@@ -10,7 +10,7 @@ def bar(x, y, colors):
         marker_color=colors)
     fig = go.Figure([trace1])
     
-    return fig.show()
+    return fig
 
 data = pd.read_csv('./resources/SPopulation.csv')
 
