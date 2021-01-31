@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="./dashboard.css" > 
   <!-- what is this ^ ?? -->
-  <link rel="stylesheet" href="./static/css/style.css">
-  <link rel="stylesheet" href="./static/css/d3Style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/d3Style.css">
   <meta name="description" content="117th Congress United States Senate">
   <meta name="keywords" content="Civil, Services, Local, Government, 117th Congress United States Senate" />
   <meta name="dc:source" content="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html">
@@ -18,13 +18,13 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
 </head>
-</html>
+
 
 
 
 <body>
+  <!-- NAVBAR -->
   <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Senate Salamaders Dashboard</a>
 
@@ -39,6 +39,7 @@
 
   <div class="container-fluid">
     <div class="row">
+
       <!-- Sidebar -->
       <div class="col-md-2 bg-light d-none d-md-block sidebar">
         <div class="left-sidebar">
@@ -77,147 +78,158 @@
         </div>
       </div>
     </div>
+
+
+    <!-- MAIN PAGE -->
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="row">
+        <div class="col-col-md-9 ml-sm-auto col-lg-10 px-4">
+
+          <!-- title -->
+          <h1>Senate Salamanders</h1>
+          <picture>......</picture>
+
+
+          <!-- DROPDOWNS -->
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Senator
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Legislative agenda
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gender
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- TEXT STUFF IDK -->
+      <div class="row">
+        <div class="col-xs-12  col-md-9">
+          <div class="article">
+            <h2>  Through exploring various Senate reform suggestions, can we have better representation and a more productive and effective Congress?</h2>
+            
+            
+              <p>The final output will be a website which has a brief explanation and then various visualizations with comparisons between the Senate and the US population. There will be buttons (or possibly a dropdown?) with which you can switch to different reform ideas. As for what the graphs will look like, a couple based on population are shown below. The left one, shaped like the Senate chambers, is likely to be the basis for many of our plots.</p>
+
+            <p></p>
+
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PLOT -->
+      <div class="row">
+        <div class="col-xs-12  col-md-9">
+          <div id="scatter">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="container">
+      <h3>Senators</h3>
+      <hr>
+      <div class="table-responsive">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Isabelle</td>
+              <td>Sanford</td>
+              <td>Texas</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Kosal</td>
+              <td>Sieng</td>
+              <td>California</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Michelle</td>
+              <td>Risucci</td>
+              <td>Colorado</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>William</td>
+              <td>Enriquez</td>
+              <td>Washington</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Steven</td>
+              <td>Brown</td>
+              <td>New York</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
   </div>
 
 
+</main>
 
 
-
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"></main>
-
-<h3>Senators</h3>
-<hr>
-<div class="table-responsive">
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">State</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Isabelle</td>
-        <td>Sanford</td>
-        <td>Texas</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Kosal</td>
-        <td>Sieng</td>
-        <td>California</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Michelle</td>
-        <td>Risucci</td>
-        <td>Colorado</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>William</td>
-        <td>Enriquez</td>
-        <td>Washington</td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>Steven</td>
-        <td>Brown</td>
-        <td>New York</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
-        <h1>Senate Salamanders</h1>
-      </div>
-    </div>
-    <picture>...</picture>
-    <div class="row">
-      <div class="col-xs-12  col-md-9">
-        <div id="scatter">
-
-        </div>
-      </div>
-      <section> 
       
+  <!-- Footer-->
+  <div>
+    <section> 
       <div class="footer animated fadeInUpBig">
         <a href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html" target="_blank" title="Download Open Source Senate Data"><i class="fa fa-fw fa-2x fa-cloud-download"></i><span>Download Data</span></a>
     </div>
-</section>
-      
-      
-      
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Senator
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Legislative agenda
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Gender
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-      
-    </div>
-    <div class="row">
-      <div class="col-xs-12  col-md-9">
-        <div class="article">
-          <h2>  Through exploring various Senate reform suggestions, can we have better representation and a more productive and effective Congress?</h2>
-          
-          
-            <p>The final output will be a website which has a brief explanation and then various visualizations with comparisons between the Senate and the US population. There will be buttons (or possibly a dropdown?) with which you can switch to different reform ideas. As for what the graphs will look like, a couple based on population are shown below. The left one, shaped like the Senate chambers, is likely to be the basis for many of our plots. 
-          </p>
-
-          <p></p>
-
-          <p></p>
-        </div>
-      </div>
+  </section>
+    <div id="SlitheringSenateSalamanders">
+      <p>Slithering Senate Salamanders| U.S.C Data Visualization and Analytics</p>
     </div>
   </div>
 
-  <!-- Footer-->
-  <div id="SlitheringSenateSalamanders">
-    
-    
-    
-    <p>Slithering Senate Salamanders| U.S.C Data Visualization and Analytics/p>
-  </div>
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script type="text/javascript" src="./static/js/app.js"></script>
+  <script type="text/javascript" src="../static/js/app.js"></script>
 
 </body>
 

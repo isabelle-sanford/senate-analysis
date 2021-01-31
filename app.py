@@ -25,6 +25,8 @@ def index():
 @app.route("/api")
 def populate():
 
+    # SQL to json guide: https://stackoverflow.com/questions/3286525/return-sql-table-as-json-in-python 
+
     # populate SQL database with our thing? jsonified? 
 
     return redirect('/')
