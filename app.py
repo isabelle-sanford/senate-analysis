@@ -17,8 +17,10 @@ app = Flask(__name__)
 # 3. Define static routes
 @app.route("/")
 def index():
-    return render_template('templates\\SlitheringSenateSalamanders.html', partybar = party_bar.show())
+    return render_template('SlitheringSenateSalamanders.html')
 
+# templates\SlitheringSenateSalamanders.html
+# C:\Users\Isabelle Sanford\Documents\BootCamp\senate-analysis\templates\SlitheringSenateSalamanders.html
 
 @app.route("/api")
 def populate():
