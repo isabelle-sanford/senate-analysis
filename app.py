@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
-from plots.PlotPopScript import party_bar, chamber, pop_bar # will be importing funcs once database/json is here
+
 
 
 # SQL CONNECTION HERE
@@ -17,25 +17,25 @@ app = Flask(__name__)
 # 3. Define static routes
 @app.route("/")
 def index():
-    return render_template('SlitheringSenateSalamanders.html', party_bar=party_bar)
+    return render_template('SlitheringSenateSalamanders.html')
 
-# templates\SlitheringSenateSalamanders.html
-# C:\Users\Isabelle Sanford\Documents\BootCamp\senate-analysis\templates\SlitheringSenateSalamanders.html
+
 
 @app.route("/api")
 def populate():
 
     # SQL to json guide: https://stackoverflow.com/questions/3286525/return-sql-table-as-json-in-python 
 
-    # populate SQL database with our thing? jsonified? 
+    # add json to the /api route
 
+    # go back to main when done
     return redirect('/')
 
 # more routes to include:
 # other senate reform pages, any other stretch stuff
 
 
-# GOOD EXAMPLE STUFF-------------------
+# USEFUL EXAMPLE STUFF-------------------
 # VARIABLES
 # @app.route("/api/v1.0/justice-league/<real_name>")
 # def justice_league_character(real_name):
