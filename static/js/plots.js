@@ -57,6 +57,8 @@ function bar_pop_stack(vars1, vars2, div) {
         text: text2
     };
 
+    // REMEMBER TO ADD LINE FOR HALFWAY POINT
+
     let data = [trace1, trace2];
 
     let layout = {
@@ -73,3 +75,89 @@ function bar_pop_stack(vars1, vars2, div) {
     Plotly.newPlot(div, data, layout);
 }
 
+
+// P O L A R
+
+function chamber_plot(rep_pops, dem_pops, div) {
+
+    // Get coordinate lists - rep is right, dem is left
+    let rep_theta = [];
+    let dem_theta = [];
+    let rads = [];
+
+    for(let a = 0; a < 12; a++) {
+        for(let r=0; r < Math.max(5, a - 2); r += 10) {
+            let rad = r;
+            let theta_R = a * 90 / (r + 2);
+            let theta_D = 180 - theta_R;
+
+            rep_theta.push(theta_R);
+            dem_theta.pish(theta_D);
+            rads.push(rad);
+
+        }
+    }
+
+    // Do we even need two subplots? Just shift everything over and make it one plot
+
+    let reps = {
+        r: rads,
+        theta: rep_theta,
+        mode: 'markers',
+        name: 'Republican',
+        marker: {color: 'red',
+                    size: rep_pops,
+                    sizemode: 'area',
+                    sizeref: 2.0 * Math.max(...size) / (40**2),
+                },
+        type: 'scatterpolar',
+        subplot: 'polar_rep'
+    };
+
+    let dems = {
+        r: rads,
+        theta: dem_theta,
+        mode: 'markers',
+        name: 'Democrat',
+        marker: {
+            color: 'blue',
+            size: dem_pops,
+            sizemode: 'area',
+            sizeref: 2.0 * Math.max(...size) / (40**2)
+        },
+        type: 'scatterpolar',
+        subplot: 'polar_dem'
+    };
+
+    let data = [reps, dems];
+
+
+    var layout = {
+        title: 'US Senate',
+        showlegend: true,
+        polar_rep: {
+            sector: [0,90],
+            // domain: {
+            //     x: [0,0.4],
+            //     y: [0,1]
+            // },
+            // radialaxis: {
+            //     tickfont: {
+            //     size: 8
+            //     }
+            // },
+            // angularaxis: {
+            //     tickfont: {
+            //     size: 8
+            //  }
+            //}
+        },
+        polar_dem: {
+            sector: [90, 180]
+          }
+        }
+
+    Plotly.newPlot(div, data, layout)
+
+
+}

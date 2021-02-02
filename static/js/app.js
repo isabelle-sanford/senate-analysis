@@ -16,6 +16,9 @@ function init() {
     // color is determined by senator from that state, text is senator's name
     // vars1 vs vars2 are each half the senators (divide in half by index - eg 'x % 2 === 0' vs equals 1)
 
+
+
+    // CHAMBER PLOT:
     
 
 
