@@ -61,7 +61,7 @@ function bar_pop_stack(vars1, vars2, title1, div) {
 
     let data = [trace1, trace2];
 
-    console.log(title1);
+    //console.log(title1);
 
     let layout = {
         title: title1,
@@ -90,17 +90,19 @@ function chamber_plot(rep_pops, dem_pops, div) {
     let rads = [];
 
     for(let a = 0; a < 12; a++) {
-        for(let r=0; r < Math.max(5, a - 2); r += 10) {
+        for(let r = Math.max(5, a - 2); r < 10; r++) {
             let rad = r;
             let theta_R = a * 90 / (r + 2);
             let theta_D = 180 - theta_R;
 
             rep_theta.push(theta_R);
-            dem_theta.pish(theta_D);
+            dem_theta.push(theta_D);
             rads.push(rad);
 
         }
     }
+
+    //console.log(rep_theta)
 
     // Do we even need two subplots? Just shift everything over and make it one plot
 
@@ -112,7 +114,7 @@ function chamber_plot(rep_pops, dem_pops, div) {
         marker: {color: 'red',
                     size: rep_pops,
                     sizemode: 'area',
-                    sizeref: 2.0 * Math.max(...size) / (40**2),
+                    sizeref: 2.0 * Math.max(...rep_pops) / (40**2),
                 },
         type: 'scatterpolar',
         subplot: 'polar_rep'
@@ -127,7 +129,8 @@ function chamber_plot(rep_pops, dem_pops, div) {
             color: 'blue',
             size: dem_pops,
             sizemode: 'area',
-            sizeref: 2.0 * Math.max(...size) / (40**2)
+            sizeref: 2.0 * Math.max(...dem_pops) / (40**2),
+            sizemin: 5
         },
         type: 'scatterpolar',
         subplot: 'polar_dem'
@@ -141,10 +144,10 @@ function chamber_plot(rep_pops, dem_pops, div) {
         showlegend: true,
         polar_rep: {
             sector: [0,90],
-            // domain: {
-            //     x: [0,0.4],
-            //     y: [0,1]
-            // },
+            domain: {
+                row: 0,
+                col: 0
+            },
             // radialaxis: {
             //     tickfont: {
             //     size: 8
@@ -157,7 +160,11 @@ function chamber_plot(rep_pops, dem_pops, div) {
             //}
         },
         polar_dem: {
-            sector: [90, 180]
+            sector: [90, 180],
+            domain: {
+                row: 0,
+                col: 1
+            },
           }
         }
 

@@ -10,23 +10,29 @@ function init() {
     // y is # of people D vs R senators represent
 
 
-    rep_total = data.filter(d => {
-        d.Party === 'Republican';
-    });
+    rep_total = data.filter(d => d.Party === 'Republican').map(sen => sen.Population);
 
-    dem_total = data.filter(d => {
-        d.Party === 'Democrat';
-    });
+    dem_total = data.filter(d => d.Party !== 'Republican').map(sen => sen.Population);
 
     other_total = data.filter(d => {
         return (d.Party !== 'Republican') && (d.Party !== 'Democrat')
-    })
+    }).map(sen => sen.Population);
 
+    // no other total atm
+   
+
+    function sumList(nums) {
+        return nums.reduce(function(tot, next) {
+            return tot + parseInt(next)
+        }, 0);
+    }
 
 
     let bar_x = ['Democrat', 'Republican'];
-    let bar_y = [(dem_total + other_total), rep_total];
+    let bar_y = [sumList(dem_total), sumList(rep_total)];
     let bar_colors = ['blue', 'red'];
+
+
 
     bar(bar_x, bar_y, '# of People each Party Represents', bar_colors, "IS-bar");
 
@@ -86,6 +92,13 @@ function init() {
     // dem_pops is the equivalent, etc
     // eventually add - hovertext for state / senator
 
+    let sorted_data = data.sort((a, b) => parseInt(a.Population) - parseInt(b.Population));
+    let rep_sorted = sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.Population));
+    let dem_sorted = sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.Population));
+
+    console.log(dem_sorted);
+
+    chamber_plot(rep_sorted, dem_sorted, 'IS-chamber-plot')
 
     }).catch(function(error) {
     console.log(error);
