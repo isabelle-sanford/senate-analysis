@@ -12,6 +12,7 @@ html {
 body {
   /* Padding bottom by footer height */
   padding-bottom: 80px;
+  background-color: rgb(252, 232, 207);
 }
 
 #footer {
@@ -57,7 +58,32 @@ body {
   font-weight: 500;
 }
 
-.jumbotron {
-  background-image: url("../static/img/US_Capitol_west_side.jpeg");
+/* .jumbotron {
+  background-image: url('img/US_Capitol_west_side.jpeg');
   background-size: cover;
+} */
+
+.bg-primary {
+  background-color: #10559e!important;
 }
+
+.jumbotron {
+  background-color: crimson;
+}
+
+/* @media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+  .sidebar a {float: left;}
+  div.content {margin-left:0;}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+} */
