@@ -25,7 +25,7 @@ function bar(x, y, title, colors, div){
 
 // idea - have the function be adding a trace so you don't have to specify x1 x2 etc
 
-function bar_pop_stack(vars1, vars2, div) {
+function bar_pop_stack(vars1, vars2, title1, div) {
     // not convinced this is better but okay
     let x1 = vars1[0];
     let y1 = vars1[1];
@@ -61,8 +61,11 @@ function bar_pop_stack(vars1, vars2, div) {
 
     let data = [trace1, trace2];
 
+    console.log(title1);
+
     let layout = {
-        title: title,
+        title: title1,
+        showlegend: false,
         barmode: 'stack',
         xaxis: {
             categoryorder: 'total descending' // CF
@@ -71,6 +74,7 @@ function bar_pop_stack(vars1, vars2, div) {
         template: 'plotly_white'  // check formatting
 
     }
+
 
     Plotly.newPlot(div, data, layout);
 }
@@ -132,7 +136,7 @@ function chamber_plot(rep_pops, dem_pops, div) {
     let data = [reps, dems];
 
 
-    var layout = {
+    let layout = {
         title: 'US Senate',
         showlegend: true,
         polar_rep: {

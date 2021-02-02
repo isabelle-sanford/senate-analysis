@@ -15,6 +15,7 @@ function init() {
 
     data.forEach(d => {
         let pop = d.Population / 2;
+        //console.log(pop);
 
         if (d.Party === "Republican") {
             rep_total += pop
@@ -29,7 +30,7 @@ function init() {
     let bar_y = [(dem_total + other_total), rep_total];
     let bar_colors = ['blue', 'red'];
 
-    bar(bar_x, bar_y, '# of People each Party Represents', bar_colors, '#IS-bar');
+    bar(bar_x, bar_y, '# of People each Party Represents', bar_colors, "IS-bar");
 
 
 
@@ -41,7 +42,7 @@ function init() {
     // vars1 vs vars2 are each half the senators (divide in half by index - eg 'x % 2 === 0' vs equals 1)
     // DO NOT NEED TO SORT thank goodness
 
-    colordict = {'Republican': 'red', 'Democrat':'blue', 'Vacant':'gray'}
+    colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
 
     let states = []; // x for both vars
 
@@ -72,10 +73,10 @@ function init() {
         }
     }
 
-    vars1 = [states, stack1_pop, stack1_color, stack1_name];
-    vars2 = [states, stack2_pop, stack2_color, stack2_name];
+    let vars1 = [states, stack1_pop, stack1_color, stack1_name];
+    let vars2 = [states, stack2_pop, stack2_color, stack2_name];
 
-    bar_pop_stack(vars1, vars2, '#IS-bar-pop');
+    bar_pop_stack(vars1, vars2, 'State populations by Senator', 'IS-bar-pop');
 
 
 
@@ -86,13 +87,10 @@ function init() {
     // eventually add - hovertext for state / senator
 
 
-
-
-    
     }).catch(function(error) {
     console.log(error);
     });
-    
-
 
 }
+
+init();
