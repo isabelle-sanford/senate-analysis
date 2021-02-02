@@ -39,6 +39,43 @@ function init() {
     // x is state, y is state population (divided by 2 bc 2 senators!)
     // color is determined by senator from that state, text is senator's name
     // vars1 vs vars2 are each half the senators (divide in half by index - eg 'x % 2 === 0' vs equals 1)
+    // DO NOT NEED TO SORT thank goodness
+
+    colordict = {'Republican': 'red', 'Democrat':'blue', 'Vacant':'gray'}
+
+    let states = []; // x for both vars
+
+    let stack1_pop = []; // y for vars1
+    let stack1_color = []; // color for vars1
+    let stack1_name = []; // text for vars1
+    
+    let stack2_pop = []; // y for vars2
+    let stack2_color = []; // color for vars2
+    let stack2_name = []; // text for vars2
+
+    for(let i = 0; i < 100; i++) {
+        let sen = data[i];
+        let pop = sen.Population;
+        let name = sen.Senator;
+        let color = colordict[sen.Party];
+        let curr_state = sen.State;
+
+        if (i % 2 == 0) {
+            states.push(curr_state);
+            stack1_pop.push(pop);
+            stack1_color.push(color);
+            stack1_name.push(name);
+        } else {
+            stack2_pop.push(pop);
+            stack2_color.push(color);
+            stack2_name.push(name);
+        }
+    }
+
+    vars1 = [states, stack1_pop, stack1_color, stack1_name];
+    vars2 = [states, stack2_pop, stack2_color, stack2_name];
+
+    bar_pop_stack(vars1, vars2, '#IS-bar-pop');
 
 
 
