@@ -71,7 +71,7 @@ function bar_pop_stack(vars1, vars2, title1, div) {
             categoryorder: 'total descending' // CF
         },
         // showlegend is false
-        template: 'plotly_white'  // check formatting
+        template: 'plotly_white'  // check formatting - why does this work and chamber plot not???
 
     }
 
@@ -89,10 +89,10 @@ function chamber_plot(rep_pops, dem_pops, div) {
     let dem_theta = [];
     let rads = [];
 
-    for(let a = 0; a < 12; a++) {
-        for(let r = Math.max(5, a - 2); r < 10; r++) {
+    for(let a = 0; a < 13; a++) {
+        for(let r = Math.max(10, 2*(a-3)); r < 20; r+= 2) {
             let rad = r;
-            let theta_R = a * 90 / (r + 2);
+            let theta_R = a * 90 / (r/2 +3);
             let theta_D = 180 - theta_R;
 
             rep_theta.push(theta_R);
@@ -117,7 +117,7 @@ function chamber_plot(rep_pops, dem_pops, div) {
                     sizeref: 2.0 * Math.max(...rep_pops) / (40**2),
                 },
         type: 'scatterpolar',
-        subplot: 'polar_rep'
+        subplot: 'polar2'
     };
 
     let dems = {
@@ -133,7 +133,7 @@ function chamber_plot(rep_pops, dem_pops, div) {
             sizemin: 5
         },
         type: 'scatterpolar',
-        subplot: 'polar_dem'
+        subplot: 'polar'
     };
 
     let data = [reps, dems];
@@ -141,31 +141,36 @@ function chamber_plot(rep_pops, dem_pops, div) {
 
     let layout = {
         title: 'US Senate',
-        showlegend: true,
-        polar_rep: {
-            sector: [0,90],
+        showlegend: false,
+        polar: {
+            sector: [90,180],
             domain: {
-                row: 0,
-                col: 0
+                x: [0, 0.45],
+                y: [0,1]
             },
-            // radialaxis: {
-            //     tickfont: {
-            //     size: 8
-            //     }
-            // },
-            // angularaxis: {
-            //     tickfont: {
-            //     size: 8
-            //  }
-            //}
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
         },
-        polar_dem: {
-            sector: [90, 180],
+        polar2: {
+            sector: [0, 90],
             domain: {
-                row: 0,
-                col: 1
+                x: [0.55, 1],
+                y: [0, 1]
             },
-          }
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
+          }//,
+          //template: 'plotly_white'
         }
 
     Plotly.newPlot(div, data, layout)
