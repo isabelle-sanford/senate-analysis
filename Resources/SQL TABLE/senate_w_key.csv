@@ -1,0 +1,101 @@
+key,st,state,senator,party,born,assumed office,term up,population
+0,st1,Alabama,Richard Shelby,Republican,86,1987-01-03,2022,4903185
+1,st1,Alabama,Tommy Tuberville,Republican,66,2021-01-03,2026,4903185
+2,st2,Alaska,Lisa Murkowski,Republican,63,2002-12-20,2022,731545
+3,st2,Alaska,Dan Sullivan,Republican,56,2015-01-03,2026,731545
+4,st3,Arizona,Kyrsten Sinema,Democratic,44,2019-01-03,2024,7278717
+5,st3,Arizona,Mark Kelly,Democratic,56,2020-12-02,2022,7278717
+6,st4,Arkansas,John Boozman,Republican,70,2011-01-03,2022,3017804
+7,st4,Arkansas,Tom Cotton,Republican,43,2015-01-03,2026,3017804
+8,st5,California,Dianne Feinstein,Democratic,87,1992-11-10,2024,39512223
+9,st5,California,Alex Padilla,Democratic,47,2021-01-20,2022,39512223
+10,st6,Colorado,Michael Bennet,Democratic,56,2009-01-21,2022,5758736
+11,st6,Colorado,John Hickenlooper,Democratic,68,2021-01-03,2026,5758736
+12,st7,Connecticut,Richard Blumenthal,Democratic,74,2011-01-03,2022,3565287
+13,st7,Connecticut,Chris Murphy,Democratic,47,2013-01-03,2024,3565287
+14,st8,Delaware,Tom Carper,Democratic,74,2001-01-03,2024,973764
+15,st8,Delaware,Chris Coons,Democratic,57,2010-11-15,2026,973764
+16,st10,Florida,Marco Rubio,Republican,49,2011-01-03,2022,21477737
+17,st10,Florida,Rick Scott,Republican,68,2019-01-08,2024,21477737
+18,st11,Georgia,Jon Ossoff,Democratic,33,2021-01-20,2026,10617423
+19,st11,Georgia,Raphael Warnock,Democratic,51,2021-01-20,2022,10617423
+20,st12,Hawaii,Brian Schatz,Democratic,48,2012-12-26,2022,1415872
+21,st12,Hawaii,Mazie Hirono,Democratic,73,2013-01-03,2024,1415872
+22,st13,Idaho,Mike Crapo,Republican,69,1999-01-03,2022,1787065
+23,st13,Idaho,Jim Risch,Republican,77,2009-01-03,2026,1787065
+24,st14,Illinois,Dick Durbin,Democratic,76,1997-01-03,2026,12671821
+25,st14,Illinois,Tammy Duckworth,Democratic,52,2017-01-03,2022,12671821
+26,st15,Indiana,Todd Young,Republican,48,2017-01-03,2022,6732219
+27,st15,Indiana,Mike Braun,Republican,66,2019-01-03,2024,6732219
+28,st16,Iowa,Chuck Grassley,Republican,87,1981-01-03,2022,3155070
+29,st16,Iowa,Joni Ernst,Republican,50,2015-01-03,2026,3155070
+30,st17,Kansas,Jerry Moran,Republican,66,2011-01-03,2022,2913314
+31,st17,Kansas,Roger Marshall,Republican,60,2021-01-03,2026,2913314
+32,st18,Kentucky,Mitch McConnell,Republican,78,1985-01-03,2026,4467673
+33,st18,Kentucky,Rand Paul,Republican,58,2011-01-03,2022,4467673
+34,st19,Louisiana,Bill Cassidy,Republican,63,2015-01-03,2026,4648794
+35,st19,Louisiana,John Kennedy,Republican,69,2017-01-03,2022,4648794
+36,st20,Maine,Susan Collins,Republican,68,1997-01-03,2026,1344212
+37,st20,Maine,Angus King,Independent,76,2013-01-03,2024,1344212
+38,st21,Maryland,Ben Cardin,Democratic,77,2007-01-03,2024,6045680
+39,st21,Maryland,Chris Van Hollen,Democratic,62,2017-01-03,2022,6045680
+40,st22,Massachusetts,Elizabeth Warren,Democratic,71,2013-01-03,2024,6892503
+41,st22,Massachusetts,Ed Markey,Democratic,74,2013-07-16,2026,6892503
+42,st23,Michigan,Debbie Stabenow,Democratic,70,2001-01-03,2024,9986857
+43,st23,Michigan,Gary Peters,Democratic,62,2015-01-03,2026,9986857
+44,st24,Minnesota,Amy Klobuchar,Democratic,60,2007-01-03,2024,5639632
+45,st24,Minnesota,Tina Smith,Democratic,62,2018-01-03,2026,5639632
+46,st25,Mississippi,Roger Wicker,Republican,69,2007-12-31,2024,2976149
+47,st25,Mississippi,Cindy Hyde-Smith,Republican,61,2018-04-09,2026,2976149
+48,st26,Missouri,Roy Blunt,Republican,71,2011-01-03,2022,6137428
+49,st26,Missouri,Josh Hawley,Republican,41,2019-01-03,2024,6137428
+50,st27,Montana,Jon Tester,Democratic,64,2007-01-03,2024,1068778
+51,st27,Montana,Steve Daines,Republican,58,2015-01-03,2026,1068778
+52,st28,Nebraska,Deb Fischer,Republican,69,2013-01-03,2024,1934408
+53,st28,Nebraska,Ben Sasse,Republican,48,2015-01-03,2026,1934408
+54,st29,Nevada,Catherine Cortez Masto,Democratic,56,2017-01-03,2022,3080156
+55,st29,Nevada,Jacky Rosen,Democratic,63,2019-01-03,2024,3080156
+56,st30,New Hampshire,Jeanne Shaheen,Democratic,74,2009-01-03,2026,1359711
+57,st30,New Hampshire,Maggie Hassan,Democratic,62,2017-01-03,2022,1359711
+58,st31,New Jersey,Bob Menendez,Democratic,67,2006-01-17,2024,8882190
+59,st31,New Jersey,Cory Booker,Democratic,51,2013-10-31,2026,8882190
+60,st32,New Mexico,Martin Heinrich,Democratic,49,2013-01-03,2024,2096829
+61,st32,New Mexico,Ben Ray Luján,Democratic,48,2021-01-03,2026,2096829
+62,st33,New York,Chuck Schumer,Democratic,70,1999-01-03,2022,19453561
+63,st33,New York,Kirsten Gillibrand,Democratic,54,2009-01-26,2024,19453561
+64,st34,North Carolina,Richard Burr,Republican,65,2005-01-03,2022,10488084
+65,st34,North Carolina,Thom Tillis,Republican,60,2015-01-03,2026,10488084
+66,st35,North Dakota,John Hoeven,Republican,63,2011-01-03,2022,762062
+67,st35,North Dakota,Kevin Cramer,Republican,60,2019-01-03,2024,762062
+68,st36,Ohio,Sherrod Brown,Democratic,68,2007-01-03,2024,11689100
+69,st36,Ohio,Rob Portman,Republican,65,2011-01-03,2022,11689100
+70,st37,Oklahoma,Jim Inhofe,Republican,86,1994-11-16,2026,3956971
+71,st37,Oklahoma,James Lankford,Republican,52,2015-01-03,2022,3956971
+72,st38,Oregon,Ron Wyden,Democratic,71,1996-02-05,2022,4217737
+73,st38,Oregon,Jeff Merkley,Democratic,64,2009-01-03,2026,4217737
+74,st39,Pennsylvania,Bob Casey Jr.,Democratic,60,2007-01-03,2024,12801989
+75,st39,Pennsylvania,Pat Toomey,Republican,59,2011-01-03,2022,12801989
+76,st40,Rhode Island,Jack Reed,Democratic,71,1997-01-03,2026,1059361
+77,st40,Rhode Island,Sheldon Whitehouse,Democratic,65,2007-01-03,2024,1059361
+78,st41,South Carolina,Lindsey Graham,Republican,65,2003-01-03,2026,5148714
+79,st41,South Carolina,Tim Scott,Republican,55,2013-01-03,2022,5148714
+80,st42,South Dakota,John Thune,Republican,60,2005-01-03,2022,884659
+81,st42,South Dakota,Mike Rounds,Republican,66,2015-01-03,2026,884659
+82,st43,Tennessee,Marsha Blackburn,Republican,68,2019-01-03,2024,6829174
+83,st43,Tennessee,Bill Hagerty,Republican,61,2021-01-03,2026,6829174
+84,st44,Texas,John Cornyn,Republican,68,2002-12-02,2026,28995881
+85,st44,Texas,Ted Cruz,Republican,50,2013-01-03,2024,28995881
+86,st45,Utah,Mike Lee,Republican,49,2011-01-03,2022,3205958
+87,st45,Utah,Mitt Romney,Republican,73,2019-01-03,2024,3205958
+88,st46,Vermont,Patrick Leahy,Democratic,80,1975-01-03,2022,623989
+89,st46,Vermont,Bernie Sanders,Independent,79,2007-01-03,2024,623989
+90,st47,Virginia,Mark Warner,Democratic,66,2009-01-03,2026,8535519
+91,st47,Virginia,Tim Kaine,Democratic,62,2013-01-03,2024,8535519
+92,st48,Washington,Patty Murray,Democratic,70,1993-01-03,2022,7614893
+93,st48,Washington,Maria Cantwell,Democratic,62,2001-01-03,2024,7614893
+94,st49,West Virginia,Joe Manchin,Democratic,73,2010-11-15,2024,1792147
+95,st49,West Virginia,Shelley Moore Capito,Republican,67,2015-01-03,2026,1792147
+96,st50,Wisconsin,Ron Johnson,Republican,65,2011-01-03,2022,5822434
+97,st50,Wisconsin,Tammy Baldwin,Democratic,58,2013-01-03,2024,5822434
+98,st51,Wyoming,John Barrasso,Republican,68,2007-06-25,2024,578759
+99,st51,Wyoming,Cynthia Lummis,Republican,66,2021-01-03,2026,578759

@@ -1,0 +1,134 @@
+age
+-
+a_key varchar(5) PK
+age_range varchar(25)
+generation varchar(25)
+
+
+division
+-
+d_key varchar(5) PK
+division varchar(50)
+
+
+origin
+-
+o_key varchar(5) PK
+origin varchar(50)
+
+
+race
+-
+r_key varchar(5) PK
+race varchar(50)
+race2 varchar(100)
+
+
+sex
+-
+s_key varchar(5) PK
+sex varchar(25)
+
+
+state
+-
+st_key varchar(5) PK
+st varchar(5)
+state varchar(50)
+
+senate
+-
+key int
+st varchar(10) FK >- state.st_key
+state varchar(50)
+senator varchar(100)
+party varchar(100)
+born int
+assumed_office date
+term_up int
+population int
+
+population
+-
+key int PK
+sumlev int
+region varchar(10)
+division varchar(10) FK >- division.d_key
+state varchar(10) FK >- state.st_key
+name varchar(50)
+sex varchar(10) FK >- sex.s_key
+origin varchar(10) FK >- origin.o_key
+race varchar(10) FK >- race.r_key
+age varchar(10) FK >- age.a_key
+census2010pop int
+estimatesbase2010 int
+popestimate2010 int
+popestimate2011 int
+popestimate2012 int
+popestimate2013 int
+popestimate2014 int
+popestimate2015 int
+popestimate2016 int
+popestimate2017 int
+popestimate2018 int
+popestimate2019 int
+
+religious
+-
+key int PK
+st varchar(10) FK >- state.st_key
+state int
+baptist_family_(et) int
+methodist_family_(et) int
+non_denominational_family_(et) int
+lutheran_family_(et) int
+presbyterian_(et) int
+pentecostal_family_(et) int
+episcopalian/anglican_family_(et) int
+restorationist_family_(et) int
+congregationalist_family_(et) int
+holiness_family_(et) int
+reformed_family_(et) int
+adventist_family_(et) int
+anabaptist_family_(et) int
+pietist_family_(et) int
+other_evangelical int
+nonspecific_protestant_family_(et) int
+baptist_family_(mt) int
+methodist_family_(mt) int
+non-denominational_family_(mt) int
+lutheran_family_(mt) int
+presbyterian_family_(mt) int
+episcopalian/anglican_family_(mt) int
+restorationist_family_(mt) int
+congregationalist_family_(mt) int
+reformed_family_(mt) int
+anabaptist_family_(mt) int
+friends_family_(mt) (int)
+nonspecific_protestant_family_(mt) int
+baptist_family_(hbpt) int
+methodist_family_(hbpt) int
+pentecostal_family_(hbpt) int
+holiness_family_(hbpt) int
+non-denominational_family_(hbpt) int
+nonspecific_protestant_(hbpt) int
+catholic int
+mormon-lds int
+other_mormom int
+greek_orthodox int
+russian_orthodox int
+orthodox_church_in_america int
+other_orthodox_christian int
+jehovah's_witness int
+other_christian int
+jewish int
+muslim int
+buddhist int
+hindu int
+other_world_religions int
+unitarians int
+new_age int
+native_american_religions int
+atheist int
+agnostic int
+nothing_in_particular int
