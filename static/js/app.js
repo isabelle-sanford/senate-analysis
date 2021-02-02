@@ -9,22 +9,20 @@ function init() {
     // x is dem & republican
     // y is # of people D vs R senators represent
 
-    let dem_total = 0;
-    let rep_total = 0;
-    let other_total = 0;
 
-    data.forEach(d => {
-        let pop = d.Population / 2;
-        //console.log(pop);
+    rep_total = data.filter(d => {
+        d.Party === 'Republican';
+    });
 
-        if (d.Party === "Republican") {
-            rep_total += pop
-        } else if (d.Party === "Democrat") {
-            dem_total += pop
-        } else {
-            other_total += pop
-        }
+    dem_total = data.filter(d => {
+        d.Party === 'Democrat';
+    });
+
+    other_total = data.filter(d => {
+        return (d.Party !== 'Republican') && (d.Party !== 'Democrat')
     })
+
+
 
     let bar_x = ['Democrat', 'Republican'];
     let bar_y = [(dem_total + other_total), rep_total];
@@ -77,6 +75,8 @@ function init() {
     let vars2 = [states, stack2_pop, stack2_color, stack2_name];
 
     bar_pop_stack(vars1, vars2, 'State populations by Senator', 'IS-bar-pop');
+
+    // TODO: Add vertical line at halfway point; add state abbrevs into data so those can be used
 
 
 
