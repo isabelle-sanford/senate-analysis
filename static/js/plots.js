@@ -13,8 +13,6 @@ function bar(x, y, title, colors, div){
 
     let my_layout = {
         title: title,
-        // xaxis: {title: "Outcome"},
-        // yaxis: {title: "Avg. Length (cycles)"},
         hovermode: 'closest'
     };
 
@@ -180,8 +178,8 @@ function chamber_plot(rep_pops, dem_pops, div) {
 
 
 
-// by sex
-function sex_chamber_plot(rep_colors, dem_colors, div) {
+// by sex - senators
+function sex_sen_chamber_plot(rep_colors, dem_colors, div) {
 
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name
@@ -262,4 +260,143 @@ function sex_chamber_plot(rep_colors, dem_colors, div) {
 }
 
 
+function sumList(nums) {
+    return nums.reduce(function(tot, next) {
+        return tot + parseInt(next)
+    }, 0);
+}
 
+function getSeats(myList) {
+    let tot = sumList(myList);
+
+    let seats = myList.map(m => Math.round(m*100 / tot));
+
+    if (sumList(seats) !== 100) {
+        console.log('uh oh!');
+        console.log(seats);
+    }
+
+    return seats;
+}
+
+
+
+// SEX POPULATION CHAMBER------------------
+
+function sex_pop_chamber(popsList, popsColors, div) {
+    // do function on popslist to get proportional list
+
+    let sex_seats = getSeats(popsList);
+
+    
+    // split up list evenly (note: this makes no sense for non-binary attributes)
+    let sexRseats = [];
+    let sexDseats = [];
+    // again this makes no sense pls fix
+
+    sex_seats.forEach(sex => {
+        let numSex = sex / 2;
+
+        if (sumList(sexRseats) < sumList(sexDseats)) {
+            sexDseats.push(Math.floor(numSex));
+            sexRseats.push(Math.ceil(numSex));
+        } else {
+            sexRseats.push(Math.floor(numSex));
+            sexDseats.push(Math.ceil(numSex));
+        }
+
+    });
+
+    //console.log(`seats division: ${sex_seats}`);
+
+    sexDcolors = [];
+    sexRcolors = [];
+
+    for (let i=0; i < popsList.length; i++) {
+
+        let currRep = Array(sexRseats[i]).fill(popsColors[i]);
+        let currDem = Array(sexDseats[i]).fill(popsColors[i]);
+
+        sexDcolors = sexDcolors.concat(currDem);
+        sexRcolors = sexRcolors.concat(currRep);
+    }
+
+    console.log(sexDcolors);
+
+    // ACTUAL PLOT
+
+    // Do we even need two subplots? Just shift everything over and make it one plot
+    // todo: add mouseover for sen/state name
+
+    let reps = {
+        r: rads,
+        theta: rep_theta,
+        mode: 'markers',
+        name: 'Republican',
+        marker: {color: sexRcolors,
+                    size: 10,
+                },
+        type: 'scatterpolar',
+        subplot: 'polar2'
+    };
+
+    let dems = {
+        r: rads,
+        theta: dem_theta,
+        mode: 'markers',
+        name: 'Democrat',
+        //text: dem_pops,
+        marker: {
+            color: sexDcolors,
+            size: 10,
+        },
+        type: 'scatterpolar',
+        subplot: 'polar'
+    };
+
+    let data = [reps, dems];
+
+
+    let layout = {
+        title: 'US Population',
+        showlegend: false,
+        polar: {
+            sector: [90,180],
+            domain: {
+                x: [0, 0.45],
+                y: [0,1]
+            },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
+        },
+        polar2: {
+           // title: 'Republican',
+            sector: [0, 90],
+            domain: {
+                x: [0.55, 1],
+                y: [0, 1]
+            },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            },
+
+          }
+        }
+
+    Plotly.newPlot(div, data, layout)
+
+
+
+}
+
+
+// at some point we really need to go through formatting and make it camelCase

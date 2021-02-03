@@ -21,11 +21,7 @@ function init() {
     // no other total atm
    
 
-    function sumList(nums) {
-        return nums.reduce(function(tot, next) {
-            return tot + parseInt(next)
-        }, 0);
-    }
+
 
 
     let bar_x = ['Democrat', 'Republican'];
@@ -113,7 +109,10 @@ function init() {
     let sexRcolors = sexRsorted.map(g => sexDict[g]);
     let sexDcolors = sexDsorted.map(g => sexDict[g])
 
-    sex_chamber_plot(sexRcolors, sexDcolors, 'IS-chamber-sen-sex');
+    sex_sen_chamber_plot(sexRcolors, sexDcolors, 'IS-chamber-sen-sex');
+    // TO DO - DO WITHOUT PARTY
+
+    //  what about with party though, and show the party breakdown of the country?
 
         
     d3.csv("../../resources/population_age_sex_race.csv").then(function(attr) { 
@@ -123,12 +122,12 @@ function init() {
         let guys = attr.filter(a => a.sex === 's1');
         let gals = attr.filter(a => a.sex === 's2');
 
-        let guys_pop = 0;
-        let gals_pop = 0;
+        let guys_pop = sumList(guys.map(g => g.popestimate2019));
+        let gals_pop = sumList(gals.map(g => g.popestimate2019));
+ 
+        
 
-        guys.map(g => g += guys_pop);
-        console.log(guys_pop)
-
+        sex_pop_chamber([guys_pop, gals_pop], ['purple', 'pink'], 'IS-chamber-pop-sex');
 
 
     });
