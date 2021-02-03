@@ -1,7 +1,7 @@
 
 // GET COORDINATES OF EACH POINT
 // may want to shift to 1 list, or have an option for that
-function coords() {
+function coords(bool) {
     // Get coordinate lists - rep is right, dem is left
     let rep_theta = [];
     let dem_theta = [];
@@ -9,7 +9,7 @@ function coords() {
 
     for(let a = 0; a < 13; a++) {
         for(let r = Math.max(10, 2*(a-2)); r < 20; r+= 2) {
-            let rad = r;
+            let rad = r+1;
             let theta_R = a * 90 / (r/2 +2);
             let theta_D = 180 - theta_R;
 
@@ -18,8 +18,21 @@ function coords() {
             rads.push(rad);
         }
     }
-    return [rads, rep_theta, dem_theta];
+
+    let theta = rep_theta.concat(dem_theta.reverse());
+
+    let rads2 = [...rads];
+    rads2.reverse();
+    let all_rads = rads.concat(rads2);
+
+    if (bool) {
+        return [rads, rep_theta, dem_theta.reverse()];
+    } else {
+        return [all_rads, theta];
+    }
+
 }
+
 
 // sum list
 function sumList(nums) {
@@ -68,7 +81,7 @@ function getPartySeats(myList) {
 
 }
 
-function getColors(numsList, colorList) {
+function getPartyColors(numsList, colorList) {
     let sexDcolors = [];
     let sexRcolors = [];
 
@@ -82,4 +95,15 @@ function getColors(numsList, colorList) {
     };
 
     return [sexRcolors, sexDcolors];
+}
+
+function getColors(numsList, colorList) {
+    myColors = [];
+
+    for (let i=0; i < numsList.length; i++) {
+        let curr = Array(numsList[i]).fill(colorList[i]);
+        myColors = myColors.concat(curr);
+    };
+
+    return myColors;
 }

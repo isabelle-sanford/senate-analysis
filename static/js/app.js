@@ -97,17 +97,23 @@ function init() {
 
 
     // SENATOR SEX CHAMBER PLOT------------------------
-    let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
+    let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender)).map(sen => sen.gender);
 
-    let sexRsorted = sex_sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.gender));
-    let sexDsorted = sex_sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.gender));
+    // let sexRsorted = sex_sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.gender));
+    // let sexDsorted = sex_sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.gender));
 
-    let sexDict = {1: 'purple', 2: 'pink'};
+    let sexDict = {'1': 'purple', '2': 'pink'};
 
-    let sensexRcolors = sexRsorted.map(g => sexDict[g]);
-    let sensexDcolors = sexDsorted.map(g => sexDict[g])
+    let sensexcolors = sex_sorted_data.map(g => sexDict[g]);
 
-    chamber_plot(10, 10, sensexRcolors, sensexDcolors, 0, 0, 'IS-chamber-sen-sex');
+    //console.log(sensexcolors);
+
+    // let sensexRcolors = sexRsorted.map(g => sexDict[g]);
+    // let sensexDcolors = sexDsorted.map(g => sexDict[g])
+
+    // chamber_plot(10, 10, sensexRcolors, sensexDcolors, 0, 0, 'IS-chamber-sen-sex');
+
+    nonpartychamber_plot(10, sensexcolors, 0, 'IS-chamber-sen-sex');
     // TO DO - MAKE WITHOUT PARTY
     //  what about with party though, and show the party breakdown of the country?
 
@@ -121,13 +127,13 @@ function init() {
 
         let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
         let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
- 
-        let pop_sex_colors = getColors(getPartySeats([guys_pop, gals_pop]), ['purple', 'pink']);
 
+        let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'pink']);
+     
+        nonpartychamber_plot(10, pop_sex_colors, 0, 'IS-chamber-pop-sex');
 
-
-        chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
-
+        
+        //chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
 
     });
 

@@ -79,288 +79,8 @@ function bar_pop_stack(vars1, vars2, title1, div) {
 }
 
 
-let coord = coords();
 
 // P O L A R-----------------------------------------
-
-function pop_chamber_plot(rep_pops, dem_pops, div) {
-
-    // Do we even need two subplots? Just shift everything over and make it one plot
-    // todo: add mouseover for sen/state name
-
-    let reps = {
-        r: coord[0],
-        theta: coord[1],
-        mode: 'markers',
-        name: 'Republican',
-        marker: {color: 'red',
-                    size: rep_pops,
-                    sizemode: 'area',
-                    sizeref: 2.0 * Math.max(...rep_pops) / (30**2),
-                    sizemin: 2
-                },
-        type: 'scatterpolar',
-        subplot: 'polar2'
-    };
-
-    let dems = {
-        r: coord[0],
-        theta: coord[2],
-        mode: 'markers',
-        name: 'Democrat',
-        text: dem_pops,
-        marker: {
-            color: 'blue',
-            size: dem_pops,
-            sizemode: 'area',
-            sizeref: 2.0 * Math.max(...dem_pops) / (30**2),
-            sizemin: 2
-        },
-        type: 'scatterpolar',
-        subplot: 'polar'
-    };
-
-    let data = [reps, dems];
-
-
-    let layout = {
-        title: 'US Senate',
-        showlegend: false,
-        polar: {
-            sector: [90,180],
-            domain: {
-                x: [0, 0.45],
-                y: [0,1]
-            },
-            hole: .2,
-            radialaxis: {
-                visible: false
-            },
-            angularaxis: {
-                visible: false
-            }
-        },
-        polar2: {
-            sector: [0, 90],
-            domain: {
-                x: [0.55, 1],
-                y: [0, 1]
-            },
-            hole: .2,
-            radialaxis: {
-                visible: false
-            },
-            angularaxis: {
-                visible: false
-            },
-
-          }
-        }
-
-    Plotly.newPlot(div, data, layout)
-
-
-}
-
-
-
-// by sex - senators-------------------------------------
-function sex_sen_chamber_plot(rep_colors, dem_colors, div) {
-
-    // Do we even need two subplots? Just shift everything over and make it one plot
-    // todo: add mouseover for sen/state name
-
-    let reps = {
-        r: coord[0],
-        theta: coord[1],
-        mode: 'markers',
-        name: 'Republican',
-        marker: {color: rep_colors,
-                    size: 10,
-                    // sizemode: 'area',
-                    // sizeref: 2.0 * Math.max(...rep_pops) / (30**2),
-                    // sizemin: 2
-                },
-        type: 'scatterpolar',
-        subplot: 'polar2'
-    };
-
-    let dems = {
-        r: coord[0],
-        theta: coord[2],
-        mode: 'markers',
-        name: 'Democrat',
-        //text: dem_pops,
-        marker: {
-            color: dem_colors,
-            size: 10,
-            // sizemode: 'area',
-            // sizeref: 2.0 * Math.max(...dem_pops) / (30**2),
-            // sizemin: 2
-        },
-        type: 'scatterpolar',
-        subplot: 'polar'
-    };
-
-    let data = [reps, dems];
-
-
-    let layout = {
-        title: 'US Senate',
-        showlegend: false,
-        polar: {
-            sector: [90,180],
-            domain: {
-                x: [0, 0.45],
-                y: [0,1]
-            },
-            hole: .2,
-            radialaxis: {
-                visible: false
-            },
-            angularaxis: {
-                visible: false
-            }
-        },
-        polar2: {
-           // title: 'Republican',
-            sector: [0, 90],
-            domain: {
-                x: [0.55, 1],
-                y: [0, 1]
-            },
-            hole: .2,
-            radialaxis: {
-                visible: false
-            },
-            angularaxis: {
-                visible: false
-            },
-
-          }
-        }
-
-    Plotly.newPlot(div, data, layout)
-
-
-}
-
-
-
-// SEX POPULATION CHAMBER-------------------------
-
-function sex_pop_chamber(popsList, popsColors, div) {
-    // do function on popslist to get proportional list
-
-    let sex_seats = getSeats(popsList);
-
-    
-    // split up list evenly (note: this makes no sense for non-binary attributes)
-    let sexRseats = [];
-    let sexDseats = [];
-    // again this makes no sense pls fix
-
-    sex_seats.forEach(sex => {
-        let numSex = sex / 2;
-
-        if (sumList(sexRseats) < sumList(sexDseats)) {
-            sexDseats.push(Math.floor(numSex));
-            sexRseats.push(Math.ceil(numSex));
-        } else {
-            sexRseats.push(Math.floor(numSex));
-            sexDseats.push(Math.ceil(numSex));
-        }
-
-    });
-
-    //console.log(`seats division: ${sex_seats}`);
-
-    sexDcolors = [];
-    sexRcolors = [];
-
-    for (let i=0; i < popsList.length; i++) {
-
-        let currRep = Array(sexRseats[i]).fill(popsColors[i]);
-        let currDem = Array(sexDseats[i]).fill(popsColors[i]);
-
-        sexDcolors = sexDcolors.concat(currDem);
-        sexRcolors = sexRcolors.concat(currRep);
-    }
-
-    // ACTUAL PLOT
-
-    // Do we even need two subplots? Just shift everything over and make it one plot
-    // todo: add mouseover for sen/state name
-
-    let reps = {
-        r: coord[0],
-        theta: coord[1],
-        mode: 'markers',
-        name: 'Republican',
-        marker: {color: sexRcolors,
-                    size: 10,
-                },
-        type: 'scatterpolar',
-        subplot: 'polar2'
-    };
-
-    let dems = {
-        r: coord[0],
-        theta: coord[2],
-        mode: 'markers',
-        name: 'Democrat',
-        //text: dem_pops,
-        marker: {
-            color: sexDcolors,
-            size: 10,
-        },
-        type: 'scatterpolar',
-        subplot: 'polar'
-    };
-
-    let data = [reps, dems];
-
-
-    let layout = {
-        title: 'US Population',
-        showlegend: false,
-        polar: {
-            sector: [90,180],
-            domain: {
-                x: [0, 0.45],
-                y: [0,1]
-            },
-            hole: .2,
-            radialaxis: {
-                visible: false
-            },
-            angularaxis: {
-                visible: false
-            }
-        },
-        polar2: {
-           // title: 'Republican',
-            sector: [0, 90],
-            domain: {
-                x: [0.55, 1],
-                y: [0, 1]
-            },
-            hole: .2,
-            radialaxis: {
-                visible: false
-            },
-            angularaxis: {
-                visible: false
-            },
-
-          }
-        }
-
-    Plotly.newPlot(div, data, layout)
-
-
-
-}
 
 // note: eventually have size be a single input, and plot parties
 // if size is a list, else plot just one chamber
@@ -368,7 +88,8 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
     // defaults: size = 10
     // color = red, blue
 
-
+    
+    let coord = coords(true);
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name & remove coords on hover
 
@@ -448,6 +169,62 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
 
           }
         }
+
+    Plotly.newPlot(div, data, layout)
+
+
+}
+
+function nonpartychamber_plot(size, color, text, div) {
+    // defaults: size = 10
+    // color = red, blue
+
+    
+    let coord = coords(false);
+    // Do we even need two subplots? Just shift everything over and make it one plot
+    // todo: add mouseover for sen/state name & remove coords on hover
+
+    let trace = {
+        r: coord[0],
+        theta: coord[1],
+        mode: 'markers',
+        //name: 'Republican',
+        text: text,
+        marker: {
+            color: color,
+            size: size,
+        },
+        type: 'scatterpolar',
+        //subplot: 'polar2'
+    };
+
+    if (size.length > 1) {
+        trace.marker.sizemode = 'area';
+        trace.marker.sizeref = 2.0 * Math.max(...sizeR) / (30**2);
+        trace.marker.sizemin = 2;
+    };
+
+    let data = [trace];
+
+
+    let layout = {
+        title: 'US Senate',
+        showlegend: false,
+        polar: {
+            sector: [0,180],
+            // domain: {
+            //     x: [0, 0.45],
+            //     y: [0,1]
+            // },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
+        },
+    }
 
     Plotly.newPlot(div, data, layout)
 
