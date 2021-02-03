@@ -381,13 +381,16 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         marker: {
             color: colorR,
             size: sizeR,
-            sizemode: 'area',
-            sizeref: 2.0 * Math.max(...sizeR) / (30**2),
-            sizemin: 2
         },
         type: 'scatterpolar',
         subplot: 'polar2'
     };
+
+    if (sizeR.length > 1) {
+        reps.marker.sizemode = 'area';
+        reps.marker.sizeref = 2.0 * Math.max(...sizeR) / (30**2);
+        reps.marker.sizemin = 2;
+    }
 
     let dems = {
         r: coord[0],
@@ -397,14 +400,17 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         text: textD,
         marker: {
             color: colorD,
-            size: sizeD,
-            sizemode: 'area',
-            sizeref: 2.0 * Math.max(...sizeD) / (30**2),
-            sizemin: 2
+            size: sizeD
         },
         type: 'scatterpolar',
         subplot: 'polar'
     };
+
+    if (sizeD.length > 1) {
+        dems.marker.sizemode = 'area';
+        dems.marker.sizeref = 2.0 * Math.max(...sizeD) / (30**2);
+        dems.marker.sizemin = 2;
+    }
 
     let data = [reps, dems];
 

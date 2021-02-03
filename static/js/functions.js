@@ -29,7 +29,7 @@ function sumList(nums) {
 }
 
 // convert list to number of senate seats (ie rounded percentage)
-function getSeats(myList) {
+function getAllSeats(myList) {
     let tot = sumList(myList);
 
     let seats = myList.map(m => Math.round(m*100 / tot));
@@ -42,3 +42,44 @@ function getSeats(myList) {
     return seats;
 }
 
+function getPartySeats(myList) {
+        
+    let sex_seats = getAllSeats(myList);
+
+    // split up list evenly (note: this makes no sense for non-binary attributes)
+    let sexRseats = [];
+    let sexDseats = [];
+    // again this makes no sense pls fix
+
+    sex_seats.forEach(sex => {
+        let numSex = sex / 2;
+
+        if (sumList(sexRseats) < sumList(sexDseats)) {
+            sexDseats.push(Math.floor(numSex));
+            sexRseats.push(Math.ceil(numSex));
+        } else {
+            sexRseats.push(Math.floor(numSex));
+            sexDseats.push(Math.ceil(numSex));
+        }
+
+    });
+
+    return [sexRseats, sexDseats];
+
+}
+
+function getColors(numsList, colorList) {
+    let sexDcolors = [];
+    let sexRcolors = [];
+
+    for (let i=0; i < numsList[0].length; i++) {
+
+        let currRep = Array(numsList[0][i]).fill(colorList[i]);
+        let currDem = Array(numsList[1][i]).fill(colorList[i]);
+
+        sexDcolors = sexDcolors.concat(currDem);
+        sexRcolors = sexRcolors.concat(currRep);
+    };
+
+    return [sexRcolors, sexDcolors];
+}

@@ -82,8 +82,8 @@ function init() {
 
 
 
-    // CHAMBER PLOT:
-    // chamber_plot(rep_pops, dem_pops, div)
+    // POP CHAMBER PLOT---------------------
+    // chamber_plot(rep_pops, dem_pops, rep_color, dem_color, rep_text_, dem_text, div)
     // rep_pops is a sorted list of populations from each republican senator
     // dem_pops is the equivalent, etc
     // eventually add - hovertext for state / senator
@@ -92,13 +92,11 @@ function init() {
     let rep_sorted = sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.Population)/2);
     let dem_sorted = sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.Population)/2);
 
-    //console.log(dem_sorted);
-
     chamber_plot(rep_sorted, dem_sorted, 'red', 'blue', 0,0, 'IS-chamber-plot');
 
 
 
-    // SENATOR SEX CHAMBER PLOT
+    // SENATOR SEX CHAMBER PLOT------------------------
     let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
 
     let sexRsorted = sex_sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.gender));
@@ -106,28 +104,29 @@ function init() {
 
     let sexDict = {1: 'purple', 2: 'pink'};
 
-    let sexRcolors = sexRsorted.map(g => sexDict[g]);
-    let sexDcolors = sexDsorted.map(g => sexDict[g])
+    let sensexRcolors = sexRsorted.map(g => sexDict[g]);
+    let sensexDcolors = sexDsorted.map(g => sexDict[g])
 
-    sex_sen_chamber_plot(sexRcolors, sexDcolors, 'IS-chamber-sen-sex');
-    // TO DO - DO WITHOUT PARTY
-
+    chamber_plot(10, 10, sensexRcolors, sensexDcolors, 0, 0, 'IS-chamber-sen-sex');
+    // TO DO - MAKE WITHOUT PARTY
     //  what about with party though, and show the party breakdown of the country?
 
         
     d3.csv("../../resources/CensusAttributesData.csv").then(function(attr) { 
 
-        // popestimate2019, sex (s1 vs s2)
-
+        
+        // US SEX CHAMBER PLOT
         let guys = attr.filter(a => a.SEX === '1');
         let gals = attr.filter(a => a.SEX === '2');
 
         let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
         let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
  
-        console.log(guys_pop)
+        let pop_sex_colors = getColors(getPartySeats([guys_pop, gals_pop]), ['purple', 'pink']);
 
-        sex_pop_chamber([guys_pop, gals_pop], ['purple', 'pink'], 'IS-chamber-pop-sex');
+
+
+        chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
 
 
     });
