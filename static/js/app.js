@@ -93,10 +93,10 @@ function init() {
     // eventually add - hovertext for state / senator
 
     let sorted_data = data.sort((a, b) => parseInt(a.Population) - parseInt(b.Population));
-    let rep_sorted = sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.Population));
-    let dem_sorted = sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.Population));
+    let rep_sorted = sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.Population)/2);
+    let dem_sorted = sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.Population)/2);
 
-    console.log(dem_sorted);
+    //console.log(dem_sorted);
 
     chamber_plot(rep_sorted, dem_sorted, 'IS-chamber-plot')
 

@@ -90,9 +90,9 @@ function chamber_plot(rep_pops, dem_pops, div) {
     let rads = [];
 
     for(let a = 0; a < 13; a++) {
-        for(let r = Math.max(10, 2*(a-3)); r < 20; r+= 2) {
+        for(let r = Math.max(10, 2*(a-2)); r < 20; r+= 2) {
             let rad = r;
-            let theta_R = a * 90 / (r/2 +3);
+            let theta_R = a * 90 / (r/2 +2);
             let theta_D = 180 - theta_R;
 
             rep_theta.push(theta_R);
@@ -102,9 +102,10 @@ function chamber_plot(rep_pops, dem_pops, div) {
         }
     }
 
-    //console.log(rep_theta)
+    console.log(rads)
 
     // Do we even need two subplots? Just shift everything over and make it one plot
+    // todo: add mouseover for sen/state name
 
     let reps = {
         r: rads,
@@ -115,6 +116,7 @@ function chamber_plot(rep_pops, dem_pops, div) {
                     size: rep_pops,
                     sizemode: 'area',
                     sizeref: 2.0 * Math.max(...rep_pops) / (40**2),
+                    sizemin: 4
                 },
         type: 'scatterpolar',
         subplot: 'polar2'
@@ -125,12 +127,13 @@ function chamber_plot(rep_pops, dem_pops, div) {
         theta: dem_theta,
         mode: 'markers',
         name: 'Democrat',
+        text: dem_pops,
         marker: {
             color: 'blue',
             size: dem_pops,
             sizemode: 'area',
             sizeref: 2.0 * Math.max(...dem_pops) / (40**2),
-            sizemin: 5
+            sizemin: 4
         },
         type: 'scatterpolar',
         subplot: 'polar'
