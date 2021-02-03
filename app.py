@@ -1,8 +1,6 @@
 # 1. Import Flask
 from flask import Flask, render_template, redirect
-from flask_pymongo import PyMongo
-
-
+from to_json_testing import get_jsons
 
 # SQL CONNECTION HERE
 
@@ -28,7 +26,7 @@ def populate():
     # add json to the /api route
 
     # go back to main when done
-    return redirect('/')
+    return get_jsons()
 
 # more routes to include:
 # other senate reform pages, any other stretch stuff

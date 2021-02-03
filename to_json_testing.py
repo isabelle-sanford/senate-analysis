@@ -14,6 +14,8 @@ def get_jsons():
     engine = create_engine(f"sqlite:///{path}")
     #conn = engine.connect()
 
+    Base = declarative_base()
+
     # Inspect table 
     # inspector = inspect(engine)
     # #print(inspector.get_table_names())

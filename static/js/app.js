@@ -1,7 +1,7 @@
 
 
 function init() {
-    d3.csv("../../resources/SPopulation1.csv").then(function(data) {
+    d3.json("http://localhost:5000/api").then(function(data) {
 
     // SIMPLE BAR:
     // bar(x, y, title, colors, div)
@@ -118,24 +118,24 @@ function init() {
     //  what about with party though, and show the party breakdown of the country?
 
         
-    d3.csv("../../resources/CensusAttributesData.csv").then(function(attr) { 
+    // d3.csv("../../resources/CensusAttributesData.csv").then(function(attr) { 
 
         
-        // US SEX CHAMBER PLOT
-        let guys = attr.filter(a => a.SEX === '1');
-        let gals = attr.filter(a => a.SEX === '2');
+    //     // US SEX CHAMBER PLOT
+    //     let guys = attr.filter(a => a.SEX === '1');
+    //     let gals = attr.filter(a => a.SEX === '2');
 
-        let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
-        let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
+    //     let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
+    //     let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
 
-        let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'pink']);
+    //     let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'pink']);
      
-        nonpartychamber_plot(10, pop_sex_colors, 0, 'IS-chamber-pop-sex');
+    //     nonpartychamber_plot(10, pop_sex_colors, 0, 'IS-chamber-pop-sex');
 
         
-        //chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
+    //     //chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
 
-    });
+    // });
 
     }).catch(function(error) {
     console.log(error);
