@@ -1,381 +1,140 @@
-// //set svg dimensions to be used later
-// var svgWidth = 960;
-// var svgHeight = 620;
-
-// //set borders for the SVG
-// var margin = {
-//     top: 20,
-//     right: 40,
-//     bottom: 200,
-//     left: 100
-// };
-
-// //create the width and height using the margins and parameters
-// var width = svgWidth - margin.right - margin.left;
-// var height = svgHeight - margin.top - margin.bottom;
-
-// //append a div classed chart to the scatter element
-// var chart = d3.select("#scatter").append("div").classed("chart", true);
-
-
-// //append an svg element to the chart with appropriate height and width
-// var svg = chart.append("svg")
-//     .attr("width", svgWidth)
-//     .attr("height", svgHeight);
-
-// //append an svg group
-// var chartGroup = svg.append("g")
-//     .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-// //initial Parameters
-// var chosenXAxis = "poverty";
-// var chosenYAxis = "healthcare";
-
-// //function used for updating x-scale var upon clicking on axis label
-// function xScale(censusData, chosenXAxis) {
-//     //create scales
-//     var xLinearScale = d3.scaleLinear()
-//         .domain([d3.min(censusData, d => d[chosenXAxis]) * 0.8,
-//             d3.max(censusData, d => d[chosenXAxis]) * 1.2
-//         ])
-//         .range([0, width]);
-
-//     return xLinearScale;
-// }
-
-// //function used for updating y-scale var upon clicking on axis label
-// function yScale(censusData, chosenYAxis) {
-//     //create scales
-//     var yLinearScale = d3.scaleLinear()
-//         .domain([d3.min(censusData, d => d[chosenYAxis]) * 0.8,
-//             d3.max(censusData, d => d[chosenYAxis]) * 1.2
-//         ])
-//         .range([height, 0]);
-
-//     return yLinearScale;
-// }
-
-// //function used for updating xAxis var upon click on axis label
-// function renderAxesX(newXScale, xAxis) {
-//     var bottomAxis = d3.axisBottom(newXScale);
-
-//     xAxis.transition()
-//         .duration(1000)
-//         .call(bottomAxis);
-
-//     return xAxis;
-// }
-
-// //function used for updating yAxis var upon click on axis label
-// function renderAxesY(newYScale, yAxis) {
-//     var leftAxis = d3.axisLeft(newYScale);
-
-//     yAxis.transition()
-//         .duration(1000)
-//         .call(leftAxis);
-
-//     return yAxis;
-// }
-
-// //function used for updating circles group with a transition to new circles
-// //for change in x axis or y axis
-// function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
-
-//     circlesGroup.transition()
-//         .duration(1000)
-//         .attr("cx", data => newXScale(data[chosenXAxis]))
-//         .attr("cy", data => newYScale(data[chosenYAxis]));
-
-//     return circlesGroup;
-// }
-
-// //function used for updating state labels with a transition to new 
-// function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
-
-//     textGroup.transition()
-//         .duration(1000)
-//         .attr("x", d => newXScale(d[chosenXAxis]))
-//         .attr("y", d => newYScale(d[chosenYAxis]));
-
-//     return textGroup;
-// }
-// //function to stylize x-axis values for tooltips
-// function styleX(value, chosenXAxis) {
-
-//     //stylize based on variable chosen
-//     //poverty percentage
-//     if (chosenXAxis === 'poverty') {
-//         return `${value}%`;
-//     }
-//     //household income in dollars
-//     else if (chosenXAxis === 'income') {
-//         return `$${value}`;
-//     }
-//     //age (number)
-//     else {
-//         return `${value}`;
-//     }
-// }
-
-// // function used for updating circles group with new tooltip
-// function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
-
-//     //select x label
-//     //poverty percentage
-//     if (chosenXAxis === 'poverty') {
-//         var xLabel = "Poverty:";
-//     }
-//     //household income in dollars
-//     else if (chosenXAxis === 'income') {
-//         var xLabel = "Median Income:";
-//     }
-//     //age (number)
-//     else {
-//         var xLabel = "Age:";
-//     }
-
-//     //select y label
-//     //percentage lacking healthcare
-//     if (chosenYAxis === 'healthcare') {
-//         var yLabel = "No Healthcare:"
-//     }
-//     //percentage obese
-//     else if (chosenYAxis === 'obesity') {
-//         var yLabel = "Obesity:"
-//     }
-//     //smoking percentage
-//     else {
-//         var yLabel = "Smokers:"
-//     }
-
-//     //create tooltip
-//     var toolTip = d3.tip()
-//         .attr("class", "d3-tip")
-//         .offset([-8, 0])
-//         .html(function(d) {
-//             return (`${d.state}<br>${xLabel} ${styleX(d[chosenXAxis], chosenXAxis)}<br>${yLabel} ${d[chosenYAxis]}%`);
-//         });
-
-//     circlesGroup.call(toolTip);
-
-//     //add events
-//     circlesGroup.on("mouseover", toolTip.show)
-//         .on("mouseout", toolTip.hide);
-
-//     return circlesGroup;
-// }
-
-// //retrieve csv data and execute everything below
-// d3.csv("./assets/data/data.csv").then(function(censusData) {
-
-//     console.log(censusData);
-
-//     //parse data
-//     censusData.forEach(function(data) {
-//         data.obesity = +data.obesity;
-//         data.income = +data.income;
-//         data.smokes = +data.smokes;
-//         data.age = +data.age;
-//         data.healthcare = +data.healthcare;
-//         data.poverty = +data.poverty;
-//     });
-
-//     //create first linear scales
-//     var xLinearScale = xScale(censusData, chosenXAxis);
-//     var yLinearScale = yScale(censusData, chosenYAxis);
-
-//     //create initial axis functions
-//     var bottomAxis = d3.axisBottom(xLinearScale);
-//     var leftAxis = d3.axisLeft(yLinearScale);
-
-//     //append x axis
-//     var xAxis = chartGroup.append("g")
-//         .classed("x-axis", true)
-//         .attr("transform", `translate(0, ${height})`)
-//         .call(bottomAxis);
-
-//     //append y axis
-//     var yAxis = chartGroup.append("g")
-//         .classed("y-axis", true)
-//         .call(leftAxis);
-
-//     //append initial circles
-//     var circlesGroup = chartGroup.selectAll("circle")
-//         .data(censusData)
-//         .enter()
-//         .append("circle")
-//         .classed("stateCircle", true)
-//         .attr("cx", d => xLinearScale(d[chosenXAxis]))
-//         .attr("cy", d => yLinearScale(d[chosenYAxis]))
-//         .attr("r", 12)
-//         .attr("opacity", ".5");
-
-//     //append initial text
-//     var textGroup = chartGroup.selectAll(".stateText")
-//         .data(censusData)
-//         .enter()
-//         .append("text")
-//         .classed("stateText", true)
-//         .attr("x", d => xLinearScale(d[chosenXAxis]))
-//         .attr("y", d => yLinearScale(d[chosenYAxis]))
-//         .attr("dy", 3)
-//         .attr("font-size", "10px")
-//         .text(function(d) { return d.abbr });
-
-//     //create group for 3 x-axis labels
-//     var xLabelsGroup = chartGroup.append("g")
-//         .attr("transform", `translate(${width / 2}, ${height + 20 + margin.top})`);
-
-//     var povertyLabel = xLabelsGroup.append("text")
-//         .classed("aText", true)
-//         .classed("active", true)
-//         .attr("x", 0)
-//         .attr("y", 20)
-//         .attr("value", "poverty")
-//         .text("In Poverty (%)");
-
-//     var ageLabel = xLabelsGroup.append("text")
-//         .classed("aText", true)
-//         .classed("inactive", true)
-//         .attr("x", 0)
-//         .attr("y", 40)
-//         .attr("value", "age")
-//         .text("Age (Median)")
-
-//     var incomeLabel = xLabelsGroup.append("text")
-//         .classed("aText", true)
-//         .classed("inactive", true)
-//         .attr("x", 0)
-//         .attr("y", 60)
-//         .attr("value", "income")
-//         .text("Household Income (Median)")
-
-//     //create group for 3 y-axis labels
-//     var yLabelsGroup = chartGroup.append("g")
-//         .attr("transform", `translate(${0 - margin.left/4}, ${(height/2)})`);
-
-//     var healthcareLabel = yLabelsGroup.append("text")
-//         .classed("aText", true)
-//         .classed("active", true)
-//         .attr("x", 0)
-//         .attr("y", 0 - 20)
-//         .attr("dy", "1em")
-//         .attr("transform", "rotate(-90)")
-//         .attr("value", "healthcare")
-//         .text("Lacks Healthcare (%)");
-
-//     var smokesLabel = yLabelsGroup.append("text")
-//         .classed("aText", true)
-//         .classed("inactive", true)
-//         .attr("x", 0)
-//         .attr("y", 0 - 40)
-//         .attr("dy", "1em")
-//         .attr("transform", "rotate(-90)")
-//         .attr("value", "smokes")
-//         .text("Smokes (%)");
-
-//     var obesityLabel = yLabelsGroup.append("text")
-//         .classed("aText", true)
-//         .classed("inactive", true)
-//         .attr("x", 0)
-//         .attr("y", 0 - 60)
-//         .attr("dy", "1em")
-//         .attr("transform", "rotate(-90)")
-//         .attr("value", "obesity")
-//         .text("Obese (%)");
-
-//     //updateToolTip function with data
-//     var circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
-
-//     //x axis labels event listener
-//     xLabelsGroup.selectAll("text")
-//         .on("click", function() {
-//             //get value of selection
-//             var value = d3.select(this).attr("value");
-
-//             //check if value is same as current axis
-//             if (value != chosenXAxis) {
-
-//                 //replace chosenXAxis with value
-//                 chosenXAxis = value;
-
-//                 //update x scale for new data
-//                 xLinearScale = xScale(censusData, chosenXAxis);
-
-//                 //update x axis with transition
-//                 xAxis = renderAxesX(xLinearScale, xAxis);
-
-//                 //update circles with new x values
-//                 circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
-
-//                 //update text with new x values
-//                 textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
-
-//                 //update tooltips with new info
-//                 circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
-
-//                 //change classes to change bold text
-//                 if (chosenXAxis === "poverty") {
-//                     povertyLabel.classed("active", true).classed("inactive", false);
-//                     ageLabel.classed("active", false).classed("inactive", true);
-//                     incomeLabel.classed("active", false).classed("inactive", true);
-//                 } else if (chosenXAxis === "age") {
-//                     povertyLabel.classed("active", false).classed("inactive", true);
-//                     ageLabel.classed("active", true).classed("inactive", false);
-//                     incomeLabel.classed("active", false).classed("inactive", true);
-//                 } else {
-//                     povertyLabel.classed("active", false).classed("inactive", true);
-//                     ageLabel.classed("active", false).classed("inactive", true);
-//                     incomeLabel.classed("active", true).classed("inactive", false);
-//                 }
-//             }
-//         });
-
-//     //y axis labels event listener
-//     yLabelsGroup.selectAll("text")
-//         .on("click", function() {
-//             //get value of selection
-//             var value = d3.select(this).attr("value");
-
-//             //check if value is same as current axis
-//             if (value != chosenYAxis) {
-
-//                 //replace chosenYAxis with value
-//                 chosenYAxis = value;
-
-//                 //update y scale for new data
-//                 yLinearScale = yScale(censusData, chosenYAxis);
-
-//                 //update x axis with transition
-//                 yAxis = renderAxesY(yLinearScale, yAxis);
-
-//                 //update circles with new y values
-//                 circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
-
-//                 //update text with new y values
-//                 textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis)
-
-//                 //update tooltips with new info
-//                 circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
-
-//                 //change classes to change bold text
-//                 if (chosenYAxis === "obesity") {
-//                     obesityLabel.classed("active", true).classed("inactive", false);
-//                     smokesLabel.classed("active", false).classed("inactive", true);
-//                     healthcareLabel.classed("active", false).classed("inactive", true);
-//                 } else if (chosenYAxis === "smokes") {
-//                     obesityLabel.classed("active", false).classed("inactive", true);
-//                     smokesLabel.classed("active", true).classed("inactive", false);
-//                     healthcareLabel.classed("active", false).classed("inactive", true);
-//                 } else {
-//                     obesityLabel.classed("active", false).classed("inactive", true);
-//                     smokesLabel.classed("active", false).classed("inactive", true);
-//                     healthcareLabel.classed("active", true).classed("inactive", false);
-//                 }
-//             }
-//         });
-
-
-
-
-// });
+
+
+function init() {
+    d3.csv("../../resources/SPopulation1.csv").then(function(data) {
+
+    // SIMPLE BAR:
+    // bar(x, y, title, colors, div)
+    // colors are blue & red
+    // x is dem & republican
+    // y is # of people D vs R senators represent
+
+
+    rep_total = data.filter(d => d.Party === 'Republican').map(sen => sen.Population);
+
+    dem_total = data.filter(d => d.Party !== 'Republican').map(sen => sen.Population);
+
+    other_total = data.filter(d => {
+        return (d.Party !== 'Republican') && (d.Party !== 'Democrat')
+    }).map(sen => sen.Population);
+
+    // no other total atm
+   
+
+
+
+
+    let bar_x = ['Democrat', 'Republican'];
+    let bar_y = [sumList(dem_total), sumList(rep_total)];
+    let bar_colors = ['blue', 'red'];
+
+
+
+    bar(bar_x, bar_y, '# of People each Party Represents', bar_colors, "IS-bar");
+
+
+
+    // STATE POP BAR:
+    // bar_pop_stack(vars1, vars2, div)
+    // vars is a list of [x, y, color, text]
+    // x is state, y is state population (divided by 2 bc 2 senators!)
+    // color is determined by senator from that state, text is senator's name
+    // vars1 vs vars2 are each half the senators (divide in half by index - eg 'x % 2 === 0' vs equals 1)
+    // DO NOT NEED TO SORT thank goodness
+
+    colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
+
+    let states = []; // x for both vars
+
+    let stack1_pop = []; // y for vars1
+    let stack1_color = []; // color for vars1
+    let stack1_name = []; // text for vars1
+    
+    let stack2_pop = []; // y for vars2
+    let stack2_color = []; // color for vars2
+    let stack2_name = []; // text for vars2
+
+    for(let i = 0; i < 100; i++) {
+        let sen = data[i];
+        let pop = sen.Population;
+        let name = sen.Senator;
+        let color = colordict[sen.Party];
+        let curr_state = sen.State;
+
+        if (i % 2 == 0) {
+            states.push(curr_state);
+            stack1_pop.push(pop);
+            stack1_color.push(color);
+            stack1_name.push(name);
+        } else {
+            stack2_pop.push(pop);
+            stack2_color.push(color);
+            stack2_name.push(name);
+        }
+    }
+
+    let vars1 = [states, stack1_pop, stack1_color, stack1_name];
+    let vars2 = [states, stack2_pop, stack2_color, stack2_name];
+
+    bar_pop_stack(vars1, vars2, 'State populations by Senator', 'IS-bar-pop');
+
+    // TODO: Add vertical line at halfway point; add state abbrevs into data so those can be used
+
+
+
+    // POP CHAMBER PLOT---------------------
+    // chamber_plot(rep_pops, dem_pops, rep_color, dem_color, rep_text_, dem_text, div)
+    // rep_pops is a sorted list of populations from each republican senator
+    // dem_pops is the equivalent, etc
+    // eventually add - hovertext for state / senator
+
+    let sorted_data = data.sort((a, b) => parseInt(a.Population) - parseInt(b.Population));
+    let rep_sorted = sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.Population)/2);
+    let dem_sorted = sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.Population)/2);
+
+    chamber_plot(rep_sorted, dem_sorted, 'red', 'blue', 0,0, 'IS-chamber-plot');
+
+
+
+    // SENATOR SEX CHAMBER PLOT------------------------
+    let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
+
+    let sexRsorted = sex_sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.gender));
+    let sexDsorted = sex_sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.gender));
+
+    let sexDict = {1: 'purple', 2: 'pink'};
+
+    let sensexRcolors = sexRsorted.map(g => sexDict[g]);
+    let sensexDcolors = sexDsorted.map(g => sexDict[g])
+
+    chamber_plot(10, 10, sensexRcolors, sensexDcolors, 0, 0, 'IS-chamber-sen-sex');
+    // TO DO - MAKE WITHOUT PARTY
+    //  what about with party though, and show the party breakdown of the country?
+
+        
+    d3.csv("../../resources/CensusAttributesData.csv").then(function(attr) { 
+
+        
+        // US SEX CHAMBER PLOT
+        let guys = attr.filter(a => a.SEX === '1');
+        let gals = attr.filter(a => a.SEX === '2');
+
+        let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
+        let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
+ 
+        let pop_sex_colors = getColors(getPartySeats([guys_pop, gals_pop]), ['purple', 'pink']);
+
+
+
+        chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
+
+
+    });
+
+    }).catch(function(error) {
+    console.log(error);
+    });
+
+}
+
+init();
