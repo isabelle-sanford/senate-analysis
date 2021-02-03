@@ -83,7 +83,7 @@ let coord = coords();
 
 // P O L A R-----------------------------------------
 
-function chamber_plot(rep_pops, dem_pops, div) {
+function pop_chamber_plot(rep_pops, dem_pops, div) {
 
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name
@@ -361,6 +361,93 @@ function sex_pop_chamber(popsList, popsColors, div) {
 
 
 }
+
+// note: eventually have size be a single input, and plot parties
+// if size is a list, else plot just one chamber
+function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
+    // defaults: size = 10
+    // color = red, blue
+
+
+    // Do we even need two subplots? Just shift everything over and make it one plot
+    // todo: add mouseover for sen/state name & remove coords on hover
+
+    let reps = {
+        r: coord[0],
+        theta: coord[1],
+        mode: 'markers',
+        name: 'Republican',
+        text: textR,
+        marker: {
+            color: colorR,
+            size: sizeR,
+            sizemode: 'area',
+            sizeref: 2.0 * Math.max(...sizeR) / (30**2),
+            sizemin: 2
+        },
+        type: 'scatterpolar',
+        subplot: 'polar2'
+    };
+
+    let dems = {
+        r: coord[0],
+        theta: coord[2],
+        mode: 'markers',
+        name: 'Democrat',
+        text: textD,
+        marker: {
+            color: colorD,
+            size: sizeD,
+            sizemode: 'area',
+            sizeref: 2.0 * Math.max(...sizeD) / (30**2),
+            sizemin: 2
+        },
+        type: 'scatterpolar',
+        subplot: 'polar'
+    };
+
+    let data = [reps, dems];
+
+
+    let layout = {
+        title: 'US Senate',
+        showlegend: false,
+        polar: {
+            sector: [90,180],
+            domain: {
+                x: [0, 0.45],
+                y: [0,1]
+            },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
+        },
+        polar2: {
+            sector: [0, 90],
+            domain: {
+                x: [0.55, 1],
+                y: [0, 1]
+            },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            },
+
+          }
+        }
+
+    Plotly.newPlot(div, data, layout)
+
+
+}
+
 
 
 // at some point we really need to go through formatting and make it camelCase

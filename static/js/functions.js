@@ -1,6 +1,6 @@
 
 // GET COORDINATES OF EACH POINT
-
+// may want to shift to 1 list, or have an option for that
 function coords() {
     // Get coordinate lists - rep is right, dem is left
     let rep_theta = [];
@@ -16,10 +16,8 @@ function coords() {
             rep_theta.push(theta_R);
             dem_theta.push(theta_D);
             rads.push(rad);
-
         }
     }
-
     return [rads, rep_theta, dem_theta];
 }
 
@@ -37,9 +35,10 @@ function getSeats(myList) {
     let seats = myList.map(m => Math.round(m*100 / tot));
 
     if (sumList(seats) !== 100) {
-        console.log('uh oh!');
+        console.log('uh oh! getSeats has a problem!');
         console.log(seats);
     }
 
     return seats;
 }
+

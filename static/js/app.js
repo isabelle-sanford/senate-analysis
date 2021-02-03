@@ -94,7 +94,7 @@ function init() {
 
     //console.log(dem_sorted);
 
-    chamber_plot(rep_sorted, dem_sorted, 'IS-chamber-plot');
+    chamber_plot(rep_sorted, dem_sorted, 'red', 'blue', 0,0, 'IS-chamber-plot');
 
 
 
