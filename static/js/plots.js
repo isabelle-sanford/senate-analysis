@@ -1,6 +1,6 @@
 // Plain bar graph
 
-// Simple Bar 
+// Simple Bar--------------------------------------------
 function bar(x, y, title, colors, div){
     let my_data = [{
         x: x,
@@ -23,6 +23,7 @@ function bar(x, y, title, colors, div){
 
 // idea - have the function be adding a trace so you don't have to specify x1 x2 etc
 
+//bar pop stack-----------------------------------
 function bar_pop_stack(vars1, vars2, title1, div) {
     // not convinced this is better but okay
     let x1 = vars1[0];
@@ -77,25 +78,10 @@ function bar_pop_stack(vars1, vars2, title1, div) {
     Plotly.newPlot(div, data, layout);
 }
 
-// Get coordinate lists - rep is right, dem is left
-let rep_theta = [];
-let dem_theta = [];
-let rads = [];
 
-for(let a = 0; a < 13; a++) {
-    for(let r = Math.max(10, 2*(a-2)); r < 20; r+= 2) {
-        let rad = r;
-        let theta_R = a * 90 / (r/2 +2);
-        let theta_D = 180 - theta_R;
+let coord = coords();
 
-        rep_theta.push(theta_R);
-        dem_theta.push(theta_D);
-        rads.push(rad);
-
-    }
-}
-
-// P O L A R
+// P O L A R-----------------------------------------
 
 function chamber_plot(rep_pops, dem_pops, div) {
 
@@ -103,8 +89,8 @@ function chamber_plot(rep_pops, dem_pops, div) {
     // todo: add mouseover for sen/state name
 
     let reps = {
-        r: rads,
-        theta: rep_theta,
+        r: coord[0],
+        theta: coord[1],
         mode: 'markers',
         name: 'Republican',
         marker: {color: 'red',
@@ -118,8 +104,8 @@ function chamber_plot(rep_pops, dem_pops, div) {
     };
 
     let dems = {
-        r: rads,
-        theta: dem_theta,
+        r: coord[0],
+        theta: coord[2],
         mode: 'markers',
         name: 'Democrat',
         text: dem_pops,
@@ -178,15 +164,15 @@ function chamber_plot(rep_pops, dem_pops, div) {
 
 
 
-// by sex - senators
+// by sex - senators-------------------------------------
 function sex_sen_chamber_plot(rep_colors, dem_colors, div) {
 
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name
 
     let reps = {
-        r: rads,
-        theta: rep_theta,
+        r: coord[0],
+        theta: coord[1],
         mode: 'markers',
         name: 'Republican',
         marker: {color: rep_colors,
@@ -200,8 +186,8 @@ function sex_sen_chamber_plot(rep_colors, dem_colors, div) {
     };
 
     let dems = {
-        r: rads,
-        theta: dem_theta,
+        r: coord[0],
+        theta: coord[2],
         mode: 'markers',
         name: 'Democrat',
         //text: dem_pops,
@@ -260,28 +246,8 @@ function sex_sen_chamber_plot(rep_colors, dem_colors, div) {
 }
 
 
-function sumList(nums) {
-    return nums.reduce(function(tot, next) {
-        return tot + parseInt(next)
-    }, 0);
-}
 
-function getSeats(myList) {
-    let tot = sumList(myList);
-
-    let seats = myList.map(m => Math.round(m*100 / tot));
-
-    if (sumList(seats) !== 100) {
-        console.log('uh oh!');
-        console.log(seats);
-    }
-
-    return seats;
-}
-
-
-
-// SEX POPULATION CHAMBER------------------
+// SEX POPULATION CHAMBER-------------------------
 
 function sex_pop_chamber(popsList, popsColors, div) {
     // do function on popslist to get proportional list
@@ -321,16 +287,14 @@ function sex_pop_chamber(popsList, popsColors, div) {
         sexRcolors = sexRcolors.concat(currRep);
     }
 
-
-
     // ACTUAL PLOT
 
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name
 
     let reps = {
-        r: rads,
-        theta: rep_theta,
+        r: coord[0],
+        theta: coord[1],
         mode: 'markers',
         name: 'Republican',
         marker: {color: sexRcolors,
@@ -341,8 +305,8 @@ function sex_pop_chamber(popsList, popsColors, div) {
     };
 
     let dems = {
-        r: rads,
-        theta: dem_theta,
+        r: coord[0],
+        theta: coord[2],
         mode: 'markers',
         name: 'Democrat',
         //text: dem_pops,
