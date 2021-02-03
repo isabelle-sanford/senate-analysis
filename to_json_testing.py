@@ -7,102 +7,108 @@ from sqlalchemy import Column, Integer, String, Float, BigInteger
 
 import json
 
-def get_jsons():
+# Set connection 
+path = "resources/AllData.sqlite"
+engine = create_engine(f"sqlite:///{path}")
+#conn = engine.connect()
 
-    # Set connection 
-    path = "resources/AllData.sqlite"
-    engine = create_engine(f"sqlite:///{path}")
-    #conn = engine.connect()
-
-    Base = declarative_base()
-
-    # Inspect table 
-    # inspector = inspect(engine)
-    # #print(inspector.get_table_names())
-
-    # # get column names
-    # columns_dict = inspector.get_columns('attributes')
-    # cols = [c['name'] for c in columns_dict]
-    #print(cols)
-
-    class Senate(Base):
-        __tablename__ = 'senate'
-        index = Column(Integer, primary_key = True)
-        st = Column(String(10)) 
-        state = Column(String(50))
-        senator = Column(String(100))
-        party = Column(String(100))
-        born = Column(Integer) # change name to Age
-        assumed_office = Column(String(100)) # technically date
-        term_up = Column(Integer)
-        population = Column(BigInteger)
-        gender = Column(Integer)
+Base = declarative_base()
 
 
-    class Attributes(Base):
-        __tablename__ = 'attributes'
-        index = Column(BigInteger, primary_key = True)
-        SUMLEV = Column(Integer)
-        REGION = Column(Integer)
-        DIVISION = Column(Integer)
-        STATE = Column(Integer)
-        NAME = Column(BigInteger)
-        SEX = Column(Integer)
-        ORIGIN = Column(Integer)
-        RACE  = Column(Integer)
-        AGE = Column(Integer)
-        CENSUS2010POP = Column(BigInteger)
-        ESTIMATESBASE2010 = Column(BigInteger)
-        POPESTIMATE2010 = Column(BigInteger)
-        POPESTIMATE2011 = Column(BigInteger)
-        POPESTIMATE2012 = Column(BigInteger)
-        POPESTIMATE2013 = Column(BigInteger)
-        POPESTIMATE2014 = Column(BigInteger)
-        POPESTIMATE2015 = Column(BigInteger)
-        POPESTIMATE2016 = Column(BigInteger)
-        POPESTIMATE2017 = Column(BigInteger)
-        POPESTIMATE2018 = Column(BigInteger)
-        POPESTIMATE2019 = Column(BigInteger)
 
 
-    # INTO JSON-------------
+# Inspect table 
+# inspector = inspect(engine)
+# #print(inspector.get_table_names())
 
-    Base.metadata.create_all(engine)
-    session = Session(bind=engine)
+# # get column names
+# columns_dict = inspector.get_columns('attributes')
+# cols = [c['name'] for c in columns_dict]
+#print(cols)
 
-    senate_rows = (
-        Query(Senate)
-        .with_session(session)
-        .with_entities(Senate.index, 
-            Senate.st, # MERGE INTO SPOPULATION CSV
-            Senate.state, 
-            Senate.senator, 
-            Senate.party, 
-            Senate.population,
-            Senate.gender) # leaving out term_up and assumed_office and born for now
-        .all()
-    )
-    senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender']
-    senate_json = [dict((senate_cols[i], value) for i, value in enumerate(row)) for row in senate_rows]
-
-    sen_json_output = json.dumps(senate_json)
+class Senate(Base):
+    __tablename__ = 'senate'
+    index = Column(Integer, primary_key = True)
+    st = Column(String(10)) 
+    state = Column(String(50))
+    senator = Column(String(100))
+    party = Column(String(100))
+    born = Column(Integer) # change name to Age
+    assumed_office = Column(String(100)) # technically date
+    term_up = Column(Integer)
+    population = Column(BigInteger)
+    gender = Column(Integer)
 
 
-    attribute_rows = (
-        Query(Attributes)
-        .with_session(session)
-        .with_entities(Attributes.index, Attributes.NAME, Attributes.STATE, Attributes.SEX, Attributes.ORIGIN, Attributes.RACE, Attributes.AGE, Attributes.POPESTIMATE2019)
-        .all()
-    )
-    attribute_cols = ['index', 'NAME', 'STATE', 'SEX', 'ORIGIN', 'RACE', 'AGE', 'POPESTIMATE2019']
-    attr_json = [dict((attribute_cols[i], value) for i, value in enumerate(row)) for row in attribute_rows]
+class Attributes(Base):
+    __tablename__ = 'attributes'
+    index = Column(BigInteger, primary_key = True)
+    SUMLEV = Column(Integer)
+    REGION = Column(Integer)
+    DIVISION = Column(Integer)
+    STATE = Column(Integer)
+    NAME = Column(BigInteger)
+    SEX = Column(Integer)
+    ORIGIN = Column(Integer)
+    RACE  = Column(Integer)
+    AGE = Column(Integer)
+    CENSUS2010POP = Column(BigInteger)
+    ESTIMATESBASE2010 = Column(BigInteger)
+    POPESTIMATE2010 = Column(BigInteger)
+    POPESTIMATE2011 = Column(BigInteger)
+    POPESTIMATE2012 = Column(BigInteger)
+    POPESTIMATE2013 = Column(BigInteger)
+    POPESTIMATE2014 = Column(BigInteger)
+    POPESTIMATE2015 = Column(BigInteger)
+    POPESTIMATE2016 = Column(BigInteger)
+    POPESTIMATE2017 = Column(BigInteger)
+    POPESTIMATE2018 = Column(BigInteger)
+    POPESTIMATE2019 = Column(BigInteger)
 
-    # TODO: AUTOMATE EVERYTHING function for this query, just get all rows, function for putting inspected cols into base class...
-    # import religion stuff below
 
-    print(senate_json[3])
+# INTO JSON-------------
 
+Base.metadata.create_all(engine)
+session = Session(bind=engine)
+
+senate_rows = (
+    Query(Senate)
+    .with_session(session)
+    .with_entities(Senate.index, 
+        Senate.st, # MERGE INTO SPOPULATION CSV
+        Senate.state, 
+        Senate.senator, 
+        Senate.party, 
+        Senate.population,
+        Senate.gender) # leaving out term_up and assumed_office and born for now
+    .all()
+)
+senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender']
+senate_json = [dict((senate_cols[i], value) for i, value in enumerate(row)) for row in senate_rows]
+
+sen_json_output = json.dumps(senate_json)
+
+
+attribute_rows = (
+    Query(Attributes)
+    .with_session(session)
+    .with_entities(Attributes.index, Attributes.NAME, Attributes.STATE, Attributes.SEX, Attributes.ORIGIN, Attributes.RACE, Attributes.AGE, Attributes.POPESTIMATE2019)
+    .all()
+)
+attribute_cols = ['index', 'NAME', 'STATE', 'SEX', 'ORIGIN', 'RACE', 'AGE', 'POPESTIMATE2019']
+attr_json = [dict((attribute_cols[i], value) for i, value in enumerate(row)) for row in attribute_rows]
+attr_json_output = json.dumps(attr_json)
+
+# TODO: AUTOMATE EVERYTHING function for this query, just get all rows, function for putting inspected cols into base class...
+# import religion stuff below
+
+
+
+def sen_json():
     return sen_json_output
+
+def attr_json():
+    return attr_json_output
 
 
 
