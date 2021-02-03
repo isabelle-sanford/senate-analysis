@@ -1,7 +1,7 @@
 
 
 function init() {
-    d3.csv("../../resources/SPopulation.csv").then(function(data) {
+    d3.csv("../../resources/SPopulation1.csv").then(function(data) {
 
     // SIMPLE BAR:
     // bar(x, y, title, colors, div)
@@ -98,7 +98,40 @@ function init() {
 
     //console.log(dem_sorted);
 
-    chamber_plot(rep_sorted, dem_sorted, 'IS-chamber-plot')
+    chamber_plot(rep_sorted, dem_sorted, 'IS-chamber-plot');
+
+
+
+    // SENATOR SEX CHAMBER PLOT
+    let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
+
+    let sexRsorted = sex_sorted_data.filter(d => d.Party === 'Republican').map(sen => parseInt(sen.gender));
+    let sexDsorted = sex_sorted_data.filter(d => d.Party !== 'Republican').map(sen => parseInt(sen.gender));
+
+    let sexDict = {1: 'purple', 2: 'pink'};
+
+    let sexRcolors = sexRsorted.map(g => sexDict[g]);
+    let sexDcolors = sexDsorted.map(g => sexDict[g])
+
+    sex_chamber_plot(sexRcolors, sexDcolors, 'IS-chamber-sen-sex');
+
+        
+    d3.csv("../../resources/population_age_sex_race.csv").then(function(attr) { 
+
+        // popestimate2019, sex (s1 vs s2)
+
+        let guys = attr.filter(a => a.sex === 's1');
+        let gals = attr.filter(a => a.sex === 's2');
+
+        let guys_pop = 0;
+        let gals_pop = 0;
+
+        guys.map(g => g += guys_pop);
+        console.log(guys_pop)
+
+
+
+    });
 
     }).catch(function(error) {
     console.log(error);

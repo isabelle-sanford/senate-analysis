@@ -79,30 +79,27 @@ function bar_pop_stack(vars1, vars2, title1, div) {
     Plotly.newPlot(div, data, layout);
 }
 
+// Get coordinate lists - rep is right, dem is left
+let rep_theta = [];
+let dem_theta = [];
+let rads = [];
+
+for(let a = 0; a < 13; a++) {
+    for(let r = Math.max(10, 2*(a-2)); r < 20; r+= 2) {
+        let rad = r;
+        let theta_R = a * 90 / (r/2 +2);
+        let theta_D = 180 - theta_R;
+
+        rep_theta.push(theta_R);
+        dem_theta.push(theta_D);
+        rads.push(rad);
+
+    }
+}
 
 // P O L A R
 
 function chamber_plot(rep_pops, dem_pops, div) {
-
-    // Get coordinate lists - rep is right, dem is left
-    let rep_theta = [];
-    let dem_theta = [];
-    let rads = [];
-
-    for(let a = 0; a < 13; a++) {
-        for(let r = Math.max(10, 2*(a-2)); r < 20; r+= 2) {
-            let rad = r;
-            let theta_R = a * 90 / (r/2 +2);
-            let theta_D = 180 - theta_R;
-
-            rep_theta.push(theta_R);
-            dem_theta.push(theta_D);
-            rads.push(rad);
-
-        }
-    }
-
-    console.log(rads)
 
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name
@@ -115,8 +112,8 @@ function chamber_plot(rep_pops, dem_pops, div) {
         marker: {color: 'red',
                     size: rep_pops,
                     sizemode: 'area',
-                    sizeref: 2.0 * Math.max(...rep_pops) / (40**2),
-                    sizemin: 4
+                    sizeref: 2.0 * Math.max(...rep_pops) / (30**2),
+                    sizemin: 2
                 },
         type: 'scatterpolar',
         subplot: 'polar2'
@@ -132,8 +129,8 @@ function chamber_plot(rep_pops, dem_pops, div) {
             color: 'blue',
             size: dem_pops,
             sizemode: 'area',
-            sizeref: 2.0 * Math.max(...dem_pops) / (40**2),
-            sizemin: 4
+            sizeref: 2.0 * Math.max(...dem_pops) / (30**2),
+            sizemin: 2
         },
         type: 'scatterpolar',
         subplot: 'polar'
@@ -171,12 +168,98 @@ function chamber_plot(rep_pops, dem_pops, div) {
             },
             angularaxis: {
                 visible: false
-            }
-          }//,
-          //template: 'plotly_white'
+            },
+
+          }
         }
 
     Plotly.newPlot(div, data, layout)
 
 
 }
+
+
+
+// by sex
+function sex_chamber_plot(rep_colors, dem_colors, div) {
+
+    // Do we even need two subplots? Just shift everything over and make it one plot
+    // todo: add mouseover for sen/state name
+
+    let reps = {
+        r: rads,
+        theta: rep_theta,
+        mode: 'markers',
+        name: 'Republican',
+        marker: {color: rep_colors,
+                    size: 10,
+                    // sizemode: 'area',
+                    // sizeref: 2.0 * Math.max(...rep_pops) / (30**2),
+                    // sizemin: 2
+                },
+        type: 'scatterpolar',
+        subplot: 'polar2'
+    };
+
+    let dems = {
+        r: rads,
+        theta: dem_theta,
+        mode: 'markers',
+        name: 'Democrat',
+        //text: dem_pops,
+        marker: {
+            color: dem_colors,
+            size: 10,
+            // sizemode: 'area',
+            // sizeref: 2.0 * Math.max(...dem_pops) / (30**2),
+            // sizemin: 2
+        },
+        type: 'scatterpolar',
+        subplot: 'polar'
+    };
+
+    let data = [reps, dems];
+
+
+    let layout = {
+        title: 'US Senate',
+        showlegend: false,
+        polar: {
+            sector: [90,180],
+            domain: {
+                x: [0, 0.45],
+                y: [0,1]
+            },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
+        },
+        polar2: {
+           // title: 'Republican',
+            sector: [0, 90],
+            domain: {
+                x: [0.55, 1],
+                y: [0, 1]
+            },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            },
+
+          }
+        }
+
+    Plotly.newPlot(div, data, layout)
+
+
+}
+
+
+
