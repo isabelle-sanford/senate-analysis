@@ -89,7 +89,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
     // color = red, blue
 
     
-    let coord = coords();
+    let coord = coords(true);
     // Do we even need two subplots? Just shift everything over and make it one plot
     // todo: add mouseover for sen/state name & remove coords on hover
 
@@ -169,6 +169,62 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
 
           }
         }
+
+    Plotly.newPlot(div, data, layout)
+
+
+}
+
+function nonpartychamber_plot(size, color, text, div) {
+    // defaults: size = 10
+    // color = red, blue
+
+    
+    let coord = coords(false);
+    // Do we even need two subplots? Just shift everything over and make it one plot
+    // todo: add mouseover for sen/state name & remove coords on hover
+
+    let trace = {
+        r: coord[0],
+        theta: coord[1],
+        mode: 'markers',
+        //name: 'Republican',
+        text: text,
+        marker: {
+            color: color,
+            size: size,
+        },
+        type: 'scatterpolar',
+        //subplot: 'polar2'
+    };
+
+    if (size.length > 1) {
+        trace.marker.sizemode = 'area';
+        trace.marker.sizeref = 2.0 * Math.max(...sizeR) / (30**2);
+        trace.marker.sizemin = 2;
+    };
+
+    let data = [trace];
+
+
+    let layout = {
+        title: 'US Senate',
+        showlegend: false,
+        polar: {
+            sector: [0,180],
+            // domain: {
+            //     x: [0, 0.45],
+            //     y: [0,1]
+            // },
+            hole: .2,
+            radialaxis: {
+                visible: false
+            },
+            angularaxis: {
+                visible: false
+            }
+        },
+    }
 
     Plotly.newPlot(div, data, layout)
 
