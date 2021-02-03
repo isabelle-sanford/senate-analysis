@@ -321,7 +321,7 @@ function sex_pop_chamber(popsList, popsColors, div) {
         sexRcolors = sexRcolors.concat(currRep);
     }
 
-    console.log(sexDcolors);
+
 
     // ACTUAL PLOT
 

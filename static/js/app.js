@@ -115,17 +115,17 @@ function init() {
     //  what about with party though, and show the party breakdown of the country?
 
         
-    d3.csv("../../resources/population_age_sex_race.csv").then(function(attr) { 
+    d3.csv("../../resources/CensusAttributesData.csv").then(function(attr) { 
 
         // popestimate2019, sex (s1 vs s2)
 
-        let guys = attr.filter(a => a.sex === 's1');
-        let gals = attr.filter(a => a.sex === 's2');
+        let guys = attr.filter(a => a.SEX === '1');
+        let gals = attr.filter(a => a.SEX === '2');
 
-        let guys_pop = sumList(guys.map(g => g.popestimate2019));
-        let gals_pop = sumList(gals.map(g => g.popestimate2019));
+        let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
+        let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
  
-        
+        console.log(guys_pop)
 
         sex_pop_chamber([guys_pop, gals_pop], ['purple', 'pink'], 'IS-chamber-pop-sex');
 
