@@ -29,6 +29,7 @@ class Senate(Base):
     term_up = Column(Integer)
     population = Column(BigInteger)
     gender = Column(Integer)
+    race = Column(Integer)
 
 
 class Attributes(Base):
@@ -150,10 +151,11 @@ senate_rows = (
         Senate.senator, 
         Senate.party, 
         Senate.population,
-        Senate.gender) # leaving out term_up and assumed_office and born for now
+        Senate.gender,
+        Senate.race) # leaving out term_up and assumed_office and born for now
     .all()
 )
-senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender']
+senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender', 'race']
 senate_json = [dict((senate_cols[i], value) for i, value in enumerate(row)) for row in senate_rows]
 sen_json_output = json.dumps(senate_json)
 

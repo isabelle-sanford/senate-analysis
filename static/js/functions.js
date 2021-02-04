@@ -10,7 +10,7 @@ function coords(bool) {
     for(let a = 0; a < 13; a++) {
         for(let r = Math.max(10, 2*(a-2)); r < 20; r+= 2) {
             let rad = r+1;
-            let theta_R = a * 90 / (r/2 +2);
+            let theta_R = a * 90 / (r/2 +2) - 5;
             let theta_D = 180 - theta_R;
 
             rep_theta.push(theta_R);
@@ -28,7 +28,7 @@ function coords(bool) {
     if (bool) {
         return [rads, rep_theta, dem_theta.reverse()];
     } else {
-        return [all_rads, theta];
+        return [all_rads, theta.reverse()];
     }
 
 }
@@ -45,11 +45,15 @@ function sumList(nums) {
 function getAllSeats(myList) {
     let tot = sumList(myList);
 
+    let temp = myList.map(m => (m*100 / tot));
+
     let seats = myList.map(m => Math.round(m*100 / tot));
 
-    if (sumList(seats) !== 100) {
+    while (sumList(seats) !== 100) {  // NOTE: WILL BREAK EVERYTHING IF SEATS > 100
         console.log('uh oh! getSeats has a problem!');
-        console.log(seats);
+        console.log(temp);
+
+        seats[0] +=1 
     }
 
     return seats;
