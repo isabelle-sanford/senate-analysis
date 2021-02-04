@@ -175,7 +175,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
 
 }
 
-function nonpartychamber_plot(size, color, text, title, div) {
+function nonpartychamber_plot(size, color, text, title2, div) {
     // defaults: size = 10
     // color = red, blue
 
@@ -208,14 +208,10 @@ function nonpartychamber_plot(size, color, text, title, div) {
 
 
     let layout = {
-        title: title,
+        title: title2,
         showlegend: false,
         polar: {
-            sector: [0,180],
-            // domain: {
-            //     x: [0, 0.45],
-            //     y: [0,1]
-            // },
+            sector: [-10,190],
             hole: .2,
             radialaxis: {
                 visible: false

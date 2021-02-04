@@ -110,8 +110,18 @@ function init() {
         // chamber_plot(10, 10, sensexRcolors, sensexDcolors, 0, 0, 'IS-chamber-sen-sex');
 
         nonpartychamber_plot(10, sensexcolors, 0, 'US Senate', 'IS-chamber-sen-sex');
-        // TO DO - MAKE WITHOUT PARTY
+
         //  what about with party though, and show the party breakdown of the country?
+
+
+        let race_sorted_data = data.sort((a,b) => parseInt(a.race) - parseInt(b.race)).map(sen => sen.race);
+        console.log(data[0]);
+
+        let raceDict = {1: 'blue', 2: 'red', 3: 'yellow', 4: 'green', 5: 'purple', 6: 'orange'};
+
+        let senracecolors = race_sorted_data.map(g => raceDict[g]);
+
+        nonpartychamber_plot(10, senracecolors, 0, 'Senate race demographics', 'IS-chamber-sen-race');
 
         
         d3.json("http://localhost:5000/api/attr").then(function(attr) {
@@ -121,7 +131,6 @@ function init() {
             let guys = attr.filter(a => a.SEX === 1);
             let gals = attr.filter(a => a.SEX === 2);
 
-            console.log(guys);
 
             let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
             let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
@@ -132,6 +141,35 @@ function init() {
 
             
             //chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
+
+
+
+
+            // US RACE CHAMBER PLOT
+
+            let white = attr.filter(a => a.RACE === 1);
+            let black = attr.filter(a => a.RACE === 2);
+            let native = attr.filter(a => a.RACE === 3);
+            let asian = attr.filter(a => a.RACE === 4);
+            let pacific = attr.filter(a => a.RACE === 5);
+            let multiple = attr.filter(a => a.RACE === 6);
+
+            let white_pop = sumList(white.map(g => parseInt(g.POPESTIMATE2019)));
+            let black_pop = sumList(black.map(g => parseInt(g.POPESTIMATE2019)));
+            let native_pop = sumList(native.map(g => parseInt(g.POPESTIMATE2019)));
+            let asian_pop = sumList(asian.map(g => parseInt(g.POPESTIMATE2019)));
+            let pacific_pop = sumList(pacific.map(g => parseInt(g.POPESTIMATE2019)));
+            let multiple_pop = sumList(multiple.map(g => parseInt(g.POPESTIMATE2019)));
+
+            let race_pops = [white_pop, black_pop, native_pop, asian_pop, pacific_pop, multiple_pop];
+            let race_colors = ['blue', 'red', 'yellow', 'green', 'purple', 'orange'];
+
+            let pop_race_colors = getColors(getAllSeats(race_pops), race_colors);
+
+            nonpartychamber_plot(10, pop_race_colors, 0, 'US Population Race Demographics', 'IS-chamber-pop-race');
+
+
+
 
         });
 
