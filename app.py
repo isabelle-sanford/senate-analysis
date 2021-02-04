@@ -38,6 +38,17 @@ def attr_data():
     # go back to main when done
     return data_jsons.attr_json()
 
+
+@app.route("/api/relig")
+def relig_json():
+
+    # SQL to json guide: https://stackoverflow.com/questions/3286525/return-sql-table-as-json-in-python 
+
+    # add json to the /api route
+
+    # go back to main when done
+    return data_jsons.relig_json()
+
 # more routes to include:
 # other senate reform pages, any other stretch stuff
 

@@ -13,6 +13,15 @@ senate = pd.read_csv('resources/SPopulation.csv')
 attributes = pd.read_csv('resources/CensusAttributesData.csv')
 religion = pd.read_csv('resources/ReligiousAffiliationByState.csv')
 
+columns = religion.columns 
+columns = [i.replace(' ', '_') for i in columns]
+columns = [i.replace('(', '') for i in columns]
+columns = [i.replace(')', '') for i in columns]
+columns = [i.replace("'", '_') for i in columns]
+columns = [i.replace("-", '_') for i in columns]
+columns = [i.replace("/", '_') for i in columns]
+religion.columns = columns
+
 senate.reset_index().to_sql("senate", con = conn, if_exists = 'replace')
 attributes.reset_index().to_sql("attributes", con = conn, if_exists = 'replace')
 religion.to_sql("religion", con = conn, if_exists = 'replace')

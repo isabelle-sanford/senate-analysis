@@ -20,9 +20,6 @@ function init() {
         // no other total atm
     
 
-
-
-
         let bar_x = ['Democrat', 'Republican'];
         let bar_y = [sumList(dem_total), sumList(rep_total)];
         let bar_colors = ['blue', 'red'];
@@ -128,8 +125,6 @@ function init() {
 
             let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
             let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
-
-            //console.log(guys_pop);
 
             let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'pink']);
         
