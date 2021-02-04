@@ -175,7 +175,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
 
 }
 
-function nonpartychamber_plot(size, color, text, div) {
+function nonpartychamber_plot(size, color, text, title, div) {
     // defaults: size = 10
     // color = red, blue
 
@@ -208,7 +208,7 @@ function nonpartychamber_plot(size, color, text, div) {
 
 
     let layout = {
-        title: 'US Senate',
+        title: title,
         showlegend: false,
         polar: {
             sector: [0,180],
