@@ -156,8 +156,8 @@ senate_rows = (
     .all()
 )
 senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender', 'race']
-senate_json = [dict((senate_cols[i], value) for i, value in enumerate(row)) for row in senate_rows]
-sen_json_output = json.dumps(senate_json)
+senate_json_init = [dict((senate_cols[i], value) for i, value in enumerate(row)) for row in senate_rows]
+sen_json_output = json.dumps(senate_json_init)
 
 def sen_json():
     return sen_json_output
@@ -170,8 +170,8 @@ attribute_rows = (
     .all()
 )
 attribute_cols = ['index', 'NAME', 'STATE', 'SEX', 'ORIGIN', 'RACE', 'AGE', 'POPESTIMATE2019']
-attr_json = [dict((attribute_cols[i], value) for i, value in enumerate(row)) for row in attribute_rows]
-attr_json_output = json.dumps(attr_json)
+attr_json_init = [dict((attribute_cols[i], value) for i, value in enumerate(row)) for row in attribute_rows]
+attr_json_output = json.dumps(attr_json_init)
 
 # TODO: AUTOMATE EVERYTHING function for this query, just get all rows, function for putting inspected cols into base class...
 # import religion stuff below
@@ -195,8 +195,8 @@ relig_rows = (
     .all()
 )
 relig_cols = ['index', 'state', 'catholic', 'jewish', 'muslim', 'buddhist', 'hindu', 'agnostic']
-relig_json = [dict((relig_cols[i], value) for i, value in enumerate(row)) for row in relig_rows]
-relig_json_output = json.dumps(relig_json)
+relig_json_init = [dict((relig_cols[i], value) for i, value in enumerate(row)) for row in relig_rows]
+relig_json_output = json.dumps(relig_json_init)
 
 def relig_json():
     return relig_json_output

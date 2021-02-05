@@ -13,6 +13,7 @@ senate = pd.read_csv('resources/SPopulation.csv')
 attributes = pd.read_csv('resources/CensusAttributesData.csv')
 religion = pd.read_csv('resources/ReligiousAffiliationByState.csv')
 
+# this can definitely be done better
 columns = religion.columns 
 columns = [i.replace(' ', '_') for i in columns]
 columns = [i.replace('(', '') for i in columns]

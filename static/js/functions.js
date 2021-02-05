@@ -117,13 +117,13 @@ function getColors(numsList, colorList) {
 
 const sen_j_loc = "http://localhost:5000/api/sen";
 const pop_j_loc = "http://localhost:5000/api/attr";
-const rel_j_loc = "http://localhost:5000/api/relig"
+const rel_j_loc = "http://localhost:5000/api/relig";
 
 
 // drop down from pi plot
 function drop_pi_option(){
     // option for pi_plot
-    var pi_option = ["SEX", "SEX", "SEX"];
+    var pi_option = ["SEX", "RACE", "RELIGION"];
     var drop_pi = d3.select("#option_plot");
 
     pi_option.forEach(function(a){
@@ -172,7 +172,7 @@ function sen_pi_plot(option){
 
         value = [total_m, total_f];
         label = ["male", "female"];
-        title = option;
+        title = option; // add something distinguishing this as the senate plot?
         mydiv = 'pi_plot_sen';
         colo = ["#DE33FF", "#FF5733"];
 
