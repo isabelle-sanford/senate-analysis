@@ -130,3 +130,15 @@ body {
     font-size: 1.75rem;
   }
 }
+
+/* About Page CSS */
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.bg-1 {
+  background-color: rgb(47, 47, 168);
+  color: white;
+  margin-top: 10px;
+}
