@@ -169,6 +169,44 @@ function init() {
             nonpartychamber_plot(10, pop_race_colors, 0, 'US Population Race Demographics', 'IS-chamber-pop-race');
 
 
+            // SENATE RELIGION CHAMBER PLOT
+
+
+            // ['Catholic', 'Congregationalist', 'Episcopalian', 'Jewish',
+            //    'Presbyterian', 'Evangelical', 'Protestant', 'Baptist', 'Lutheran',
+            //    'Methodist', 'Restorationist', 'Quaker', 'Holiness',
+            //    'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
+
+            protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
+                        'Baptist', 'Lutheran', 'Methodist', 'Restorationist', 'Quaker', 'Holiness'];
+            unknowns = ['Unaffiliated', 'Unknown'];
+
+            religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint'];
+
+            data.forEach(datum => {
+                curr_religion = datum.Religion;
+
+                religion_list.forEach(religion) {
+                    if (curr_religion === religion) {
+                        
+                    }
+                }
+
+                switch(curr_religion) {
+                    case "Mickey":
+                      message = "I am a very famous mouse!";
+                      break;
+                    case "Donald":
+                      message = "I am a very famous duck!";
+                      break;
+                    case "Goofy":
+                      message = "I am a very famous dog!";
+                      break;
+                    default:
+                      message = "Did you forget to choose a friend?";
+                  }
+            })
+
 
 
         });
