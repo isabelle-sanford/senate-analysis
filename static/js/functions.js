@@ -111,3 +111,96 @@ function getColors(numsList, colorList) {
 
     return myColors;
 }
+
+
+// ***************************** Kosal **********************
+
+const sen_j_loc = "http://localhost:5000/api/sen";
+const pop_j_loc = "http://localhost:5000/api/attr";
+const rel_j_loc = "http://localhost:5000/api/relig"
+
+
+// drop down from pi plot
+function drop_pi_option(){
+    // option for pi_plot
+    var pi_option = ["SEX", "SEX", "SEX"];
+    var drop_pi = d3.select("#option_plot");
+
+    pi_option.forEach(function(a){
+        drop_pi.append("option").text(a).property("value");
+    });
+};
+
+
+// pie plot for general population
+function pop_pi_plot(option){
+
+    d3.json(pop_j_loc).then(function(data){
+
+        var opt_select = option;
+        var female = data.filter(a => a[opt_select] === 2);
+        var male = data.filter(a => a[opt_select] === 1);
+
+        var total_f = sumList(female.map(f => parseInt(f.POPESTIMATE2019)));
+        var total_m = sumList(male.map(m => parseInt(m.POPESTIMATE2019)));
+
+        value = [total_m, total_f];
+        label = ["male", "female"];
+        title = option;
+        color = ["#DE33FF", "#FF5733"];
+        mydiv = 'pi_plot_pop';
+
+        plot_pie(value, label, title, mydiv,color);
+    });
+    
+};
+
+// pi plot for general sen
+function sen_pi_plot(option){
+
+    if (option = "SEX"){
+        option1 = "gender"
+    };
+
+    d3.json(sen_j_loc).then(function(data){
+        var opt_select = option1;
+        var female = data.filter(a => a[opt_select] === 2);
+        var male = data.filter(a => a[opt_select] === 1);
+
+        var total_f = sumList(female.map(f => parseInt(f.population)));
+        var total_m = sumList(male.map(m => parseInt(m.population)));
+
+        value = [total_m, total_f];
+        label = ["male", "female"];
+        title = option;
+        mydiv = 'pi_plot_sen';
+        colo = ["#DE33FF", "#FF5733"];
+
+        plot_pie(value, label, title, mydiv, colo);
+    });
+    
+};
+
+// pie plot
+function plot_pie(val, lab, titl, div, color){
+
+    var dataPlot = [{
+        type : "pie",
+        values : val,
+        labels : lab,
+        textinfo: "label+percent",
+        automargin: true,
+        marker:{
+            colors: color
+        }
+    }];
+
+    var layoutPlot = {
+        title : titl,
+        height: 450,
+        width: 600,
+        margin: {"t": 50, "b": 50, "l": 50, "r": 50},
+        showlegend: true
+        };
+    return Plotly.newPlot(div, dataPlot, layoutPlot)
+};
