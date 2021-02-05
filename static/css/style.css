@@ -74,13 +74,59 @@ body {
   font-weight: 500;
 }
 
+/* Jumbotron image and text */
 .hero {
   background: url('../img/US_Capitol_west_side.jpeg') no-repeat center center;
   background-size: cover;
-  height: 50%;
+  /* height: 50%; */
+  position: relative;
+  height: 550px;
+  padding: 20px;
+  margin: 0;
 }
 
+#jumbotron-title {
+  padding-top: 70px;
+  color: white;
+}
+
+/* Button group */
+.bottom-left { 
+  bottom: 0; 
+  left: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
+} 
+
+.bottom-center { 
+  bottom: 0; 
+  left: 50%; 
+  transform: translateX(-50%);
+  margin-bottom: 10px; 
+} 
+.bottom-right { 
+  bottom: 0; 
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+} 
+
+.btn-secondary {
+  background-color: #1260a5;
+}
+
+/* Navbar */
 .bg-primary {
   background-color: rgb(170, 21, 51)!important;
 }
 
+.nav-link {
+  color: white!important;
+}
+
+/* Mobile Rules */
+@media screen and (max-width: 575px) {
+  #jumbotron-title {
+    font-size: 1.75rem;
+  }
+}

@@ -33,12 +33,10 @@
       </ul>
     </nav>
 
+    <!-- <div class="container-fluid">
+      <div class="row"> -->
 
-
-    <div class="container-fluid">
-      <div class="row">
-
-        <!-- Sidebar -->
+        <!-- Sidebar
         <nav class="col-md-2 bg-light d-none d-md-block sidebar">
           <div class="left-sidebar">
             <ul class="nav flex-column sidebar-nav">
@@ -74,59 +72,64 @@
               </li>
             </ul>
           </div>
-        </nav>
+        </nav> -->
 
+      <!-- Main Page -->
 
-          <!-- MAIN PAGE -->
-        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
-          <div class="jumbotron row hero">
-            <div class="col-12">
-              <h1>Slithering Senate Salamanders</h1>
-
-
-              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-2" role="group" aria-label="First group">
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Senator
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+        <!-- Jumbotron -->
+        <div class="jumbotron hero ">
+          <div class="container">
+            <div class="col-12 text-center">
+              <h1 id="jumbotron-title">Slithering Senate Salamanders</h1>
+            </div>
+            
+          <!-- Button group -->
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group mr-2 position-absolute bottom-left" role="group" aria-label="First group">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Senator
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </div>
+              </div>
 
-                <div class="btn-group mr-2" role="group" aria-label="Second group">
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Senator
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+              <div class="btn-group mr-2 position-absolute bottom-center" role="group" aria-label="Second group">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Senator
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </div>
+              </div>
 
-                <div class="btn-group" role="group" aria-label="Third group">
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Senator
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+              <div class="btn-group position-absolute bottom-right" role="group" aria-label="Third group">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Senator
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          
+        </div>
 
+        <div class="container-fluid"> <!--moved from line 38-->
+      
           <div class="row">
             <div class="col-12">
               <div id="scatter">
@@ -302,12 +305,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script type="text/javascript" src="../static/js/functions.js"></script>
-  <script type="text/javascript" src="../static/js/plots.js"></script>
-  <script type="text/javascript" src="../static/js/app.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="../static/js/functions.js"></script>
+    <script type="text/javascript" src="../static/js/plots.js"></script>
+    <script type="text/javascript" src="../static/js/app.js"></script>
 
 
 
