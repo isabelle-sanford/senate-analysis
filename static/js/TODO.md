@@ -8,3 +8,4 @@
 
 - add hovertext on chamber plots
 
+- the nonparty chamber plot has overlapping middle columns
