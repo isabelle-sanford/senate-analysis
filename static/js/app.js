@@ -177,6 +177,27 @@ function init() {
     console.log(error);
     });
 
+    // ************* Kosal *******************
+    drop_pi_option();
+    pop_pi_plot('SEX');
+    sen_pi_plot('SEX');
+
 }
 
 init();
+
+
+// ************* kosal ***********************************
+// pip option change
+function optionChanged(){
+    // select id data from dropdownMenu
+    var dropdownMenu = d3.select("#option_plot");
+    // get id from drop down menu
+    var idFromOption = dropdownMenu.property("value");
+
+    console.log(idFromOption);
+    
+    // call required function
+    pop_pi_plot(idFromOption);
+    sen_pi_plot(idFromOption);
+};
