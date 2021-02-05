@@ -29,6 +29,7 @@ class Senate(Base):
     term_up = Column(Integer)
     population = Column(BigInteger)
     gender = Column(Integer)
+    race = Column(Integer)
 
 
 class Attributes(Base):
@@ -150,10 +151,11 @@ senate_rows = (
         Senate.senator, 
         Senate.party, 
         Senate.population,
-        Senate.gender) # leaving out term_up and assumed_office and born for now
+        Senate.gender,
+        Senate.race) # leaving out term_up and assumed_office and born for now
     .all()
 )
-senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender']
+senate_cols = ['index', 'st', 'state', 'senator', 'party', 'population', 'gender', 'race']
 senate_json = [dict((senate_cols[i], value) for i, value in enumerate(row)) for row in senate_rows]
 sen_json_output = json.dumps(senate_json)
 
@@ -198,63 +200,6 @@ relig_json_output = json.dumps(relig_json)
 
 def relig_json():
     return relig_json_output
-
-
-
-#     "baptist_family_(et)" integer NOT NULL,
-#     "methodist_family_(et)" integer NOT NULL,
-#     "non_denominational_family_(et)" integer NOT NULL,
-#     "lutheran_family_(et)" integer NOT NULL,
-#     "presbyterian_(et)" integer NOT NULL,
-#     "pentecostal_family_(et)" integer NOT NULL,
-#     "episcopalian/anglican_family_(et)" integer NOT NULL,
-#     "restorationist_family_(et)" integer NOT NULL,
-#     "congregationalist_family_(et)" integer NOT NULL,
-#     "holiness_family_(et)" integer NOT NULL,
-#     "reformed_family_(et)" integer NOT NULL,
-#     "adventist_family_(et)" integer NOT NULL,
-#     "anabaptist_family_(et)" integer NOT NULL,
-#     "pietist_family_(et)" integer NOT NULL,
-#     other_evangelical integer NOT NULL,
-#     "nonspecific_protestant_family_(et)" integer NOT NULL,
-#     "baptist_family_(mt)" integer NOT NULL,
-#     "methodist_family_(mt)" integer NOT NULL,
-#     "non-denominational_family_(mt)" integer NOT NULL,
-#     "lutheran_family_(mt)" integer NOT NULL,
-#     "presbyterian_family_(mt)" integer NOT NULL,
-#     "episcopalian/anglican_family_(mt)" integer NOT NULL,
-#     "restorationist_family_(mt)" integer NOT NULL,
-#     "congregationalist_family_(mt)" integer NOT NULL,
-#     "reformed_family_(mt)" integer NOT NULL,
-#     "anabaptist_family_(mt)" integer NOT NULL,
-#     "friends_family_(mt)" integer NOT NULL,
-#     "nonspecific_protestant_family_(mt)" integer NOT NULL,
-#     "baptist_family_(hbpt)" integer NOT NULL,
-#     "methodist_family_(hbpt)" integer NOT NULL,
-#     "pentecostal_family_(hbpt)" integer NOT NULL,
-#     "holiness_family_(hbpt)" integer NOT NULL,
-#     "non-denominational_family_(hbpt)" integer NOT NULL,
-#     "nonspecific_protestant_(hbpt)" integer NOT NULL,
-#     catholic integer NOT NULL,
-#     "mormon-lds" integer NOT NULL,
-#     other_mormom integer NOT NULL,
-#     greek_orthodox integer NOT NULL,
-#     russian_orthodox integer NOT NULL,
-#     orthodox_church_in_america integer NOT NULL,
-#     other_orthodox_christian integer NOT NULL,
-#     "jehovah's_witness" integer NOT NULL,
-#     other_christian integer NOT NULL,
-#     jewish integer NOT NULL,
-#     muslim integer NOT NULL,
-#     buddhist integer NOT NULL,
-#     hindu integer NOT NULL,
-#     other_world_religions integer NOT NULL,
-#     unitarians integer NOT NULL,
-#     new_age integer NOT NULL,
-#     native_american_religions integer NOT NULL,
-#     atheist integer NOT NULL,
-#     agnostic integer NOT NULL,
-#     nothing_in_particular integer NOT NULL
 
 
 
