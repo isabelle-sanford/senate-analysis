@@ -17,10 +17,10 @@ In the ten years since this review, we have witnessed an increase in minority re
 
 **The Data**
 _______________________________
-*	US Census Population Data
-*	US Census State Population by Characteristics 
-*	Pew Research Religion Data
-*	Wikipedia
+*	US Census Population Data - https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-total.html
+*	US Census State Population by Characteristics - https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
+*	Pew Research Religion Data - https://www.pewresearch.org/
+*	Wikipedia - https://en.wikipedia.org/wiki/List_of_current_United_States_senators
 
 
 **Technology**
@@ -37,4 +37,5 @@ _______________________________
 
 
 
-#### (1)  https://www.theatlantic.com/ideas/archive/2018/12/john-dingell-how-restore-faith-government/577222/
+##### (1)  https://www.theatlantic.com/ideas/archive/2018/12/john-dingell-how-restore-faith-government/577222/
+##### Photo Credit: Martin Falbisoner
