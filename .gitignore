@@ -130,6 +130,3 @@ dmypy.json
 
 # vs code thing
 .code-workspace
-
-.DS-store
-.DS_Store
