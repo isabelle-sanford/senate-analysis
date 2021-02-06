@@ -122,7 +122,7 @@ const rel_j_loc = "http://localhost:5000/api/relig";
 
 const sex_list = ['Male', 'Female'];
 const sex_num = [1,2];
-const sex_color = ["#DE33FF", "#FF5733"];
+const sex_color = ["#C39BD3", "#F4ECF7"];
 
 const race_list = ["White", "Black", "Native", "Asian", "Islander", "Two+"];
 const race_num = [1,2,3,4,5,6];
@@ -131,6 +131,9 @@ const race_color = ["#F7A6C8", "#47343C","#C70039", "#FFC300", "#547C98", "#0A0A
 const option_list = [sex_list, race_list];
 const option_num = [sex_num, race_num];
 const option_color = [sex_color, race_color];
+
+const age_list = ["0-17", "18-34", "35-50", "51-69", "70-87", "87+"];
+var age_num_ = [];
 
 
 // pie plot for general population
@@ -232,11 +235,13 @@ function plot_pie(val, lab, titl, div, color){
 
     var layoutPlot = {
         title : titl,
-        height: 450,
-        width: 600,
-        margin: {"t": 50, "b": 50, "l": 50, "r": 50},
+        // height: 500,
+        // width: 920,
+        // margin: {"t": 50, "b": 50, "l": 50, "r": 50},
         showlegend: true,
         // transform: rotate(-25.2)
         };
-    return Plotly.newPlot(div, dataPlot, layoutPlot)
+    
+    var config = {responsive : true}
+    return Plotly.newPlot(div, dataPlot, layoutPlot, config)
 };
