@@ -113,41 +113,54 @@ function getColors(numsList, colorList) {
 }
 
 
+
 // ***************************** Kosal **********************
 
 const sen_j_loc = "http://localhost:5000/api/sen";
 const pop_j_loc = "http://localhost:5000/api/attr";
 const rel_j_loc = "http://localhost:5000/api/relig";
 
+const sex_list = ['Male', 'Female'];
+const sex_num = [1,2];
+const sex_color = ["#DE33FF", "#FF5733"];
 
-// drop down from pi plot
-function drop_pi_option(){
-    // option for pi_plot
-    var pi_option = ["SEX", "RACE", "RELIGION"];
-    var drop_pi = d3.select("#option_plot");
+const race_list = ["White", "Black", "Native", "Asian", "Islander", "Two+"];
+const race_num = [1,2,3,4,5,6];
+const race_color = ["#F7A6C8", "#47343C","#C70039", "#FFC300", "#547C98", "#0A0AD9"];
 
-    pi_option.forEach(function(a){
-        drop_pi.append("option").text(a).property("value");
-    });
-};
+const option_list = [sex_list, race_list];
+const option_num = [sex_num, race_num];
+const option_color = [sex_color, race_color];
 
 
 // pie plot for general population
 function pop_pi_plot(option){
 
+    if (option == "SEX"){
+        index = 0;
+    } if (option == "RACE"){
+        index = 1;
+    };
+
     d3.json(pop_j_loc).then(function(data){
 
         var opt_select = option;
-        var female = data.filter(a => a[opt_select] === 2);
-        var male = data.filter(a => a[opt_select] === 1);
+        var num = option_num[index];
+        var labels_list = option_list[index];
+        var value_list =[];
 
-        var total_f = sumList(female.map(f => parseInt(f.POPESTIMATE2019)));
-        var total_m = sumList(male.map(m => parseInt(m.POPESTIMATE2019)));
 
-        value = [total_m, total_f];
-        label = ["male", "female"];
-        title = option;
-        color = ["#DE33FF", "#FF5733"];
+        for (var i=0; i<num.length; i++){
+            temp = data.filter(a => a[opt_select] === num[i]);
+            value_list[i] = sumList(temp.map(f => parseInt(f.POPESTIMATE2019)));
+        };
+
+        // console.log(value_list);
+
+        value = value_list;
+        label = labels_list;
+        title = 'General Population ' + option + ' Ratio';
+        color = option_color[index];
         mydiv = 'pi_plot_pop';
 
         plot_pie(value, label, title, mydiv,color);
@@ -158,27 +171,48 @@ function pop_pi_plot(option){
 // pi plot for general sen
 function sen_pi_plot(option){
 
-    if (option = "SEX"){
-        option1 = "gender"
+    if (option == "SEX"){
+        index = 0;
+        option1 = "gender";
+    } if (option == "RACE"){
+        index = 1;
+        option1 = "race";
     };
 
     d3.json(sen_j_loc).then(function(data){
         var opt_select = option1;
-        var female = data.filter(a => a[opt_select] === 2);
-        var male = data.filter(a => a[opt_select] === 1);
 
-        var total_f = sumList(female.map(f => parseInt(f.population)));
-        var total_m = sumList(male.map(m => parseInt(m.population)));
+        var num = option_num[index];
+        var labels_list = option_list[index];
+        var value_list =[];
 
-        value = [total_m, total_f];
-        label = ["male", "female"];
-        title = option; // add something distinguishing this as the senate plot?
+
+        for (var i=0; i<num.length; i++){
+            temp = data.filter(a => a[opt_select] === num[i]);
+            value_list[i] = sumList(temp.map(f => parseInt(f.population)));
+        };
+
+        value = value_list;
+        label = labels_list;
+        title = 'Senate ' + option + ' Ratio';
+        color = option_color[index];
         mydiv = 'pi_plot_sen';
-        colo = ["#DE33FF", "#FF5733"];
 
-        plot_pie(value, label, title, mydiv, colo);
+        plot_pie(value, label, title, mydiv, color);
     });
     
+};
+
+
+// drop down from pi plot
+function drop_pi_option(){
+    // option for pi_plot
+    var pi_option = ["SEX", "RACE"];
+    var drop_pi = d3.select("#option_plot");
+
+    pi_option.forEach(function(a){
+        drop_pi.append("option").text(a).property("value");
+    });
 };
 
 // pie plot
@@ -192,7 +226,8 @@ function plot_pie(val, lab, titl, div, color){
         automargin: true,
         marker:{
             colors: color
-        }
+        },
+        rotation :-45
     }];
 
     var layoutPlot = {
@@ -200,7 +235,8 @@ function plot_pie(val, lab, titl, div, color){
         height: 450,
         width: 600,
         margin: {"t": 50, "b": 50, "l": 50, "r": 50},
-        showlegend: true
+        showlegend: true,
+        // transform: rotate(-25.2)
         };
     return Plotly.newPlot(div, dataPlot, layoutPlot)
 };
