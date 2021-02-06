@@ -13,7 +13,9 @@ function bar(x, y, title, colors, div){
 
     let my_layout = {
         title: title,
-        hovermode: 'closest'
+        hovermode: 'closest',
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'rgb(247,226,202)'
     };
 
     Plotly.newPlot(div, my_data, my_layout);
@@ -56,7 +58,6 @@ function bar_pop_stack(vars1, vars2, title1, div) {
         text: text2
     };
 
-    // REMEMBER TO ADD LINE FOR HALFWAY POINT
 
     let data = [trace1, trace2];
 
@@ -69,7 +70,22 @@ function bar_pop_stack(vars1, vars2, title1, div) {
         xaxis: {
             categoryorder: 'total descending' // CF
         },
+        shapes: [
+            {
+                type: 'line',
+                x0: 9.5,
+                y0: 0,
+                x1: 9.5,
+                y1: Math.max(...y1)*2,
+                line: {
+                    width: 1.5,
+                    dash: 'dot'
+                }
+            }
+        ],
         // showlegend is false
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'rgb(247,226,202)',
         template: 'plotly_white'  // check formatting - why does this work and chamber plot not???
 
     }
@@ -99,6 +115,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         mode: 'markers',
         name: 'Republican',
         text: textR,
+        hoverinfo: 'text',
         marker: {
             color: colorR,
             size: sizeR,
@@ -119,6 +136,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         mode: 'markers',
         name: 'Democrat',
         text: textD,
+        hoverinfo: 'text',
         marker: {
             color: colorD,
             size: sizeD
@@ -137,7 +155,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
 
 
     let layout = {
-        title: 'US Senate',
+        title: 'US Senate by Population',
         showlegend: false,
         polar: {
             sector: [90,180],
@@ -151,7 +169,8 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             },
             angularaxis: {
                 visible: false
-            }
+            },
+            bgcolor: 'rgb(247,226,202)'
         },
         polar2: {
             sector: [0, 90],
@@ -166,8 +185,10 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             angularaxis: {
                 visible: false
             },
+            bgcolor: 'rgb(247,226,202)'
 
-          }
+          },
+          paper_bgcolor: 'transparent'
         }
 
     Plotly.newPlot(div, data, layout)
@@ -190,6 +211,7 @@ function nonpartychamber_plot(size, color, text, title2, div) {
         mode: 'markers',
         //name: 'Republican',
         text: text,
+        hoverinfo: 'text',
         marker: {
             color: color,
             size: size,
@@ -218,9 +240,11 @@ function nonpartychamber_plot(size, color, text, title2, div) {
             },
             angularaxis: {
                 visible: false
-            }
+            },
+            bgcolor: 'rgb(247,226,202)'
         },
-        paper_bgcolor: 'rgb(247,226,202)'
+        paper_bgcolor: 'transparent',
+        //plot_bgcolor: 'rgb(247,226,202)'
     }
 
     Plotly.newPlot(div, data, layout)
