@@ -2,11 +2,7 @@ function init() {
     d3.json("http://localhost:5000/api/sen").then(function(data) {
         
 
-        // SIMPLE BAR:
-        // bar(x, y, title, colors, div)
-        // colors are blue & red
-        // x is dem & republican
-        // y is # of people D vs R senators represent
+        // SIMPLE BAR========================================
 
 
         rep_total = data.filter(d => d.party === 'Republican').map(sen => sen.population);
@@ -21,7 +17,7 @@ function init() {
     
 
         let bar_x = ['Democrat', 'Republican'];
-        let bar_y = [sumList(dem_total), sumList(rep_total)];
+        let bar_y = [sumList(dem_total)/2, sumList(rep_total)/2];
         let bar_colors = ['blue', 'red'];
 
 
@@ -30,13 +26,7 @@ function init() {
 
 
 
-        // STATE POP BAR:
-        // bar_pop_stack(vars1, vars2, div)
-        // vars is a list of [x, y, color, text]
-        // x is state, y is state population (divided by 2 bc 2 senators!)
-        // color is determined by senator from that state, text is senator's name
-        // vars1 vs vars2 are each half the senators (divide in half by index - eg 'x % 2 === 0' vs equals 1)
-        // DO NOT NEED TO SORT thank goodness
+        // STATE POP BAR===========================
 
         colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
 
@@ -72,35 +62,39 @@ function init() {
         let vars1 = [states, stack1_pop, stack1_color, stack1_name];
         let vars2 = [states, stack2_pop, stack2_color, stack2_name];
 
-        bar_pop_stack(vars1, vars2, 'State populations by Senator', 'IS-bar-pop');
+        bar_pop_stack(vars1, vars2, 'State Populations by Senator', 'IS-bar-pop');
 
-        // TODO: Add vertical line at halfway point; add state abbrevs into data so those can be used
+        // add state abbrevs into data so those can be used
 
 
 
-        // POP CHAMBER PLOT---------------------
-        // chamber_plot(rep_pops, dem_pops, rep_color, dem_color, rep_text_, dem_text, div)
-        // rep_pops is a sorted list of populations from each republican senator
-        // dem_pops is the equivalent, etc
-        // eventually add - hovertext for state / senator
+        // POP CHAMBER PLOT==========================================
 
         let sorted_data = data.sort((a, b) => parseInt(a.population) - parseInt(b.population));
-        let rep_sorted = sorted_data.filter(d => d.party === 'Republican').map(sen => parseInt(sen.population)/2);
-        let dem_sorted = sorted_data.filter(d => d.party !== 'Republican').map(sen => parseInt(sen.population)/2);
+        let rep_sorted = sorted_data.filter(d => d.party === 'Republican');
+        let rep_sorted_pops = rep_sorted.map(sen => parseInt(sen.population)/2);
+        let rep_sorted_names = rep_sorted.map(sen => `${sen.senator} (${sen.state})`);
 
-        chamber_plot(rep_sorted, dem_sorted, 'red', 'blue', 0,0, 'IS-chamber-plot');
+
+        let dem_sorted = sorted_data.filter(d => d.party !== 'Republican');
+        let dem_sorted_pops = dem_sorted.map(sen => parseInt(sen.population)/2);
+        let dem_sorted_names = dem_sorted.map(sen => `${sen.senator} (${sen.state})`);
+
+        chamber_plot(rep_sorted_pops, dem_sorted_pops, 'red', 'blue', rep_sorted_names, dem_sorted_names, 'IS-chamber-plot');
 
 
 
         // SENATOR SEX CHAMBER PLOT------------------------
-        let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender)).map(sen => sen.gender);
+        let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
 
         // let sexRsorted = sex_sorted_data.filter(d => d.party === 'Republican').map(sen => parseInt(sen.gender));
         // let sexDsorted = sex_sorted_data.filter(d => d.party !== 'Republican').map(sen => parseInt(sen.gender));
 
         let sexDict = {'1': 'purple', '2': 'pink'};
+        let sexObj = {'1': 'male', '2': 'female'};
 
-        let sensexcolors = sex_sorted_data.map(g => sexDict[g]);
+        let sensexcolors = sex_sorted_data.map(g => sexDict[g.gender]);
+        let sensexlabels = sex_sorted_data.map(g => `${g.senator} (${sexObj[g.gender]})`);
 
         //console.log(sensexcolors);
 
@@ -109,19 +103,21 @@ function init() {
 
         // chamber_plot(10, 10, sensexRcolors, sensexDcolors, 0, 0, 'IS-chamber-sen-sex');
 
-        nonpartychamber_plot(10, sensexcolors, 0, 'US Senate', 'IS-chamber-sen-sex');
+        nonpartychamber_plot(10, sensexcolors, sensexlabels, 'Gender - US Senate', 'IS-chamber-sen-sex');
 
         //  what about with party though, and show the party breakdown of the country?
 
 
-        let race_sorted_data = data.sort((a,b) => parseInt(a.race) - parseInt(b.race)).map(sen => sen.race);
-        console.log(data[0]);
+        let race_sorted_data = data.sort((a,b) => parseInt(a.race) - parseInt(b.race));
+        //console.log(data[0]);
 
         let raceDict = {1: 'blue', 2: 'red', 3: 'yellow', 4: 'green', 5: 'purple', 6: 'orange'};
+        let raceObj = {1: 'white', 2: 'African American', 3: 'yellow', 4: 'Asian American', 5: 'purple', 6: 'orange'}
 
-        let senracecolors = race_sorted_data.map(g => raceDict[g]);
+        let senracecolors = race_sorted_data.map(g => raceDict[g.race]);
+        let senracelabels = race_sorted_data.map(g => `${g.senator} (${raceObj[g.race]})`)
 
-        nonpartychamber_plot(10, senracecolors, 0, 'Senate race demographics', 'IS-chamber-sen-race');
+        nonpartychamber_plot(10, senracecolors, senracelabels, 'Race Demographics - Senate', 'IS-chamber-sen-race');
 
         
         d3.json("http://localhost:5000/api/attr").then(function(attr) {
@@ -137,7 +133,7 @@ function init() {
 
             let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'pink']);
         
-            nonpartychamber_plot(10, pop_sex_colors, 0, 'US Population gender ratio', 'IS-chamber-pop-sex');
+            nonpartychamber_plot(10, pop_sex_colors, 0, 'Gender - US Population', 'IS-chamber-pop-sex');
 
             
             //chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
@@ -163,10 +159,12 @@ function init() {
 
             let race_pops = [white_pop, black_pop, native_pop, asian_pop, pacific_pop, multiple_pop];
             let race_colors = ['blue', 'red', 'yellow', 'green', 'purple', 'orange'];
+            let race_names = {'blue':'White', 'red':'African American', 'yellow':'Indigenous/Native American', 'green':'Asian American', 'purple': 'Hawaiian or Pacific Islander', 'orange': 'Multiple races'};
 
             let pop_race_colors = getColors(getAllSeats(race_pops), race_colors);
+            let pop_race_labels = pop_race_colors.map(color => race_names[color]);
 
-            nonpartychamber_plot(10, pop_race_colors, 0, 'US Population Race Demographics', 'IS-chamber-pop-race');
+            nonpartychamber_plot(10, pop_race_colors, pop_race_labels, 'Race Demographics - US Population', 'IS-chamber-pop-race');
 
 
             // SENATE RELIGION CHAMBER PLOT
