@@ -21,7 +21,7 @@ function init() {
     
 
         let bar_x = ['Democrat', 'Republican'];
-        let bar_y = [sumList(dem_total), sumList(rep_total)];
+        let bar_y = [sumList(dem_total)/2, sumList(rep_total)/2];
         let bar_colors = ['blue', 'red'];
 
 

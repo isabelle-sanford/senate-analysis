@@ -239,6 +239,8 @@ function plot_pie(val, lab, titl, div, color){
         // width: 920,
         // margin: {"t": 50, "b": 50, "l": 50, "r": 50},
         showlegend: true,
+        paper_bgcolor: 'rgb(247,226,202)',
+        plot_bgcolor: 'rgb(247,226,202)'
         // transform: rotate(-25.2)
         };
     

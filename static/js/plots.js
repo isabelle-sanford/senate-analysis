@@ -58,6 +58,25 @@ function bar_pop_stack(vars1, vars2, title1, div) {
         text: text2
     };
 
+    // let trace3 = {
+    //     type: 'scatter',
+    //     mode: 'lines',
+    //     x0: 9.5,
+    //     y0: 0,
+    //     line: {
+    //       color: 'grey',
+    //       width: 1.5,
+    //       dash: 'dot'
+    //     }
+    //   };
+
+    // let trace3 = {
+    //     x = 9.5,
+
+    // }
+
+    //pop_state_bar.add_vline(x=9.5, line_dash='dot')
+
     // REMEMBER TO ADD LINE FOR HALFWAY POINT
 
     let data = [trace1, trace2];
@@ -71,6 +90,19 @@ function bar_pop_stack(vars1, vars2, title1, div) {
         xaxis: {
             categoryorder: 'total descending' // CF
         },
+        shapes: [
+            {
+                type: 'line',
+                x0: 9.5,
+                y0: 0,
+                x1: 9.5,
+                y1: Math.max(...y1)*2,
+                line: {
+                    width: 1.5,
+                    dash: 'dot'
+                }
+            }
+        ],
         // showlegend is false
         paper_bgcolor: 'transparent',
         plot_bgcolor: 'rgb(247,226,202)',
