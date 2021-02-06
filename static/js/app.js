@@ -186,11 +186,20 @@ function init() {
             // data.forEach(datum => {
             //     curr_religion = datum.Religion;
 
+<<<<<<< HEAD
             //     religion_list.forEach(religion => {
             //         if (curr_religion === religion) {
                         
             //         }
             //     });
+=======
+            //     religion_list.forEach(religion =>{
+            //         if (curr_religion === religion){
+                        
+            //             };   
+            //         }
+                
+>>>>>>> 51e5a890df40c6a01b298e1e92616e7cef122650
 
             //     switch(curr_religion) {
             //         case "Mickey":
