@@ -204,7 +204,7 @@ function init() {
             //           message = "Did you forget to choose a friend?";
             //       }
             // })
-
+1
 
 
         });
