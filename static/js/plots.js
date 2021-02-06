@@ -13,7 +13,9 @@ function bar(x, y, title, colors, div){
 
     let my_layout = {
         title: title,
-        hovermode: 'closest'
+        hovermode: 'closest',
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'rgb(247,226,202)'
     };
 
     Plotly.newPlot(div, my_data, my_layout);
@@ -70,6 +72,8 @@ function bar_pop_stack(vars1, vars2, title1, div) {
             categoryorder: 'total descending' // CF
         },
         // showlegend is false
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'rgb(247,226,202)',
         template: 'plotly_white'  // check formatting - why does this work and chamber plot not???
 
     }
@@ -151,7 +155,8 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             },
             angularaxis: {
                 visible: false
-            }
+            },
+            bgcolor: 'rgb(247,226,202)'
         },
         polar2: {
             sector: [0, 90],
@@ -166,8 +171,10 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             angularaxis: {
                 visible: false
             },
+            bgcolor: 'rgb(247,226,202)'
 
-          }
+          },
+          paper_bgcolor: 'transparent'
         }
 
     Plotly.newPlot(div, data, layout)
@@ -218,9 +225,11 @@ function nonpartychamber_plot(size, color, text, title2, div) {
             },
             angularaxis: {
                 visible: false
-            }
+            },
+            bgcolor: 'rgb(247,226,202)'
         },
-        paper_bgcolor: 'rgb(247,226,202)'
+        paper_bgcolor: 'transparent',
+        //plot_bgcolor: 'rgb(247,226,202)'
     }
 
     Plotly.newPlot(div, data, layout)
