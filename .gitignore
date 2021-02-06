@@ -130,3 +130,7 @@ dmypy.json
 
 # vs code thing
 .code-workspace
+
+# Remove .DS_Store
+.DS_Store
+
