@@ -186,8 +186,8 @@ function init() {
             data.forEach(datum => {
                 curr_religion = datum.Religion;
 
-                religion_list.forEach(religion) {
-                    if (curr_religion === religion) {
+                religion_list.forEach(religion){
+                    if (curr_religion === religion){
                         
                     }
                 }
