@@ -183,29 +183,30 @@ function init() {
 
             religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint'];
 
-            data.forEach(datum => {
-                curr_religion = datum.Religion;
+            // data.forEach(datum => {
+            //     curr_religion = datum.Religion;
 
-                religion_list.forEach(religion) {
-                    if (curr_religion === religion) {
+            //     religion_list.forEach(religion =>{
+            //         if (curr_religion === religion){
                         
-                    }
-                }
+            //             };   
+            //         }
+                
 
-                switch(curr_religion) {
-                    case "Mickey":
-                      message = "I am a very famous mouse!";
-                      break;
-                    case "Donald":
-                      message = "I am a very famous duck!";
-                      break;
-                    case "Goofy":
-                      message = "I am a very famous dog!";
-                      break;
-                    default:
-                      message = "Did you forget to choose a friend?";
-                  }
-            })
+            //     switch(curr_religion) {
+            //         case "Mickey":
+            //           message = "I am a very famous mouse!";
+            //           break;
+            //         case "Donald":
+            //           message = "I am a very famous duck!";
+            //           break;
+            //         case "Goofy":
+            //           message = "I am a very famous dog!";
+            //           break;
+            //         default:
+            //           message = "Did you forget to choose a friend?";
+            //       }
+            // })
 
 
 
