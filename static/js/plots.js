@@ -115,6 +115,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         mode: 'markers',
         name: 'Republican',
         text: textR,
+        hoverinfo: 'text',
         marker: {
             color: colorR,
             size: sizeR,
@@ -135,6 +136,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         mode: 'markers',
         name: 'Democrat',
         text: textD,
+        hoverinfo: 'text',
         marker: {
             color: colorD,
             size: sizeD
@@ -209,6 +211,7 @@ function nonpartychamber_plot(size, color, text, title2, div) {
         mode: 'markers',
         //name: 'Republican',
         text: text,
+        hoverinfo: 'text',
         marker: {
             color: color,
             size: size,
