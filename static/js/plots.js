@@ -220,6 +220,7 @@ function nonpartychamber_plot(size, color, text, title2, div) {
                 visible: false
             }
         },
+        paper_bgcolor: 'rgb(247,226,202)'
     }
 
     Plotly.newPlot(div, data, layout)
