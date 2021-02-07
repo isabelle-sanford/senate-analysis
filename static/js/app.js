@@ -175,36 +175,56 @@ function init() {
             //    'Methodist', 'Restorationist', 'Quaker', 'Holiness',
             //    'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
 
+            let relig_sorted_data = data.sort((a,b) => a.religion - b.religion); // strings? this might break
+
+
             protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
                         'Baptist', 'Lutheran', 'Methodist', 'Restorationist', 'Quaker', 'Holiness'];
-            unknowns = ['Unaffiliated', 'Unknown'];
+            //unknowns = ['Unaffiliated', 'Unknown'];
+            religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Unknown', 'Latter-day Saint']
 
-            religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint'];
+            // religion_obj = {'Catholic':['brown', []], 
+            // 'Jewish':['purple', []], 
+            // 'Protestant':['red', []], 
+            // 'Unaffiliated':['gray', []], 
+            // 'Buddhist':['blue', []], 
+            // 'Unknown':['black', []], 
+            // 'Latter-day Saint':['orange', []]};
 
-            // data.forEach(datum => {
-            //     curr_religion = datum.Religion;
+            relig_color_dict = {'Catholic':'brown', 
+            'Jewish':'purple', 
+            'Protestant':'red', 
+            'Unaffiliated':'gray', 
+            'Buddhist':'blue', 
+            'Unknown':'black', 
+            'Latter-day Saint':'orange',
+            'Congregationalist':'red', 'Episcopalian':'red', 'Presbyterian':'red', 'Evangelical':'red', 'Protestant':'red', 
+            'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
 
-            //     religion_list.forEach(religion => {
+            // relig_sorted_data.forEach(datum => {
+            //     curr_religion = datum.religion;
+
+            //     religion_list.forEach(religion => { // can you iterate through an object like that?
             //         if (curr_religion === religion) {
-                        
-            //         }
+            //             datum.relig_color = religion_obj[religion] 
+            //         } else if (curr_religion in protestant_list) {
+            //             religion_obj['Protestant'][1].push(datum);
+            //         } else {
+            //             console.log('religion not found!');
+            //             console.log(curr_religion);
+            //         };
             //     });
+            // });
 
-            //     switch(curr_religion) {
-            //         case "Mickey":
-            //           message = "I am a very famous mouse!";
-            //           break;
-            //         case "Donald":
-            //           message = "I am a very famous duck!";
-            //           break;
-            //         case "Goofy":
-            //           message = "I am a very famous dog!";
-            //           break;
-            //         default:
-            //           message = "Did you forget to choose a friend?";
-            //       }
-            // })
-1
+            
+
+            relig_colors = relig_sorted_data.map(d => relig_color_dict[d.religion]);
+            relig_labels = relig_sorted_data.map(d => `${d.sen} (${d.religion})`);
+
+            nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
+
+
+
 
 
         });
