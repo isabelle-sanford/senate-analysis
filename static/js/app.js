@@ -119,6 +119,40 @@ function init() {
 
         nonpartychamber_plot(10, senracecolors, senracelabels, 'Race Demographics - Senate', 'IS-chamber-sen-race');
 
+
+    
+        // SENATE RELIGION CHAMBER PLOT======================================================
+
+        // ['Catholic', 'Congregationalist', 'Episcopalian', 'Jewish',
+        //    'Presbyterian', 'Evangelical', 'Protestant', 'Baptist', 'Lutheran',
+        //    'Methodist', 'Restorationist', 'Quaker', 'Holiness',
+        //    'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
+
+        let relig_sorted_data = data.sort((a,b) => a.religion - b.religion); // strings? this might break
+
+
+        protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
+                    'Baptist', 'Lutheran', 'Methodist', 'Restorationist', 'Quaker', 'Holiness'];
+        religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Unknown', 'Latter-day Saint']
+
+
+        relig_color_dict = {'Catholic':'brown', 
+        'Jewish':'purple', 
+        'Protestant':'red', 
+        'Unaffiliated':'gray', 
+        'Buddhist':'blue', 
+        'Unknown':'black', 
+        'Latter-day Saint':'orange',
+        'Congregationalist':'red', 'Episcopalian':'red', 'Presbyterian':'red', 'Evangelical':'red', 'Protestant':'red', 
+        'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
+
+        relig_colors = relig_sorted_data.map(d => relig_color_dict[d.religion]);
+        relig_labels = relig_sorted_data.map(d => `${d.sen} (${d.religion})`);
+
+        nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
+
+
+
         
         d3.json("http://localhost:5000/api/attr").then(function(attr) {
 
@@ -137,8 +171,6 @@ function init() {
 
             
             //chamber_plot(10, 10, pop_sex_colors[0], pop_sex_colors[1], 0, 0, 'IS-chamber-pop-sex');
-
-
 
 
             // US RACE CHAMBER PLOT
@@ -167,63 +199,22 @@ function init() {
             nonpartychamber_plot(10, pop_race_colors, pop_race_labels, 'Race Demographics - US Population', 'IS-chamber-pop-race');
 
 
-            // SENATE RELIGION CHAMBER PLOT
+            // US POP RELIGION CHAMBER PLOT===================================================
 
 
-            // ['Catholic', 'Congregationalist', 'Episcopalian', 'Jewish',
-            //    'Presbyterian', 'Evangelical', 'Protestant', 'Baptist', 'Lutheran',
-            //    'Methodist', 'Restorationist', 'Quaker', 'Holiness',
-            //    'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
+//Catholic,Mormon-LDS,Other Mormom,
+//Greek Orthodox,Russian Orthodox,Orthodox Church in America,Other Orthodox Christian,
+//Jehovah's Witness,Other Christian,Jewish,Muslim,Buddhist,Hindu,Other World Religions,Unitarians,New Age,Native American Religions,
+//Atheist,Agnostic,Nothing in Particular
 
-            let relig_sorted_data = data.sort((a,b) => a.religion - b.religion); // strings? this might break
-
-
-            protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
-                        'Baptist', 'Lutheran', 'Methodist', 'Restorationist', 'Quaker', 'Holiness'];
-            //unknowns = ['Unaffiliated', 'Unknown'];
-            religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Unknown', 'Latter-day Saint']
-
-            // religion_obj = {'Catholic':['brown', []], 
-            // 'Jewish':['purple', []], 
-            // 'Protestant':['red', []], 
-            // 'Unaffiliated':['gray', []], 
-            // 'Buddhist':['blue', []], 
-            // 'Unknown':['black', []], 
-            // 'Latter-day Saint':['orange', []]};
-
-            relig_color_dict = {'Catholic':'brown', 
-            'Jewish':'purple', 
-            'Protestant':'red', 
-            'Unaffiliated':'gray', 
-            'Buddhist':'blue', 
-            'Unknown':'black', 
-            'Latter-day Saint':'orange',
-            'Congregationalist':'red', 'Episcopalian':'red', 'Presbyterian':'red', 'Evangelical':'red', 'Protestant':'red', 
-            'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
-
-            // relig_sorted_data.forEach(datum => {
-            //     curr_religion = datum.religion;
-
-            //     religion_list.forEach(religion => { // can you iterate through an object like that?
-            //         if (curr_religion === religion) {
-            //             datum.relig_color = religion_obj[religion] 
-            //         } else if (curr_religion in protestant_list) {
-            //             religion_obj['Protestant'][1].push(datum);
-            //         } else {
-            //             console.log('religion not found!');
-            //             console.log(curr_religion);
-            //         };
-            //     });
-            // });
-
-            
-
-            relig_colors = relig_sorted_data.map(d => relig_color_dict[d.religion]);
-            relig_labels = relig_sorted_data.map(d => `${d.sen} (${d.religion})`);
-
-            nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
-
-
+// PROTESTANT:
+// Baptist Family (ET),Methodist Family (ET),Non-denominational Family (ET),Lutheran Family (ET),Presbyterian (ET),
+//Pentecostal Family (ET),Episcopalian/Anglican Family (ET),Restorationist Family (ET),Congregationalist Family (ET),
+//Holiness Family (ET),Reformed Family (ET),Adventist Family (ET),Anabaptist Family (ET),Pietist Family (ET),Other Evangelical,
+//NonSpecific Protestant Family (ET),Baptist Family (MT),Methodist Family (MT),Non-Denominational Family (MT),Lutheran Family (MT),Presbyterian Family (MT),
+//Episcopalian/Anglican Family (MT),Restorationist Family (MT),Congregationalist Family (MT),Reformed Family (MT),Anabaptist Family (MT),Friends Family (MT),
+//NonSpecific Protestant Family (MT),Baptist Family (HBPT),Methodist Family (HBPT),Pentecostal Family (HBPT),Holiness Family (HBPT),
+//Non-Denominational Family (HBPT),NonSpecific Protestant (HBPT),
 
 
 
