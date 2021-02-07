@@ -1,6 +1,7 @@
 # 1. Import Flask
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 import to_json_testing as data_jsons
+from religion_cleaning import relig_dict
 
 # SQL CONNECTION HERE
 
@@ -40,7 +41,7 @@ def relig_json():
 
 
     # go back to main when done
-    return data_jsons.relig_json()
+    return jsonify(relig_dict)
 
 
 

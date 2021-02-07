@@ -201,10 +201,27 @@ function init() {
 
             // US POP RELIGION CHAMBER PLOT===================================================
 
+            // IMPORT RELIGION DATA
 
-//Catholic,Mormon-LDS,Other Mormom,
-//Greek Orthodox,Russian Orthodox,Orthodox Church in America,Other Orthodox Christian,
-//Jehovah's Witness,Other Christian,Jewish,Muslim,Buddhist,Hindu,Other World Religions,Unitarians,New Age,Native American Religions,
+            // relig_nums = relig_data.forEach(state => {
+            //     state.forEach(religion => {
+            //         if (religion === '<1') {
+            //             curr = 0
+            //         } else {
+            //             curr = parseInt(religion);
+            //         }
+            //     })
+            // })
+
+            // pulling from cleaned relig_dict in religion_cleaning:
+
+            // can you iterate through an object by key and value??
+
+
+//Catholic,
+//Mormon-LDS,Other Mormom,
+//Greek Orthodox,Russian Orthodox,Orthodox Church in America,Other Orthodox Christian,Jehovah's Witness,Other Christian,
+//Jewish,Muslim,Buddhist,Hindu,Other World Religions,Unitarians,New Age,Native American Religions,
 //Atheist,Agnostic,Nothing in Particular
 
 // PROTESTANT:
