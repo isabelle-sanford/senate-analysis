@@ -160,7 +160,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         polar: {
             sector: [90,180],
             domain: {
-                x: [0, 0.45],
+                x: [0, 0.5],
                 y: [0,1]
             },
             hole: .2,
@@ -175,7 +175,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
         polar2: {
             sector: [0, 90],
             domain: {
-                x: [0.55, 1],
+                x: [0.5, 1],
                 y: [0, 1]
             },
             hole: .2,

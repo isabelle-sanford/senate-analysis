@@ -90,7 +90,7 @@ function init() {
         // let sexRsorted = sex_sorted_data.filter(d => d.party === 'Republican').map(sen => parseInt(sen.gender));
         // let sexDsorted = sex_sorted_data.filter(d => d.party !== 'Republican').map(sen => parseInt(sen.gender));
 
-        let sexDict = {'1': 'purple', '2': 'pink'};
+        let sexDict = {'1': 'purple', '2': 'salmon'};
         let sexObj = {'1': 'male', '2': 'female'};
 
         let sensexcolors = sex_sorted_data.map(g => sexDict[g.gender]);
@@ -128,7 +128,7 @@ function init() {
         //    'Methodist', 'Restorationist', 'Quaker', 'Holiness',
         //    'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
 
-        let relig_sorted_data = data.sort((a,b) => a.religion - b.religion); // strings? this might break
+        let relig_sorted_data = data.sort(); // strings? this might break
 
 
         protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
@@ -147,7 +147,7 @@ function init() {
         'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
 
         relig_colors = relig_sorted_data.map(d => relig_color_dict[d.religion]);
-        relig_labels = relig_sorted_data.map(d => `${d.sen} (${d.religion})`);
+        relig_labels = relig_sorted_data.map(d => `${d.senator} (${d.religion})`);
 
         nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
 
@@ -165,7 +165,7 @@ function init() {
             let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
             let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
 
-            let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'pink']);
+            let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'salmon']);
         
             nonpartychamber_plot(10, pop_sex_colors, 0, 'Gender - US Population', 'IS-chamber-pop-sex');
 
