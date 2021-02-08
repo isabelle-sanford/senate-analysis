@@ -100,6 +100,8 @@ senators_dict = {
 import random
 
 senators = list(senators_dict.keys())
+cscore = 0
+qnum = 0
 for i in [1, 2, 3, 4, 5]:
     senator = random.choice(senators)
     senator1 = random.choice(senators)
@@ -109,25 +111,31 @@ for i in [1, 2, 3, 4, 5]:
     state2 = senators_dict[senator2]
     state_guess_list = [state, state1, state2]
     y = random.randint(1,3)
-
+    qnum = qnum + 1
     if y == 1:
         print("")
-        print("Chose from: " + state_guess_list[0]+ " " + state_guess_list[1] + " " + state_guess_list[2])
+        print("")
+        print(" For quiz # " + str(qnum) + " of 5, chose from: " + state_guess_list[0]+ ", " + state_guess_list[1] + ", or " + state_guess_list[2])
     elif y == 2:
         print("")
-        print("Chose from: " + state_guess_list[1]+ " " + state_guess_list[2] + " " + state_guess_list[0])
+        print("")
+        print(" For quiz # " + str(qnum) + " of 5, chose from: " + state_guess_list[1]+ ", " + state_guess_list[2] + ", or " + state_guess_list[0])
     else:
         print("")
-        print("Chose from: " + state_guess_list[2]+ " " + state_guess_list[0] + " " + state_guess_list[1])
+        print("")
+        print(" For quiz # " + str(qnum) + " of 5, chose from: " + state_guess_list[2]+ ", " + state_guess_list[0] + ", or " + state_guess_list[1])
     
     print("")
     state_guess = input("What State does " + senator + " represent? ")
     
     if state_guess == state:
-        print("Correct! Nice job.")
+        cscore = cscore + 1
+        print("Correct! Nice job. Your score is " + str(cscore) + " out of " + str(qnum) + ".")
     else:
         print("Incorrect. The state " + senator + "represents is " + state + ".")
-        
-print("All done")
+        print("your score is " + str(cscore) + " out of " + str(qnum) + ".")
+
+print("")        
+print("All done, thanks for taking the Senator's Quiz.")
     
     
