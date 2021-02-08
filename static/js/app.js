@@ -128,15 +128,16 @@ function init() {
         //    'Methodist', 'Restorationist', 'Quaker', 'Holiness',
         //    'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
 
-        let relig_sorted_data = data.sort(); // strings? this might break
+        //let relig_sorted_data = data.sort((a,b) => (a.religion > b.religion) ? 1 : -1); // strings? this might break
+        //console.log(relig_sorted_data)
 
 
-        protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
+        let protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 'Protestant', 
                     'Baptist', 'Lutheran', 'Methodist', 'Restorationist', 'Quaker', 'Holiness'];
-        religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Unknown', 'Latter-day Saint']
+        let religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Unknown', 'Latter-day Saint']
 
 
-        relig_color_dict = {'Catholic':'brown', 
+        let relig_color_dict = {'Catholic':'brown', 
         'Jewish':'purple', 
         'Protestant':'red', 
         'Unaffiliated':'gray', 
@@ -146,11 +147,22 @@ function init() {
         'Congregationalist':'red', 'Episcopalian':'red', 'Presbyterian':'red', 'Evangelical':'red', 'Protestant':'red', 
         'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
 
-        relig_colors = relig_sorted_data.map(d => relig_color_dict[d.religion]);
-        relig_labels = relig_sorted_data.map(d => `${d.senator} (${d.religion})`);
 
-        nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
 
+        let relig_colors = data.map(d => relig_color_dict[d.religion]);
+        console.log(relig_colors);
+        console.log(data);
+
+        let relig_sorted_colors = relig_colors.sort((a,b) => (a > b) ? 1 : -1);
+        let relig_sorted2 = data.sort((a,b) => (relig_color_dict[a.religion] > relig_color_dict[b.religion]) ? 1 : -1)
+
+        let relig_labels = relig_sorted2.map(d => `${d.senator} (${d.religion})`);
+
+       // console.log(relig_colors);
+
+        nonpartychamber_plot(10, relig_sorted_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
+
+        // @TODO: make an ordering of colors approx by group
 
 
         
@@ -236,6 +248,50 @@ function init() {
 
 
         });
+    let religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Latter-day Saint', 'Muslim', 'Other', 'Christian']
+    let religion_obj = {'Catholic': 0, 'Jewish': 0, 'Protestant': 0, 'Unaffiliated': 0, 'Buddhist': 0, 'Latter-day Saint': 0, 'Muslim': 0, 'Other': 0, 'Christian': 0}
+
+    let other_list = ['Hindu', 'Other World Religions', 'Unitarians', 'New Age', 'Native American Religions']
+    let unaffiliated_list = ['Atheist', 'Agnostic', 'Nothing in Particular']
+    let other_christian = ['Greek Orthodox', 'Russian Orthodox', 'Orthodox Church in America', 'Other Orthodox Christian', 'Jehovah\'s Witness', 'Other Christian']
+    let mormon_list = ['Mormon-LDS', 'Other Mormon']
+
+    let relig_color_dict = {'Catholic':'darkblue', 
+    'Jewish':'green', 
+    'Protestant':'blue', 
+    'Unaffiliated':'gray', 
+    'Buddhist':'orange',  
+    'Latter-day Saint':'lightblue',
+    'Muslim': 'purple',
+    'Other': 'red',
+    'Christian': 'black'};
+
+
+
+    d3.json("http://localhost:5000/api/relig").then(function(relig_data) {
+        for (religion in relig_data) {
+            if (religion in religion_list) {
+                religion_obj[religion] += relig_data[religion]
+            } else if (religion in other_list) {
+                religion_obj['Other'] += relig_data[religion]
+            } else if (religion in unaffiliated_list) {
+                religion_obj['Unaffiliated'] += relig_data[religion]
+            } else if (religion in other_christian) {
+                religion_obj['Christian'] += relig_data[religion]
+            } else if (religion in mormon_list) {
+                religion_obj['Latter-day Saint'] += relig_data[religion]
+            } else {
+                religion_obj['Protestant'] += relig_data[religion]
+            };
+        }
+        console.log(religion_obj);
+
+        let relig_colors1 = getColors(getAllSeats(religion_obj.values()), relig_color_dict.values())
+
+        nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-us-relig');
+        
+
+    });
 
     }).catch(function(error) {
     console.log(error);
