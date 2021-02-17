@@ -248,7 +248,7 @@ function init() {
 
 
         });
-    let religion_list = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Latter-day Saint', 'Muslim', 'Other', 'Christian']
+    let religion_list2 = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Latter-day Saint', 'Muslim', 'Other', 'Christian']
     let religion_obj = {'Catholic': 0, 'Jewish': 0, 'Protestant': 0, 'Unaffiliated': 0, 'Buddhist': 0, 'Latter-day Saint': 0, 'Muslim': 0, 'Other': 0, 'Christian': 0}
 
     let other_list = ['Hindu', 'Other World Religions', 'Unitarians', 'New Age', 'Native American Religions']
@@ -256,7 +256,7 @@ function init() {
     let other_christian = ['Greek Orthodox', 'Russian Orthodox', 'Orthodox Church in America', 'Other Orthodox Christian', 'Jehovah\'s Witness', 'Other Christian']
     let mormon_list = ['Mormon-LDS', 'Other Mormon']
 
-    let relig_color_dict = {'Catholic':'darkblue', 
+    let relig_color_dict2 = {'Catholic':'darkblue', 
     'Jewish':'green', 
     'Protestant':'blue', 
     'Unaffiliated':'gray', 
@@ -270,7 +270,7 @@ function init() {
 
     d3.json("http://localhost:5000/api/relig").then(function(relig_data) {
         for (religion in relig_data) {
-            if (religion in religion_list) {
+            if (religion in religion_list2) {
                 religion_obj[religion] += relig_data[religion]
             } else if (religion in other_list) {
                 religion_obj['Other'] += relig_data[religion]
@@ -286,7 +286,7 @@ function init() {
         }
         console.log(religion_obj);
 
-        let relig_colors1 = getColors(getAllSeats(religion_obj.values()), relig_color_dict.values())
+        let relig_colors1 = getColors(getAllSeats(religion_obj.values()), relig_color_dict2.values())
 
         nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-us-relig');
         
