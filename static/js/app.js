@@ -150,8 +150,8 @@ function init() {
 
 
         let relig_colors = data.map(d => relig_color_dict[d.religion]);
-        console.log(relig_colors);
-        console.log(data);
+        //console.log(relig_colors);
+        //console.log(data);
 
         let relig_sorted_colors = relig_colors.sort((a,b) => (a > b) ? 1 : -1);
         let relig_sorted2 = data.sort((a,b) => (relig_color_dict[a.religion] > relig_color_dict[b.religion]) ? 1 : -1)
@@ -269,9 +269,12 @@ function init() {
 
 
     d3.json("http://localhost:5000/api/relig").then(function(relig_data) {
-        for (religion in relig_data) {
+        //console.log(relig_data)
+        for ([religion, val] of Object.entries(relig_data)) {
+            console.log(religion)
             if (religion in religion_list2) {
-                religion_obj[religion] += relig_data[religion]
+                religion_obj[religion] += val;
+                console.log(religion)
             } else if (religion in other_list) {
                 religion_obj['Other'] += relig_data[religion]
             } else if (religion in unaffiliated_list) {
@@ -286,9 +289,10 @@ function init() {
         }
         console.log(religion_obj);
 
-        let relig_colors1 = getColors(getAllSeats(religion_obj.values()), relig_color_dict2.values())
+        let relig_colors1 = getColors(getAllSeats(Object.values(religion_obj)), Object.values(relig_color_dict2))
 
-        nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-us-relig');
+        console.log(relig_colors1)
+        nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-pop-relig');
         
 
     });
