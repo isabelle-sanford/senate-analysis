@@ -1,7 +1,7 @@
 function init() {
     d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(data) {
         
-        
+        console.log('this is working!')
         // SIMPLE BAR========================================
 
 
@@ -168,6 +168,7 @@ function init() {
         
         d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/uspop.json").then(function(attr) {
 
+        console.log('successfully got uspop')
 
             // US SEX CHAMBER PLOT
             let guys = attr.filter(a => a.SEX === 1);
