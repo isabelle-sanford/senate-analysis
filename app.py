@@ -15,7 +15,7 @@ app = Flask(__name__)
 # 3. Define static routes
 @app.route("/")
 def index():
-    return render_template('SlitheringSenateSalamanders.html')
+    return render_template('index.html')
 
 
 
