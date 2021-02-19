@@ -1,7 +1,7 @@
 function init() {
     d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(data) {
         
-        console.log('this is working!');
+        
         // SIMPLE BAR========================================
 
 
@@ -289,10 +289,10 @@ function init() {
         }
         console.log(religion_obj);
 
-        let relig_colors1 = getColors(getAllSeats(Object.values(religion_obj)), Object.values(relig_color_dict2))
+        //let relig_colors1 = getColors(getAllSeats(Object.values(religion_obj)), Object.values(relig_color_dict2))
 
-        console.log(relig_colors1)
-        nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-pop-relig');
+        //console.log(relig_colors1)
+        //nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-pop-relig');
         
 
     });
