@@ -1,5 +1,5 @@
 function init() {
-    d3.json("./jsons/senators.json").then(function(data) {
+    d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(data) {
         
         console.log('this is working!');
         // SIMPLE BAR========================================
@@ -166,7 +166,7 @@ function init() {
 
 
         
-        d3.json("./jsons/attr.json").then(function(attr) {
+        d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/uspop.json").then(function(attr) {
 
 
             // US SEX CHAMBER PLOT
@@ -268,7 +268,7 @@ function init() {
 
 
 
-    d3.json("./jsons/relig.json").then(function(relig_data) {
+    d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
         //console.log(relig_data)
         for ([religion, val] of Object.entries(relig_data)) {
             console.log(religion)
