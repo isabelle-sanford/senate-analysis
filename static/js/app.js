@@ -257,15 +257,38 @@ function init() {
     let other_christian = ['Greek Orthodox', 'Russian Orthodox', 'Orthodox Church in America', 'Other Orthodox Christian', 'Jehovah\'s Witness', 'Other Christian']
     let mormon_list = ['Mormon-LDS', 'Other Mormon']
 
-    let relig_color_dict2 = {'Catholic':'darkblue', 
-    'Jewish':'green', 
-    'Protestant':'blue', 
+    let relig_color_dictCOPY = {'Catholic':'brown', 
+    'Jewish':'purple', 
+    'Protestant':'red', 
     'Unaffiliated':'gray', 
-    'Buddhist':'orange',  
-    'Latter-day Saint':'lightblue',
-    'Muslim': 'purple',
-    'Other': 'red',
-    'Christian': 'black'};
+    'Buddhist':'blue', 
+    'Unknown':'black', 
+    'Latter-day Saint':'orange',
+    'Congregationalist':'red', 'Episcopalian':'red', 'Presbyterian':'red', 'Evangelical':'red', 'Protestant':'red', 
+    'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
+
+
+    let relig_color_dict2 = {'Catholic':'brown', 
+    'Jewish':'purple', 
+    'Protestant':'red', 
+    'Unaffiliated':'gray', 
+    'Buddhist':'blue',  
+    'Latter-day Saint':'orange',
+    'Muslim': 'green',
+    'Other': 'black',
+    'Christian': 'yellow'};
+
+    // TODO - literally ANYTHING other than this
+    // down below need relig->color and color->relig
+    let relig_color_dict3 = {'darkblue':'Catholic',
+    'purple':'Jewish',
+    'red':'Protestant',
+    'gray':'Unaffiliated',
+    'blue':'Buddhist',
+    'orange':'Latter-day Saint',
+    'green':'Muslim',
+    'black':'Other',
+    'yellow':'Christian'}
 
 
 
@@ -296,12 +319,15 @@ function init() {
                 religion_obj['Protestant'] += relig_data[0][religion];
             };
         }
-        console.log(religion_obj);
+        //console.log(religion_obj);
 
         let relig_colors1 = getColors(getAllSeats(Object.values(religion_obj)), Object.values(relig_color_dict2))
+        let pop_relig_labels = relig_colors1.map(color => relig_color_dict3[color]);
 
-        console.log(relig_colors1)
-        //nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-pop-relig');
+        //console.log(pop_relig_labels);
+
+
+        nonpartychamber_plot(10, relig_colors1, pop_relig_labels, 'US Religion Demographics', 'IS-chamber-pop-relig');
         
 
     });
