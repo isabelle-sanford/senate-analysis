@@ -1,7 +1,7 @@
 function init() {
     d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(data) {
         
-        console.log('this is working!')
+        console.log('got my first dataset!')
         // SIMPLE BAR========================================
 
 
@@ -270,29 +270,37 @@ function init() {
 
 
     d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
-        //console.log(relig_data)
-        for ([religion, val] of Object.entries(relig_data)) {
-            console.log(religion)
-            if (religion in religion_list2) {
+        //console.log(relig_data) // this works
+        let n = true;
+        for ([religion, val] of Object.entries(relig_data[0])) {
+            //console.log(val);
+            if(n) {
+                n = false;
+                continue;
+            } else if (religion_list2.includes(religion)) {
                 religion_obj[religion] += val;
-                console.log(religion)
-            } else if (religion in other_list) {
-                religion_obj['Other'] += relig_data[religion]
-            } else if (religion in unaffiliated_list) {
-                religion_obj['Unaffiliated'] += relig_data[religion]
-            } else if (religion in other_christian) {
-                religion_obj['Christian'] += relig_data[religion]
-            } else if (religion in mormon_list) {
-                religion_obj['Latter-day Saint'] += relig_data[religion]
+                
+            } else if (other_list.includes(religion)) {
+                religion_obj['Other'] += relig_data[0][religion];
+
+            } else if (unaffiliated_list.includes(religion)) {
+                religion_obj['Unaffiliated'] += relig_data[0][religion];
+
+            } else if (other_christian.includes(religion)) {
+                religion_obj['Christian'] += relig_data[0][religion];
+
+            } else if (mormon_list.includes(religion)) {
+                religion_obj['Latter-day Saint'] += relig_data[0][religion];
+
             } else {
-                religion_obj['Protestant'] += relig_data[religion]
+                religion_obj['Protestant'] += relig_data[0][religion];
             };
         }
         console.log(religion_obj);
 
-        //let relig_colors1 = getColors(getAllSeats(Object.values(religion_obj)), Object.values(relig_color_dict2))
+        let relig_colors1 = getColors(getAllSeats(Object.values(religion_obj)), Object.values(relig_color_dict2))
 
-        //console.log(relig_colors1)
+        console.log(relig_colors1)
         //nonpartychamber_plot(10, relig_colors1, 0, 'US Religion Demographics', 'IS-chamber-pop-relig');
         
 

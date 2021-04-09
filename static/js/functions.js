@@ -49,11 +49,15 @@ function getAllSeats(myList) {
 
     let seats = myList.map(m => Math.round(m*100 / tot));
 
-    while (sumList(seats) !== 100) {  // NOTE: WILL BREAK EVERYTHING IF SEATS > 100
-        console.log('uh oh! getSeats has a problem!');
+    while (sumList(seats) < 100) {  // NOTE: WILL BREAK EVERYTHING IF SEATS > 100
+        console.log('uh oh! getSeats has a problem:');
         console.log(temp);
 
-        seats[0] +=1 
+        seats[0] += 1; 
+    }
+
+    while(sumList(seats) > 100) {
+        seats[0] -= 1;
     }
 
     return seats;
