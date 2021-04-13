@@ -2,10 +2,12 @@
 
 - figure out how to do default values for chamber plot
 
-- add line to stacked bar pop chart, put state abbrevs in
+- annotate line on stacked bar pop chart, put state abbrevs in
 
-- race, religion, age, ...
+- hispanic origin age, ...
 
 - add hovertext on chamber plots
 
 - the nonparty chamber plot has overlapping middle columns
+
+- religion population is skewed data
