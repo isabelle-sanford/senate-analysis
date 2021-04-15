@@ -12,4 +12,6 @@
 
 - religion population is skewed data
 
-- get rid of bigger level rows of religion table
+- get rid of bigger level rows of religion table (total, christian, non christian, ...)
+
+- make the button stop shadowing???

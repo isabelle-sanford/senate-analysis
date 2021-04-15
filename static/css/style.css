@@ -15,6 +15,9 @@ body {
   background-color: rgb(247, 226, 202);
 }
 
+p {
+  font-size: larger;
+}
 
 
 .footer {
@@ -143,9 +146,12 @@ body {
 
 /* About Page CSS */
 .container-fluid {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
+
+
 
 .bg-1 {
   background-color: rgb(47, 47, 168);

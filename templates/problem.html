@@ -23,14 +23,12 @@
   <body>
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-dark bg-primary fixed-top flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Slithering Senate Salamaders Dashboard</a>
+    <nav class="navbar navbar-dark bg-primary fixed-top shadow justify-content-end">
+      <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Slithering Senate Salamaders Dashboard</a> -->
 
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="templates/about.html">About</a>
-        </li>
-      </ul>
+        <a class="nav-link nav-item" href="../index.html">Old Version</a>
+        <a class="nav-link nav-item" href="about.html">About</a>
+      
     </nav>
 
     <!-- <div class="container-fluid">
@@ -92,11 +90,23 @@
         
     </div>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid bg-1">
+                    <h1 class="bg-1 text-center">Indroduction</h1>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
     <div class="container"> <!--moved from line 38-->
     
         <div class="row">
+
             <div class="col-12">
-                <h1 class="bg-1 text-center">Indroduction</h1>
+                
                 <p> The United States Senate is the upper chamber of the United States Congress, which along with the House of Representatives 
                 constitutes the legislature of the United States. The Senate is currently composed of 100 senators, two for each state. They 
                 serve staggered terms of six years.  <br><br>
@@ -116,25 +126,32 @@
 
         <hr>
 
+    </div>
+
+    <div class="container-fluid">
         <div class="row">
-            <div class="jumbotron bg-2">
-                <h1 class="text-center">Senate and Population Data Analysis</h1>
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid bg-2">
+                    <h1 class="text-center">Senate and Demographic Data Analysis</h1>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+    <div class="container">
+   
+
+        <div class="row">
+            <div class="col-12">
                 <p>
                     The Senate was not created to be a body representative of the US population, but rather of the states. This was a logical step in the time of the Founding Fathers, when each state was more like unto its own country than a part of a nation. Back then, the US was a little more like the European Union is today: largely self-governed except for some situations in which acting in concert is valuable. 
 
                     Now, however, this is no longer the case. You probably think of yourself as an American far more readily than a Pennsylvanian or a Texan. And even as the states grow more similar and united, the range of their populations has grown more and more extreme, leading to what we see today.
+
+                    18 Senators represent 50% of the population. More than half of the US states could want something to occur, and they might not even be halfway to a majority. 
                 </p>
             </div>
-        </div>
-
-        <hr>
-
-        <p>
-            18 Senators represent 50% of the population. More than half of the US states could want something to occur, and they might not even be halfway to a majority. 
-        </p>
-            
-
-        <div class="row">
             <div class="col-12">
                 <div id="IS-bar-pop"></div>
             </div>
@@ -156,23 +173,32 @@
             </div>
         </div>
 
-        
-        <div class="row">
-            <div class="jumbotron bg-2">
-                <h1 class="text-center">Senate and Demographic Data Analysis</h1>
-                <p>In addition to Senators representing vastly different population sizes, we can also consider the demographics of the US and whether the Senate accurately reflects them. </p>
-            </div>
-        </div>
+    </div>
 
-        <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid bg-2">
+                    <h1 class="text-center">Senate and Demographic Data Analysis</h1>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+
+    <div class="container">
+
+
 
         <div class="row">
             <div class='col'>
+                <p>In addition to Senators representing vastly different population sizes, we can also consider the demographics of the US and whether the Senate accurately reflects them. </p>
+          
               <nav>
-                <div class="nav nav-tabs nav-fill text-light border-bottom border-danger" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link btn-danger" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Gender</a>
-                  <a class="nav-item nav-link btn-danger" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Race</a>
-                  <a class="nav-item nav-link btn-danger" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Religion</a>
+                <div class="nav nav-tabs text-light border-bottom border-danger" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link btn-danger mx-1 active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Gender</a>
+                  <a class="nav-item nav-link btn-danger mx-1" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Race</a>
+                  <a class="nav-item nav-link btn-danger mx-1" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Religion</a>
                 </div>
               </nav>
               <div class="tab-content" id="nav-tabContent">
