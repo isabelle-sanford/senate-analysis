@@ -214,81 +214,47 @@ function init() {
 
             // US POP RELIGION CHAMBER PLOT===================================================
 
-            // IMPORT RELIGION DATA
-
-            // relig_nums = relig_data.forEach(state => {
-            //     state.forEach(religion => {
-            //         if (religion === '<1') {
-            //             curr = 0
-            //         } else {
-            //             curr = parseInt(religion);
-            //         }
-            //     })
-            // })
-
-            // pulling from cleaned relig_dict in religion_cleaning:
-
-            // can you iterate through an object by key and value??
-
-
-//Catholic,
-//Mormon-LDS,Other Mormom,
-//Greek Orthodox,Russian Orthodox,Orthodox Church in America,Other Orthodox Christian,Jehovah's Witness,Other Christian,
-//Jewish,Muslim,Buddhist,Hindu,Other World Religions,Unitarians,New Age,Native American Religions,
-//Atheist,Agnostic,Nothing in Particular
-
-// PROTESTANT:
-// Baptist Family (ET),Methodist Family (ET),Non-denominational Family (ET),Lutheran Family (ET),Presbyterian (ET),
-//Pentecostal Family (ET),Episcopalian/Anglican Family (ET),Restorationist Family (ET),Congregationalist Family (ET),
-//Holiness Family (ET),Reformed Family (ET),Adventist Family (ET),Anabaptist Family (ET),Pietist Family (ET),Other Evangelical,
-//NonSpecific Protestant Family (ET),Baptist Family (MT),Methodist Family (MT),Non-Denominational Family (MT),Lutheran Family (MT),Presbyterian Family (MT),
-//Episcopalian/Anglican Family (MT),Restorationist Family (MT),Congregationalist Family (MT),Reformed Family (MT),Anabaptist Family (MT),Friends Family (MT),
-//NonSpecific Protestant Family (MT),Baptist Family (HBPT),Methodist Family (HBPT),Pentecostal Family (HBPT),Holiness Family (HBPT),
-//Non-Denominational Family (HBPT),NonSpecific Protestant (HBPT),
-
 
 
         });
-    let religion_list2 = ['Catholic', 'Jewish', 'Protestant', 'Unaffiliated', 'Buddhist', 'Mormon', 'Muslim', 'Other non-Christian', 'Other Christian', 'Hindu']
-    let religion_obj = {'Catholic': 0, 'Jewish': 0, 'Protestant': 0, 'Unaffiliated': 0, 'Buddhist': 0, 'Mormon': 0, 'Muslim': 0, 'Other non-Christian': 0, 'Other Christian': 0, 'Hindu':0};
+    let religion_list2 = ['Catholic', 'Jewish', 'Unaffiliated', 'Buddhist', 'Mormon', 'Muslim', 
+                            'Other non-Christian', 'Other Christian', 'Protestant', 'Hindu']
+    let religion_obj = {'Catholic': 0, 
+        'Jewish': 0, 
+        'Unaffiliated': 0, 
+        'Buddhist': 0, 
+        'Mormon': 0, 
+        'Muslim': 0, 
+        'Other non-Christian': 0, 
+        'Other Christian': 0, 
+        'Protestant': 0, 
+        'Hindu':0};
 
     let other_christian = ['Orthodox Christian', 'Jehovah\'s Witness', 'Other Christian'];
 
-
-    let ReligListClean = []
-
-    let relig_color_dictCOPY = {'Catholic':'brown', 
-    'Jewish':'purple', 
-    'Protestant':'red', 
-    'Unaffiliated':'gray', 
-    'Buddhist':'blue', 
-    'Unknown':'black', 
-    'Latter-day Saint':'orange',
-    'Congregationalist':'red', 'Episcopalian':'red', 'Presbyterian':'red', 'Evangelical':'red', 'Protestant':'red', 
-    'Baptist':'red', 'Lutheran':'red', 'Methodist':'red', 'Restorationist':'red', 'Quaker':'red', 'Holiness':'red'};
-
-
     let relig_color_dict2 = {'Catholic':'brown', 
-    'Jewish':'purple', 
-    'Protestant':'red', 
-    'Unaffiliated':'gray', 
-    'Buddhist':'blue',  
-    'Latter-day Saint':'orange',
-    'Muslim': 'green',
-    'Other': 'black',
-    'Other Christian': 'yellow'};
+        'Jewish':'purple', 
+        'Unaffiliated':'gray',
+        'Buddhist':'blue',  
+        'Mormon':'orange',
+        'Muslim': 'green',
+        'Other non-Christian': 'black',
+        'Other Christian': 'yellow',
+        'Protestant':'red',  
+        'Hindu': 'pink'};
 
     // TODO - literally ANYTHING other than this
     // down below need relig->color and color->relig
     let relig_color_dict3 = {'brown':'Catholic',
-    'purple':'Jewish',
-    'red':'Protestant',
-    'gray':'Unaffiliated',
-    'blue':'Buddhist',
-    'orange':'Latter-day Saint',
-    'green':'Muslim',
-    'black':'Other',
-    'yellow':'Other Christian'}
+        'purple':'Jewish',
+        'gray':'Unaffiliated',
+        'blue':'Buddhist',
+        'orange':'Mormon',
+        'green':'Muslim',
+        'black':'Other',
+        'yellow':'Other Christian',
+        'red':'Protestant',
+        'pink': 'Hindu'};
 
 
 

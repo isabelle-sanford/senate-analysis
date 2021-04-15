@@ -11,3 +11,5 @@
 - the nonparty chamber plot has overlapping middle columns
 
 - religion population is skewed data
+
+- get rid of bigger level rows of religion table
