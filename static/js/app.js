@@ -28,7 +28,7 @@ function init() {
 
         // STATE POP BAR===========================
 
-        colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
+        let colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
 
         let states = []; // x for both vars
 

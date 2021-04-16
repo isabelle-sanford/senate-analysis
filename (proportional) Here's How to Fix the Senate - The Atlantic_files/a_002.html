@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="a_data_003/get"></script><script>var inDapIF=true,inGptIF=true;</script><style>.c-play-button .control {
+  opacity: 0;
+  /* transition: opacity .2s linear; */ }
+
+.c-play-button.not-started .play,
+.c-play-button.is-paused .play {
+  opacity: 1; }
+
+.c-play-button.is-playing .pause {
+  opacity: 1; }
+
+.c-play-button.ended .stop {
+  opacity: 1; }
+
+.c-play-button.precache-bar .done {
+  opacity: 0; }
+
+.c-play-button.ended .progress-bar,
+.c-play-button.not-started .progress-bar {
+  display: none; }
+
+.c-play-button.ended .progress-track {
+  stroke-opacity: 1; }
+
+.c-play-button .progress-bar {
+  transition: stroke-dashoffset 300ms linear; }
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+h1,
+figure {
+  font-size: inherit; }
+
+a {
+  color: inherit; }
+
+.circle-audio-player {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer; }
+
+.c-content {
+  color: black;
+  display: flex;
+  align-items: flex-start;
+  font-family: "Graphik", -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif;
+  margin: 16px;
+  padding-bottom: 32px; }
+  .is-small--hp.is-desktop .c-content {
+    margin: 16px 0 0;
+    padding: 16px 0;
+    border-top: 1px solid #d3dce6; }
+  .is-small--recirc .c-content {
+    border-top: 0;
+    margin: 16px 0 0;
+    padding: 0 0 16px; }
+  .is-large .c-content {
+    border: 1px solid #d3dce6;
+    padding: 24px;
+    margin: 0; }
+
+.is-large .c-info-container {
+  position: relative;
+  top: -4px; }
+
+.c-info-text {
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: calc(22 / 16);
+  margin-bottom: 16px; }
+  .is-large .c-info-text {
+    margin-bottom: 0; }
+
+.c-lead {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  font-family: "Goldwyn", serif; }
+
+.c-image-container {
+  display: none; }
+  .is-large .c-image-container {
+    display: block;
+    margin-right: 24px; }
+
+.c-hed {
+  display: inline; }
+  .is-large .c-hed {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 0.25px;
+    line-height: calc(24 / 20);
+    margin-bottom: 8px; }
+
+.c-hed::after {
+  content: ":"; }
+  .is-large .c-hed::after {
+    content: ""; }
+
+.c-dek {
+  color: #5e6a74;
+  display: inline; }
+  .is-large .c-dek {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 0.25px;
+    line-height: calc(20 / 16);
+    margin-bottom: 16px; }
+
+.c-dek--mobile {
+  display: inline; }
+  .is-large .c-dek--mobile {
+    display: none; }
+
+.c-dek--desktop {
+  display: none; }
+  .is-large .c-dek--desktop {
+    display: block; }
+
+.c-mobile-cta {
+  display: inline; }
+  .is-large .c-mobile-cta {
+    display: none; }
+
+.c-desktop-cta {
+  display: none; }
+  .is-large .c-desktop-cta {
+    display: inline-block; }
+
+.c-play-text {
+  font-size: 14px;
+  line-height: 1;
+  font-family: "Goldwyn", serif;
+  margin-left: 16px; }
+
+.c-player-cta::after {
+  display: none; }
+  .is-large .c-player-cta::after {
+    display: inline;
+    content: "|";
+    margin-left: 8px;
+    margin-right: 8px; }
+
+/*
+ * Player styles
+ */
+.c-play-container {
+  display: flex;
+  align-items: center; }
+
+.c-circle-audio-player {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.c-icon-container {
+  position: relative; }
+
+.c-icon {
+  z-index: 10;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  top: 6px; }
+
+.c-play-icon {
+  left: 12px; }
+  .is-playing .c-play-icon {
+    display: none; }
+
+.c-pause-icon {
+  display: none;
+  left: 11px; }
+  .is-playing .c-pause-icon {
+    display: block; }
+</style></head><body class="is-small is-small--recirc" topmargin="0" marginwidth="0" marginheight="0" leftmargin="0"><script type="text/javascript" async="" src="a_data_003/segments_to_partner.js"></script><style>
+  @font-face {
+    font-display: swap;
+    font-family: "Goldwyn";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://www.theatlantic.com/packages/fonts/goldwyn/goldwyn-medium.woff2")
+        format("woff2"),
+      url("{{ cdnURL }}goldwyn/goldwyn-medium.woff") format("woff");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://www.theatlantic.com/packages/fonts/graphik/Graphik-Regular-Web.woff2")
+        format("woff2"),
+      url("{{ cdnURL }}graphik/Graphik-Regular-Web.woff") format("woff");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "Graphik";
+    font-style: normal;
+    font-weight: 600;
+    src: url("https://www.theatlantic.com/packages/fonts/graphik/Graphik-Semibold-Web.woff2")
+        format("woff2"),
+      url("{{ cdnURL }}graphik/Graphik-Semibold-Web.woff") format("woff");
+  }
+</style>
+<div class="c-content">
+  <figure class="c-image-container">
+    <a href="https://adclick.g.doubleclick.net/pcs/click?adurl=https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvM7AzjD2-WyaBmD6E1WSYj8OtuxAdlJkns4Km5IAtbMJYomK4hPB2GozCYE9j_gkL-H_Kn3EVNnzSq9S_TROnTiyTV4CQUr4iHJW07ooSjmlT6B-rOMd4PPwLb0ZrJCnAjWhHTHkJ2wa6CpHG8JDDOU48Fca4YrS3zF9e4i5onAzDoFox_I0ej2ny0lusEJ4rBG46EuX6lvoUMXEoWqvG3CWRsHS04OqdDMnpKVqEp_XYH9orbCjNT9WJB1FkfkqGxZipajnWNUQJALvdX7h1L0U74Tx-vjRIunJOPp0vLyu8rArb7rY_O4k1NYeRba3gUiOTe5AXGYDcZvLAAjQ%2526sai%253DAMfl-YTeFX3auYXTqMzjSPr2-7HIRG_O_1143bveDfkMKT8YIM3O9B06B9OFqCoT-XkUwKmtNxTWNbc1Nj8EE-4vvEAvyO2ah9qE96e0-AoY4-7eOEQ3WhX5x6iEuBvNr9J1%2526sig%253DCg0ArKJSzLmVhUtsMw_5EAE%2526fbs_aeid%253D%255Bgw_fbsaeid%255D%2526urlfix%253D1%2526adurl%253Dhttps%3A%2F%2Fwww.theatlantic.com%2Fpodcasts%2Fexperiment%2F%20" target="_parent">
+      <picture>
+        <img src="a_data_002/cover-small.jpg" alt="logo for this podcast" width="120" height="120">
+      </picture>
+    </a>
+  </figure>
+  <div class="c-info-container">
+    <div class="c-info-text">
+      <p class="c-lead">The Experiment</p>
+      <h1 class="c-hed">The Problem With the National Parks</h1>
+      <p class="c-dek">
+        <span class="c-dek--mobile">Rethinking our best idea</span><span class="c-dek--desktop">Stories from an unfinished country</span>
+        <span class="c-mobile-cta">
+          <a href="https://adclick.g.doubleclick.net/pcs/click?adurl=https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvM7AzjD2-WyaBmD6E1WSYj8OtuxAdlJkns4Km5IAtbMJYomK4hPB2GozCYE9j_gkL-H_Kn3EVNnzSq9S_TROnTiyTV4CQUr4iHJW07ooSjmlT6B-rOMd4PPwLb0ZrJCnAjWhHTHkJ2wa6CpHG8JDDOU48Fca4YrS3zF9e4i5onAzDoFox_I0ej2ny0lusEJ4rBG46EuX6lvoUMXEoWqvG3CWRsHS04OqdDMnpKVqEp_XYH9orbCjNT9WJB1FkfkqGxZipajnWNUQJALvdX7h1L0U74Tx-vjRIunJOPp0vLyu8rArb7rY_O4k1NYeRba3gUiOTe5AXGYDcZvLAAjQ%2526sai%253DAMfl-YTeFX3auYXTqMzjSPr2-7HIRG_O_1143bveDfkMKT8YIM3O9B06B9OFqCoT-XkUwKmtNxTWNbc1Nj8EE-4vvEAvyO2ah9qE96e0-AoY4-7eOEQ3WhX5x6iEuBvNr9J1%2526sig%253DCg0ArKJSzLmVhUtsMw_5EAE%2526fbs_aeid%253D%255Bgw_fbsaeid%255D%2526urlfix%253D1%2526adurl%253Dhttps%3A%2F%2Fwww.theatlantic.com%2Fpodcasts%2Fexperiment%2F%20" target="_parent">Full episode</a>
+        </span>
+      </p>
+    </div>
+    <div class="c-play-container">
+      <div id="playerContainer" class="c-icon-container">
+        <svg id="js-play-button" class="c-play-button is-paused" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32" aria-label="play">
+          <g class="shape">
+            <circle class="progress-track" cx="50" cy="50" r="45" stroke="#000" stroke-opacity=".25" fill="none" stroke-width="12"></circle>
+            <circle class="progress-bar" cx="50" cy="50" r="45" stroke="#000" fill="none" stroke-width="12" transform="rotate(-90 50 50)" style="stroke-dasharray: 282.743px; stroke-dashoffset: 282.743px;"></circle>
+          </g>
+          <g class="control pause" fill="#000" fill-rule="nonzero" transform="matrix(3.216786, 0, 0, 3.216786, 34.053131, 33.989922)" style="">
+            <path d="M3.222.111H.556A.444.444 0 00.11.556v8.888c0 .246.2.445.445.445h2.666a.444.444 0 00.445-.445V.556A.444.444 0 003.222.11zM9.444.111H6.778a.444.444 0 00-.445.445v8.888c0 .246.2.445.445.445h2.666a.444.444 0 00.445-.445V.556A.444.444 0 009.444.11z"></path>
+          </g>
+          <path class="control play" d="M 68.304 49.331 L 39.869 30.376 C 38.86 29.7 37.498 30.368 37.417 31.584 C 37.413 31.619 37.413 31.654 37.413 31.69 L 37.413 69.602 C 37.413 70.864 38.82 71.617 39.866 70.917 L 68.3 51.961 C 69.242 51.336 69.242 49.956 68.3 49.331 Z" fill="#000" fill-rule="nonzero" style=""></path>
+        </svg>
+      <audio></audio></div>
+      <p class="c-play-text">
+        <span class="c-player-cta">Preview</span><span class="c-desktop-cta"><a href="https://adclick.g.doubleclick.net/pcs/click?adurl=https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvM7AzjD2-WyaBmD6E1WSYj8OtuxAdlJkns4Km5IAtbMJYomK4hPB2GozCYE9j_gkL-H_Kn3EVNnzSq9S_TROnTiyTV4CQUr4iHJW07ooSjmlT6B-rOMd4PPwLb0ZrJCnAjWhHTHkJ2wa6CpHG8JDDOU48Fca4YrS3zF9e4i5onAzDoFox_I0ej2ny0lusEJ4rBG46EuX6lvoUMXEoWqvG3CWRsHS04OqdDMnpKVqEp_XYH9orbCjNT9WJB1FkfkqGxZipajnWNUQJALvdX7h1L0U74Tx-vjRIunJOPp0vLyu8rArb7rY_O4k1NYeRba3gUiOTe5AXGYDcZvLAAjQ%2526sai%253DAMfl-YTeFX3auYXTqMzjSPr2-7HIRG_O_1143bveDfkMKT8YIM3O9B06B9OFqCoT-XkUwKmtNxTWNbc1Nj8EE-4vvEAvyO2ah9qE96e0-AoY4-7eOEQ3WhX5x6iEuBvNr9J1%2526sig%253DCg0ArKJSzLmVhUtsMw_5EAE%2526fbs_aeid%253D%255Bgw_fbsaeid%255D%2526urlfix%253D1%2526adurl%253Dhttps%3A%2F%2Fwww.theatlantic.com%2Fpodcasts%2Fexperiment%2F%20" target="_parent">Full episodes here</a></span>
+      </p>
+    </div>
+  </div>
+</div>
+<script>window.dicnf = {};</script><script data-jc="41" data-jc-version="r20210414" data-jc-flags="[&quot;x%278446'9efotm(&amp;20067;&gt;8&amp;&gt;`dopb~&quot;]">(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ 'use strict';function l(a,b){function c(){}c.prototype=b.prototype;a.s=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.o=function(d,g,h){for(var e=Array(arguments.length-2),f=2;f<arguments.length;f++)e[f-2]=arguments[f];return b.prototype[g].apply(d,e)}};class m{constructor(){this.key="45350890"}}var n=class extends m{constructor(){super();this.defaultValue=!1}};var q=new n;(class{constructor(a,b){this.g=b===r?a:""}}).prototype.toString=function(){return this.g.toString()};var r={};let t=0;function u(a=null){var b=t;return a&&a.getAttribute("data-jc")===String(b)?a:document.querySelector(`[${"data-jc"}="${b}"]`)};function v(){w||(w=new x);const a=w.g[q.key];if(q instanceof n)return"boolean"===typeof a?a:q.defaultValue;throw Error();}var y=class{constructor(){this.g={}}};var x=class extends y{constructor(){super();var a=u(document.currentScript);a=a&&a.getAttribute("data-jc-flags")||"";try{const b=JSON.parse(a)[0];a="";for(let c=0;c<b.length;c++)a+=String.fromCharCode(b.charCodeAt(c)^"\u0003\u0007\u0003\u0007\b\u0004\u0004\u0006\u0005\u0003".charCodeAt(c%10));this.g=JSON.parse(a)}catch(b){}}},w;var z={},A=null; function B(a,b){void 0===b&&(b=0);if(!A){A={};for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),d=["+/=","+/","-_=","-_.","-_"],g=0;5>g;g++){var h=c.concat(d[g].split(""));z[g]=h;for(var e=0;e<h.length;e++){var f=h[e];void 0===A[f]&&(A[f]=e)}}}b=z[b];c=[];for(d=0;d<a.length;d+=3){var p=a[d],k=(g=d+1<a.length)?a[d+1]:0;f=(h=d+2<a.length)?a[d+2]:0;e=p>>2;p=(p&3)<<4|k>>4;k=(k&15)<<2|f>>6;f&=63;h||(f=64,g||(k=64));c.push(b[e],b[p],b[k]||"",b[f]||"")}return c.join("")};function C(){}var D="function"==typeof Uint8Array;const E=[];function F(a){let b=a.i+a.l;a.g[b]||(a.h=a.g[b]={})}function G(a,b,c){b<a.i?a.g[b+a.l]=c:(F(a),a.h[b]=c);return a}function H(a){if(a.j)for(var b in a.j){var c=a.j[b];if(Array.isArray(c))for(var d=0;d<c.length;d++)c[d]&&H(c[d]);else c&&H(c)}return a.g} C.prototype.m=D?function(){var a=Uint8Array.prototype.toJSON;Uint8Array.prototype.toJSON=function(){return B(this)};try{return JSON.stringify(this.g&&H(this),I)}finally{Uint8Array.prototype.toJSON=a}}:function(){return JSON.stringify(this.g&&H(this),I)};function I(a,b){return"number"!==typeof b||!isNaN(b)&&Infinity!==b&&-Infinity!==b?b:String(b)}C.prototype.toString=function(){return H(this).toString()};function J(a){var b=a;a=K;this.j=null;b||(b=[]);this.l=-1;this.g=b;a:{if(b=this.g.length){--b;var c=this.g[b];if(!(null===c||"object"!=typeof c||Array.isArray(c)||D&&c instanceof Uint8Array)){this.i=b- -1;this.h=c;break a}}this.i=Number.MAX_VALUE}if(a)for(b=0;b<a.length;b++)c=a[b],c<this.i?(c+=-1,this.g[c]=this.g[c]||E):(F(this),this.h[c]=this.h[c]||E)}l(J,C);var K=[6];const L=["platform","platformVersion","architecture","model","uaFullVersion"];var M=()=>{var a=window;return a.navigator&&a.navigator.userAgentData&&"function"===typeof a.navigator.userAgentData.getHighEntropyValues?a.navigator.userAgentData.getHighEntropyValues(L).then(b=>{var c=new J;c=G(c,1,b.platform);c=G(c,2,b.platformVersion);c=G(c,3,b.architecture);c=G(c,4,b.model);return G(c,5,b.uaFullVersion)}):null};window.viewReq=[];const N=a=>{const b=new Image;b.src=a.replace("&amp;","&");window.viewReq.push(b)};t=41;window.vu=a=>{if(v()){const b=M();if(null!=b){b.then(c=>{c=c.m();for(var d=[],g=0,h=0;h<c.length;h++){var e=c.charCodeAt(h);255<e&&(d[g++]=e&255,e>>=8);d[g++]=e}c=B(d,3);0<c.length&&(c="&uach="+c,a="&adurl="==a.substring(a.length-7)?a.substring(0,a.length-7)+c+"&adurl=":a+c);N(a)});return}}N(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pcs/view?xai\x3dAKAOjst6w1nmEd4PNhmSfIovt_-g46MvFZIglncYbP0N2z7nLQhjHzFFC66gmEZsmXkBQOfxfXlxoR4D1l7a5ZFygaxSk9yl1RicAFmmJ6qrolTVJVHGIkIeTVpBaZVsADG3eQddrV5N7lnSfK48PwsPsDg_zmPDQnbJh6xocEybydnA_7d_dkpcEB83lAZoTWoag9Hv-_pukxeOcC2yrrGegUXbTOdlas8FhfA-KpKWFJx4f3x7exLBZT-ASZL-uFJsiY1nhR2WHHfeox0tgknLkXjvjnYH3744x2Rnt7atP01FNWWykHTWBCZ1VTeISv9jS-CNzHDwf-uivAoxY2KFl0NuRnrbyw\x26sai\x3dAMfl-YRptoSYB--nc-S08miAEE16qGnNgO9z9qvfHa88auJW5pNkkcghV2mHeKCn9FSTjTRghqQSTK30xkLHh9ezINRIYnx6x4kadot2jJdIL-gz0YJCSVf9vptZrmu611b7\x26sig\x3dCg0ArKJSzJF_FnN2R5AaEAE\x26urlfix\x3d1\x26adurl\x3d")</script><div class="GoogleActiveViewInnerContainer" style="left:0px;top:0px;width:100%;height:100%;position:fixed;pointer-events:none;z-index:-9999;"></div><div style="display:inline" class="GoogleActiveViewElement" data-google-av-cxn="https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjsuPNCUFYF38JwjWfX5-9dauZHszHT-TSw8XuHkvu1l7WjNM3GHJwgX8_nX8EcLh6iumIWr6Q8_4hrv0Tg3tmuboC0EYtGmiB8eNnDTIz54&amp;sig=Cg0ArKJSzLPwbMbJTdt2EAE" data-google-av-adk="834505678" data-google-av-metadata="la=0&amp;xdi=0&amp;" data-google-av-override="-1" data-google-av-dm="2" data-google-av-immediate="" data-google-av-aid="0" data-google-av-naid="1" data-google-av-slift="" data-google-av-cpmav="" data-google-av-btr="https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjsspqvrboOZUQbxxNvb47XDMAXgEvbnSzpwZYncRQer2Swi-bly74-vnlTiBPMCr81rQLf2JbAmev7sfj1A0V7Xyf-q5t0Mj8R8_4ZUhw7OzVRSfEjd7w0wnnlZAYpPPrtBCREKC0RSNTYqhFk3j2df0oHsHlYDjE4zd95AdXci6HwmRnuomoOy5juRVH9mRFVKCCtzvdjRoqB48kpw89C3D0ya2hBXm-JXuQJveMq0a3M1MR6iF3Jg8mEth3pzBqBhykH2ygKKHc0GBhnAlFmarrEiJYXiEFUk0NLd5QwH4o0l7tYg3-grp_rnL8dcnA6vHDPlCcgaMD18gWLhHykBoKlwKQXFr&amp;sai=AMfl-YQyErujKNkM6rzp_KmGcfPFLBdtGqdHluZASPhcXiFOQP6ctd0l353pulbZT9TaRZZIM9DN4aOWHltXl-EsiondnduvSRe0s1DJHcIgCFrWX70_oIZ3L3aqR95JvbKO&amp;sig=Cg0ArKJSzP-xZsfSPVsrEAE&amp;urlfix=1&amp;adurl=" data-google-av-itpl="19" data-google-av-rs="4" data-google-av-flags="[&quot;x%278440'9efotm(&amp;753374%2bejvf/%27844&gt;'9wuvb$&amp;56533&gt;!=nehu`/!637854$?wqrf+*01503064%2bejvf~&quot;]" data-creative-load-listener=""><script>
+  window.settings = {
+    clickthroughUrl: "https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvM7AzjD2-WyaBmD6E1WSYj8OtuxAdlJkns4Km5IAtbMJYomK4hPB2GozCYE9j_gkL-H_Kn3EVNnzSq9S_TROnTiyTV4CQUr4iHJW07ooSjmlT6B-rOMd4PPwLb0ZrJCnAjWhHTHkJ2wa6CpHG8JDDOU48Fca4YrS3zF9e4i5onAzDoFox_I0ej2ny0lusEJ4rBG46EuX6lvoUMXEoWqvG3CWRsHS04OqdDMnpKVqEp_XYH9orbCjNT9WJB1FkfkqGxZipajnWNUQJALvdX7h1L0U74Tx-vjRIunJOPp0vLyu8rArb7rY_O4k1NYeRba3gUiOTe5AXGYDcZvLAAjQ%2526sai%253DAMfl-YTeFX3auYXTqMzjSPr2-7HIRG_O_1143bveDfkMKT8YIM3O9B06B9OFqCoT-XkUwKmtNxTWNbc1Nj8EE-4vvEAvyO2ah9qE96e0-AoY4-7eOEQ3WhX5x6iEuBvNr9J1%2526sig%253DCg0ArKJSzLmVhUtsMw_5EAE%2526fbs_aeid%253D%255Bgw_fbsaeid%255D%2526urlfix%253D1%2526adurl%253Dhttps%3A%2F%2Fwww.theatlantic.com%2Fpodcasts%2Fexperiment%2F%20",
+    audio: "https://adclick.g.doubleclick.net/pcs/click%253Fxai%253DAKAOjsvM7AzjD2-WyaBmD6E1WSYj8OtuxAdlJkns4Km5IAtbMJYomK4hPB2GozCYE9j_gkL-H_Kn3EVNnzSq9S_TROnTiyTV4CQUr4iHJW07ooSjmlT6B-rOMd4PPwLb0ZrJCnAjWhHTHkJ2wa6CpHG8JDDOU48Fca4YrS3zF9e4i5onAzDoFox_I0ej2ny0lusEJ4rBG46EuX6lvoUMXEoWqvG3CWRsHS04OqdDMnpKVqEp_XYH9orbCjNT9WJB1FkfkqGxZipajnWNUQJALvdX7h1L0U74Tx-vjRIunJOPp0vLyu8rArb7rY_O4k1NYeRba3gUiOTe5AXGYDcZvLAAjQ%2526sai%253DAMfl-YTeFX3auYXTqMzjSPr2-7HIRG_O_1143bveDfkMKT8YIM3O9B06B9OFqCoT-XkUwKmtNxTWNbc1Nj8EE-4vvEAvyO2ah9qE96e0-AoY4-7eOEQ3WhX5x6iEuBvNr9J1%2526sig%253DCg0ArKJSzLmVhUtsMw_5EAE%2526fbs_aeid%253D%255Bgw_fbsaeid%255D%2526urlfix%253D1%2526adurl%253Dhttps%3A%2F%2Ftpc.googlesyndication.com%2Fsimgad%2F7562367923445636451%3F",
+    lead: "The Experiment",
+    title: "The Problem With the National Parks",
+    mobileDek: "Rethinking our best idea",
+    mobileCta: "Full episode",
+    playerCta: "Preview",
+  }
+</script>
+<script src="a_data_002/wnyc-the-experiment.js"></script></div><script src="a_data_003/rx_lidar.js"></script><script type="text/javascript">osdlfm(-1,'','Bx1hRb9V5YMSAMtWvmwT5mriQDAAAAAAQATgByAEJwAIC4AIA4AQBoAYf0ggHCIDhgEAQAQ','',834505678,true,'la\x3d0\x26xdi\x3d0\x26',3,'CAASPeRo4NmPsQ5r1edVIBbTFkIdXaQ2YWNVI4H-YDpMHT5sd-0USih5YW7Iz4wCNk91NxWIpe3icwnHpCZaNoY','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjsuPNCUFYF38JwjWfX5-9dauZHszHT-TSw8XuHkvu1l7WjNM3GHJwgX8_nX8EcLh6iumIWr6Q8_4hrv0Tg3tmuboC0EYtGmiB8eNnDTIz54\x26sig\x3dCg0ArKJSzLPwbMbJTdt2EAE','','[\x22x%278440\x279efotm(\x26753374%2bejvf/%27844\x3e\x279wuvb$\x2656533\x3e!\x3dnehu`/!637854$?wqrf+*01503064%2bejvf~\x22]');</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB6SURBVBjTbZEBDsAgCAPLD/j/axdpK2CGi5N4lI4B/xGMencGZN2mDs6KQ61DKzs3mVk7S5hdOl66NYe2ncA1dHIjj+r0DQx1aas52g1UJaJYaHN/Y2xxnbpi+9hGplObWt9FnM/WVu2eoOzmojXveLXp2T+qJ0iO8AfwGAVv1ctPJAAAAABJRU5ErkJggg==') !important;"></div><img src="a_data_002/p-b0K-eQJGBXxXE.gif" style="display: none;" alt="Quantcast" width="1" height="1" border="0"><img src="a_data_002/p-b0K-eQJGBXxXE_002.gif" width="1" height="1"><noscript class="MOAT-thewire746082389130?moatClientLevel1=15754956&amp;moatClientLevel2=2812826563&amp;moatClientLevel3=5667079329&amp;moatClientLevel4=138346426818&amp;moatClientSlicer1=21951671389&amp;moatClientSlicer2=21954716346&amp;zMoatPS=native-article-related&amp;zMoatST=&amp;zMoatSZ=1x2"></noscript>
+<script src="a_data_002/moatad.js" type="text/javascript"></script><style type="text/css">
+/* Hide all 1x1 pixels */
+img[width="1"][height="1"] {
+  position: absolute;
+  bottom: 0;
+  z-index: -100000000;
+  opacity: 0;
+}
+</style><img src="a_data_002/custom-ads.gif" style="position: absolute; top: -1px; left: -1px; width:0; height:0; visibility:hidden;" width="1" height="1"></body></html>

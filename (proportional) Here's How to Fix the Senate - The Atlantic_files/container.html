@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>SafeFrame Container</title>
+    <script type="text/javascript" async="" src="container_data/tag149836"></script><script type="text/javascript" async="" src="container_data/banner.js"></script><script type="text/javascript" src="container_data/bg.html"></script><script>
+(function(){/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+var m=this||self,w=function(a){return a};var x;var z=function(a,b,c){this.g=c===y?a:""};z.prototype.toString=function(){return this.g.toString()};var y={};var C=function(a,b){var c=void 0===c?{}:c;this.error=a;this.context=b.context;this.msg=b.message||"";this.id=b.id||"jserror";this.meta=c};var D=function(a){D[" "](a);return a};D[" "]=function(){};var E=/^(?:([^:/?#.]+):)?(?:\/\/(?:([^\\/?#]*)@)?([^\\/?#]*?)(?::([0-9]+))?(?=[\\/?#]|$))?([^?#]+)?(?:\?([^#]*))?(?:#([\s\S]*))?$/;var I=function(a,b){if(a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var J=/^https?:\/\/(\w|-)+\.cdn\.ampproject\.(net|org)(\?|\/|$)/,K=function(a,b){this.g=a;this.h=b},L=function(a,b){this.url=a;this.j=!!b;this.depth=null};var M=function(a){m.google_image_requests||(m.google_image_requests=[]);var b=m.document.createElement("img");b.src=a;m.google_image_requests.push(b)};var N=function(){this.i="&";this.h={};this.o=0;this.g=[]},O=function(a,b){var c={};c[a]=b;return[c]},U=function(a,b,c,d,g){var e=[];I(a,function(f,k){(f=T(f,b,c,d,g))&&e.push(k+"="+f)});return e.join(b)},T=function(a,b,c,d,g){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var e=[],f=0;f<a.length;f++)e.push(T(a[f],b,c,d+1,g));return e.join(c[d])}}else if("object"==typeof a)return g=g||0,2>g?encodeURIComponent(U(a,b,c,d,g+1)):"...";return encodeURIComponent(String(a))},W=function(a){var b="https://pagead2.googlesyndication.com/pagead/gen_204?id=jserror&",c=V(a)-27;if(0>c)return"";a.g.sort(function(n,A){return n-A});for(var d=null,g="",e=0;e<a.g.length;e++)for(var f=a.g[e],k=a.h[f],l=0;l<k.length;l++){if(!c){d=null==d?f:d;break}var h=U(k[l],a.i,",$");if(h){h=g+h;if(c>=h.length){c-=h.length;b+=h;g=a.i;break}d=null==d?f:d}}a="";null!=d&&(a=g+"trn="+d);return b+a+""},V=function(a){var b=1,c;for(c in a.h)b=c.length>b?c.length:b;return 3997-b-a.i.length-1};var X=function(a){if(.01>Math.random())try{if(a instanceof N)var b=a;else b=new N,I(a,function(d,g){var e=b,f=e.o++;d=O(g,d);e.g.push(f);e.h[f]=d});var c=W(b);c&&M(c)}catch(d){}};var Y=function(a){var b=a.toString();a.name&&-1==b.indexOf(a.name)&&(b+=": "+a.name);a.message&&-1==b.indexOf(a.message)&&(b+=": "+a.message);if(a.stack){a=a.stack;var c=b;try{-1==a.indexOf(c)&&(a=c+"\n"+a);for(var d;a!=d;)d=a,a=a.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=a.replace(/\n */g,"\n")}catch(g){b=c}}return b};var aa=/^([^;]+);(\d+);([\s\S]*)$/,ba=function(){var a=window.name,b=aa.exec(a);if(null===b)throw Error("Cannot parse serialized data. "+a.substring(0,50));a=+b[2];var c=b[3];if(a>c.length)throw Error("Parsed content size doesn't match. "+a+":"+c.length);return{m:b[1],content:c.substr(0,a),l:c.substr(a)}};var Z=null,da=function(a){var b=a.length,c=3*b/4;c%3?c=Math.floor(c):-1!="=.".indexOf(a[b-1])&&(c=-1!="=.".indexOf(a[b-2])?c-2:c-1);var d=new Uint8Array(c),g=0;ca(a,function(e){d[g++]=e});return d.subarray(0,g)},ca=function(a,b){function c(l){for(;d<a.length;){var h=a.charAt(d++),n=Z[h];if(null!=n)return n;if(!/^[\s\xa0]*$/.test(h))throw Error("Unknown base64 encoding at char: "+h);}return l}ea();for(var d=0;;){var g=c(-1),e=c(0),f=c(64),k=c(64);if(64===k&&-1===g)break;b(g<<2|e>>4);64!=f&&(b(e<<4&240|f>>2),64!=k&&b(f<<6&192|k))}},ea=function(){if(!Z){Z={};for(var a="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),b=["+/=","+/","-_=","-_.","-_"],c=0;5>c;c++)for(var d=a.concat(b[c].split("")),g=0;g<d.length;g++){var e=d[g];void 0===Z[e]&&(Z[e]=g)}}};(function(a){if(window.name){var b=function(e){try{var f=new N;f.g.push(1);f.h[1]=O("context",507);e.error&&e.meta&&e.id||(e=new C(e,{message:Y(e)}));if(e.msg){var k=e.msg.substring(0,512);f.g.push(2);f.h[2]=O("msg",k)}var l=[e.meta||{}];f.g.push(3);f.h[3]=l;l=m;k=[];e=null;do{var h=l;try{var n;if(n=!!h&&null!=h.location.href)b:{try{D(h.foo);n=!0;break b}catch(B){}n=!1}var A=n}catch(B){A=!1}if(A){var r=h.location.href;e=h.document&&h.document.referrer||null}else r=e,e=null;k.push(new L(r||""));try{l=h.parent}catch(B){l=null}}while(l&&h!=l);r=0;for(var t=k.length-1;r<=t;++r)k[r].depth=t-r;h=m;if(h.location&&h.location.ancestorOrigins&&h.location.ancestorOrigins.length==k.length-1)for(t=1;t<k.length;++t){var u=k[t];u.url||(u.url=h.location.ancestorOrigins[t-1]||"",u.j=!0)}var p=new L(m.location.href,!1);h=null;var F=k.length-1;for(u=F;0<=u;--u){var q=k[u];!h&&J.test(q.url)&&(h=q);if(q.url&&!q.j){p=q;break}}q=null;var fa=k.length&&k[F].url;0!=p.depth&&fa&&(q=k[F]);var v=new K(p,q);if(v.h){var ha=v.h.url||"";f.g.push(4);f.h[4]=O("top",ha)}var G={url:v.g.url||""};if(v.g.url){var H=v.g.url.match(E),P=H[1],Q=H[3],R=H[4];p="";P&&(p+=P+":");Q&&(p+="//",p+=Q,R&&(p+=":"+R));var S=p}else S="";G=[G,{url:S}];f.g.push(5);f.h[5]=G;X(f)}catch(B){try{X({context:"ecmserr",rctx:507,msg:Y(B),url:v&&v.g.url})}catch(ia){}}};try{var c=ba(),d=JSON.parse(c.l),g=void 0===d.encryptionMode?null:d.encryptionMode;window.name="";a(c.content,g,function(e){d.goog_safeframe_hlt&&(m.goog_safeframe_hlt=d.goog_safeframe_hlt);d._context&&(m.AMP_CONTEXT_DATA=d._context);m.sf_={v:c.m,cfg:d};document.open("text/html","replace");if(void 0===x){var f=null;var k=m.trustedTypes;if(k&&k.createPolicy){try{f=k.createPolicy("goog#html",{createHTML:w,createScript:w,createScriptURL:w})}catch(l){m.console&&m.console.error(l.message)}x=f}else x=f}e=(f=x)?f.createHTML(e):e;e=new z(e,null,y);document.write(e instanceof z&&e.constructor===z?e.g:"type_error:SafeHtml");document.close();m.sf_&&(window.name="")},b)}catch(e){b(e)}}})(function(a,b,c){if(2===b){b=new TextDecoder;var d=/<startguard>(.*)<endguard>/g.exec(a);if(a=b.decode.call(b,da(d&&d[1]?d[1]:a)))b=a.toLowerCase(),a=-1<b.indexOf("<!doctype")||-1<b.indexOf("<html")?a:"<!doctype html><html><head></head><body>"+a+"</body></html>"}c(a)});}).call(this);
+    </script><script>var jscVersion = 'r20210414';</script><script>var google_casm=[];</script></head><body class="jar" topmargin="0" marginwidth="0" marginheight="0" leftmargin="0"><ins style="position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; padding: 0px; overflow: hidden; visibility: hidden;"><iframe allowtransparency="false" hspace="0" marginwidth="0" marginheight="0" scrolling="no" vspace="0" src="container_data/sync.html" style="margin: 0px; padding: 0px; position: relative; left: 0px; top: 0px; opacity: 1; visibility: visible; overflow: hidden; border: medium none; float: none; width: 1px; height: 1px;" frameborder="0"></iframe></ins><script>window.dicnf = {};</script><script data-jc="41" data-jc-version="r20210414" data-jc-flags="[&quot;x%278446'9efotm(&amp;20067;&gt;8&amp;&gt;`dopb~&quot;]">(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ 'use strict';function l(a,b){function c(){}c.prototype=b.prototype;a.s=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.o=function(d,g,h){for(var e=Array(arguments.length-2),f=2;f<arguments.length;f++)e[f-2]=arguments[f];return b.prototype[g].apply(d,e)}};class m{constructor(){this.key="45350890"}}var n=class extends m{constructor(){super();this.defaultValue=!1}};var q=new n;(class{constructor(a,b){this.g=b===r?a:""}}).prototype.toString=function(){return this.g.toString()};var r={};let t=0;function u(a=null){var b=t;return a&&a.getAttribute("data-jc")===String(b)?a:document.querySelector(`[${"data-jc"}="${b}"]`)};function v(){w||(w=new x);const a=w.g[q.key];if(q instanceof n)return"boolean"===typeof a?a:q.defaultValue;throw Error();}var y=class{constructor(){this.g={}}};var x=class extends y{constructor(){super();var a=u(document.currentScript);a=a&&a.getAttribute("data-jc-flags")||"";try{const b=JSON.parse(a)[0];a="";for(let c=0;c<b.length;c++)a+=String.fromCharCode(b.charCodeAt(c)^"\u0003\u0007\u0003\u0007\b\u0004\u0004\u0006\u0005\u0003".charCodeAt(c%10));this.g=JSON.parse(a)}catch(b){}}},w;var z={},A=null; function B(a,b){void 0===b&&(b=0);if(!A){A={};for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),d=["+/=","+/","-_=","-_.","-_"],g=0;5>g;g++){var h=c.concat(d[g].split(""));z[g]=h;for(var e=0;e<h.length;e++){var f=h[e];void 0===A[f]&&(A[f]=e)}}}b=z[b];c=[];for(d=0;d<a.length;d+=3){var p=a[d],k=(g=d+1<a.length)?a[d+1]:0;f=(h=d+2<a.length)?a[d+2]:0;e=p>>2;p=(p&3)<<4|k>>4;k=(k&15)<<2|f>>6;f&=63;h||(f=64,g||(k=64));c.push(b[e],b[p],b[k]||"",b[f]||"")}return c.join("")};function C(){}var D="function"==typeof Uint8Array;const E=[];function F(a){let b=a.i+a.l;a.g[b]||(a.h=a.g[b]={})}function G(a,b,c){b<a.i?a.g[b+a.l]=c:(F(a),a.h[b]=c);return a}function H(a){if(a.j)for(var b in a.j){var c=a.j[b];if(Array.isArray(c))for(var d=0;d<c.length;d++)c[d]&&H(c[d]);else c&&H(c)}return a.g} C.prototype.m=D?function(){var a=Uint8Array.prototype.toJSON;Uint8Array.prototype.toJSON=function(){return B(this)};try{return JSON.stringify(this.g&&H(this),I)}finally{Uint8Array.prototype.toJSON=a}}:function(){return JSON.stringify(this.g&&H(this),I)};function I(a,b){return"number"!==typeof b||!isNaN(b)&&Infinity!==b&&-Infinity!==b?b:String(b)}C.prototype.toString=function(){return H(this).toString()};function J(a){var b=a;a=K;this.j=null;b||(b=[]);this.l=-1;this.g=b;a:{if(b=this.g.length){--b;var c=this.g[b];if(!(null===c||"object"!=typeof c||Array.isArray(c)||D&&c instanceof Uint8Array)){this.i=b- -1;this.h=c;break a}}this.i=Number.MAX_VALUE}if(a)for(b=0;b<a.length;b++)c=a[b],c<this.i?(c+=-1,this.g[c]=this.g[c]||E):(F(this),this.h[c]=this.h[c]||E)}l(J,C);var K=[6];const L=["platform","platformVersion","architecture","model","uaFullVersion"];var M=()=>{var a=window;return a.navigator&&a.navigator.userAgentData&&"function"===typeof a.navigator.userAgentData.getHighEntropyValues?a.navigator.userAgentData.getHighEntropyValues(L).then(b=>{var c=new J;c=G(c,1,b.platform);c=G(c,2,b.platformVersion);c=G(c,3,b.architecture);c=G(c,4,b.model);return G(c,5,b.uaFullVersion)}):null};window.viewReq=[];const N=a=>{const b=new Image;b.src=a.replace("&amp;","&");window.viewReq.push(b)};t=41;window.vu=a=>{if(v()){const b=M();if(null!=b){b.then(c=>{c=c.m();for(var d=[],g=0,h=0;h<c.length;h++){var e=c.charCodeAt(h);255<e&&(d[g++]=e&255,e>>=8);d[g++]=e}c=B(d,3);0<c.length&&(c="&uach="+c,a="&adurl="==a.substring(a.length-7)?a.substring(0,a.length-7)+c+"&adurl=":a+c);N(a)});return}}N(a)};}).call(this);</script><script>vu("https://securepubads.g.doubleclick.net/pagead/adview?ai\x3dCrN_dcdV5YPLtE8SImwSj3az4BKr17aFhqt_V1KcMloLNhYgWEAEgxKiAImDJhoCA0KTkD6AB8cHg-wLIAQngAgCoAwGqBMACT9CvEfOa5zC16Z9Mxflo72jiROxWLPaw09YnWsPBFHJc9xUKLjf8pVZ57Nr5DzxU2GJWn1V5k6gZKrwSJORqTl7AXqa-pbDKmze3wG6XwFXtaWhkVifM_KW9HyeaBFzaqGi3yt58qFAqbF5_B63ok26eJGlkvv-j0xn8O4ZY5Dt-ED7ITXoiNWY2DhLu4yyL4qvo8s994XE_BFDmsIklpUYLGLyC9WeOJOyVbh5ZtcKqbPn9ueCPKxgPnVQGBn4H2mxBYUznZTR0eIS6Rg8TlGaIGU5omHTIvHv418oFMpNWYGHNxKhR6aRe0v8RWGR5kejzB5EeAnWaKpAVngMGhRHAe9HM0U7roR92VO-irPbnLw-04d2iKEz-TYry1KsR8dCBIb5kAwRgv7D3HNY4I_xA0k0gRqQzBYfpaNAmTs3ABKrjsIusA-AEAZIFBAgEGAGSBQQIBRgEoAYRgAf3vZ-EAagH1ckbqAfw2RuoB_LZG6gHjs4bqAeT2BuoB7oGqAfulrECqAemvhuoB-zVG9gHAPIHBBDA5zrSCAkIgOGAQBABGB2ACgPICwHYEwyyFxoKGAgAEhRwdWItNzIwODkyMzI3NzI2MDg4OA\x26sigh\x3dMEeXekrh-S8")</script><div class="GoogleActiveViewInnerContainer" style="left:0px;top:0px;width:100%;height:100%;position:fixed;pointer-events:none;z-index:-9999;"></div><div style="display:inline" class="GoogleActiveViewElement" data-google-av-cxn="https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjstWeOcsI2yAyrWrdPyI4W5fBkhNQ7V5JJN5AZEVl2zz0Cqcm1F4ndopgc_1IqmIYzE3q24RTAe5R6cspjzQ4qIu2LV58c5E6o1JrUti4v_OX66S3Ond-XCeMQYEWg&amp;sai=AMfl-YQvkgnCshMjM36CO9GfS-9uph0AlC-KkFgDAb08shOUu8yTvlVOTUwfjhqWb6ij_INixdFJDyyzI-3iaVd_niuG9T9zOb3urrjxa1sRWtkRLFU5iBS4OnTplkKTuXCb&amp;sig=Cg0ArKJSzIIixbtnRxB3EAE&amp;cid=CAASPeRoia6woxNkSvHqXEOotmd5bt14Sa4rzZp1wxgt0fMrDqbn05TOd4FZO1O2eg9cr13EkTYN1YOH8h5BZ24" data-google-av-adk="1768974382" data-google-av-metadata="la=0&amp;xdi=0&amp;" data-google-av-override="-1" data-google-av-dm="2" data-google-av-immediate="" data-google-av-aid="0" data-google-av-naid="1" data-google-av-slift="" data-google-av-cpmav="" data-google-av-btr="" data-google-av-itpl="20" data-google-av-rs="4" data-google-av-flags="[&quot;x%278440'9efotm(&amp;753374%2bejvf/%27844&gt;'9wuvb$&amp;56533&gt;!=nehu`/!637854$?wqrf+*01503064%2bejvf~&quot;]" data-creative-load-listener=""><div id="revjet-tag-0"><ins id="REVJET_Tag_1_wrpr" style="margin: 0px; padding: 0px; position: relative; left: 0px; top: 0px; opacity: 1; visibility: visible; overflow: hidden; border: medium none; float: none; display: inline-block; width: 300px; height: 250px;"><ins id="REVJET_Tag_1" style="margin: 0px; padding: 0px; position: relative; left: 0px; top: 0px; opacity: 1; visibility: visible; overflow: hidden; border: medium none; float: none; display: block; width: 300px; height: 250px;"><iframe allowtransparency="false" hspace="0" marginwidth="0" marginheight="0" scrolling="no" vspace="0" name="revjet-single-iframe" data-revjet-options="{&quot;embd_tag_id&quot;:&quot;revjet-tag-0&quot;,&quot;responsive&quot;:false,&quot;autoscale&quot;:false,&quot;delivery_method&quot;:&quot;banner&quot;,&quot;_imp_banner_size&quot;:&quot;300x250&quot;}" style="margin: 0px; padding: 0px; position: relative; left: 0px; top: 0px; opacity: 1; visibility: visible; overflow: hidden; border: medium none; float: none;" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;50651694/44911862&lt;/title&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;                       
+			var click_url = 'https://revjet.lendingtree.com/click/tag149836/8756688448795860904/1?_crm=2&amp;__ads=63c29bdbc3830655fff144cc56fee29b&amp;adkey=027&amp;hx=3756769&amp;agrp=eg4885&amp;slot=tag149836&amp;impts=1618597234329&amp;ad=crv74558&amp;_cx=$$CX$$&amp;_cy=$$CY$$&amp;_celt=$$ELT-ID$$&amp;_celtid=$$ELT-IDS$$';
+			var click_target ='_blank';
+		&lt;/script&gt;
+		&lt;script src=&quot;//cdn.revjet.com/~cdn/JS/03/elements-2.7.0.js&quot; type=&quot;text/javascript&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+		&lt;!--  --&gt;
+		&lt;!--  --&gt;
+		&lt;style type=&quot;text/css&quot;&gt;
+			#revjet_container {
+			overflow:hidden;
+			position:relative;
+			font-size:12px;
+			color:#000;
+			font-family:Arial, Helvetica, sans-serif;
+			text-align:left;
+			}
+			#outer_container {
+			position:relative;
+			}
+			.bar-elm {
+			display: table;
+			position:absolute;
+			}
+			.bar-elm-row {
+			display: table-row;
+			height: 100%;
+			}
+			.bar-elm .image-elm {
+			position:absolute;
+			float:left;
+			overflow:hidden;
+			top:0;
+			left:0;
+			font-size:0px;
+			}
+			.bar-elm-cell {
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+			}
+			* {
+			padding:0;
+			margin:0;
+			text-rendering:optimizeLegibility;
+			-moz-osx-font-smoothing:grayscale;
+			font-smoothing:antialiased;
+			-webkit-font-smoothing:antialiased;
+			}
+			a {
+			text-decoration:none;
+			color:#000;
+			}
+			a:hover, a:hover * {
+			text-decoration:none;
+			}
+			img, a img{
+			border:none;
+			}
+			li {
+			list-style-type:none;
+			}
+			#content_body.animation_stopped *, .animation_stopped #revjet_container * {
+			-webkit-animation: none !important;
+			animation: none !important;
+			}
+			#content_body.animation_paused *, .animation_paused #revjet_container * {
+				-webkit-animation-play-state: paused !important;
+				animation-play-state: paused !important;
+			}
+			* {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+			body {
+			overflow: hidden;
+			}
+			.text-elm, .flash-elm, .block-elm, .html5-elm, .dropdown-elm, .textfield-elm, .animimage-elm{
+			position:absolute;
+			float:left;
+			display:block;
+			}
+			.ic0n-elm, .image-elm{
+			position:absolute;
+			float:left;
+			overflow:hidden;
+			display:block;
+			}
+			.ic0n-elm .ic0n-container{
+			display:table;
+			width:100%;
+			height:100%;
+			}
+			.ic0n-elm .ic0n-container *{
+			box-sizing:border-box;
+			}
+			.ic0n-elm .ic0n-container div{
+			display:table-cell;
+			}
+			.ic0n-elm .ic0n-wrapper{
+			width:1px;
+			white-space:nowrap;
+			}
+			.ic0n-elm img, .ic0n-elm span{
+			display: inline-block;
+			vertical-align: middle;
+			}
+			.image-elm img{
+			width:100%;
+			height:100%;
+			}
+			.button-elm{
+			position:absolute;
+			display:block;
+			}
+			.button-elm .text-elm{
+			position:absolute;
+			float:left;
+			top:0;
+			left:0;
+			}
+			.button-elm .image-elm{
+			position:absolute;
+			float:left;
+			overflow:hidden;
+			top:0;
+			left:0;
+			}
+		&lt;/style&gt;
+
+		&lt;!--  --&gt;
+		
+		&lt;!--  --&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			/*Animation sequence fix*/
+			(function () {
+			var fired = false;
+			function animationSequenceFix() {
+			if (!fired) {
+				var elements = document.querySelectorAll('.animated-element'),
+				 pfx = [&quot;webkit&quot;, &quot;moz&quot;, &quot;MS&quot;, &quot;o&quot;, &quot;&quot;];
+			
+			function PrefixedEvent(element, type, callback) {
+			for (var p = 0; p &lt; pfx.length; p++) {
+			if (!pfx[p]) type = type.toLowerCase();
+			element.addEventListener(pfx[p] + type, callback, false);
+			}
+			}
+				elements = Array.prototype.slice.call(elements);
+				for (var i = 0, l = elements.length; i &lt; l; i++) {
+			PrefixedEvent(elements[i],'AnimationEnd', function (e) {
+			e.target.classList.add('run-next');
+			});
+				}
+				fired = true;
+			}
+				}
+			
+			if (window.addEventListener) {
+				window.addEventListener('message', function (e) { if (e.data &amp;&amp; e.data === 'update') { animationSequenceFix();} }, false);
+			} else {
+				window.attachEvent(&quot;onmessage&quot;, function (e) { if (e.data &amp;&amp; e.data === 'update') { animationSequenceFix();} });
+			}
+			if (document.addEventListener) { document.addEventListener('DOMContentLoaded', animationSequenceFix, false); } else { document.attachEvent(&quot;onDOMContentLoaded&quot;, animationSequenceFix); }
+			}());
+			
+			/* TextField onEnter */
+			(function() {
+			function Fill_Elm_Behavior(){
+				var elmClass = 'textfield-elm-input';
+				var elmList = document.querySelectorAll('.'+elmClass);
+				for (var i=0;i&lt;elmList.length;i++) {
+					applyEvents(elmList[i]);
+				}
+				function applyEvents(elm) {
+					var Fill = elm;
+					Fill.addEventListener(&quot;keydown&quot;, function(e){
+						var keynum;
+						if (window.event) keynum = e.keyCode;
+						else if (e.which) keynum = e.which;
+						else return;
+						if (keynum == 13) window.open('https://revjet.lendingtree.com/click/tag149836/8756688448795860904/1?_crm=2&amp;__ads=63c29bdbc3830655fff144cc56fee29b&amp;adkey=027&amp;hx=3756769&amp;agrp=eg4885&amp;slot=tag149836&amp;impts=1618597234329&amp;ad=crv74558&amp;_cx=$$CX$$&amp;_cy=$$CY$$&amp;_celt=$$ELT-ID$$&amp;_celtid=$$ELT-IDS$$', '_blank');
+					}, false);
+				}
+			}
+			if (window.addEventListener) {
+				window.addEventListener('load', function() {Fill_Elm_Behavior();}, false);
+			} else {
+				window.attachEvent(&quot;onload&quot;, function() {Fill_Elm_Behavior();});
+			}
+			})();
+			
+		&lt;/script&gt;
+			&lt;/head&gt;
+	&lt;body id=&quot;content_body&quot;&gt;
+&lt;!-- revjet-tracking --&gt;
+		&lt;img src=&quot;https://pix.lendingtree.com/interaction/999?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot; style=&quot;position:absolute; visibility:hidden&quot;&gt;
+
+&lt;!-- /revjet-tracking --&gt;
+		&lt;style&gt;
+    #container,#el50651688 { width: 300px; height: 250px; overflow: hidden; position: relative; font-size: 12px; color: #000; font-family: Arial, Helvetica, sans-serif; text-align: left; display: block;}* { padding: 0; margin: 0;}* { box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;}a { text-decoration: none; color: #000;}a:hover,a:hover * { text-decoration: none;}img,a img { border: none;}li { list-style-type: none;}#content_body.animation_stopped *,.animation_stopped #container * { -webkit-animation: none !important; animation: none !important;}body { overflow: hidden;}.text-elm,.flash-elm,.block-elm,.html5-elm,.dropdown-elm,.textfield-elm,.animimage-elm,.border-elm { position: absolute; float: left; display: block;}.ic0n-elm,.image-elm,.animimage-elm { position: absolute; float: left; overflow: hidden; display: block;}.ic0n-elm .ic0n-container { display: table; width: 100%; height: 100%;}.ic0n-elm .ic0n-container * { box-sizing: border-box;}.ic0n-elm .ic0n-container div { display: table-cell;}.ic0n-elm .ic0n-wrapper { width: 1px; white-space: nowrap;}.image-elm img { width: 100%; height: 100%;}.button-elm { position: absolute; display: block;}.button-elm .text-elm { position: absolute; float: left; top: 0; left: 0;}.button-elm .image-elm { position: absolute; float: left; overflow: hidden; top: 0; left: 0;}#container { width: 300px; height: 250px; overflow: hidden; position: relative; font-size: 12px; color: #000; font-family: Arial, Helvetica, sans-serif; text-align: left;}#outer_container { width: 300px; height: 250px; position: relative;}.bar-elm { display: table; position: absolute;}.bar-elm-row { display: table-row; height: 100%;}.bar-elm .image-elm { position: absolute; float: left; overflow: hidden; top: 0; left: 0; font-size: 0px;}.bar-elm-cell { display: table-cell; position: relative; vertical-align: middle;}
+
+
+
+   &lt;/style&gt;
+       &lt;div id=&quot;revjet_container&quot;&gt;
+    &lt;div id=&quot;el50651688&quot; class=&quot;revjet_container_el&quot;&gt;
+     &lt;style type=&quot;text/css&quot;&gt;#elframe_element50651655{width:300px;height:250px;position:absolute;display:block;} 
+
+&lt;/style&gt;
+&lt;div id=&quot;elframe_element50651655&quot; class=&quot;animated-element&quot; data-revjet-role=&quot;STAGE 1&quot; data-revjet-role-id=&quot;50651676&quot;&gt;&lt;style type=&quot;text/css&quot;&gt;#elframe_element50651658{width:300px;height:250px;position:absolute;display:block;} 
+#el50651670{ display:block; left:0px; top:0px; transform: translateX(0px) translateY(0px) scale3d(1,1,1) ; -ms-transform: translateX(0px) translateY(0px) scale3d(1,1,1) ; -webkit-transform: translateX(0px) translateY(0px) scale3d(1,1,1) ; width:300px; height:250px; }* { margin:0; padding:0; }
+
+
+.html5-elm { position: absolute; float: left; display: block;}&lt;/style&gt;
+&lt;div id=&quot;elframe_element50651658&quot; class=&quot;animated-element&quot; data-revjet-role=&quot;STAGE 1. SCENE 1&quot; data-revjet-role-id=&quot;50651676.50651673&quot;&gt;&lt;a href=&quot;https://revjet.lendingtree.com/click/tag149836/8756688448795860904/1?_crm=2&amp;__ads=63c29bdbc3830655fff144cc56fee29b&amp;adkey=027&amp;hx=3756769&amp;agrp=eg4885&amp;slot=tag149836&amp;impts=1618597234329&amp;ad=crv74558&amp;_cx=$$CX$$&amp;_cy=$$CY$$&amp;_celt=$$ELT-ID$$&amp;_celtid=$$ELT-IDS$$&quot; target=&quot;_blank&quot; id=&quot;el50651670&quot; class=&quot;animated-element html5-elm &quot; data-element-type=&quot;html5&quot; data-animation-timeout=&quot;&quot; data-revjet-role=&quot;STAGE 1. SCENE 1. BACKGROUND&quot; data-revjet-role-id=&quot;50651676.50651673.50651670&quot;&gt;
+        &lt;div data-revjet-html5vars='%html5vars%' data-revjet-asset-src=&quot;https://cdn.revjet.com/s3/csp/1616019332826/index.html&quot; data-revjet-asset-propagate-events&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  if (!window.revjet || !window.revjet.elements_api) {
+    document.write('\x3ciframe src=&quot;https://cdn.revjet.com/s3/csp/1616019332826/index.html&quot; style=&quot;position:absolute;left:0;top:0;width:100%;height:100%;border:0;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot;\x3e\x3c/iframe\x3e');
+  }
+&lt;/script&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+       &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Salt Pixel --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+window.Salt = {
+  
+  &quot;start&quot;: &quot;900&quot;,
+  &quot;firstQuartile&quot;: &quot;901&quot;,
+  &quot;midpoint&quot;: &quot;902&quot;,
+  &quot;thirdQuartile&quot;: &quot;903&quot;,
+  &quot;complete&quot;: &quot;904&quot;,
+  &quot;invisible&quot;: &quot;905&quot;,
+  &quot;adsDomainName&quot;: &quot;https://pix.lendingtree.com&quot;,
+  &quot;pixelPattern&quot;: &quot;https://pix.lendingtree.com/interaction/%%PIXEL%%?__ads=63c29bdbc3830655fff144cc56fee29b&amp;vid=4967382447799497780&amp;__adt=8756688448795860904&amp;__ade=1&amp;latent=%%LATENT%%&quot; + &quot;&quot;,
+  &quot;duration&quot;: 30
+};
+&lt;/script&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    var revjet = revjet || {};
+    var eligibleActions = [50651691];
+        eligibleActions = eligibleActions.concat([1006]);
+       revjet.elements = {
+           &quot;widgets&quot;: [
+                {&quot;id&quot;: &quot;el50651688&quot;, &quot;type&quot;: &quot;container_element&quot;, &quot;parentId&quot;: null}, {&quot;id&quot;: &quot;elframe_element50651655&quot;, &quot;type&quot;: &quot;frame_element&quot;, &quot;parentId&quot;: &quot;el50651688&quot;}, {&quot;id&quot;: &quot;elframe_element50651658&quot;, &quot;type&quot;: &quot;frame_element&quot;, &quot;parentId&quot;: &quot;elframe_element50651655&quot;}, {&quot;id&quot;: &quot;el50651670&quot;, &quot;type&quot;: &quot;html5_element&quot;, &quot;parentId&quot;: &quot;elframe_element50651658&quot;, &quot;disableBrowserEvents&quot;: true},
+           ],
+           &quot;actions&quot;: window._disanim ? [] : [{&quot;id&quot;: 1006,
+	&quot;type&quot;: &quot;start_animation&quot;,
+	&quot;sourceWidgetId&quot;: &quot;elframe_element50651658&quot;,
+	&quot;events&quot;: [{
+	&quot;type&quot;: &quot;before_show&quot;
+}],
+	&quot;widgetId&quot;: &quot;elframe_element50651658&quot;,
+        &quot;animatedWidgets&quot;: [],
+	&quot;animationName&quot;: &quot;On Load&quot;,
+	&quot;className&quot;: &quot;run-animation-on-load&quot;,
+        &quot;finalClassName&quot;: &quot;run-animation&quot;,
+        &quot;finalStyle&quot;: [],
+	&quot;maxRunCount&quot;: &quot;&quot;,
+	&quot;execDelay&quot;: &quot;0&quot;,
+	&quot;iterationCount&quot;: 1,
+	&quot;relatedActions&quot;: [1007]
+},{
+	&quot;id&quot;: 1007,
+	&quot;type&quot;: &quot;start_html5_animation&quot;,
+	&quot;sourceWidgetId&quot;: &quot;elframe_element50651658&quot;,
+	&quot;events&quot;: [{
+	&quot;type&quot;: &quot;before_show&quot;
+}],
+	&quot;widgetId&quot;: &quot;elframe_element50651658&quot;,
+	&quot;maxRunCount&quot;: &quot;&quot;,
+	&quot;execDelay&quot;: &quot;0&quot;,
+	&quot;iterationCount&quot;: 1,
+	&quot;widgets&quot;: [],
+	&quot;stopEventPropagation&quot;: false
+}, {&quot;id&quot;: 50651691,
+	&quot;type&quot;: &quot;link&quot;,
+	&quot;sourceWidgetId&quot;: &quot;el50651688&quot;,
+	&quot;events&quot;: [{
+	&quot;type&quot;: &quot;click&quot;
+}],
+	&quot;url&quot;: click_url,
+	&quot;target&quot;: click_target,
+	&quot;stopEventPropagation&quot;: false
+},],
+           &quot;tracking&quot;: [
+           /*
+               {
+                   'type': 'mraid_loaded',
+                   'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1001?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+               },
+           */
+               {
+                   'type': 'mraid_viewable',
+                   'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/899?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+               },
+           {
+	'type': 'open_link',
+	'pixels': []
+},
+{
+	'type': 'click_heatmap',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/2500?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'video_started',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1103?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'video_first_quartile',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1104?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'video_midpoint',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1105?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'video_third_quartile',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1106?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'video_complete',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1107?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'expand',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1112?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'collapse',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/1192?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+},
+{
+	'type': 'javascript_error',
+	'pixels': []
+}
+/*
+{
+	'type': 'slider_card_view',
+	'pixels': [{&quot;type&quot;:&quot;image&quot;,&quot;url&quot;:&quot;https://pix.lendingtree.com/interaction/911?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780&quot;}]
+}
+*/,
+           ],
+           &quot;options&quot;: {
+               'hideBody': true,
+               'hideMethod': 'visibility',
+               'disableAnimation': window._disanim
+           },
+           &quot;personalization&quot;: [],
+           &quot;eligibleActions&quot;: eligibleActions
+       };
+
+
+    &lt;/script&gt;
+   
+
+
+
+&lt;!-- revjet-tracking --&gt;
+		&lt;script&gt;
+  setTimeout(function(){
+    new Image().src = 'https://pix.lendingtree.com/interaction/1004?__ads=63c29bdbc3830655fff144cc56fee29b&amp;__adt=8756688448795860904&amp;__ade=1&amp;vid=4967382447799497780';
+  }, 1000);
+&lt;/script&gt;
+
+&lt;!-- /revjet-tracking --&gt;
+		
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			function pauseAnimation() {
+				var element = document.getElementById('content_body');
+				if (!element.classList.contains('animation_paused')) {
+					element.classList.add('animation_paused');
+				}
+
+				element.getBoundingClientRect();
+			}
+
+			function resumeAnimation() {
+				var element = document.getElementById('content_body');
+				if (element.classList.contains('animation_paused')) {
+					element.classList.remove('animation_paused');
+				}
+
+				element.getBoundingClientRect();
+			}
+
+			var prefixes = ['moz', 'ms', 'webkit'];
+			var hiddenProperty = 'hidden';
+			var visibilityChangeEventName = 'visibilitychange';
+
+			for (var i = 0; i &lt; prefixes.length; i++) {
+				if (document[prefixes[i] + 'Hidden']) {
+					hiddenProperty = prefixes[i] + 'Hidden';
+					visibilityChangeEventName = prefixes[i] + visibilityChangeEventName;
+					break;
+				}
+			}
+
+			document.addEventListener(visibilityChangeEventName, function() {
+				if (document[hiddenProperty]) {
+					pauseAnimation();
+				} else {
+					resumeAnimation();
+				}
+			}, false);
+		&lt;/script&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+" width="300" height="250" frameborder="0"></iframe></ins></ins></div><script type="text/javascript">
+
+window.revjet = window.revjet || {};
+window.revjet.tags = window.revjet.tags || [];
+ 
+window.revjet.tags.push({
+	_tag: 'tag149836',
+        _plc_id: '44911862',
+	_key: '027',
+	ct_url: 'https://www.googleadservices.com/pagead/aclk%3Fsa%3DL%26ai%3DCP1LPcdV5YPLtE8SImwSj3az4BKr17aFhqt_V1KcMloLNhYgWEAEgxKiAImDJhoCA0KTkD6AB8cHg-wLIAQngAgCoAwGqBMMCT9CvEfOa5zC16Z9Mxflo72jiROxWLPaw09YnWsPBFHJc9xUKLjf8pVZ57Nr5DzxU2GJWn1V5k6gZKrwSJORqTl7AXqa-pbDKmze3wG6XwFXtaWhkVifM_KW9HyeaBFzaqGi3yt58qFAqbF5_B63ok26eJGlkvv-j0xn8O4ZY5Dt-ED7ITXoiNWY2DhLu4yyL4qvo8s994XE_BFDmsIklpUYLGLyC9WeOJOyVbh5ZtcKqbPn9ueCPKxgPnVQGBn4H2mxBYUznZTR0eIS6Rg8TlGaIGU5omHTIvHv418oFMpNWYGHNxKhR6aRe0v8RWGR5kejzB5EeAnWaKpAVngMGhRHAe9HM0U7roR92VO-irPbnLw-04d2iKEz-TYry1KsR8dCBIb5kAwRgv7D3HNZ6IfHSaZ3oS2n7KAZfU1q4aNXFXVDABKrjsIusA-AEAaAGEYAH972fhAGoB9XJG6gH8NkbqAfy2RuoB47OG6gHk9gbqAe6BqgH7paxAqgHpr4bqAfs1RuoB_PRG6gH7NUbqAeW2BvYBwDSCAkIgOGAQBABGB2ACgOYCwHICwGADAG4DAHYEww%26num%3D1%26cid%3DCAASPeRoia6woxNkSvHqXEOotmd5bt14Sa4rzZp1wxgt0fMrDqbn05TOd4FZO1O2eg9cr13EkTYN1YOH8h5BZ24%26sig%3DAOD64_3UjZZtTRpd_FMLyikyXQPi9J1uYA%26client%3Dca-pub-7208923277260888%26adurl%3D',
+	_opts: {
+		embd_tag_id: (function(doc) {
+			var tag = doc.createElement("div");
+			tag.id = 'revjet-tag-' + revjet.tags.length;
+			var s = doc.getElementsByTagName("script");
+			s[s.length-1].parentNode.insertBefore(tag, s[s.length-1]);
+			return tag.id;
+		})(document),
+		responsive: false,
+		autoscale: false,
+		delivery_method: 'banner',
+		_imp_banner_size: '300x250'		
+	},
+	li: '{Loan_Interest_Type}',
+	gdn_ad_group_id: '114914242986',
+	cachebuster: '1546030877'
+});
+
+(function(a,d){var b=d.createElement(a);b.asyc=!0;b.type="text/javascript";
+b.src="https://revjet.lendingtree.com/bg";
+a=d.getElementsByTagName(a)[0];a.parentNode.insertBefore(b,a)})("script",document);
+
+</script></div><script data-jc="5" src="container_data/m_js_controller_fy2019.js" data-jc-version="r20210414"></script><script>buildAdSlot([[[2,null,null,null,null,"https://googleads.g.doubleclick.net/pagead/interaction/?ai=CP1LPcdV5YPLtE8SImwSj3az4BKr17aFhqt_V1KcMloLNhYgWEAEgxKiAImDJhoCA0KTkD6AB8cHg-wLIAQngAgCoAwGqBMMCT9CvEfOa5zC16Z9Mxflo72jiROxWLPaw09YnWsPBFHJc9xUKLjf8pVZ57Nr5DzxU2GJWn1V5k6gZKrwSJORqTl7AXqa-pbDKmze3wG6XwFXtaWhkVifM_KW9HyeaBFzaqGi3yt58qFAqbF5_B63ok26eJGlkvv-j0xn8O4ZY5Dt-ED7ITXoiNWY2DhLu4yyL4qvo8s994XE_BFDmsIklpUYLGLyC9WeOJOyVbh5ZtcKqbPn9ueCPKxgPnVQGBn4H2mxBYUznZTR0eIS6Rg8TlGaIGU5omHTIvHv418oFMpNWYGHNxKhR6aRe0v8RWGR5kejzB5EeAnWaKpAVngMGhRHAe9HM0U7roR92VO-irPbnLw-04d2iKEz-TYry1KsR8dCBIb5kAwRgv7D3HNZ6IfHSaZ3oS2n7KAZfU1q4aNXFXVDABKrjsIusA-AEAaAGEYAH972fhAGoB9XJG6gH8NkbqAfy2RuoB47OG6gHk9gbqAe6BqgH7paxAqgHpr4bqAfs1RuoB_PRG6gH7NUbqAeW2BvYBwDSCAkIgOGAQBABGB2ACgOYCwHICwGADAG4DAHYEww\u0026sigh=6MYLviWbHQg\u0026cid=CAQSPwCNIrLM5XNTWOa9T_dPdEWIeh8-3Z-JpgPQoltf3Sh564YrgkfITRV4AcQPuU3q_WIczc_Rfepqo7nJNwy4Tg"]],300,250,null,null,null,"CLLqgcmwg_ACFUTEhgodoy4LTw",null,null,"ca-pub-7208923277260888",300,250,null,"_top",null,null,null,"https://tpc.googlesyndication.com",null,null,null,1768974382,[["open_applinks_adding_gclid","True"],["pass_gclid_to_deeplink_url","True"],["avoid_appify_double_billing","True"]],null,null,null,null,[],null,null,null,null,null,1.25,null,null,null,null,null,null,null,null,null,null,null,null,null,1]);</script><script data-jc="18" data-jc-version="r20210414">(function(_){'use strict';var Bi=function(a,b){var c=_.Qb;return(...d)=>_.Eb(c,423,()=>a.apply(b,d))},Ci=function(a){_.Ea(this,a,null)},Ei=function(){var a=window.adSlot;_.G(_.Uc,"DOMContentLoaded",()=>{!_.q.googqscp||1>a.getAdsLength()||a.registerFinalizeCallback(()=>{new Di(a)})})},Fi=function(a,b){if(a=_.C(a.h.g,6)){b=a+"&label="+b;if(a=_.K.navigator)a=_.K.navigator.userAgent,a=/Chrome/.test(a)&&!/Edge/.test(a)?!0:!1;a&&_.K.navigator.sendBeacon?_.K.navigator.sendBeacon(b):_.fb(_.K,b)}};_.x(Ci,_.Ba); Ci.prototype.getDuration=function(){return _.B(this,2,0)};var Di=class{constructor(a){this.g=a;this.h=this.g.getAd(0);1<this.g.getAdsLength()&&this.g.forEachAd((0,_.t)(this.l,this));_.q.googqscp.registerCallback(Bi(this.j,this))}l(a){a.listen(0,_.E(this.g.g,4)?"touchstart":"mousedown",()=>{this.h=a})}j(a,b){b=new Ci(b);switch(_.B(b,4,1)){case 2:b.getDuration()?Fi(this,"blocked_fast_click"):(_.C(b,1)||_.C(b,7))&&Fi(this,"blocked_border_click");break;case 3:this.g.fireOnObject("common_show_15overlay",a),Fi(this,"onepointfiveclick_first_click")}}};_.O=18;window.adSlot&&Ei();})(window.hydra=window.hydra||{});</script><script>var googleRichMediaAd = buildRichmediaAd(adSlot, 0);adSlot.addAd(googleRichMediaAd);adSlot.finalize('');</script><script data-jc="22" src="container_data/window_focus_fy2019.js" async="" data-jc-version="r20210414" data-jcp-url="https://googleads.g.doubleclick.net/pagead/interaction/?ai=CP1LPcdV5YPLtE8SImwSj3az4BKr17aFhqt_V1KcMloLNhYgWEAEgxKiAImDJhoCA0KTkD6AB8cHg-wLIAQngAgCoAwGqBMMCT9CvEfOa5zC16Z9Mxflo72jiROxWLPaw09YnWsPBFHJc9xUKLjf8pVZ57Nr5DzxU2GJWn1V5k6gZKrwSJORqTl7AXqa-pbDKmze3wG6XwFXtaWhkVifM_KW9HyeaBFzaqGi3yt58qFAqbF5_B63ok26eJGlkvv-j0xn8O4ZY5Dt-ED7ITXoiNWY2DhLu4yyL4qvo8s994XE_BFDmsIklpUYLGLyC9WeOJOyVbh5ZtcKqbPn9ueCPKxgPnVQGBn4H2mxBYUznZTR0eIS6Rg8TlGaIGU5omHTIvHv418oFMpNWYGHNxKhR6aRe0v8RWGR5kejzB5EeAnWaKpAVngMGhRHAe9HM0U7roR92VO-irPbnLw-04d2iKEz-TYry1KsR8dCBIb5kAwRgv7D3HNZ6IfHSaZ3oS2n7KAZfU1q4aNXFXVDABKrjsIusA-AEAaAGEYAH972fhAGoB9XJG6gH8NkbqAfy2RuoB47OG6gHk9gbqAe6BqgH7paxAqgHpr4bqAfs1RuoB_PRG6gH7NUbqAeW2BvYBwDSCAkIgOGAQBABGB2ACgOYCwHICwGADAG4DAHYEww&amp;sigh=6MYLviWbHQg&amp;cid=CAQSPwCNIrLM5XNTWOa9T_dPdEWIeh8-3Z-JpgPQoltf3Sh564YrgkfITRV4AcQPuU3q_WIczc_Rfepqo7nJNwy4Tg" data-jcp-gws-id="" data-jcp-qem-id="CLLqgcmwg_ACFUTEhgodoy4LTw"></script><script src="a_data_003/rx_lidar.js"></script><script type="text/javascript">osdlfm(-1,'','BXZARcdV5YPLtE8SImwSj3az4BACq39XUpwwAABABOAHIAQngAgDgBAGgBhHSCAcIgOGAQBABwhMGGPHB4PsC','',1768974382,true,'la\x3d0\x26xdi\x3d0\x26',3,'CAASPeRoia6woxNkSvHqXEOotmd5bt14Sa4rzZp1wxgt0fMrDqbn05TOd4FZO1O2eg9cr13EkTYN1YOH8h5BZ24','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjstWeOcsI2yAyrWrdPyI4W5fBkhNQ7V5JJN5AZEVl2zz0Cqcm1F4ndopgc_1IqmIYzE3q24RTAe5R6cspjzQ4qIu2LV58c5E6o1JrUti4v_OX66S3Ond-XCeMQYEWg\x26sai\x3dAMfl-YQvkgnCshMjM36CO9GfS-9uph0AlC-KkFgDAb08shOUu8yTvlVOTUwfjhqWb6ij_INixdFJDyyzI-3iaVd_niuG9T9zOb3urrjxa1sRWtkRLFU5iBS4OnTplkKTuXCb\x26sig\x3dCg0ArKJSzIIixbtnRxB3EAE\x26cid\x3dCAASPeRoia6woxNkSvHqXEOotmd5bt14Sa4rzZp1wxgt0fMrDqbn05TOd4FZO1O2eg9cr13EkTYN1YOH8h5BZ24','','[\x22x%278440\x279efotm(\x26753374%2bejvf/%27844\x3e\x279wuvb$\x2656533\x3e!\x3dnehu`/!637854$?wqrf+*01503064%2bejvf~\x22]');</script><script data-jc="23" src="container_data/qs_click_protection_fy2019.js" data-jc-version="r20210414"></script><script>googqscp.init([[[[null,500,99,2,9,null,null,null,1]]],null,null,null,null,null,null,null,null,null,null,1]);</script><div style="display: none; position: absolute; z-index: 2147483647; width: 100%; height: 100%; top: 0px; left: 0px;"></div><div style="bottom:0;right:0;width:300px;height:250px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB9SURBVBjTbZEBDoAwCAPLD/j/aw3QAiMyXCR07KzAf1hFvD2VZzd2d+/KQoFa6Co6VGWq6r7hqDk7ZDObd3M1iSLnbm5Ij+YX8sjJtcYZUZIkFVIyNc/0iHtIUNo8NNwlx3HQE8HJtRw0SV8HXfTLs/5Hx0E6zi9okkqe/gBndQXoHGNK5AAAAABJRU5ErkJggg==') !important;"></div><style>div{margin:0;padding:0;}.abgc{display:block;height:15px;position:absolute;right:1px;top:1px;text-rendering:geometricPrecision;z-index:2147483646;}.abgb{display:inline-block;height:15px;}.abgc,.jar .abgc,.jar .cbb{opacity:1;}.abgs{display:none;height:100%;}.abgl{text-decoration:none;}.abgs svg,.abgb svg{display:inline-block;height:15px;width:auto;vertical-align:top;}.abgc .il-wrap{background-color:#ffffff;height:15px;white-space:nowrap;}.abgc .il-wrap.exp{border-bottom-left-radius:5px;}.abgc .il-text,.abgc .il-icon{display:inline-block;}.abgc .il-text{padding-right:1px;padding-left:5px;height:15px;width:55px;}.abgc .il-icon{height:15px;width:15px;}.abgc .il-text svg{fill:#000000;}.abgc .il-icon svg{fill:#00aecd}</style><div id="abgc" class="abgc" dir="ltr" aria-hidden="true"><div id="abgb" class="abgb"><div class="il-wrap"><div class="il-icon"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15 15"><circle cx="6" cy="6" r="0.67"></circle><path d="M4.2,11.3Q3.3,11.8,3.3,10.75L3.3,4.1Q3.3,3.1,4.3,3.5L10.4,7.0Q12.0,7.5,10.4,8.0L6.65,10.0L6.65,7.75a0.65,0.65,0,1,0,-1.3,0L5.35,10.75a0.9,0.9,0,0,0,1.3,0.8L12.7,8.2Q13.7,7.5,12.7,6.7L3.3,1.6Q2.2,1.3,1.8,2.5L1.8,12.5Q2.2,13.9,3.3,13.3L4.8,12.5A0.3,0.3,0,1,0,4.2,11.3Z"></path></svg></div></div></div><div id="abgs" class="abgs"><a id="abgl" class="abgl" href="https://www.google.com/url?ct=abg&amp;q=https://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttps://www.theatlantic.com/ideas/archive/2019/01/heres-how-fix-senate/579172/%26gl%3DUS%26hl%3Den%26client%3Dca-pub-7208923277260888%26ai0%3DCP1LPcdV5YPLtE8SImwSj3az4BKr17aFhqt_V1KcMloLNhYgWEAEgxKiAImDJhoCA0KTkD6AB8cHg-wLIAQngAgCoAwGqBMMCT9CvEfOa5zC16Z9Mxflo72jiROxWLPaw09YnWsPBFHJc9xUKLjf8pVZ57Nr5DzxU2GJWn1V5k6gZKrwSJORqTl7AXqa-pbDKmze3wG6XwFXtaWhkVifM_KW9HyeaBFzaqGi3yt58qFAqbF5_B63ok26eJGlkvv-j0xn8O4ZY5Dt-ED7ITXoiNWY2DhLu4yyL4qvo8s994XE_BFDmsIklpUYLGLyC9WeOJOyVbh5ZtcKqbPn9ueCPKxgPnVQGBn4H2mxBYUznZTR0eIS6Rg8TlGaIGU5omHTIvHv418oFMpNWYGHNxKhR6aRe0v8RWGR5kejzB5EeAnWaKpAVngMGhRHAe9HM0U7roR92VO-irPbnLw-04d2iKEz-TYry1KsR8dCBIb5kAwRgv7D3HNZ6IfHSaZ3oS2n7KAZfU1q4aNXFXVDABKrjsIusA-AEAaAGEYAH972fhAGoB9XJG6gH8NkbqAfy2RuoB47OG6gHk9gbqAe6BqgH7paxAqgHpr4bqAfs1RuoB_PRG6gH7NUbqAeW2BvYBwDSCAkIgOGAQBABGB2ACgOYCwHICwGADAG4DAHYEww&amp;usg=AFQjCNExYzimLqa8QedTugszNtYyclI-hg" target="_blank"><div class="il-wrap exp"><div class="il-text"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 59 16"><path d="M4.51 4.24L8.02 12.83L6.73 12.83L5.72 10.21L2.14 10.21L1.19 12.83L-0.01 12.83L3.29 4.24L4.51 4.24ZM2.46 9.31L5.38 9.31L5.38 9.31Q4.32 6.52 4.19 6.14L4.19 6.14L4.19 6.14Q4.05 5.77 3.89 5.13L3.89 5.13L3.86 5.13L3.86 5.13Q3.70 6 3.42 6.74L3.42 6.74L2.46 9.31ZM13.83 4.24L13.83 12.83L12.85 12.83L12.85 12.04L12.83 12.04L12.83 12.04Q12.26 12.97 11.11 12.97L11.11 12.97L11.11 12.97Q9.97 12.97 9.20 12.07L9.20 12.07L9.20 12.07Q8.44 11.16 8.44 9.72L8.44 9.72L8.44 9.72Q8.44 8.21 9.16 7.34L9.16 7.34L9.16 7.34Q9.88 6.47 11.06 6.47L11.06 6.47L11.06 6.47Q12.18 6.47 12.76 7.32L12.76 7.32L12.78 7.32L12.78 4.24L13.83 4.24ZM11.22 12.11L11.22 12.11L11.22 12.11Q11.91 12.11 12.39 11.54L12.39 11.54L12.39 11.54Q12.87 10.97 12.87 9.81L12.87 9.81L12.87 9.81Q12.87 8.68 12.43 8.00L12.43 8.00L12.43 8.00Q11.99 7.33 11.17 7.33L11.17 7.33L11.17 7.33Q10.35 7.33 9.93 7.99L9.93 7.99L9.93 7.99Q9.52 8.65 9.52 9.72L9.52 9.72L9.52 9.72Q9.52 10.49 9.74 11.03L9.74 11.03L9.74 11.03Q9.97 11.57 10.37 11.84L10.37 11.84L10.37 11.84Q10.78 12.11 11.22 12.11ZM21.74 9.81L22.88 10.10L22.88 10.10Q22.50 11.55 21.57 12.26L21.57 12.26L21.57 12.26Q20.63 12.97 19.32 12.97L19.32 12.97L19.32 12.97Q17.21 12.97 16.25 11.65L16.25 11.65L16.25 11.65Q15.29 10.33 15.29 8.47L15.29 8.47L15.29 8.47Q15.29 6.42 16.42 5.25L16.42 5.25L16.42 5.25Q17.55 4.09 19.34 4.09L19.34 4.09L19.34 4.09Q20.59 4.09 21.48 4.73L21.48 4.73L21.48 4.73Q22.37 5.37 22.73 6.60L22.73 6.60L21.62 6.86L21.62 6.86Q21.33 5.96 20.76 5.51L20.76 5.51L20.76 5.51Q20.19 5.06 19.32 5.06L19.32 5.06L19.32 5.06Q17.92 5.06 17.19 5.99L17.19 5.99L17.19 5.99Q16.46 6.91 16.46 8.46L16.46 8.46L16.46 8.46Q16.46 10.25 17.23 11.13L17.23 11.13L17.23 11.13Q17.99 12 19.22 12L19.22 12L19.22 12Q20.23 12 20.86 11.46L20.86 11.46L20.86 11.46Q21.49 10.91 21.74 9.81L21.74 9.81ZM29.23 8.89L29.23 12.83L28.17 12.83L28.17 8.90L28.17 8.90Q28.17 8.14 27.84 7.76L27.84 7.76L27.84 7.76Q27.51 7.38 26.86 7.38L26.86 7.38L26.86 7.38Q26.21 7.38 25.71 7.83L25.71 7.83L25.71 7.83Q25.20 8.27 25.20 9.43L25.20 9.43L25.20 12.83L24.15 12.83L24.15 4.24L25.20 4.24L25.20 7.32L25.20 7.32Q25.95 6.47 27.08 6.47L27.08 6.47L27.08 6.47Q27.68 6.47 28.23 6.71L28.23 6.71L28.23 6.71Q28.78 6.96 29.00 7.47L29.00 7.47L29.00 7.47Q29.23 7.98 29.23 8.89L29.23 8.89ZM33.35 6.47L33.35 6.47L33.35 6.47Q34.61 6.47 35.44 7.29L35.44 7.29L35.44 7.29Q36.27 8.11 36.27 9.62L36.27 9.62L36.27 9.62Q36.27 11.46 35.37 12.21L35.37 12.21L35.37 12.21Q34.48 12.97 33.35 12.97L33.35 12.97L33.35 12.97Q32.17 12.97 31.31 12.19L31.31 12.19L31.31 12.19Q30.44 11.41 30.44 9.72L30.44 9.72L30.44 9.72Q30.44 8.08 31.28 7.27L31.28 7.27L31.28 7.27Q32.12 6.47 33.35 6.47ZM33.35 12.11L33.35 12.11L33.35 12.11Q34.25 12.11 34.72 11.44L34.72 11.44L34.72 11.44Q35.19 10.77 35.19 9.68L35.19 9.68L35.19 9.68Q35.19 8.51 34.66 7.92L34.66 7.92L34.66 7.92Q34.13 7.33 33.35 7.33L33.35 7.33L33.35 7.33Q32.55 7.33 32.03 7.93L32.03 7.93L32.03 7.93Q31.52 8.53 31.52 9.72L31.52 9.72L31.52 9.72Q31.52 10.90 32.04 11.50L32.04 11.50L32.04 11.50Q32.57 12.11 33.35 12.11ZM38.55 6.61L38.55 12.83L37.49 12.83L37.49 6.61L38.55 6.61ZM38.55 4.24L38.55 5.43L37.49 5.43L37.49 4.24L38.55 4.24ZM44.20 10.55L45.25 10.68L45.25 10.68Q45.05 11.87 44.31 12.42L44.31 12.42L44.31 12.42Q43.58 12.97 42.66 12.97L42.66 12.97L42.66 12.97Q41.30 12.97 40.56 12.08L40.56 12.08L40.56 12.08Q39.83 11.20 39.83 9.73L39.83 9.73L39.83 9.73Q39.83 8.52 40.25 7.79L40.25 7.79L40.25 7.79Q40.68 7.06 41.31 6.76L41.31 6.76L41.31 6.76Q41.95 6.47 42.66 6.47L42.66 6.47L42.66 6.47Q43.62 6.47 44.30 6.97L44.30 6.97L44.30 6.97Q44.98 7.46 45.14 8.43L45.14 8.43L44.12 8.59L44.12 8.59Q43.96 7.96 43.61 7.65L43.61 7.65L43.61 7.65Q43.25 7.33 42.70 7.33L42.70 7.33L42.70 7.33Q41.82 7.33 41.36 7.96L41.36 7.96L41.36 7.96Q40.90 8.58 40.90 9.71L40.90 9.71L40.90 9.71Q40.90 10.86 41.35 11.48L41.35 11.48L41.35 11.48Q41.80 12.11 42.64 12.11L42.64 12.11L42.64 12.11Q43.32 12.11 43.71 11.72L43.71 11.72L43.71 11.72Q44.10 11.33 44.20 10.55L44.20 10.55ZM51.56 9.98L51.56 9.98L46.90 9.98L46.90 9.98Q46.97 11.02 47.49 11.56L47.49 11.56L47.49 11.56Q48.02 12.11 48.80 12.11L48.80 12.11L48.80 12.11Q49.41 12.11 49.82 11.79L49.82 11.79L49.82 11.79Q50.23 11.47 50.44 10.82L50.44 10.82L51.53 10.96L51.53 10.96Q51.26 11.93 50.56 12.45L50.56 12.45L50.56 12.45Q49.86 12.97 48.80 12.97L48.80 12.97L48.80 12.97Q47.40 12.97 46.61 12.11L46.61 12.11L46.61 12.11Q45.83 11.26 45.83 9.77L45.83 9.77L45.83 9.77Q45.83 8.30 46.59 7.38L46.59 7.38L46.59 7.38Q47.36 6.47 48.74 6.47L48.74 6.47L48.74 6.47Q49.42 6.47 50.05 6.77L50.05 6.77L50.05 6.77Q50.68 7.07 51.12 7.78L51.12 7.78L51.12 7.78Q51.56 8.50 51.56 9.98ZM46.96 9.12L50.48 9.12L50.48 9.12Q50.41 8.17 49.89 7.75L49.89 7.75L49.89 7.75Q49.37 7.33 48.74 7.33L48.74 7.33L48.74 7.33Q48 7.33 47.52 7.83L47.52 7.83L47.52 7.83Q47.04 8.33 46.96 9.12L46.96 9.12ZM57.33 8.21L56.30 8.35L56.30 8.35Q56.23 7.84 55.89 7.58L55.89 7.58L55.89 7.58Q55.55 7.33 54.94 7.33L54.94 7.33L54.94 7.33Q54.33 7.33 53.96 7.54L53.96 7.54L53.96 7.54Q53.59 7.74 53.59 8.13L53.59 8.13L53.59 8.13Q53.59 8.50 53.89 8.66L53.89 8.66L53.89 8.66Q54.18 8.82 55.05 9.05L55.05 9.05L55.05 9.05Q56.04 9.30 56.53 9.49L56.53 9.49L56.53 9.49Q57.02 9.69 57.29 10.03L57.29 10.03L57.29 10.03Q57.56 10.38 57.56 11.00L57.56 11.00L57.56 11.00Q57.56 11.84 56.88 12.40L56.88 12.40L56.88 12.40Q56.20 12.97 55.07 12.97L55.07 12.97L55.07 12.97Q53.88 12.97 53.22 12.47L53.22 12.47L53.22 12.47Q52.55 11.97 52.40 10.97L52.40 10.97L53.45 10.81L53.45 10.81Q53.53 11.46 53.93 11.78L53.93 11.78L53.93 11.78Q54.33 12.11 55.05 12.11L55.05 12.11L55.05 12.11Q55.75 12.11 56.12 11.82L56.12 11.82L56.12 11.82Q56.48 11.53 56.48 11.11L56.48 11.11L56.48 11.11Q56.48 10.83 56.31 10.66L56.31 10.66L56.31 10.66Q56.14 10.49 55.89 10.40L55.89 10.40L55.89 10.40Q55.63 10.32 54.74 10.10L54.74 10.10L54.74 10.10Q53.42 9.79 53.00 9.33L53.00 9.33L53.00 9.33Q52.57 8.88 52.57 8.26L52.57 8.26L52.57 8.26Q52.57 7.48 53.19 6.97L53.19 6.97L53.19 6.97Q53.81 6.47 54.86 6.47L54.86 6.47L54.86 6.47Q55.97 6.47 56.59 6.91L56.59 6.91L56.59 6.91Q57.21 7.34 57.33 8.21L57.33 8.21Z"></path></svg></div><div class="il-icon"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 15 15"><circle cx="6" cy="6" r="0.67"></circle><path d="M4.2,11.3Q3.3,11.8,3.3,10.75L3.3,4.1Q3.3,3.1,4.3,3.5L10.4,7.0Q12.0,7.5,10.4,8.0L6.65,10.0L6.65,7.75a0.65,0.65,0,1,0,-1.3,0L5.35,10.75a0.9,0.9,0,0,0,1.3,0.8L12.7,8.2Q13.7,7.5,12.7,6.7L3.3,1.6Q2.2,1.3,1.8,2.5L1.8,12.5Q2.2,13.9,3.3,13.3L4.8,12.5A0.3,0.3,0,1,0,4.2,11.3Z"></path></svg></div></div></a></div></div><script data-jc="60" src="container_data/abg_lite_fy2019.js" data-jc-version="r20210414"></script><script>buildAttribution([null,null,null,0,null,0,0,1,0,0,0,0,0,0,0,null,0,null,0,null,null,null,null,0,null,null,0,null,null,"right",0,0]);</script>
+  
+  
+  
+
+</body></html>
