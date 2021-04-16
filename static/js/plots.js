@@ -188,7 +188,11 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             bgcolor: 'rgb(247,226,202)'
 
           },
-          paper_bgcolor: 'transparent'
+          paper_bgcolor: 'white',
+          margin: {
+              l: 0,
+              r: 0
+          }
         }
 
     Plotly.newPlot(div, data, layout)
@@ -243,7 +247,12 @@ function nonpartychamber_plot(size, color, text, title2, div) {
             },
             bgcolor: 'rgb(247,226,202)'
         },
-        paper_bgcolor: 'transparent',
+        paper_bgcolor: 'pink',
+        margin: {
+            l: 0,
+            r: 0
+        }, 
+        
         //plot_bgcolor: 'rgb(247,226,202)'
     }
 
