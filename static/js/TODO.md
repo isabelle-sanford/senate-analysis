@@ -4,9 +4,7 @@
 
 - annotate line on stacked bar pop chart, put state abbrevs in
 
-- hispanic origin age, ...
-
-- add hovertext on chamber plots
+- hispanic origin, age, ...
 
 - the nonparty chamber plot has overlapping middle columns
 
@@ -15,3 +13,7 @@
 - get rid of bigger level rows of religion table (total, christian, non christian, ...)
 
 - make the button stop shadowing???
+
+- L E G E N D S
+
+- gender US plot hovertext not working
