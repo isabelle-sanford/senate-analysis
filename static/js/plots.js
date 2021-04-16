@@ -188,7 +188,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             bgcolor: 'rgb(247,226,202)'
 
           },
-          paper_bgcolor: 'white',
+          paper_bgcolor: 'transparent',
           margin: {
               l: 0,
               r: 0
@@ -247,7 +247,7 @@ function nonpartychamber_plot(size, color, text, title2, div) {
             },
             bgcolor: 'rgb(247,226,202)'
         },
-        paper_bgcolor: 'pink',
+        paper_bgcolor: 'transparent',
         margin: {
             l: 0,
             r: 0
