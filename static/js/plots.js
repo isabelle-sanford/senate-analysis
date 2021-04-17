@@ -170,7 +170,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             angularaxis: {
                 visible: false
             },
-            bgcolor: 'rgb(247,226,202)'
+            bgcolor: 'transparent'
         },
         polar2: {
             sector: [0, 90],
@@ -185,7 +185,7 @@ function chamber_plot(sizeR, sizeD, colorR, colorD, textR, textD, div) {
             angularaxis: {
                 visible: false
             },
-            bgcolor: 'rgb(247,226,202)'
+            bgcolor: 'transparent'
 
           },
           paper_bgcolor: 'transparent',
@@ -245,7 +245,7 @@ function nonpartychamber_plot(size, color, text, title2, div) {
             angularaxis: {
                 visible: false
             },
-            bgcolor: 'rgb(247,226,202)'
+            bgcolor: 'transparent'
         },
         paper_bgcolor: 'transparent',
         margin: {

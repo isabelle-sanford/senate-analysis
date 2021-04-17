@@ -151,8 +151,16 @@ p {
   padding-bottom: 20px;
 }
 
-.nav-pills > .nav-link.active {
-  background-color: #dc3545!important;
+.nav-tabs > .nav-link.active {
+  background-color: darksalmon;
+  border-color: darksalmon;
+  color:white;
+}
+
+.bg-coral {
+  background-color: darksalmon;
+  border-color: darksalmon;
+  color:#333;
 }
 
 

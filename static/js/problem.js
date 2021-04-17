@@ -75,7 +75,7 @@ function init() {
 
     let sex_sorted_data = sendata.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
 
-    let sexKey = {'1': {color:'purple', sex:'male'}, '2': {color:'salmon', sex:'female'}};
+    let sexKey = {'1': {color:'purple', sex:'male'}, '2': {color:'deeppink', sex:'female'}};
 
     let sensexcolors = sex_sorted_data.map(g => sexKey[g.gender].color);
     let sensexlabels = sex_sorted_data.map(g => `${g.senator} (${sexKey[g.gender].sex})`);
@@ -164,7 +164,7 @@ function init() {
     let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
     let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
 
-    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'salmon']);
+    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'deeppink']);
 
     nonpartychamber_plot(10, pop_sex_colors, 0, 'US Population 2019', 'IS-chamber-pop-sex');
 
