@@ -261,7 +261,7 @@ let colonies_data = [//{state: "Vermont", pop: 22435},
     
     let col_sorted = colonies_data.sort((a,b) => b.pop - a.pop);
 
-    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the 13 Colonies', 'rgb(107, 93, 93)', 'colonies-bar');
+    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the 13 Colonies, 1790', 'rgb(107, 93, 93)', 'colonies-bar');
 
     let total = sumList(colonies_data.map(s => s.pop));
     console.log(total / 13);

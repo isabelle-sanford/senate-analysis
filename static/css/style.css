@@ -151,7 +151,9 @@ p {
   padding-bottom: 20px;
 }
 
-
+.nav-pills > .nav-link.active {
+  background-color: #dc3545!important;
+}
 
 
 .bg-1 {
