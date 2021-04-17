@@ -17,3 +17,11 @@
 - L E G E N D S
 
 - gender US plot hovertext not working
+
+
+COLONIES NOTES
+median 13 colonies: Maryland, 55k
+mean 13 colonies: 57k
+
+mean us state: 6.5m
+median us state: 4.5m

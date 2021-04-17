@@ -43,7 +43,7 @@ function init() {
 
     for(let i = 0; i < 100; i++) {
         let sen = sendata[i];
-        let pop = sen.population;
+        let pop = sen.population / 2;
         let name = sen.senator;
         let color = colordict[sen.party];
         let curr_state = sen.state;
@@ -242,6 +242,29 @@ d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json"
 
 });
 
+let colonies_data = [//{state: "Vermont", pop: 22435},
+                    {state: "New Hampshire", pop: 36086},
+                    //{state: "Maine", pop: 24384},
+                    {state: "Massachusetts", pop: 95453},
+                    {state: "Rhode Island", pop: 16019},
+                    {state: "Connecticut", pop: 60523},
+                    {state: "New York", pop: 83700},
+                    {state: "New Jersey", pop: 45251},
+                    {state: "Pennsylvania", pop: 110788},
+                    {state: "Delaware", pop: 11783},
+                    {state: "Maryland", pop: 55915},
+                    {state: "Virginia", pop: 110936},
+                    //{state: "Kentucky", pop: 15154},
+                    {state: "N. Carolina", pop: 69988},
+                    {state: "S. Carolina", pop: 35576},
+                    {state: "Georgia", pop: 13103}];
+    
+    let col_sorted = colonies_data.sort((a,b) => b.pop - a.pop);
+
+    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the Thirteen Colonies', 'blue', 'colonies-bar');
+
+    let total = sumList(colonies_data.map(s => s.pop));
+    console.log(total / 13);
 
 };
 

@@ -73,9 +73,9 @@ function bar_pop_stack(vars1, vars2, title1, div) {
         shapes: [
             {
                 type: 'line',
-                x0: 9.5,
+                x0: 8.5,
                 y0: 0,
-                x1: 9.5,
+                x1: 8.5,
                 y1: Math.max(...y1)*2,
                 line: {
                     width: 1.5,
