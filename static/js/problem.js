@@ -27,8 +27,43 @@ function init() {
 
 
 // STATE POP BAR===========================
+// @TODO: make this nice in the slightest??? yikes
+
     let colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
-    // wayyy too messy to justify putting in here, yikes
+
+    let states = []; // x for both vars
+
+    let stack1_pop = []; // y for vars1
+    let stack1_color = []; // color for vars1
+    let stack1_name = []; // text for vars1
+    
+    let stack2_pop = []; // y for vars2
+    let stack2_color = []; // color for vars2
+    let stack2_name = []; // text for vars2
+
+    for(let i = 0; i < 100; i++) {
+        let sen = sendata[i];
+        let pop = sen.population;
+        let name = sen.senator;
+        let color = colordict[sen.party];
+        let curr_state = sen.state;
+
+        if (i % 2 == 0) {
+            states.push(curr_state);
+            stack1_pop.push(pop);
+            stack1_color.push(color);
+            stack1_name.push(name);
+        } else {
+            stack2_pop.push(pop);
+            stack2_color.push(color);
+            stack2_name.push(name);
+        }
+    }
+
+    let vars1 = [states, stack1_pop, stack1_color, stack1_name];
+    let vars2 = [states, stack2_pop, stack2_color, stack2_name];
+
+    bar_pop_stack(vars1, vars2, 'State Populations by Senator', 'IS-bar-pop');
 
 
 // skipping population-representation chamber plot
