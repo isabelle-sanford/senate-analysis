@@ -1,11 +1,11 @@
 function init() {
-    d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(data) {
+    d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(sendata) {
 
 // SIMPLE BAR========================================
-    rep_total_pop = data.filter(d => d.party === 'Republican').map(sen => sen.population);
-    dem_total_pop = data.filter(d => d.party === 'Democratic').map(sen => sen.population);
+    rep_total_pop = sendata.filter(d => d.party === 'Republican').map(sen => sen.population);
+    dem_total_pop = sendata.filter(d => d.party === 'Democratic').map(sen => sen.population);
 
-    other_total_pop = data.filter(d => {
+    other_total_pop = sendata.filter(d => {
         return ((d.party !== 'Republican') && (d.party !== 'Democratic'));
     }).map(sen => sen.population);
 
@@ -38,7 +38,7 @@ function init() {
 
     // GENDER-------------------------------------------
 
-    let sex_sorted_data = data.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
+    let sex_sorted_data = sendata.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
 
     let sexKey = {'1': {color:'purple', sex:'male'}, '2': {color:'salmon', sex:'female'}};
 
@@ -51,7 +51,7 @@ function init() {
     // RACE----------------------------------------------
     // @TODO HISPANIC ORIGIN
 
-    let race_sorted_data = data.sort((a,b) => parseInt(a.race) - parseInt(b.race));
+    let race_sorted_data = sendata.sort((a,b) => parseInt(a.race) - parseInt(b.race));
 
     let raceKey = {1: {color: 'blue', race: 'white'},
                 2: {color: 'red', race: 'African American'},
@@ -68,11 +68,103 @@ function init() {
 
     // RELIGION--------------------------------------------
 
+    let protestant_list = ['Congregationalist', 'Episcopalian', 'Presbyterian', 'Evangelical', 
+                    'Protestant', 'Baptist', 'Lutheran', 'Methodist', 'Restorationist', 
+                    'Quaker', 'Holiness', 'Protestant'];
+
+    
+    let relig_sorted_data = sendata.sort((a,b) => {
+        let intA = a.religion;
+        let intB = b.religion;
+        if(protestant_list.includes(a.religion)) {
+            intA = "Protestant";
+        }
+        if(protestant_list.includes(b.religion)) {
+            intB = "Protestant";
+        }
+        
+        return (intA > intB) ? 1 : -1;
+    });
+
+
+    let relig_color_dict = {'Buddhist':'blue',  
+    'Catholic':'brown', 
+    'Hindu': 'pink',
+    'Jewish':'purple', 
+    'Latter-day Saint': 'orange',
+    'Mormon':'orange',
+    'Muslim': 'green',
+    'Other non-Christian': 'black',
+    'Other Christian': 'yellow',
+    'Protestant':'red',  
+    'Unaffiliated':'gray',
+    'Unknown':'black'
+    };
+
+
+    let relig_colors = relig_sorted_data.map(d => {
+        if(protestant_list.includes(d.religion)) {
+            return relig_color_dict['Protestant'];
+        }
+        return relig_color_dict[d.religion];
+    });
+
+    let relig_labels = relig_sorted_data.map(d => `${d.senator} (${d.religion})`);
+
+    nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
+
+    // @TODO: make the colors sorted by approx group and not alphabet
 
 
     });
 
 
+    d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/uspop.json").then(function(usdata) {
+    //console.log(usdata);
+    // GENDER----------------------------------------------------------
+    let guys = usdata.filter(a => a.SEX === 1);
+    let gals = usdata.filter(a => a.SEX === 2);
+
+
+    let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
+    let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
+
+    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'salmon']);
+
+    nonpartychamber_plot(10, pop_sex_colors, 0, 'Gender - US Population', 'IS-chamber-pop-sex');
+
+    // RACE-------------------------------------------------------------
+
+    let raceKey2 = [{n: 1, color: 'blue', race: 'White', pop: 0},
+                    {n: 2, color: 'red', race: 'Black', pop: 0},
+                    {n: 3, color: 'yellow', race: 'Indigenous', pop: 0},
+                    {n: 4, color: 'green', race: 'Asian American', pop: 0},
+                    {n: 5, color: 'purple', race: 'Hawaiian/Pacific Islander', pop: 0},
+                    {n: 6, color: 'orange', race: 'Multiple races', pop: 0}];
+
+    for(let j = 0; j < usdata.length; j++) {
+        let r = raceKey2.filter(r => usdata[j].RACE === r.n)
+        r[0].pop += usdata[j].POPESTIMATE2019;
+    }
+
+    
+    let us_race_colors = getColors(getAllSeats(raceKey2.map(r => r.pop)), raceKey2.map(r => r.color));
+    
+    let us_race_labels = us_race_colors.map(color => {
+        return raceKey2.filter(c => c.color === color)[0].race;
+    });
+
+    nonpartychamber_plot(10, us_race_colors, us_race_labels, 'Race Demographics - US Population', 'IS-chamber-pop-race');
+
+
+});
+
+d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
+
+
+
+
+});
 
 
 

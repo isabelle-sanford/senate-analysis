@@ -10,7 +10,7 @@ function init() {
         dem_total = data.filter(d => d.party !== 'Republican').map(sen => sen.population);
 
         other_total = data.filter(d => {
-            return (d.party !== 'Republican') && (d.party !== 'Democrat')
+            return (d.party !== 'Republican') && (d.party !== 'Democratic')
         }).map(sen => sen.population);
 
         // no other total atm
