@@ -168,7 +168,7 @@ function init() {
         
         d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/uspop.json").then(function(attr) {
 
-        console.log('successfully got uspop')
+            console.log('successfully got uspop')
 
             // US SEX CHAMBER PLOT
             let guys = attr.filter(a => a.SEX === 1);
@@ -263,15 +263,11 @@ function init() {
 
         console.log(relig_data); // 
 
-        let n = true;
-        for (let i = 0; i < relig_data.length; i++) {
 
+        for (let i = 1; i < relig_data.length; i++) {
             let curr_relig = relig_data[i];
             
-            if(n) {
-                n = false;
-                continue;
-            } else if (religion_list2.includes(curr_relig.Religion)) {
+            if (religion_list2.includes(curr_relig.Religion)) {
                 religion_obj[curr_relig.Religion] += curr_relig.Percent;
                 
             } else if (other_christian.includes(curr_relig.Religion)) {

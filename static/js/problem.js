@@ -102,16 +102,16 @@ function init() {
     };
 
 
-    let relig_colors = relig_sorted_data.map(d => {
+    let sen_relig_colors = relig_sorted_data.map(d => {
         if(protestant_list.includes(d.religion)) {
             return relig_color_dict['Protestant'];
         }
         return relig_color_dict[d.religion];
     });
 
-    let relig_labels = relig_sorted_data.map(d => `${d.senator} (${d.religion})`);
+    let sen_relig_labels = relig_sorted_data.map(d => `${d.senator} (${d.religion})`);
 
-    nonpartychamber_plot(10, relig_colors, relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
+    nonpartychamber_plot(10, sen_relig_colors, sen_relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
 
     // @TODO: make the colors sorted by approx group and not alphabet
 
@@ -161,11 +161,51 @@ function init() {
 
 d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
 
+    let religionKey = [
+        {religion: 'Buddhist', color: 'blue', pop: 0},
+        {religion: 'Catholic', color: 'brown', pop: 0},
+        {religion: 'Jewish', color: 'brown', pop: 0},
+        {religion: 'Hindu', color: 'pink', pop: 0},
+        {religion: 'Jewish', color: 'purple', pop: 0},
+        {religion: 'Latter-day Saint', color: 'orange', pop: 0},
+        {religion: 'Mormon', color: 'orange', pop: 0},
+        {religion: 'Muslim', color: 'green', pop: 0},
+        {religion: 'Other non-Christian', color: 'black', pop: 0},
+        {religion: 'Other Christian', color: 'yellow', pop: 0},
+        {religion: 'Protestant', color: 'red', pop: 0},
+        {religion: 'Unaffiliated', color: 'gray', pop: 0},
+        {religion: 'Unknown', color: 'black', pop: 0}
+    ];
 
+    let other_christian = ['Orthodox Christian', 'Jehovah\'s Witness', 'Other Christian'];
 
+    let religion_list = religionKey.map(r => r.religion);
+
+    for (let i = 1; i < relig_data.length; i++) {
+        let curr_relig = relig_data[i];
+        
+        if (religion_list.includes(curr_relig.Religion)) {
+            religionKey.filter(r => r.religion === curr_relig.Religion)[0].pop += curr_relig.Percent;
+        } else if (other_christian.includes(curr_relig.Religion)) {
+            religionKey.filter(r => r.religion === 'Other Christian')[0].pop += curr_relig.Percent;
+
+        } else if ((curr_relig.Protestant > 0) && (curr_relig.Percent < 99)) {
+            religionKey.filter(r => r.religion === 'Protestant')[0].pop += curr_relig.Percent;
+
+        } else {
+            console.log(curr_relig.Religion);
+        };
+    };
+
+    let us_relig_colors = getColors(getAllSeats(religionKey.map(r => r.pop)), religionKey.map(r => r.color));
+    let us_relig_labels = us_relig_colors.map(color => {
+        return religionKey.filter(c => c.color === color)[0].religion;
+    });
+
+    nonpartychamber_plot(10, us_relig_colors, us_relig_labels, 'US Religion Demographics', 'IS-chamber-pop-relig');
+    
 
 });
-
 
 
 };
