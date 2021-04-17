@@ -80,7 +80,7 @@ function init() {
     let sensexcolors = sex_sorted_data.map(g => sexKey[g.gender].color);
     let sensexlabels = sex_sorted_data.map(g => `${g.senator} (${sexKey[g.gender].sex})`);
 
-    nonpartychamber_plot(10, sensexcolors, sensexlabels, 'Gender - US Senate', 'IS-chamber-sen-sex');
+    nonpartychamber_plot(10, sensexcolors, sensexlabels, 'US Senate 2021', 'IS-chamber-sen-sex');
 
 
     // RACE----------------------------------------------
@@ -99,7 +99,7 @@ function init() {
     let senracecolors = race_sorted_data.map(g => raceKey[g.race].color);
     let senracelabels = race_sorted_data.map(g => `${g.senator} (${raceKey[g.race].race})`)
 
-    nonpartychamber_plot(10, senracecolors, senracelabels, 'Race Demographics - Senate', 'IS-chamber-sen-race');
+    nonpartychamber_plot(10, senracecolors, senracelabels, 'US Senate 2021', 'IS-chamber-sen-race');
 
     // RELIGION--------------------------------------------
 
@@ -146,7 +146,7 @@ function init() {
 
     let sen_relig_labels = relig_sorted_data.map(d => `${d.senator} (${d.religion})`);
 
-    nonpartychamber_plot(10, sen_relig_colors, sen_relig_labels, 'Religion Demographics - Senate', 'IS-chamber-sen-relig');
+    nonpartychamber_plot(10, sen_relig_colors, sen_relig_labels, 'US Senate 2021', 'IS-chamber-sen-relig');
 
     // @TODO: make the colors sorted by approx group and not alphabet
 
@@ -166,7 +166,7 @@ function init() {
 
     let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'salmon']);
 
-    nonpartychamber_plot(10, pop_sex_colors, 0, 'Gender - US Population', 'IS-chamber-pop-sex');
+    nonpartychamber_plot(10, pop_sex_colors, 0, 'US Population 2019', 'IS-chamber-pop-sex');
 
     // RACE-------------------------------------------------------------
 
@@ -189,7 +189,7 @@ function init() {
         return raceKey2.filter(c => c.color === color)[0].race;
     });
 
-    nonpartychamber_plot(10, us_race_colors, us_race_labels, 'Race Demographics - US Population', 'IS-chamber-pop-race');
+    nonpartychamber_plot(10, us_race_colors, us_race_labels, 'US Population 2019', 'IS-chamber-pop-race');
 
 
 });
@@ -237,7 +237,7 @@ d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json"
         return religionKey.filter(c => c.color === color)[0].religion;
     });
 
-    nonpartychamber_plot(10, us_relig_colors, us_relig_labels, 'US Religion Demographics', 'IS-chamber-pop-relig');
+    nonpartychamber_plot(10, us_relig_colors, us_relig_labels, 'US Population 2019', 'IS-chamber-pop-relig');
     
 
 });
@@ -261,7 +261,7 @@ let colonies_data = [//{state: "Vermont", pop: 22435},
     
     let col_sorted = colonies_data.sort((a,b) => b.pop - a.pop);
 
-    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the Thirteen Colonies', 'blue', 'colonies-bar');
+    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the 13 Colonies', 'rgb(107, 93, 93)', 'colonies-bar');
 
     let total = sumList(colonies_data.map(s => s.pop));
     console.log(total / 13);
