@@ -6,13 +6,10 @@
 
 - hispanic origin, age, ...
 
-- the nonparty chamber plot has overlapping middle columns
+- the nonparty chamber plot has overlapping middle columns -> later me: what does that mean?? no???
 
-- religion population is skewed data
+- get rid of bigger level rows of religion table in initial data (total, christian, non christian, ...)
 
-- get rid of bigger level rows of religion table (total, christian, non christian, ...)
-
-- make the button stop shadowing???
 
 - L E G E N D S
 
@@ -27,3 +24,16 @@ mean us state: 6.5m
 median us state: 4.5m
 
 For nonpartychamber demo plots - put title (senate/population) in middle of chamber!!!
+
+TODO 4/18:
+- CITATIONS PAGE
+- Conclusion
+- Text for 'who they represent' proportionality section
+- Revise introduction
+- makeshift legends? 
+
+TODO **NOT** 4/18:
+Think about UI for tabs - text is too long to keep tabs and text on screen. Vertical? Bottom and top? Just bottom? 
+neato icon!
+Duplicate page - Reform the Fucking Senate
+- touch up README
