@@ -25,3 +25,5 @@ mean 13 colonies: 57k
 
 mean us state: 6.5m
 median us state: 4.5m
+
+For nonpartychamber demo plots - put title (senate/population) in middle of chamber!!!
