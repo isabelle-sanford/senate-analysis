@@ -252,7 +252,7 @@ function nonpartychamber_plot(size, color, text, title2, div) {
             l: 0,
             r: 0
         }, 
-        
+        width: 500
         //plot_bgcolor: 'rgb(247,226,202)'
     }
 

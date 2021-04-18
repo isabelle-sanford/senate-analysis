@@ -20,6 +20,10 @@ p {
   font-style: normal;
 }
 
+a {
+  color:brown;
+}
+
 
 .footer {
   position: fixed;
@@ -154,7 +158,8 @@ p {
 .nav-tabs > .nav-link.active {
   background-color: darksalmon;
   border-color: darksalmon;
-  color:white;
+  color:black;
+  font-weight:700;
 }
 
 .bg-coral {

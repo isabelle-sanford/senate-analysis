@@ -24,3 +24,21 @@ such as education, child-care, and family health legislation.
 
 source: https://www.pewresearch.org/fact-tank/2019/03/18/the-share-of-women-in-legislatures-around-the-world-is-growing-but-they-are-still-underrepresented/
 Quote: Women make up 24% of members of national legislative bodies around the world, a share that has ticked up over the past decade but remains far smaller than their share of the overall world population, according to an analysis of data from the Inter-Parliamentary Union.
+
+-------------------------------
+# religion
+
+source:https://www.prri.org/wp-content/uploads/2017/09/PRRI-Religion-Report.pdf
+p.11 age graph
+
+
+source: https://www.pewforum.org/2021/01/04/faith-on-the-hill-2021/
+
+source: https://www.pewforum.org/2016/01/27/faith-and-the-2016-campaign/
+51% of americans would be less likely to vote for someone if they didn't believe in God
+
+source: https://www.jstor.org/stable/42864400 
+religious tradition and voting behavior in the House, 1959-94, yes it has effects
+
+source:https://onlinelibrary.wiley.com/doi/full/10.1111/jssr.12535
+looking at senate 110th-113th and break down assocs with religious beliefs
