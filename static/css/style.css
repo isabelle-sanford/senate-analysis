@@ -99,6 +99,33 @@ a {
   margin: 0;
 }
 
+.gender-legend {
+  background: url('../img/GenderLegend3.png') no-repeat center center;
+  background-size: cover;
+  /* height: 50%; */
+  height: 120px;
+  padding: 0px;
+  margin-top: 50px;
+}
+
+.race-legend {
+  background: url('../img/RaceLegend.png') no-repeat center center;
+  background-size: cover;
+  /* height: 50%; */
+  height: 110px;
+  padding: 0px;
+  margin-top: 50px;
+}
+
+.religion-legend {
+  background: url('../img/ReligionLegend3.png') no-repeat center center;
+  background-size: cover;
+  /* height: 50%; */
+  height: 320px;
+  padding: 0px;
+  margin-top: 50px;
+}
+
 #jumbotron-title {
   padding-top: 70px;
   color: white;

@@ -37,3 +37,4 @@ Think about UI for tabs - text is too long to keep tabs and text on screen. Vert
 neato icon!
 Duplicate page - Reform the Fucking Senate
 - touch up README
+- decent legends >:(

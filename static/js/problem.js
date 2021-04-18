@@ -182,6 +182,8 @@ function init() {
         r[0].pop += usdata[j].POPESTIMATE2019;
     }
 
+    console.log(raceKey2);
+
     
     let us_race_colors = getColors(getAllSeats(raceKey2.map(r => r.pop)), raceKey2.map(r => r.color));
     
