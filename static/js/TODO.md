@@ -39,3 +39,5 @@ Duplicate page - Reform the Fucking Senate
 - touch up README
 - decent legends >:(
 - make the capitol picture do the scroll down thing
+- update About page to bootstrap 5
+- fix the fucking tiny code under data on about page - might be a bs4 thing tho
