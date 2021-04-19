@@ -23,7 +23,7 @@ mean 13 colonies: 57k
 mean us state: 6.5m
 median us state: 4.5m
 
-For nonpartychamber demo plots - put title (senate/population) in middle of chamber!!!
+For nonpartychamber demo plots - put title (senate/population) in middle of chamber!!! and take out year from title
 
 TODO 4/18:
 - CITATIONS PAGE
@@ -38,3 +38,4 @@ neato icon!
 Duplicate page - Reform the Fucking Senate
 - touch up README
 - decent legends >:(
+- make the capitol picture do the scroll down thing
