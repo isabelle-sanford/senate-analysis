@@ -72,3 +72,6 @@ Quote: Lawmakers who are themselves people of color or returning veterans are mo
 ## minority legislators matter
 source: https://www.annualreviews.org/doi/full/10.1146/annurev-polisci-033011-205028#_i8
 Quote: To summarize, on the basis of prior studies, many of which have been corroborated by subsequent research, we have noted several reasons why racial and ethnic minority legislators matter. Such legislators are much more likely to support and initiate policies backed by minorities in the mass public; their election can mobilize minorities to participate in politics; their identity can shape the outcome of elections; their emergence has altered the coalitions of the major parties; and their presence in state legislatures encourages the adoption of policies favored by many minorities.
+
+
+53 million in the smallest 25 states out of 328 million

@@ -30,7 +30,7 @@ TODO 4/18:
 - Conclusion
 - Text for 'who they represent' proportionality section
 - Revise introduction
-- makeshift legends? 
+
 
 TODO **NOT** 4/18:
 Think about UI for tabs - text is too long to keep tabs and text on screen. Vertical? Bottom and top? Just bottom? 
