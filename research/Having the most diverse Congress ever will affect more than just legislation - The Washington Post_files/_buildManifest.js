@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a,b){return {"/":[a,b],"/[...all]":[a],"/index":[a,b],"/opinions-qa":[a,b]}}("static\u002Fchunks\u002Fb2beb7848cdc47a30d8ab5d5ee3366eca5ab1c27.58604db0606babee8d93.js","static\u002Fchunks\u002Fa7c7ab2d69c5a1614174ab102d4aa887454095dc.944e3cfbbf9bdb98b924.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

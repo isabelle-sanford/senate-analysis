@@ -1,0 +1,413 @@
+/* subaru_test_300x250.css */
+
+.text_shadow {
+color: #ffffff;
+text-shadow: rgb(0, 0, 0) 0px 1px 3px;
+}
+
+.text_black {
+color: #000000;
+}
+
+/* Main Container Controls */
+
+.message_container {
+font-family: Arial;
+font-weight: 700;
+height: 80px;
+position: absolute;
+text-align: center;
+width: 280px;
+top: 5px;
+left: 10px;
+}
+
+.message_container_stl {
+font-family: Arial;
+font-weight: 700;
+height: 80px;
+position: absolute;
+text-align: center;
+width: 215px;
+top: 5px;
+left: 10px;
+}
+
+.offer_container {
+font-family: Arial;
+font-weight: 700;
+height: 80px;
+position: absolute;
+text-align: center;
+width: 280px;
+top: 5px;
+left: 10px;
+}
+
+.offer_container_stl {
+font-family: Arial;
+font-weight: 700;
+height: 80px;
+position: absolute;
+text-align: center;
+width: 215px;
+top: 5px;
+left: 10px;
+}
+
+.child {
+top: 50%;
+transform: translateY(-50%);
+text-align: center;
+position: relative;
+}
+
+/* Discalimer and Generic Controls */
+
+.disclaimer {
+font-size: 7px;
+}
+
+.generic_xlarge {
+font-size: 36px;
+}
+
+.generic_large {
+font-size: 24px;
+}
+
+.generic_medium {
+font-size: 18px;
+}
+
+.generic_small {
+font-size: 14px;
+}
+
+.generic_xsmall {
+font-size: 9px;
+}
+
+
+/* Offer Controls */
+
+.apr_child {
+font-size: 14px;
+}
+
+.apr_price {
+font-size: 30px;
+}
+
+.apr_price_small {
+font-size: 20px;
+}
+
+.lease_child {
+font-size: 14px;
+}
+
+.msrp_child {
+font-size: 14px;
+}
+
+.msrp_price {
+font-size: 30px;
+}
+
+.signdrive_child {
+font-size: 11px;
+}
+
+.spacer {
+height: 5px;
+}
+
+.title_child {
+font-size: 16px;
+}
+
+/* Older Template Setup Controls */
+
+.title {
+text-align: center;
+width: 286px;
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 22px;
+position: absolute;
+top: 5px;
+left: 8px;
+}
+.title_stl {
+text-align: center;
+width: 205px;
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 22px;
+position: absolute;
+top: 5px;
+left: 8px;
+}
+.lease1 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 25.8203px;
+left: 8px;
+position: absolute;
+text-align: right;
+width: 56.9975px;
+top: 32px;
+font-size: 14px !important;
+}
+.lease2 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 38.9947px;
+left: 60px;
+position: absolute;
+text-align: right;
+width: 85.9892px;
+top: 30px;
+font-size: 34px !important;
+}
+.lease3 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 22.9887px;
+left: 150px;
+position: absolute;
+text-align: left;
+width: 44.9977px;
+top: 32px;
+font-size: 14px !important;
+}
+.lease4 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 32.9979px;
+left: 183px;
+position: absolute;
+text-align: left;
+top: 30px;
+width: 65.9958px;
+font-size: 34px !important;
+}
+.lease5 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 15px;
+left: 222px;
+position: absolute;
+text-align: center;
+width: 65px;
+top: 48px;
+font-size: 14px !important;
+}
+.lease6 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 15px;
+position: absolute;
+text-align: center;
+width: 286.992px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 67px;
+left: 5px;
+font-size: 14px;
+}
+.apr1 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 20.9896px;
+position: absolute;
+text-align: center;
+width: 286.992px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 30px;
+left: 5px;
+font-size: 14px !important;
+}
+.apr2 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 30px;
+position: absolute;
+text-align: center;
+width: 286.992px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 47px;
+left: 5px;
+}
+.msrp1 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 20.9896px;
+position: absolute;
+text-align: center;
+width: 286.992px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 30px;
+left: 8px;
+font-size: 14px !important;
+}
+.msrp2 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 20.9896px;
+position: absolute;
+text-align: center;
+width: 286.992px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 45px;
+left: 8px;
+font-size: 35px !important;
+}
+.sign1 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 25px;
+position: absolute;
+text-align: center;
+width: 280px;
+top: 37px;
+left: 10px;
+font-size: 12px;
+}
+.sign2 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 25px;
+position: absolute;
+text-align: center;
+width: 280px;
+top: 55px;
+left: 10px;
+font-size: 12px;
+}
+.generic1 {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 50px;
+position: absolute;
+text-align: center;
+width: 280px;
+top: 35px;
+left: 10px;
+}
+.generic_full {
+font-family: Arial;
+font-weight: 700;
+height: 80px;
+position: absolute;
+text-align: center;
+width: 280px;
+top: 5px;
+left: 10px;
+}
+.msrp1_stl {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 20.9896px;
+position: absolute;
+text-align: center;
+width: 205px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 30px;
+left: 8px;
+font-size: 14px !important;
+}
+.msrp2_stl {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 20.9896px;
+position: absolute;
+text-align: center;
+width: 205px;
+transform-origin: 143.615px 10.5593px 0px;
+top: 45px;
+left: 8px;
+font-size: 35px !important;
+}
+.generic1_stl {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 50px;
+position: absolute;
+text-align: center;
+width: 205px;
+top: 35px;
+left: 10px;
+}
+.generic_full_stl {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: 700;
+height: 80px;
+position: absolute;
+text-align: center;
+width: 205px;
+top: 5px;
+left: 10px;
+}
+.stl {
+width: 75px;
+height: 75px;
+top: 10px;
+left: 200px;
+position: absolute;
+}
+
+/* Testing for Flexbox below */
+
+.generic_full_flex {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: bold;
+font-size: 150%;
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: column;
+height: 80px;
+width: 280px;
+top: 5px;
+left: 10px;
+}
+
+.generic_full_flex_small {
+color: rgb(255, 255, 255);
+font-family: Arial;
+font-weight: bold;
+font-size: 105%;
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: column;
+height: 80px;
+width: 210px;
+top: 5px;
+left: 10px;
+}
