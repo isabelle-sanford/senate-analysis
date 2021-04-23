@@ -11,7 +11,7 @@ function init() {
 
     let bar_x = ['Democrat', 'Republican'];
     let bar_y = [sumList(dem_total_pop)/2, sumList(rep_total_pop)/2];
-    let bar_colors = ['blue', 'red'];
+    let bar_colors = ['#053C5E', '#DB222A'];
 
     if(sumList(other_total_pop) > 10000000) {
         bar_x.push('Other');
@@ -29,7 +29,7 @@ function init() {
 // STATE POP BAR===========================
 // @TODO: make this nice in the slightest??? yikes
 
-    let colordict = {'Republican': 'red', 'Democratic': 'blue', 'Vacant': 'black', 'Independent': 'gray'}
+    let colordict = {'Republican': '#DB222A', 'Democratic': '#053C5E', 'Vacant': 'black', 'Independent': 'gray'}
 
     let states = []; // x for both vars
 
@@ -75,7 +75,7 @@ function init() {
 
     let sex_sorted_data = sendata.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
 
-    let sexKey = {'1': {color:'purple', sex:'male'}, '2': {color:'deeppink', sex:'female'}};
+    let sexKey = {'1': {color:'#a31621', sex:'male'}, '2': {color:'#DB222A', sex:'female'}};
 
     let sensexcolors = sex_sorted_data.map(g => sexKey[g.gender].color);
     let sensexlabels = sex_sorted_data.map(g => `${g.senator} (${sexKey[g.gender].sex})`);
@@ -88,12 +88,12 @@ function init() {
 
     let race_sorted_data = sendata.sort((a,b) => parseInt(a.race) - parseInt(b.race));
 
-    let raceKey = {1: {color: 'blue', race: 'white'},
-                2: {color: 'red', race: 'African American'},
-                3: {color: 'yellow', race: '??????'},
-                4: {color: 'green', race: 'Asian American'},
-                5: {color: 'purple', race: '&&&&&'},
-                6: {color: 'orange', race: '******'}};
+    let raceKey = {1: {color: '#DB222A', race: 'white'},
+                2: {color: '#1F7A8C', race: 'African American'},
+                3: {color: '#06d6a0', race: '??????'},
+                4: {color: '#ffae03', race: 'Asian American'},
+                5: {color: '#EAE2B7', race: '&&&&&'},
+                6: {color: '#073b4c', race: '******'}};
 
 
     let senracecolors = race_sorted_data.map(g => raceKey[g.race].color);
@@ -122,17 +122,17 @@ function init() {
     });
 
 
-    let relig_color_dict = {'Buddhist':'blue',  
-    'Catholic':'brown', 
+    let relig_color_dict = {'Buddhist':'green',  
+    'Catholic':'#a31621', 
     'Hindu': 'pink',
-    'Jewish':'purple', 
-    'Latter-day Saint': 'gold',
-    'Mormon':'gold',
-    'Muslim': 'green',
-    'Other non-Christian': 'black',
-    'Other Christian': 'yellow',
-    'Protestant':'red',  
-    'Unaffiliated':'gray',
+    'Jewish':'#db222a', 
+    'Latter-day Saint': '#ffae03',
+    'Mormon':'#ffae03',
+    'Muslim': 'black',
+    'Other non-Christian': '#1f7a8c',
+    'Other Christian': 'purple',
+    'Protestant':'#053c5e',  
+    'Unaffiliated':'slategray',
     'Unknown':'black'
     };
 
@@ -164,18 +164,18 @@ function init() {
     let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
     let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
 
-    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['purple', 'deeppink']);
+    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['#a31621', '#DB222A']);
 
     nonpartychamber_plot(10, pop_sex_colors, 0, 'US Population 2019', 'IS-chamber-pop-sex');
 
     // RACE-------------------------------------------------------------
 
-    let raceKey2 = [{n: 1, color: 'blue', race: 'White', pop: 0},
-                    {n: 2, color: 'red', race: 'Black', pop: 0},
-                    {n: 3, color: 'yellow', race: 'Indigenous', pop: 0},
-                    {n: 4, color: 'green', race: 'Asian American', pop: 0},
+    let raceKey2 = [{n: 1, color: '#DB222A', race: 'White', pop: 0},
+                    {n: 2, color: '#1F7A8C', race: 'Black', pop: 0},
+                    {n: 3, color: '#06d6a0', race: 'Indigenous', pop: 0},
+                    {n: 4, color: '#ffae03', race: 'Asian American', pop: 0},
                     {n: 5, color: 'purple', race: 'Hawaiian/Pacific Islander', pop: 0},
-                    {n: 6, color: 'orange', race: 'Multiple races', pop: 0}];
+                    {n: 6, color: '#053c5e', race: 'Multiple races', pop: 0}];
 
     for(let j = 0; j < usdata.length; j++) {
         let r = raceKey2.filter(r => usdata[j].RACE === r.n)
@@ -199,18 +199,17 @@ function init() {
 d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
 
     let religionKey = [
-        {religion: 'Buddhist', color: 'blue', pop: 0},
-        {religion: 'Catholic', color: 'brown', pop: 0},
-        {religion: 'Jewish', color: 'brown', pop: 0},
+        {religion: 'Buddhist', color: 'green', pop: 0},
+        {religion: 'Catholic', color: '#a31621', pop: 0},
         {religion: 'Hindu', color: 'pink', pop: 0},
-        {religion: 'Jewish', color: 'purple', pop: 0},
-        {religion: 'Latter-day Saint', color: 'gold', pop: 0},
-        {religion: 'Mormon', color: 'gold', pop: 0},
-        {religion: 'Muslim', color: 'green', pop: 0},
-        {religion: 'Other non-Christian', color: 'black', pop: 0},
-        {religion: 'Other Christian', color: 'yellow', pop: 0},
-        {religion: 'Protestant', color: 'red', pop: 0},
-        {religion: 'Unaffiliated', color: 'gray', pop: 0},
+        {religion: 'Jewish', color: '#db222a', pop: 0},
+        {religion: 'Latter-day Saint', color: '#ffae03', pop: 0},
+        {religion: 'Mormon', color: '#ffae03', pop: 0},
+        {religion: 'Muslim', color: 'black', pop: 0},
+        {religion: 'Other non-Christian', color: '#1f7a8c', pop: 0},
+        {religion: 'Other Christian', color: 'purple', pop: 0},
+        {religion: 'Protestant', color: '#053c5e', pop: 0},
+        {religion: 'Unaffiliated', color: 'slategray', pop: 0},
         {religion: 'Unknown', color: 'black', pop: 0}
     ];
 
@@ -263,7 +262,7 @@ let colonies_data = [//{state: "Vermont", pop: 22435},
     
     let col_sorted = colonies_data.sort((a,b) => b.pop - a.pop);
 
-    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the 13 Colonies, 1790', 'rgb(170, 21, 51)', 'colonies-bar');
+    bar(col_sorted.map(s => s.state), colonies_data.map(s => s.pop), 'Free White Male 16-year-olds in the 13 Colonies, 1790', '#DB222A', 'colonies-bar');
 
     let total = sumList(colonies_data.map(s => s.pop));
     console.log(total);

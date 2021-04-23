@@ -15,7 +15,7 @@ function bar(x, y, title, colors, div){
         title: title,
         hovermode: 'closest',
         paper_bgcolor: 'transparent',
-        plot_bgcolor: 'rgb(247,226,202)'
+        plot_bgcolor: 'transparent'
     };
 
     Plotly.newPlot(div, my_data, my_layout);
@@ -85,7 +85,7 @@ function bar_pop_stack(vars1, vars2, title1, div) {
         ],
         // showlegend is false
         paper_bgcolor: 'transparent',
-        plot_bgcolor: 'rgb(247,226,202)',
+        plot_bgcolor: 'transparent',
         template: 'plotly_white'  // check formatting - why does this work and chamber plot not???
 
     }
