@@ -17,24 +17,18 @@
   </head>
 
 
-
-
   <body>
-    <!-- NAVBAR -->
 
+    <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-primary fixed-top flex-md-nowrap shadow p-0 m-0">
         <div class="container-fluid my-0 py-0">
             <a class="navbar-brand" href="#">Reform the Senate</a>
 
             <a class="nav-link nav-item" href="templates/about.html">About</a>
         </div>
-
-        
     </nav>
 
-      <!-- Main Page -->
-
-        <!-- TITLE BIT -->
+    <!-- TITLE / CAPITOL PIC -->
     <div class="jumbotron hero ">
         <div class="container">
             <div class="col-12 text-center">
@@ -47,10 +41,10 @@
                 <p><size="-2" color="white">Photo Credit: Martin Falbisoner</font></p>
             </div>
         </div>
-        
     </div>
 
     <!-- INTRODUCTION -->
+    <!-- header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -60,14 +54,12 @@
             </div>
         </div> 
     </div>
-
+    <!-- text -->
     <div class="container"> 
-    
         <div class="row">
-
             <div class="col-12">
-                
-                <p> The United States Senate is the upper chamber of the United States Congress, which along with the House of Representatives 
+                <p> 
+                The United States Senate is the upper chamber of the United States Congress, which along with the House of Representatives 
                 constitutes the legislature of the United States. The Senate is currently composed of 100 senators, two for each state. They 
                 serve staggered terms of six years.  <br><br>
 
@@ -78,18 +70,16 @@
 
                 Given the amount of power and influence that the Senate wields, it is important to ensure that it appropriately represents 
                 the American people. This page is intended to show some ways in which it is falling short of that ideal. 
-
                 </p>
-                
             </div>
         </div>
 
         <hr>
-
     </div>
 
-
-    <div class="container-fluid">
+    <!-- DEMOGRAPHIC PLOTS -->
+    <!-- header -->
+    <div class="container-fluid"> 
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron jumbotron-fluid bg-2">
@@ -99,20 +89,19 @@
         </div> 
     </div>
 
-
     <div class="container">
         <div class="row">
             <div class='col'>
+                <!-- intro text -->
                 <p>
                     If you chose a set of people whose demographics accurately represented the people of the 
                     United States, it would look very different than the Senate. This section shows that hypothetical
                     group next to the actual Senate, so as to showcase the differences between the two.  <br><br>
 
                     All data is from the 117th Congress (that began in January 2021) and the 2019 census data.
-                </p>
-
-                <br><br>
+                </p><br><br>
           
+                <!-- nav tabs for gender, race, relig -->
                 <nav>
                     <div class="nav nav-tabs bg-blue border border-blue border-5 border-bottom-0" id="nav-tab" role="tablist">
                       <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Gender</button>
@@ -121,22 +110,23 @@
                     </div>
                 </nav>
                 <div class="tab-content bg-coral px-5 border border-blue border-top-0 border-5" id="nav-tabContent">
+                    <!-- gender -->
                     <div class="tab-pane show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <!-- plots -->
                         <div class="row">
-
                             <div class="col-5">
                                 <div id="IS-chamber-sen-sex"></div>
-                            </div>
-                
+                            </div>              
                             <div class="col-5">
                                 <div id="IS-chamber-pop-sex"></div>
                             </div>
-
+                            <!-- legend pic -->
                             <div class="col-2">
                                 <div class="gender-legend"></div>
                             </div>
-
-
+                        </div>
+                        <!-- text -->
+                        <div class="row">
                             <div class="col-12">
                                 <br>
                                 <p>
@@ -156,29 +146,28 @@
                                     to be more effective in introducing and passing those bills 
                                     <a href="https://www.jstor.org/stable/2131862">when the legislature 
                                     has more women in it</a>. That is, ten women in a legislative
-                                    body will do more than double the work of five women. 
-                                     
-                                    
+                                    body will do more than double the work of five women.  
                                 </p>
                             </div>
-                
-
                         </div>
                     </div>
+                    <!-- race -->
                     <div class="tab-pane" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <!-- plots -->
                         <div class="row">
                             <div class="col-5">
                                 <div id="IS-chamber-sen-race"></div>
-                            </div>
-                
+                            </div>             
                             <div class="col-5">
                                 <div id="IS-chamber-pop-race"></div>
                             </div>
-
+                            <!-- legend -->
                             <div class="col-2">
                                 <div class="race-legend"></div>
                             </div>
-
+                        </div>
+                        <!-- text -->
+                        <div class="row">
                             <div class="col-12">
                                 <br>
                                 <p>
@@ -208,7 +197,9 @@
 
                         </div>
                     </div>
+                    <!-- religion -->
                     <div class="tab-pane" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <!-- plots -->
                         <div class="row">
                             <div class="col-5">
                                 <div id="IS-chamber-sen-relig"></div>
@@ -216,10 +207,12 @@
                             <div class="col-5">
                                 <div id="IS-chamber-pop-relig"></div>
                             </div>
+                            <!-- legend -->
                             <div class="col-2">
                                 <div class="religion-legend"></div>
                             </div>
                         </div>
+                        <!-- text -->
                         <div class="row">
                             <div class="col-12">
                                 <br>
@@ -251,21 +244,17 @@
                                     the 50 Republican senators are some flavor of Christian. The 14 non-Christian 
                                     senators are all Democrats. For more detail on the religious makeup of Congress, 
                                     <a href="https://www.pewforum.org/2021/01/04/faith-on-the-hill-2021/">see here</a>.)
-                                    
                                 </p>
                             </div>
-    
-
                         </div>
                     </div>
-                    
-                
                 </div>
             </div>
         </div>
-
     </div>
 
+    <!-- POPULATION & PARTY REPRESENTATION -->
+    <!-- header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -277,7 +266,9 @@
     </div>
 
     <div class="container">
+        <!-- population proportions bar section -->
         <div class="row">
+            <!-- text  -->
             <div class="col-12">
                 <p>
                     The Senate was not created to be a body representative of the US population, but rather of the states. 
@@ -296,13 +287,12 @@
             </div>
             <div class="col-12">
                 <div id="IS-bar-pop"></div>
-                
             </div>
-        </div>
-        
-        <hr>
+        </div><hr>
 
+        <!-- colonies comparison section -->
         <div class="row">
+            <!-- text -->
             <div class="col-6">
                 <p>
                     <br><br>
@@ -319,14 +309,15 @@
             <div class="col-6">
                 <div id="colonies-bar"></div>
             </div>
+        </div>
 
-
-
+        <!-- partisanship section -->
+        <div class="row">
             <div class="col-4">
                 <div id="IS-bar"></div>
             </div>
+            <!-- text -->
             <div class="col-8">
-                
                 <p>
                     In more recent years, the disproportionate power of small states has also led to increasing skews along 
                     partisan lines. Because <a href="https://fivethirtyeight.com/features/the-senate-has-always-favored-smaller-states-it-just-didnt-help-republicans-until-now/">
@@ -342,13 +333,12 @@
                     two almost certainly Democratic senate seats, and accusing Democrats of wanting it only because of those seats. 
                     Once, territories began the process of statehood once they had 60,000 people [CITE], but not only is Puerto Rico 
                     more populous than 20 states, DC, Guam, and the Virgin Islands all have over a hundred thousand people. <br><br>
-
-
-
-                </p>
-                <br>
-                
+                </p><br>
             </div>
+        </div>
+        
+        <!-- conclusion -->
+        <div class="row">
             <div class="col-12">
                 <p>
                     Nowadays there are no objective criteria for statehood that hold up to scrutiny: by population, Puerto Rico is bigger 
@@ -377,6 +367,8 @@
     </div>
 
 
+    <!-- CONCLUSION -->
+    <!-- header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -386,7 +378,6 @@
             </div>
         </div> 
     </div>
-
 
     <div class="container">
         <div class="row">
@@ -412,8 +403,6 @@
                     The Senate is the least diverse, least representative elected governing body in the country. That's a 
                     problem, and fix it could cut at the roots of a lot of other problems. So how do we fix it? <br><br>
                 </p>
-                
-                <h1 class="text-center"></h1>
             </div> 
 
             <div class="col-12 d-flex justify-content-center">
@@ -423,28 +412,30 @@
     </div>
 
 
-
+    <!-- FOOTER -->
     <footer class="footer">
       <span class="bottom">Isabelle Sanford  |</span>
       <!-- <a class="footer-data" href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html" target="_blank" title="Download Open Source Senate Data"><i class="fa fa-fw fa-2x fa-cloud-download"></i><span>Download Data</span></a> -->
       <a class="footer-data" href="templates/about" title="Download Open Source Senate Data"><i class="fa fa-fw fa-2x fa-cloud-download"></i><span>Sources & Data</span></a>
+      <!-- commented out census link and point href to data.html page -->
+      <!-- target="_blank" opens data page in new tab >>> remove if we keep href as data.html -->
     </footer>
-    <!-- commented out census link and point href to data.html page -->
-    <!-- target="_blank" opens data page in new tab >>> remove if we keep href as data.html -->
+
 
         
+    <!-- SCRIPTS -->
+    <!-- bootstrap? -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <!-- d3 -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- plotly -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- MINE -->
     <script type="text/javascript" src="static/js/functions.js"></script>
     <script type="text/javascript" src="static/js/plots.js"></script>
     <script type="text/javascript" src="static/js/problem.js"></script>
-
-
-
-      
 
 
   </body>

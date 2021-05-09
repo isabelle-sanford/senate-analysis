@@ -10,6 +10,7 @@
 
 - get rid of bigger level rows of religion table in initial data (total, christian, non christian, ...)
 
+- colonies data in a spreadsheet >:(
 
 - L E G E N D S
 
@@ -25,11 +26,6 @@ median us state: 4.5m
 
 For nonpartychamber demo plots - put title (senate/population) in middle of chamber!!! and take out year from title
 
-TODO 4/18:
-- CITATIONS PAGE
-- Conclusion
-- Text for 'who they represent' proportionality section
-- Revise introduction
 
 
 TODO **NOT** 4/18:
@@ -41,3 +37,5 @@ Duplicate page - Reform the Fucking Senate
 - make the capitol picture do the scroll down thing
 - update About page to bootstrap 5
 - fix the fucking tiny code under data on about page - might be a bs4 thing tho
+- Update for census 2020 data!!!!!
+- redo legend colors

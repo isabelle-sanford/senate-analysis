@@ -1,4 +1,5 @@
 function init() {
+    // SENATE
     d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/senators.json").then(function(sendata) {
 
 // SIMPLE BAR========================================
@@ -75,7 +76,7 @@ function init() {
 
     let sex_sorted_data = sendata.sort((a,b) => parseInt(a.gender) - parseInt(b.gender));
 
-    let sexKey = {'1': {color:'#a31621', sex:'male'}, '2': {color:'#DB222A', sex:'female'}};
+    let sexKey = {'1': {color:'#ffae03', sex:'male'}, '2': {color:'#1f7a8c', sex:'female'}};
 
     let sensexcolors = sex_sorted_data.map(g => sexKey[g.gender].color);
     let sensexlabels = sex_sorted_data.map(g => `${g.senator} (${sexKey[g.gender].sex})`);
@@ -153,7 +154,7 @@ function init() {
 
     });
 
-
+    // US (race, gender)
     d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/uspop.json").then(function(usdata) {
     //console.log(usdata);
     // GENDER----------------------------------------------------------
@@ -164,7 +165,7 @@ function init() {
     let guys_pop = sumList(guys.map(g => parseInt(g.POPESTIMATE2019)));
     let gals_pop = sumList(gals.map(g => parseInt(g.POPESTIMATE2019)));
 
-    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['#a31621', '#DB222A']);
+    let pop_sex_colors = getColors(getAllSeats([guys_pop, gals_pop]), ['#ffae03', '#1f7a8c']);
 
     nonpartychamber_plot(10, pop_sex_colors, 0, 'US Population 2019', 'IS-chamber-pop-sex');
 
@@ -194,9 +195,10 @@ function init() {
     nonpartychamber_plot(10, us_race_colors, us_race_labels, 'US Population 2019', 'IS-chamber-pop-race');
 
 
-});
+    });
 
-d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
+    // US RELIGION
+    d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json").then(function(relig_data) {
 
     let religionKey = [
         {religion: 'Buddhist', color: 'green', pop: 0},
@@ -241,8 +243,9 @@ d3.json("https://isabelle-sanford.github.io/senate-analysis/jsons/religion.json"
     nonpartychamber_plot(10, us_relig_colors, us_relig_labels, 'US Population 2019', 'IS-chamber-pop-relig');
     
 
-});
+    });
 
+    // ORIGINAL COLONIES
 let colonies_data = [//{state: "Vermont", pop: 22435},
                     {state: "New Hampshire", pop: 36086},
                     //{state: "Maine", pop: 24384},

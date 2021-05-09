@@ -26,5 +26,9 @@ https://search.proquest.com/pais/docview/59703408/6468841D40554F45PQ/7?accountid
 #### partisan responsiveness to wealth inequality
 https://search.proquest.com/pais/docview/1445359508/12B82A685DBE493APQ/2?accountid=9772
 
+check out adobe software? 
+
+NYT, WSJ, WaPo through bm - go to guides.tricolib.brynmawr.edu/news-sources 
+
 
 email to azimmerl@bmc

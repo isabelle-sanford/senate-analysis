@@ -1,0 +1,40 @@
+
+(function() {
+	if(navigator.webdriver) { return; }
+var ref = encodeURIComponent((parent !== window) ? document.referrer : document.location);
+
+var i = document.createElement("img");
+i.src = "https://aa.agkn.com/adscores/g.pixel?sid=9212284628&ip=165.106.130.34&page=" + ref + "&puid=561c914c1622a0914744eacad51225b0";
+i.height=0;i.width=0;i.style="display:none; visibility: hidden";
+document.body.appendChild(i);
+
+
+var l = document.createElement("img");
+l.src = "https://idsync.rlcdn.com/425276.gif?partner_uid=561c914c1622a0914744eacad51225b0"
+l.height=0;l.width=0;l.style="display:none; visibility: hidden";
+document.body.appendChild(l);
+
+
+var r = new XMLHttpRequest();
+r.withCredentials = true;
+var s ="r=" + ref;
+if (!(typeof dianomi_tag_params_0xA64B2857CB2344A3A33F33D4A4C5975F === "undefined")) {
+	
+	if (dianomi_tag_params_0xA64B2857CB2344A3A33F33D4A4C5975F["can_programmatic"]) {
+		var b = document.createElement("img");
+		b.src = "https://x.bidswitch.net/check_uuid/https:%2F%2Fdata.dianomi.com%2Ffrontend%2Fbidswitch%3Fgdpr=$%7BGDPR%7D&gdpr_consent=$%7BGDPR_CONSENT%7D&us_privacy=$%7BUS_PRIVACY%7D&uid=$%7BBSW_UUID%7D&cookie_age=$%7BCOOKIE_AGE%7D&username=561c914c1622a0914744eacad51225b0";
+		b.height=0;b.width=0;b.style="display:none; visibility: hidden";
+		document.body.appendChild(b);
+	}
+	
+
+	for (var property in dianomi_tag_params_0xA64B2857CB2344A3A33F33D4A4C5975F) {
+		if (dianomi_tag_params_0xA64B2857CB2344A3A33F33D4A4C5975F.hasOwnProperty(property)  && dianomi_tag_params_0xA64B2857CB2344A3A33F33D4A4C5975F[property] !== null) {
+			s += "&" + property + "=" + encodeURIComponent(dianomi_tag_params_0xA64B2857CB2344A3A33F33D4A4C5975F[property]);
+		}
+	}
+}
+
+r.open("GET", "https://data.dianomi.com/frontend/pixel?" + s, true);
+r.send();
+})();
