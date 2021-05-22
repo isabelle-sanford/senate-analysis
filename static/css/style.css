@@ -187,7 +187,8 @@ p {
   font-weight:700;
 }
 
-.bg-coral {
+/* NOT CORAL */
+.bg-coral { 
   background-color: #BFDBF7;
   border-color: #BFDBF7;
   color:#333;
