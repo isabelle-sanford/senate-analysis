@@ -1,0 +1,185 @@
+body {margin: 0px;}
+
+#container {
+	background-color: black;
+	border: 1px solid gray;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	width: 300px;
+	height: 600px;
+	pointer-events: none;
+}
+
+#container * {
+	position: absolute;
+}
+
+#clickthru{
+	width: 100%;
+	height: 100%;
+	pointer-events: auto;
+}
+
+/*-------------- SPRITE -------------*/
+.sprite { background: url('sprite.png') no-repeat top left; width: 266px; height: 407px; background-size: 266px 407px;  } 
+.sprite.cta-hover { background-position: 0 0; width: 91px; height: 16px; } 
+.sprite.cta-text { background-position: 0 -21px; width: 91px; height: 16px; } 
+.sprite.t1-1 { background-position: 0 -42px; width: 238px; height: 32px; } 
+.sprite.t1-2 { background-position: 0 -79px; width: 232px; height: 32px; } 
+.sprite.t2-1 { background-position: 0 -116px; width: 266px; height: 32px; } 
+.sprite.t2-2 { background-position: 0 -153px; width: 104px; height: 31px; } 
+.sprite.t3-1 { background-position: 0 -189px; width: 103px; height: 51px; } 
+.sprite.t4-1 { background-position: 0 -245px; width: 170px; height: 35px; } 
+.sprite.t4-2 { background-position: 0 -285px; width: 223px; height: 35px; } 
+.sprite.t4-3 { background-position: 0 -325px; width: 159px; height: 35px; } 
+.sprite.t4-4 { background-position: 0 -365px; width: 188px; height: 42px; } 
+
+/*--------- SPRITE POSITION ---------*/
+.t1-1 {
+    top: 157px;
+    left: 17px;
+}
+.t1-2 {
+    top: 203px;
+    left: 16px;
+}
+.t2-1 {
+    top: 156px;
+    left: 17px;
+}.t2-2 {
+    top: 203px;
+    left: 16px;
+}
+.t3-1 {
+    top: 210px;
+    left: 99px;
+}
+.t4-1 {
+    top: 126px;
+    left: 15px;
+}
+.t4-2 {
+    top: 176px;
+    left: 17px;
+}
+.t4-3 {
+    top: 226px;
+    left: 17px;
+}
+.t4-4 {
+    top: 0px;
+    left: 3px;
+}
+
+
+
+/*-------- IMAGES | POSITION --------*/
+img {
+    width:100%;
+    height:100%;
+}
+
+.bg1 {
+	width: 300px;
+	height: 600px;
+}
+
+.bg2 {
+	width: 300px;
+	height: 600px;
+}
+
+.logo{
+    top: 507px;
+    left: 17px;
+    width: 212px;
+    height: 67px;
+}
+
+/*-------- Mountain --------*/
+.mountain{
+    top: 267px;
+    left: 1px;
+    width: 354px;
+    height: 194px;
+}
+
+.cloud1{
+    top: 360px;
+    left: -119px;
+    width: 380px;
+    height: 193px;
+}
+
+.cloud2{
+    top: 378px;
+    left: -86px;
+    width: 498px;
+    height: 134px;
+}
+
+.cloud3{
+    top: 294px;
+    left: -35px;
+    width: 489px;
+    height: 225px;
+}
+
+
+.bar{
+    background-color: white;
+    bottom: 0px;
+    left: 0px;
+    width: 300px; 
+    height: 82px
+}
+
+
+
+/*-------- CTA --------*/
+#cta {
+    width: 124px;
+    height: 31px;
+    top: 437px;
+    left: 18px;
+}
+
+.cta-text,.cta-hover{
+    top: 14px;
+    left: 84px;
+}
+
+.cta-in{
+    width: 260px;
+    height: 43px;
+    background-color: #a41034;
+    border: 1px solid #a41034;
+}
+.cta-out{
+    width: 260px;
+    height: 43px;
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+
+/*-------- IDs --------*/
+#redLine {
+    top: 304px;
+    left: 18px;
+    width: 3px;
+    height: 52px;
+    background-color: #f4f5f6;
+}
+
+#goMask{
+    top: 310px;
+    left: 27px;
+    width: 205px;
+    height: 45px;
+    overflow: hidden;
+}

@@ -1,0 +1,7 @@
+/*
+ Quantcast measurement tag
+ Copyright (c) 2008-2018, Quantcast Corp.
+*/
+(function(b,h,g){try{__qc("defaults",b,{labels:"_fp.event.Default"})}catch(l){}var k=function(a,c,e){return a?"nc"===a?!c||!e||0>c.indexOf(e):"eq"===a?c===e:"sw"===a?0===c.indexOf(e):"ew"===a?(a=c.length-e.length,c=c.lastIndexOf(e,a),-1!==c&&c===a):"c"===a?0<=c.indexOf(e):!1:!1},d=function(a,c,e){var b;if(h.top===h.self)b=g.location.href;else{b=g.referrer;var d=g.createElement("a");d.href=b;b=d.href}k(c,b,e)?a(b):a(!1)},f=function(a){return"array"==={}.toString.call(a).match(/\s([a-zA-Z]+)/)[1].toLowerCase()?
+{labels:a.join(",")}:{labels:""+a}};__qc.apply(null,["rules",[b,null,[[f,"_fp.event.News"]],[[d,"eq","http://www.scpr.org/news/"]]],[b,null,[[f,"_fp.event.Support"]],[[d,"eq","http://www.scpr.org/support/"]]],[b,null,[[f,"_fp.event.Homepage"]],[[d,"eq","http://www.scpr.org/?"]]],[b,null,[[f,"_fp.event.Events"]],[[d,"eq","http://www.scpr.org/events/"]]],[b,null,[[f,"_fp.event.Homepage"]],[[d,"eq","http://www.scpr.org/"]]],[b,null,[[f,"_fp.event.Programs"]],[[d,"eq","http://www.scpr.org/programs/"]]],
+[b,null,[[f,"_fp.event.About"]],[[d,"eq","http://www.scpr.org/about/"]]]])})("p-_ZNT1e57PQPC3",window,document);

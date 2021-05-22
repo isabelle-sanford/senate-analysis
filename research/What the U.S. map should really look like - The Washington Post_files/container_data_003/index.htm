@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<meta charset="UTF-8">
+	<title>CandyBanners</title>
+	<meta name="ad.size" content="width=300,height=600"> 
+	<link rel="stylesheet" href="index_data/style.css">
+	<script> var clickTag = 'https://www.google.com'; </script>
+	<script src="index_data/gsap_3.js"></script>
+	<script src="index_data/cb_standard.js"></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script></head>
+<body>
+	<div id="container" style="display: block;">
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+		<div class="bg1 imgfix" style="will-change: transform; transform: translate3d(0px, 0px, 0px) rotate(0.001deg);"><img src="index_data/bg.png"></div>
+        
+        <!--FRAME1-->
+        <div class="sprite t1-1 t1" style="transform: translate(0px, -15px) rotate(0.001deg); opacity: 0;"></div>
+        <div class="sprite t1-2 t1" style="transform: translate(0px, -15px) rotate(0.001deg); opacity: 0;"></div>
+        
+        <!--FRAME2-->
+        <div class="sprite t2-1 t2" style="transform: rotate(0.001deg); opacity: 0;"></div>
+        <div class="sprite t2-2 t2" style="transform: rotate(0.001deg); opacity: 0;"></div>
+        
+        <!--MOUNTAIN-->
+        <div class="cont imgfix" style="will-change: transform; transform: translate3d(0px, 0px, 0px) rotate(0.001deg);">
+            <div class="cloud3 imgfix" style="will-change: transform; transform: translate3d(-15px, 0px, 0px) rotate(0.001deg); opacity: 0;"><img src="index_data/cloud3.png"></div>
+            <div class="mountain imgfix" style="will-change: transform; transform: translate3d(0px, 0px, 0px) rotate(0.001deg);"><img src="index_data/mountain.png"></div>
+            <div class="cloud2 imgfix" style="will-change: transform; transform: translate3d(-25px, 0px, 0px) rotate(0.001deg);"><img src="index_data/cloud2.png"></div>
+            <div class="cloud1 imgfix" style="will-change: transform; transform: translate3d(30px, 0px, 0px) rotate(0.001deg);"><img src="index_data/cloud1.png"></div>
+        </div>
+
+        <div class="bg2 imgfix" style="will-change: transform; transform: translate3d(0px, 0px, 0px) rotate(0.001deg); opacity: 0;"><img src="index_data/bg.png"></div>
+        
+        
+        <!--FRAME4-->
+        <div class="sprite t4-1" style="transform: rotate(0.001deg); opacity: 0;"></div>
+        <div class="sprite t4-2" style="transform: rotate(0.001deg); opacity: 0;"></div>
+        <div class="sprite t4-3" style="transform: rotate(0.001deg);"></div>
+
+        
+        <div id="goMask">
+            <div class="sprite t4-4 imgfix" style="transform: translate3d(0px, 0px, 0px) rotate(0.001deg); will-change: transform;"></div>
+        </div>
+        
+        <div id="redLine" style="transform: translate(0px);"></div>
+        <div class="logo imgfix" style="will-change: transform; transform: translate3d(0px, 0px, 0px) rotate(0.001deg);"><img src="index_data/logo.png"></div>
+        
+        <!----CTA---->
+        <div id="cta" style="opacity: 0;">
+            <div class="cta-in" style="transform-origin: 50% 50% 0px; transform: translate(0px);"><div class="sprite cta-text" style="transform: rotate(0.001deg);"></div></div>
+            <div class="cta-out" style="transform-origin: 50% 50% 0px; transform: translate3d(0px, 22px, -22px) rotateX(-90deg);"><div class="sprite cta-hover" style="transform: rotate(0.001deg);"></div></div>
+        </div>
+        <div id="clickthru"></div>
+		<!-- ~~~~~~~~~~~~~~ INSERT DIVS ~~~~~~~~~~~~~~ -->
+	</div>
+	<script>
+		var tl;
+        
+		function initAd() {
+			//--------- PRE-LOAD IMAGE ------------
+			startPreload('bg.png',
+                         'cloud1.png',
+                         'cloud2.png',
+                         'cloud3.png',
+                         'logo.png',
+                         'mountain.png',
+                         'sprite.png',
+                          startAnim);
+			//-------------------------------------
+			function startAnim() {
+				tl = new TimelineMax();
+                //--------------- EASING -----------------
+                var bounce1 = Elastic.easeOut.config(0.5, 2.0)
+                var bounce2 = Elastic.easeInOut.config(2.5, 2.0)
+                var RoboArms =  Power1.easeInOut
+				//--------------- SET -----------------
+				TweenMax.set('#container', {display: 'block'});
+				TweenMax.set('.sprite', { rotation:0.001});
+                TweenMax.set('.imgfix', { rotation:0.001, force3D:true, willChange: 'transform'});
+                TweenMax.set('.cta-out', {transformOrigin: '50% 50% -22px',rotationX:-90})
+                TweenMax.set('.cta-in',  {transformOrigin: '50% 50% -22px'})
+                
+                TweenMax.set('.hand1',  {transformOrigin: '9px 52px'})
+                TweenMax.set('.arm1',  {transformOrigin: '39px 63px'})
+                
+                TweenMax.set('.hand2',  {transformOrigin: '80px 46px'})
+                TweenMax.set('.arm2',  {transformOrigin: '12px 75px'})
+				//------------ ADD EVENT --------------
+				addEvent();
+				//---------- ADD ANIMATION ------------
+				tl  
+                    //----------
+                    .add('Scene1')
+					.from('.t1-1',      0.8,  {opacity:0,y:15, ease:Power1.easeOut},                'Scene1') 
+					.from('.t1-2',      0.8,  {opacity:0,y:15, ease:Power1.easeOut},                '-=0.3') 
+//.addPause()
+                    //----------
+                    .add('Scene2','+=1.5')
+                    .to('.t1',          0.8,  {opacity:0, y:-15, ease:Power1.easeOut},                   'Scene2')
+
+                    //----------
+                    .add('Scene3','-=0.4')
+                    .from('.mountain',  2.0,  {y:350, ease:bounce1 },'Scene3')
+                    .from('.cloud1',    2.0,  {y:350, ease:bounce1 },'Scene3')
+                    .from('.cloud2',    2.0,  {y:370, ease:bounce1 },'Scene3')
+                    .from('.cloud3',    2.0,  {y:480, opacity:0, ease:bounce1 },'Scene3')
+                    .from('.t2-1',      0.6,  {opacity:0,scale:3,ease:Back.easeOut.config(1)},     'Scene3+=1.0')
+                    .from('.t2-2',      0.6,  {opacity:0,scale:3,ease:Back.easeOut.config(1)},     '-=0.8')
+
+                    //----------
+                    .add('Scene4','-=1')
+                    .to('.cloud1',      4.0,  {x: 30, ease:RoboArms },'Scene4')
+                    .to('.cloud2',      4.0,  {x:-25, ease:RoboArms },'Scene4')
+                    .to('.cloud3',      4.0,  {x:-15, ease:RoboArms },'Scene4')
+
+                 
+                    //----------
+                    .add('Scene5','-=0.5')
+                    .from('.bg2',       0.6,  {opacity:0, ease:Power1.easeOut},'Scene5')
+                    .to('.t2',          0.6,  {opacity:0, ease:Power3.easeInOut},'Scene5')
+                
+                    //----------
+                    .add('Scene7','-=0.2')
+                    .from('.t4-1',      0.8,  {opacity:0, y:15, ease:Power1.easeOut},'Scene7')
+					.from('.t4-2',      0.8,  {opacity:0, y:15, ease:Power1.easeOut},'-=.3')
+                    .from('#redLine',   0.5,  {scaleY:0}, '-=.5')
+                    .from('.t4-3',      0.5,  {xPercent:-150, ease:Back.easeOut.config(0.8)}, '-=.3')
+                    .from('.t4-4',      0.5,  {xPercent:-150, ease:Back.easeOut.config(0.8)}, '-=.3')
+                    .from('#cta',       0.5,  {opacity:0}, '-=.2')
+
+                    .add(endFrame); 
+				//-------------------------------------
+			};
+			
+			function addEvent() {
+				//--------------- SET -----------------
+				//To add:		_(object).on(events,  function);
+				//To remove:	_(object).off(events, function);
+				//-------------------------------------
+				_('#container').on('click', exit);
+			};
+            
+
+			function exit() {
+				window.open(clickTag); 
+				console.log('Exit')
+			}
+			
+
+			function endFrame() {
+				_('#clickthru').on('mouseenter', function() {
+                    TweenMax.to('.cta-in',.2,{rotationX:90},'In')
+                    TweenMax.to('.cta-out',.2,{rotationX:0},'In')
+				});
+				_('#clickthru').on('mouseleave', function() {
+                    TweenMax.to('.cta-out',.2,{rotationX:-90},'Out')
+                    TweenMax.to('.cta-in',.2,{rotationX:0},'Out')
+				});
+			}
+		};
+	</script>
+
+</body></html>
