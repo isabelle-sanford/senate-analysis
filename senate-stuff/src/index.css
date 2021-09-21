@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Jumbotron image and text */
+.hero {
+  background: url('img/US_Capitol_west_side.jpeg') no-repeat center center;
+  background-size: cover;
+  /* height: 50%; */
+  position: relative;
+  height: 550px;
+  padding: 20px;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Navbar */
+.bg-red {
+  background-color: #A31621!important;
+  color: white;
+  margin-top: 10px; 
+}
+
+.bg-light {
+  background-color: rgb(247, 226, 202)!important;
+}
+
+.border-blue {
+  border: 1px solid #053C5E!important;
+
+}
+
+.bg-blue {
+  background-color: #053C5E!important;
+  color: white;
+  margin-top: 10px;
+}
+
+/* NOT CORAL */
+.bg-skyblue { 
+  background-color: #BFDBF7;
+  border-color: #BFDBF7;
+  color:#333;
+}
+
+.nav-tabs .nav-link.active {
+  color:black!important;
+  background-color: #BFDBF7!important;
+  border-color: #BFDBF7!important;
+  font-weight:700;
+}
+
+.nav-link {
+  color: white!important;
+}
+
+p {
+  font-size: larger;
+  font-style: normal;
+}
