@@ -1,6 +1,58 @@
 import senData from "../data/senators.json";
+import { sumList } from "./CensusData";
 
 // [{num: 20, color: blue, labels: [], name: democrats}, ]
+
+// partisan representation divide
+// todo: stop relying on specific party names
+// and don't automatically loop independents into Dems
+let republicanPop = senData
+  .filter((sen) => sen.party === "Republican")
+  .map((sen) => sen.population);
+let democratPop = senData
+  .filter((sen) => sen.party !== "Republican") // Ew no
+  .map((sen) => sen.population);
+
+let republicanRep = sumList(republicanPop) / 2; // bc senator only represents half a state pop
+let democratRep = sumList(democratPop) / 2;
+
+export const representationNums = [
+  { party: "Democrat", population: democratRep, color: "blue" },
+  { party: "Republican", population: republicanRep, color: "red" },
+];
+
+// split representation into two traces, 1/state
+// format: list of objects {x: xdata, y: ydata, color: blue, text: labels}
+let trace1 = { x: [], y: [], color: [], text: [] };
+let trace2 = { x: [], y: [], color: [], text: [] };
+
+let colordict = {
+  Republican: "red",
+  Democratic: "blue",
+  Vacant: "black",
+  Independent: "gray",
+};
+
+senData.forEach((sen) => {
+  let n = 1;
+  if (trace1["x"].includes(sen.state)) {
+    n = 2;
+  }
+
+  if (n === 1) {
+    trace1["x"].push(sen.state); // todo: use state abbrevs
+    trace1["y"].push(sen.population / 2);
+    trace1["color"].push(colordict[sen.party]);
+    trace1["text"].push(sen.senator);
+  } else {
+    trace2["x"].push(sen.state);
+    trace2["y"].push(sen.population / 2);
+    trace2["color"].push(colordict[sen.party]);
+    trace2["text"].push(sen.senator);
+  }
+});
+
+export const stackedData = [trace1, trace2];
 
 // GENDER--------------------------------------------------------------
 

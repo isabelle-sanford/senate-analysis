@@ -11,25 +11,19 @@ import * as React from "react";
 // } from "react-bootstrap";
 import Plot from "react-plotly.js";
 
-export function BarPlot(
-  x: number[],
-  y: number[],
-  title: any,
-  colors: string[]
-): any {
+export function BarPlot(props: any): any {
   return (
     <Plot
       data={[
         {
-          x: x,
-          y: y,
+          x: props.x,
+          y: props.y,
           type: "bar",
-          marker: { color: colors },
+          marker: { color: props.colors },
         },
-        { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
       ]}
       layout={{
-        title: title,
+        title: props.title,
         paper_bgcolor: "transparent",
         plot_bgcolor: "transparent",
       }}
@@ -130,4 +124,50 @@ function coords(bool: boolean) {
   } else {
     return [all_rads, theta.reverse()];
   }
+}
+
+// format: list of objects {x: xdata, y: ydata, color: blue, text: labels}
+export function StackedBarPlot(data: any, title: string) {
+  let traces: any[] = data.data.map((d: any) => {
+    // whyyy
+    return {
+      x: d.x,
+      y: d.y,
+      marker: {
+        color: d.color,
+      },
+      type: "bar",
+      hovertext: d.text,
+    };
+  });
+
+  return (
+    <Plot
+      data={traces}
+      layout={{
+        title: title,
+        showlegend: false,
+        barmode: "stack",
+        xaxis: {
+          categoryorder: "total descending", // CF
+        },
+        shapes: [
+          {
+            type: "line",
+            x0: 8.5,
+            y0: 0,
+            x1: 8.5,
+            y1: Math.max(...data.data[0].y) * 2, // ehhhh
+            line: {
+              width: 1.5,
+              dash: "dot",
+            },
+          },
+        ],
+        paper_bgcolor: "transparent",
+        plot_bgcolor: "transparent",
+        // template: "plotly_white",
+      }}
+    />
+  );
 }

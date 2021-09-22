@@ -7,14 +7,23 @@ import {
   whyItMatters,
   gender,
   race,
-  testing,
+  religion,
+  partisanship,
+  whoTheyRepresentConclusion,
+  compareColonialTimes,
 } from "./textStuff";
-import { ChamberPlot } from "./plotstuff/Plots";
+import { BarPlot, ChamberPlot, StackedBarPlot } from "./plotstuff/Plots";
 
-import { sexData, raceData, religData } from "./plotstuff/SenateData";
+import {
+  sexData,
+  raceData,
+  religData,
+  representationNums,
+  stackedData,
+} from "./plotstuff/SenateData";
 
 import Container from "react-bootstrap/Container";
-import { raceDataUS, sexDataUS } from "./plotstuff/CensusData";
+import { colonyData, raceDataUS, sexDataUS } from "./plotstuff/CensusData";
 
 function ExampleHeader(props) {
   return (
@@ -131,13 +140,50 @@ const App = () => (
         </Tab>
         <Tab eventKey="religion" title="Religion" className="m-2">
           <ChamberPlot data={religData} title="Senate" />
-          <p>{testing}</p>
+          <p>{religion}</p>
         </Tab>
       </Tabs>
     </Container>
 
     <ExampleHeader title="Who They Represent" id="represent" />
     <ExampleBody text={whoTheyRepresent} />
+    <Container>
+      <Row>
+        <StackedBarPlot
+          data={stackedData}
+          title="State Population by Senator"
+        />
+      </Row>
+
+      <Row>
+        <Col sm="8">
+          <ExampleBody text={compareColonialTimes} />
+        </Col>
+        <Col sm="4">
+          <BarPlot
+            x={colonyData.map((c) => c.state)}
+            y={colonyData.map((c) => c.pop)}
+            colors="red"
+            title="Free White Male 16-year-olds in the 13 Colonies, 1790"
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col sm="4">
+          <BarPlot
+            x={representationNums.map((r) => r.party)}
+            y={representationNums.map((r) => r.population)}
+            colors={representationNums.map((r) => r.color)}
+            title="# of People Each Party Represents"
+          />
+        </Col>
+        <Col sm="8">
+          <ExampleBody text={partisanship} />
+        </Col>
+      </Row>
+    </Container>
+
+    <ExampleBody text={whoTheyRepresentConclusion} />
 
     <ExampleHeader title="Why It Matters" id="why" />
     <ExampleBody text={whyItMatters} />

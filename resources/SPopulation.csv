@@ -1,0 +1,101 @@
+,State,Senator,party,Born,assumed_office,term_up,st,population,Religion,gender,color,race
+0,Alabama,Richard Shelby,Republican,(age 86),"January 3, 1987",2022,AL,4903185,Presbyterian,1,red,1
+1,Alabama,Tommy Tuberville,Republican,(age 66),"January 3, 2021",2026,AL,4903185,Restorationist,1,red,1
+2,Alaska,Lisa Murkowski,Republican,(age 63),"December 20, 2002",2022,AK,731545,Catholic,2,red,1
+3,Alaska,Dan Sullivan,Republican,(age 56),"January 3, 2015",2026,AK,731545,Catholic,1,red,1
+4,Arizona,Kyrsten Sinema,Democratic,(age 44),"January 3, 2019",2024,AZ,7278717,Unaffiliated,2,blue,1
+5,Arizona,Mark Kelly,Democratic,(age 57),"December 2, 2020",2022,AZ,7278717,Catholic,1,blue,1
+6,Arkansas,John Boozman,Republican,(age 70),"January 3, 2011",2022,AR,3017804,Baptist,1,red,1
+7,Arkansas,Tom Cotton,Republican,(age 43),"January 3, 2015",2026,AR,3017804,Methodist,1,red,1
+8,California,Dianne Feinstein,Democratic,(age 87),"November 10, 1992",2024,CA,39512223,Jewish,2,blue,1
+9,California,Alex Padilla,Democratic,(age 48),"January 20, 2021",2022,CA,39512223,Catholic,1,blue,1
+10,Colorado,Michael Bennet,Democratic,(age 56),"January 21, 2009",2022,CO,5758736,Unknown,1,blue,1
+11,Colorado,John Hickenlooper,Democratic,(age 69),"January 3, 2021",2026,CO,5758736,Quaker,1,blue,1
+12,Connecticut,Richard Blumenthal,Democratic,(age 75),"January 3, 2011",2022,CT,3565287,Jewish,1,blue,1
+13,Connecticut,Chris Murphy,Democratic,(age 47),"January 3, 2013",2024,CT,3565287,Protestant,1,blue,1
+14,Delaware,Tom Carper,Democratic,(age 74),"January 3, 2001",2024,DE,973764,Presbyterian,1,blue,1
+15,Delaware,Chris Coons,Democratic,(age 57),"November 15, 2010",2026,DE,973764,Presbyterian,1,blue,1
+16,Florida,Marco Rubio,Republican,(age 49),"January 3, 2011",2022,FL,21477737,Catholic,1,red,1
+17,Florida,Rick Scott,Republican,(age 68),"January 8, 2019",2024,FL,21477737,Evangelical,1,red,1
+18,Georgia,Jon Ossoff,Democratic,(age 34),"January 20, 2021",2026,GA,10617423,Jewish,1,blue,1
+19,Georgia,Raphael Warnock,Democratic,(age 51),"January 20, 2021",2022,GA,10617423,Baptist,1,blue,2
+20,Hawaii,Brian Schatz,Democratic,(age 48),"December 26, 2012",2022,HI,1415872,Jewish,1,blue,1
+21,Hawaii,Mazie Hirono,Democratic,(age 73),"January 3, 2013",2024,HI,1415872,Buddhist,2,blue,4
+22,Idaho,Mike Crapo,Republican,(age 69),"January 3, 1999",2022,ID,1787065,Latter-day Saint,1,red,1
+23,Idaho,Jim Risch,Republican,(age 77),"January 3, 2009",2026,ID,1787065,Catholic,1,red,1
+24,Illinois,Dick Durbin,Democratic,(age 76),"January 3, 1997",2026,IL,12671821,Catholic,1,blue,1
+25,Illinois,Tammy Duckworth,Democratic,(age 53),"January 3, 2017",2022,IL,12671821,Unknown,2,blue,4
+26,Indiana,Todd Young,Republican,(age 48),"January 3, 2017",2022,IN,6732219,Protestant,1,red,1
+27,Indiana,Mike Braun,Republican,(age 67),"January 3, 2019",2024,IN,6732219,Catholic,1,red,1
+28,Iowa,Chuck Grassley,Republican,(age 87),"January 3, 1981",2022,IA,3155070,Baptist,1,red,1
+29,Iowa,Joni Ernst,Republican,(age 50),"January 3, 2015",2026,IA,3155070,Lutheran,2,red,1
+30,Kansas,Jerry Moran,Republican,(age 66),"January 3, 2011",2022,KS,2913314,Methodist,1,red,1
+31,Kansas,Roger Marshall,Republican,(age 60),"January 3, 2021",2026,KS,2913314,Protestant,1,red,1
+32,Kentucky,Mitch McConnell,Republican,(age 79),"January 3, 1985",2026,KY,4467673,Baptist,1,red,1
+33,Kentucky,Rand Paul,Republican,(age 58),"January 3, 2011",2022,KY,4467673,Presbyterian,1,red,1
+34,Louisiana,Bill Cassidy,Republican,(age 63),"January 3, 2015",2026,LA,4648794,Evangelical,1,red,1
+35,Louisiana,John Kennedy,Republican,(age 69),"January 3, 2017",2022,LA,4648794,Methodist,1,red,1
+36,Maine,Susan Collins,Republican,(age 68),"January 3, 1997",2026,ME,1344212,Catholic,2,red,1
+37,Maine,Angus King,Independent,(age 77),"January 3, 2013",2024,ME,1344212,Episcopalian,1,gray,1
+38,Maryland,Ben Cardin,Democratic,(age 77),"January 3, 2007",2024,MD,6045680,Jewish,1,blue,1
+39,Maryland,Chris Van Hollen,Democratic,(age 62),"January 3, 2017",2022,MD,6045680,Episcopalian,1,blue,1
+40,Massachusetts,Elizabeth Warren,Democratic,(age 71),"January 3, 2013",2024,MA,6892503,Methodist,2,blue,1
+41,Massachusetts,Ed Markey,Democratic,(age 74),"July 16, 2013",2026,MA,6892503,Catholic,1,blue,1
+42,Michigan,Debbie Stabenow,Democratic,(age 70),"January 3, 2001",2024,MI,9986857,Methodist,2,blue,1
+43,Michigan,Gary Peters,Democratic,(age 62),"January 3, 2015",2026,MI,9986857,Episcopalian,1,blue,1
+44,Minnesota,Amy Klobuchar,Democratic,(age 60),"January 3, 2007",2024,MN,5639632,Congregationalist,2,blue,1
+45,Minnesota,Tina Smith,Democratic,(age 63),"January 3, 2018",2026,MN,5639632,Presbyterian,2,blue,1
+46,Mississippi,Roger Wicker,Republican,(age 69),"December 31, 2007",2024,MS,2976149,Baptist,1,red,1
+47,Mississippi,Cindy Hyde-Smith,Republican,(age 61),"April 9, 2018",2026,MS,2976149,Baptist,2,red,1
+48,Missouri,Roy Blunt,Republican,(age 71),"January 3, 2011",2022,MO,6137428,Baptist,1,red,1
+49,Missouri,Josh Hawley,Republican,(age 41),"January 3, 2019",2024,MO,6137428,Evangelical,1,red,1
+50,Montana,Jon Tester,Democratic,(age 64),"January 3, 2007",2024,MT,1068778,Holiness,1,blue,1
+51,Montana,Steve Daines,Republican,(age 58),"January 3, 2015",2026,MT,1068778,Presbyterian,1,red,1
+52,Nebraska,Deb Fischer,Republican,(age 70),"January 3, 2013",2024,NE,1934408,Presbyterian,2,red,1
+53,Nebraska,Ben Sasse,Republican,(age 49),"January 3, 2015",2026,NE,1934408,Presbyterian,1,red,1
+54,Nevada,Catherine Cortez Masto,Democratic,(age 57),"January 3, 2017",2022,NV,3080156,Catholic,2,blue,1
+55,Nevada,Jacky Rosen,Democratic,(age 63),"January 3, 2019",2024,NV,3080156,Jewish,2,blue,1
+56,New Hampshire,Jeanne Shaheen,Democratic,(age 74),"January 3, 2009",2026,NH,1359711,Protestant,2,blue,1
+57,New Hampshire,Maggie Hassan,Democratic,(age 63),"January 3, 2017",2022,NH,1359711,Congregationalist,2,blue,1
+58,New Jersey,Bob Menendez,Democratic,(age 67),"January 17, 2006",2024,NJ,8882190,Catholic,1,blue,1
+59,New Jersey,Cory Booker,Democratic,(age 51),"October 31, 2013",2026,NJ,8882190,Baptist,1,blue,2
+60,New Mexico,Martin Heinrich,Democratic,(age 49),"January 3, 2013",2024,NM,2096829,Lutheran,1,blue,1
+61,New Mexico,Ben Ray Luján,Democratic,(age 48),"January 3, 2021",2026,NM,2096829,Catholic,1,blue,1
+62,New York,Chuck Schumer,Democratic,(age 70),"January 3, 1999",2022,NY,19453561,Jewish,1,blue,1
+63,New York,Kirsten Gillibrand,Democratic,(age 54),"January 26, 2009",2024,NY,19453561,Catholic,2,blue,1
+64,North Carolina,Richard Burr,Republican,(age 65),"January 3, 2005",2022,NC,10488084,Methodist,1,red,1
+65,North Carolina,Thom Tillis,Republican,(age 60),"January 3, 2015",2026,NC,10488084,Catholic,1,red,1
+66,North Dakota,John Hoeven,Republican,(age 64),"January 3, 2011",2022,ND,762062,Catholic,1,red,1
+67,North Dakota,Kevin Cramer,Republican,(age 60),"January 3, 2019",2024,ND,762062,Evangelical,1,red,1
+68,Ohio,Sherrod Brown,Democratic,(age 68),"January 3, 2007",2024,OH,11689100,Lutheran,1,blue,1
+69,Ohio,Rob Portman,Republican,(age 65),"January 3, 2011",2022,OH,11689100,Methodist,1,red,1
+70,Oklahoma,Jim Inhofe,Republican,(age 86),"November 16, 1994",2026,OK,3956971,Presbyterian,1,red,1
+71,Oklahoma,James Lankford,Republican,(age 53),"January 3, 2015",2022,OK,3956971,Baptist,1,red,1
+72,Oregon,Ron Wyden,Democratic,(age 71),"February 5, 1996",2022,OR,4217737,Jewish,1,blue,1
+73,Oregon,Jeff Merkley,Democratic,(age 64),"January 3, 2009",2026,OR,4217737,Lutheran,1,blue,1
+74,Pennsylvania,Bob Casey Jr.,Democratic,(age 61),"January 3, 2007",2024,PA,12801989,Catholic,1,blue,1
+75,Pennsylvania,Pat Toomey,Republican,(age 59),"January 3, 2011",2022,PA,12801989,Catholic,1,red,1
+76,Rhode Island,Jack Reed,Democratic,(age 71),"January 3, 1997",2026,RI,1059361,Catholic,1,blue,1
+77,Rhode Island,Sheldon Whitehouse,Democratic,(age 65),"January 3, 2007",2024,RI,1059361,Episcopalian,1,blue,1
+78,South Carolina,Lindsey Graham,Republican,(age 65),"January 3, 2003",2026,SC,5148714,Baptist,1,red,1
+79,South Carolina,Tim Scott,Republican,(age 55),"January 3, 2013",2022,SC,5148714,Evangelical,1,red,2
+80,South Dakota,John Thune,Republican,(age 60),"January 3, 2005",2022,SD,884659,Evangelical,1,red,1
+81,South Dakota,Mike Rounds,Republican,(age 66),"January 3, 2015",2026,SD,884659,Catholic,1,red,1
+82,Tennessee,Marsha Blackburn,Republican,(age 68),"January 3, 2019",2024,TN,6829174,Presbyterian,2,red,1
+83,Tennessee,Bill Hagerty,Republican,(age 61),"January 3, 2021",2026,TN,6829174,Episcopalian,1,red,1
+84,Texas,John Cornyn,Republican,(age 69),"December 2, 2002",2026,TX,28995881,Restorationist,1,red,1
+85,Texas,Ted Cruz,Republican,(age 50),"January 3, 2013",2024,TX,28995881,Baptist,1,red,1
+86,Utah,Mike Lee,Republican,(age 49),"January 3, 2011",2022,UT,3205958,Latter-day Saint,1,red,1
+87,Utah,Mitt Romney,Republican,(age 74),"January 3, 2019",2024,UT,3205958,Latter-day Saint,1,red,1
+88,Vermont,Patrick Leahy,Democratic,(age 81),"January 3, 1975",2022,VT,623989,Catholic,1,blue,1
+89,Vermont,Bernie Sanders,Independent,(age 79),"January 3, 2007",2024,VT,623989,Jewish,1,gray,1
+90,Virginia,Mark Warner,Democratic,(age 66),"January 3, 2009",2026,VA,8535519,Presbyterian,1,blue,1
+91,Virginia,Tim Kaine,Democratic,(age 63),"January 3, 2013",2024,VA,8535519,Catholic,1,blue,1
+92,Washington,Patty Murray,Democratic,(age 70),"January 3, 1993",2022,WA,7614893,Catholic,2,blue,1
+93,Washington,Maria Cantwell,Democratic,(age 62),"January 3, 2001",2024,WA,7614893,Catholic,2,blue,1
+94,West Virginia,Joe Manchin,Democratic,(age 73),"November 15, 2010",2024,WV,1792147,Catholic,1,blue,1
+95,West Virginia,Shelley Moore Capito,Republican,(age 67),"January 3, 2015",2026,WV,1792147,Presbyterian,2,red,1
+96,Wisconsin,Ron Johnson,Republican,(age 66),"January 3, 2011",2022,WI,5822434,Lutheran,1,red,1
+97,Wisconsin,Tammy Baldwin,Democratic,(age 59),"January 3, 2013",2024,WI,5822434,Unknown,2,blue,1
+98,Wyoming,John Barrasso,Republican,(age 68),"June 25, 2007",2024,WY,578759,Presbyterian,1,red,1
+99,Wyoming,Cynthia Lummis,Republican,(age 66),"January 3, 2021",2026,WY,578759,Lutheran,2,red,1

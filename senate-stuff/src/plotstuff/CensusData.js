@@ -39,7 +39,7 @@ export const sexDataUS = [
 ];
 
 // sum list
-function sumList(nums) {
+export function sumList(nums) {
   return nums.reduce(function (tot, next) {
     return tot + parseInt(next);
   }, 0);
@@ -93,3 +93,26 @@ export const raceDataUS = [
     color: "orange",
   },
 ];
+
+// 1790 CENSUS-----------------------------
+// ORIGINAL COLONIES
+let colonies_data = [
+  //{state: "Vermont", pop: 22435},
+  { state: "New Hampshire", pop: 36086 },
+  //{state: "Maine", pop: 24384},
+  { state: "Massachusetts", pop: 95453 },
+  { state: "Rhode Island", pop: 16019 },
+  { state: "Connecticut", pop: 60523 },
+  { state: "New York", pop: 83700 },
+  { state: "New Jersey", pop: 45251 },
+  { state: "Pennsylvania", pop: 110788 },
+  { state: "Delaware", pop: 11783 },
+  { state: "Maryland", pop: 55915 },
+  { state: "Virginia", pop: 110936 },
+  //{state: "Kentucky", pop: 15154},
+  { state: "N. Carolina", pop: 69988 },
+  { state: "S. Carolina", pop: 35576 },
+  { state: "Georgia", pop: 13103 },
+];
+
+export const colonyData = colonies_data.sort((a, b) => b.pop - a.pop);
