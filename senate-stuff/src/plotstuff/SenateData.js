@@ -1,5 +1,14 @@
 import senData from "../data/senators.json";
 import { sumList } from "./CensusData";
+import {
+  myRed,
+  myBlue,
+  MALE,
+  FEMALE,
+  WHITE,
+  AFRICAN_AMERICAN,
+  ASIAN_AMERICAN,
+} from "../Info";
 
 // [{num: 20, color: blue, labels: [], name: democrats}, ]
 
@@ -17,8 +26,8 @@ let republicanRep = sumList(republicanPop) / 2; // bc senator only represents ha
 let democratRep = sumList(democratPop) / 2;
 
 export const representationNums = [
-  { party: "Democrat", population: democratRep, color: "blue" },
-  { party: "Republican", population: republicanRep, color: "red" },
+  { party: "Democrat", population: democratRep, color: myBlue },
+  { party: "Republican", population: republicanRep, color: myRed },
 ];
 
 // split representation into two traces, 1/state
@@ -27,8 +36,8 @@ let trace1 = { x: [], y: [], color: [], text: [] };
 let trace2 = { x: [], y: [], color: [], text: [] };
 
 let colordict = {
-  Republican: "red",
-  Democratic: "blue",
+  Republican: myRed,
+  Democratic: myBlue,
   Vacant: "black",
   Independent: "gray",
 };
@@ -72,13 +81,13 @@ export const sexData = [
   {
     name: "male",
     num: uniqueGenders["1"].length,
-    color: "purple",
+    color: MALE,
     labels: uniqueGenders["1"].map((sen) => sen.senator),
   },
   {
     name: "female",
     num: uniqueGenders["2"].length,
-    color: "salmon",
+    color: FEMALE,
     labels: uniqueGenders["2"].map((sen) => sen.senator),
   },
 ];
@@ -100,13 +109,13 @@ export const raceData = [
   {
     name: "White",
     num: uniqueRaces["1"].length,
-    color: "blue",
+    color: WHITE,
     labels: uniqueRaces["1"].map((sen) => sen.senator),
   },
   {
     name: "African American",
     num: uniqueRaces["2"].length,
-    color: "red",
+    color: AFRICAN_AMERICAN,
     labels: uniqueRaces["2"].map((sen) => sen.senator),
   },
   // {
@@ -118,7 +127,7 @@ export const raceData = [
   {
     name: "Asian American",
     num: uniqueRaces["4"].length,
-    color: "green",
+    color: ASIAN_AMERICAN,
     labels: uniqueRaces["4"].map((sen) => sen.senator),
   },
   // {

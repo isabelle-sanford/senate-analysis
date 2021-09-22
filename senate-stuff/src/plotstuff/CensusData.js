@@ -1,4 +1,14 @@
 import censusData from "../data/uspop.json";
+import {
+  MALE,
+  FEMALE,
+  WHITE,
+  AFRICAN_AMERICAN,
+  ASIAN_AMERICAN,
+  NATIVE_AMERICAN,
+  PACIFIC_ISLANDER,
+  MULITPLE_RACES,
+} from "../Info";
 
 // todo: have a dataset that just contains the summary
 // the census data does not change very often
@@ -28,12 +38,12 @@ while (galPopNormal + guyPopNormal > seats) {
 export const sexDataUS = [
   {
     num: guyPopNormal,
-    color: "purple", // pull this from same place as in sen data
+    color: MALE, // pull this from same place as in sen data
     name: "male",
   },
   {
     num: galPopNormal,
-    color: "pink",
+    color: FEMALE,
     name: "female",
   },
 ];
@@ -65,32 +75,32 @@ export const raceDataUS = [
   {
     name: "White",
     num: Math.round((uniqueRaces["1"] / raceSum) * seats),
-    color: "blue",
+    color: WHITE,
   },
   {
     name: "African American",
     num: Math.round((uniqueRaces["2"] / raceSum) * seats),
-    color: "red",
+    color: AFRICAN_AMERICAN,
   },
   {
     name: "Native American",
     num: Math.round((uniqueRaces["3"] / raceSum) * seats),
-    color: "yellow",
+    color: NATIVE_AMERICAN,
   },
   {
     name: "Asian American",
     num: Math.round((uniqueRaces["4"] / raceSum) * seats),
-    color: "green",
+    color: ASIAN_AMERICAN,
   },
   {
     name: "Pacific Islander",
     num: Math.round((uniqueRaces["5"] / raceSum) * seats),
-    color: "purple",
+    color: PACIFIC_ISLANDER,
   },
   {
     name: "Multiple Races",
     num: Math.round((uniqueRaces["6"] / raceSum) * seats),
-    color: "orange",
+    color: MULITPLE_RACES,
   },
 ];
 

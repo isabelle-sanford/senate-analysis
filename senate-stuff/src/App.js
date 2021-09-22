@@ -13,6 +13,7 @@ import {
   compareColonialTimes,
 } from "./textStuff";
 import { BarPlot, ChamberPlot, StackedBarPlot } from "./plotstuff/Plots";
+import { myRed } from "./Info";
 
 import {
   sexData,
@@ -116,30 +117,19 @@ const App = () => (
       >
         <Tab eventKey="gender" title="Gender" className="m-2">
           <Row>
-            <Col sm="6">
-              <ChamberPlot data={sexData} title="Senate" />
-            </Col>
-            <Col sm="6">
-              <ChamberPlot data={sexDataUS} title="US" />
-            </Col>
+            <ChamberPlot data={[sexDataUS, sexData]} />
+            <p>{gender}</p>
           </Row>
-
-          <p>{gender}</p>
         </Tab>
         <Tab eventKey="race" title="Race" className="m-2">
+          {/* TODO make this not tiny?? */}
           <Row>
-            <Col sm="6">
-              <ChamberPlot data={raceData} title="Senate" />
-            </Col>
-            <Col sm="6">
-              <ChamberPlot data={raceDataUS} title="US" />
-            </Col>
+            <ChamberPlot data={[raceDataUS, raceData]} />
+            <p>{race}</p>
           </Row>
-
-          <p>{race}</p>
         </Tab>
         <Tab eventKey="religion" title="Religion" className="m-2">
-          <ChamberPlot data={religData} title="Senate" />
+          <ChamberPlot data={[religData]} title="Senate" />
           <p>{religion}</p>
         </Tab>
       </Tabs>
@@ -163,7 +153,7 @@ const App = () => (
           <BarPlot
             x={colonyData.map((c) => c.state)}
             y={colonyData.map((c) => c.pop)}
-            colors="red"
+            colors={myRed}
             title="Free White Male 16-year-olds in the 13 Colonies, 1790"
           />
         </Col>

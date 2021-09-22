@@ -1,14 +1,5 @@
 import * as React from "react";
-// import {
-//   Nav,
-//   Navbar,
-//   Row,
-//   Col,
-//   ListGroup,
-//   Tabs,
-//   Tab,
-//   Image,
-// } from "react-bootstrap";
+
 import Plot from "react-plotly.js";
 
 export function BarPlot(props: any): any {
@@ -34,43 +25,59 @@ export function BarPlot(props: any): any {
 // todo: take a senate and a US dataset so in same plot?
 
 // note: consider adding 'size' variable if we can get coords for diff sizes
-// Input should be list [{num: 20, color: blue, labels: [], name: democrats}, ]
-export function ChamberPlot(data: any, title: string) {
+// Input should be list [[{num: 20, color: blue, labels: [], name: democrats}, ], [trace 2]]
+// todo: have input an object with key as title (maybe put title in middle of chamber?)
+export function ChamberPlot(props: any) {
   let [r, theta] = coords(false);
 
-  let i: number = 0;
+  let fullData: any[] = [];
 
-  let someData = data.data;
+  for (let j = 0; j < props.data.length; j++) {
+    let i: number = 0;
 
-  let dataList: any[] = someData.map((d: any) => {
-    let r_part = r.slice(i, i + d.num);
-    let theta_part = theta.slice(i, i + d.num);
+    let someData = props.data[j];
 
-    i += d.num;
+    someData.forEach((d: any) => {
+      let r_part = r.slice(i, i + d.num);
+      let theta_part = theta.slice(i, i + d.num);
 
-    return {
-      r: r_part,
-      theta: theta_part,
-      mode: "markers",
-      hoverinfo: "text",
-      text: d.labels,
-      type: "scatterpolar",
+      i += d.num;
 
-      name: d.name,
-      marker: {
-        color: d.color,
-        size: 10,
-      },
-    };
-  });
+      let currdata = {
+        r: r_part,
+        theta: theta_part,
+        mode: "markers",
+        hoverinfo: "text",
+        text: d.labels,
+        type: "scatterpolar",
+
+        name: d.name,
+        legendgroup: d.name,
+        showlegend: j > 0 ? false : true,
+        marker: {
+          color: d.color,
+          size: 10,
+        },
+
+        subplot: "polar" + (j > 0 ? j + 1 : ""),
+      };
+      fullData.push(currdata);
+    });
+  }
+
   //console.log(dataList);
 
   return (
     <Plot
-      data={dataList}
+      data={fullData}
       layout={{
         showlegend: true,
-        title: data.title, // >:(
+        title: props.title, // >:(
+        paper_bgcolor: "transparent",
+        margin: {
+          l: 0,
+          r: 0,
+        },
         polar: {
           sector: [-10, 190],
           hole: 0.2,
@@ -82,10 +89,17 @@ export function ChamberPlot(data: any, title: string) {
           },
           bgcolor: "transparent",
         },
-        paper_bgcolor: "transparent",
-        margin: {
-          l: 0,
-          r: 0,
+
+        polar2: {
+          sector: [-10, 190],
+          hole: 0.2,
+          radialaxis: {
+            visible: false,
+          },
+          angularaxis: {
+            visible: false,
+          },
+          bgcolor: "transparent",
         },
       }}
     />
