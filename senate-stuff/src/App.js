@@ -40,18 +40,6 @@ function ExampleHeader(props) {
   );
 }
 
-function ExampleBody(props) {
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <p>{props.text}</p>
-        </Col>
-      </Row>
-    </Container>
-  );
-}
-
 export function SenateNavBar() {
   return (
     <Navbar className="bg-blue text-light" sticky="top">
@@ -118,25 +106,25 @@ const App = () => (
         <Tab eventKey="gender" title="Gender" className="m-2">
           <Row>
             <ChamberPlot data={[sexDataUS, sexData]} />
-            <p>{gender}</p>
+            {gender}
           </Row>
         </Tab>
         <Tab eventKey="race" title="Race" className="m-2">
           {/* TODO make this not tiny?? */}
           <Row>
             <ChamberPlot data={[raceDataUS, raceData]} />
-            <p>{race}</p>
+            {race}
           </Row>
         </Tab>
         <Tab eventKey="religion" title="Religion" className="m-2">
           <ChamberPlot data={[religData]} title="Senate" />
-          <p>{religion}</p>
+          {religion}
         </Tab>
       </Tabs>
     </Container>
 
     <ExampleHeader title="Who They Represent" id="represent" />
-    <ExampleBody text={whoTheyRepresent} />
+    {whoTheyRepresent}
     <Container>
       <Row>
         <StackedBarPlot
@@ -146,9 +134,7 @@ const App = () => (
       </Row>
 
       <Row>
-        <Col sm="8">
-          <ExampleBody text={compareColonialTimes} />
-        </Col>
+        <Col sm="8">{compareColonialTimes}</Col>
         <Col sm="4">
           <BarPlot
             x={colonyData.map((c) => c.state)}
@@ -167,16 +153,14 @@ const App = () => (
             title="# of People Each Party Represents"
           />
         </Col>
-        <Col sm="8">
-          <ExampleBody text={partisanship} />
-        </Col>
+        <Col sm="8">{partisanship}</Col>
       </Row>
     </Container>
 
-    <ExampleBody text={whoTheyRepresentConclusion} />
+    {whoTheyRepresentConclusion}
 
     <ExampleHeader title="Why It Matters" id="why" />
-    <ExampleBody text={whyItMatters} />
+    {whyItMatters}
   </Container>
 );
 
