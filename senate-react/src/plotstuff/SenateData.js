@@ -49,12 +49,12 @@ senData.forEach((sen) => {
   }
 
   if (n === 1) {
-    trace1["x"].push(sen.state); // todo: use state abbrevs
+    trace1["x"].push(sen.abbrev);
     trace1["y"].push(sen.population / 2);
     trace1["color"].push(colordict[sen.party]);
     trace1["text"].push(sen.senator);
   } else {
-    trace2["x"].push(sen.state);
+    trace2["x"].push(sen.abbrev);
     trace2["y"].push(sen.population / 2);
     trace2["color"].push(colordict[sen.party]);
     trace2["text"].push(sen.senator);
@@ -80,15 +80,15 @@ senData.forEach((sen) => {
 export const sexData = [
   {
     name: "male",
-    num: uniqueGenders["1"].length,
+    num: uniqueGenders["Male"].length,
     color: MALE,
-    labels: uniqueGenders["1"].map((sen) => sen.senator),
+    labels: uniqueGenders["Male"].map((sen) => sen.senator),
   },
   {
     name: "female",
-    num: uniqueGenders["2"].length,
+    num: uniqueGenders["Female"].length,
     color: FEMALE,
-    labels: uniqueGenders["2"].map((sen) => sen.senator),
+    labels: uniqueGenders["Female"].map((sen) => sen.senator),
   },
 ];
 
@@ -108,40 +108,28 @@ senData.forEach((sen) => {
 export const raceData = [
   {
     name: "White",
-    num: uniqueRaces["1"].length,
+    num: uniqueRaces["White"].length,
     color: WHITE,
-    labels: uniqueRaces["1"].map((sen) => sen.senator),
+    labels: uniqueRaces["White"].map((sen) => sen.senator),
   },
   {
     name: "African American",
-    num: uniqueRaces["2"].length,
+    num: uniqueRaces["Black"].length,
     color: AFRICAN_AMERICAN,
-    labels: uniqueRaces["2"].map((sen) => sen.senator),
+    labels: uniqueRaces["Black"].map((sen) => sen.senator),
   },
-  // {
-  //   name: "yellow",
-  //   num: uniqueRaces["3"].length,
-  //   color: "yellow",
-  //   labels: uniqueRaces["3"].map((sen) => sen.senator),
-  // },
   {
     name: "Asian American",
-    num: uniqueRaces["4"].length,
+    num: uniqueRaces["Asian American"].length,
     color: ASIAN_AMERICAN,
-    labels: uniqueRaces["4"].map((sen) => sen.senator),
+    labels: uniqueRaces["Asian American"].map((sen) => sen.senator),
   },
-  // {
-  //   name: "???",
-  //   num: uniqueRaces["5"].length,
-  //   color: "purple",
-  //   labels: uniqueRaces["5"].map((sen) => sen.senator),
-  // },
-  // {
-  //   name: "???",
-  //   num: uniqueRaces["6"].length,
-  //   color: "orange",
-  //   labels: uniqueRaces["6"].map((sen) => sen.senator),
-  // },
+  {
+    name: "Hispanic or Latino",
+    num: uniqueRaces["Hispanic or Latino"].length,
+    color: "pink",
+    labels: uniqueRaces["Hispanic or Latino"].map((sen) => sen.senator),
+  },
 ];
 
 let protestantList = [

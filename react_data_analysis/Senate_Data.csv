@@ -1,4 +1,4 @@
-,Senator,Religion,State,party,assumed_office,term_up,st,pop,Gender,Race
+,senator,religion,state,party,assumed_office,term_up,abbrev,population,gender,race
 0,Marsha Blackburn,Presbyterian,Tennessee,Republican,"January 3, 2019",2024,TN,6910840,Female,White
 1,John Barrasso,Presbyterian,Wyoming,Republican,"June 25, 2007",2024,WY,576851,Male,White
 2,Shelley Moore Capito,Presbyterian,West Virginia,Republican,"January 3, 2015",2026,WV,1793716,Female,White
@@ -47,11 +47,11 @@
 45,Gary Peters,Episcopalian,Michigan,Democratic,"January 3, 2015",2026,MI,10077331,Male,White
 46,Chris Van Hollen,Episcopalian,Maryland,Democratic,"January 3, 2017",2022,MD,6177224,Male,White
 47,Sheldon Whitehouse,Episcopalian,Rhode Island,Democratic,"January 3, 2007",2024,RI,1097379,Male,White
-48,Maggie Hassan,Congregationalist(United Church of Christ),New Hampshire,Democratic,"January 3, 2017",2022,NH,1377529,Female,White
-49,Amy Klobuchar,Congregationalist(United Church of Christ),Minnesota,Democratic,"January 3, 2007",2024,MN,5706494,Female,White
-50,John Cornyn,Restorationist(Churches of Christ),Texas,Republican,"December 2, 2002",2026,TX,29145505,Male,White
-51,Tommy Tuberville,Restorationist(Churches of Christ),Alabama,Republican,"January 3, 2021",2026,AL,5024279,Male,White
-52,Jon Tester,Holiness(Church of God),Montana,Democratic,"January 3, 2007",2024,MT,1084225,Male,White
+48,Maggie Hassan,Congregationalist,New Hampshire,Democratic,"January 3, 2017",2022,NH,1377529,Female,White
+49,Amy Klobuchar,Congregationalist,Minnesota,Democratic,"January 3, 2007",2024,MN,5706494,Female,White
+50,John Cornyn,Restorationist,Texas,Republican,"December 2, 2002",2026,TX,29145505,Male,White
+51,Tommy Tuberville,Restorationist,Alabama,Republican,"January 3, 2021",2026,AL,5024279,Male,White
+52,Jon Tester,Holiness,Montana,Democratic,"January 3, 2007",2024,MT,1084225,Male,White
 53,John Hickenlooper,Quaker,Colorado,Democratic,"January 3, 2021",2026,CO,5773714,Male,White
 54,Chris Murphy,Protestant,Connecticut,Democratic,"January 3, 2013",2024,CT,3605944,Male,White
 55,Jeanne Shaheen,Protestant,New Hampshire,Democratic,"January 3, 2009",2026,NH,1377529,Female,White
@@ -94,8 +94,8 @@
 92,Brian Schatz,Jewish,Hawaii,Democratic,"December 26, 2012",2022,HI,1455271,Male,White
 93,Chuck Schumer,Jewish,New York,Democratic,"January 3, 1999",2022,NY,20201249,Male,White
 94,Ron Wyden,Jewish,Oregon,Democratic,"February 5, 1996",2022,OR,4237256,Male,White
-95,Mazie Hirono,Buddhist(Jōdo Shinshū),Hawaii,Democratic,"January 3, 2013",2024,HI,1455271,Female,Asian American
-96,Tammy Baldwin,Unknown/Refused to specify,Wisconsin,Democratic,"January 3, 2013",2024,WI,5893718,Female,White
-97,Michael Bennet,Unknown/Refused to specify,Colorado,Democratic,"January 21, 2009",2022,CO,5773714,Male,White
-98,Tammy Duckworth,Unknown/Refused to specify,Illinois,Democratic,"January 3, 2017",2022,IL,12812508,Female,Asian American
+95,Mazie Hirono,Buddhist,Hawaii,Democratic,"January 3, 2013",2024,HI,1455271,Female,Asian American
+96,Tammy Baldwin,Unknown,Wisconsin,Democratic,"January 3, 2013",2024,WI,5893718,Female,White
+97,Michael Bennet,Unknown,Colorado,Democratic,"January 21, 2009",2022,CO,5773714,Male,White
+98,Tammy Duckworth,Unknown,Illinois,Democratic,"January 3, 2017",2022,IL,12812508,Female,Asian American
 99,Kyrsten Sinema,Unaffiliated,Arizona,Democratic,"January 3, 2019",2024,AZ,7151502,Female,White

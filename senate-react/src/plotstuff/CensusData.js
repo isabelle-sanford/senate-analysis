@@ -1,4 +1,5 @@
-import censusData from "../data/uspop.json";
+import sexData from "../data0/sex0.json";
+import raceData from "../data0/race0.json";
 import {
   MALE,
   FEMALE,
@@ -10,25 +11,23 @@ import {
   MULITPLE_RACES,
 } from "../Info";
 
-// todo: have a dataset that just contains the summary
-// the census data does not change very often
-// and you should not have to calculate it every time
-
 let seats = 100;
 
 // GENDER
-let guys = censusData.filter((a) => a.SEX === 1);
-let gals = censusData.filter((a) => a.SEX === 2);
+// let guys = censusData.filter((a) => a.SEX === 1);
+// let gals = censusData.filter((a) => a.SEX === 2);
 
-let guys_pop = sumList(guys.map((g) => parseInt(g.POPESTIMATE2019)));
-let gals_pop = sumList(gals.map((g) => parseInt(g.POPESTIMATE2019)));
+// let guys_pop = sumList(guys.map((g) => parseInt(g.POPESTIMATE2019)));
+// let gals_pop = sumList(gals.map((g) => parseInt(g.POPESTIMATE2019)));
 
 // [{num: 20, color: blue, labels: [], name: democrats}, ]
 
-let sum = gals_pop + guys_pop;
+// let sum = gals_pop + guys_pop;
+let guys_perc = sexData.perc_men / 100;
+let gals_perc = sexData.perc_women / 100; // hmm. best to just output fraction of 1, not 100?
 
-let guyPopNormal = Math.round((guys_pop / sum) * seats);
-let galPopNormal = Math.round((gals_pop / sum) * seats);
+let guyPopNormal = Math.round(guys_perc * seats);
+let galPopNormal = Math.round(gals_perc * seats);
 
 while (galPopNormal + guyPopNormal > seats) {
   console.log(guyPopNormal);
@@ -55,51 +54,61 @@ export function sumList(nums) {
   }, 0);
 }
 
-let uniqueRaces = {};
+//let uniqueRaces = {};
 
-// make this bit a function
-censusData.forEach((state) => {
-  let g = state.RACE;
-  if (!(g in uniqueRaces)) {
-    uniqueRaces[g] = parseInt(state.POPESTIMATE2019);
-  } else {
-    uniqueRaces[g] += parseInt(state.POPESTIMATE2019);
-  }
-});
+// // make this bit a function
+// censusData.forEach((state) => {
+//   let g = state.RACE;
+//   if (!(g in uniqueRaces)) {
+//     uniqueRaces[g] = parseInt(state.POPESTIMATE2019);
+//   } else {
+//     uniqueRaces[g] += parseInt(state.POPESTIMATE2019);
+//   }
+// });
 
-let raceSum = sumList(Object.values(uniqueRaces));
+// let raceSum = sumList(Object.values(uniqueRaces));
 
-console.log(uniqueRaces);
+// console.log(uniqueRaces);
 
 export const raceDataUS = [
   {
     name: "White",
-    num: Math.round((uniqueRaces["1"] / raceSum) * seats),
+    num: Math.round((raceData["white"] / 100) * seats),
     color: WHITE,
   },
   {
     name: "African American",
-    num: Math.round((uniqueRaces["2"] / raceSum) * seats),
+    num: Math.round((raceData["black"] / 100) * seats),
     color: AFRICAN_AMERICAN,
   },
   {
+    name: "Hispanic or Latino",
+    num: Math.round((raceData["hispanic"] / 100) * seats),
+    color: "pink", // set color!!
+  },
+  {
     name: "Native American",
-    num: Math.round((uniqueRaces["3"] / raceSum) * seats),
+    num: Math.round((raceData["indigenous"] / 100) * seats),
     color: NATIVE_AMERICAN,
   },
   {
     name: "Asian American",
-    num: Math.round((uniqueRaces["4"] / raceSum) * seats),
+    num: Math.round((raceData["asian"] / 100) * seats),
     color: ASIAN_AMERICAN,
   },
   {
-    name: "Pacific Islander",
-    num: Math.round((uniqueRaces["5"] / raceSum) * seats),
+    name: "Hawaiian/Pacific Islander",
+    num: Math.round((raceData["hawaiian"] / 100) * seats),
     color: PACIFIC_ISLANDER,
   },
   {
+    name: "Other Race",
+    num: Math.round((raceData["other"] / 100) * seats),
+    color: "bluegreen",
+  },
+  {
     name: "Multiple Races",
-    num: Math.round((uniqueRaces["6"] / raceSum) * seats),
+    num: Math.round((raceData["multiple"] / 100) * seats),
     color: MULITPLE_RACES,
   },
 ];
