@@ -129,7 +129,7 @@ export const raceData = [
   {
     name: "Hispanic or Latino",
     num: uniqueRaces["Hispanic or Latino"].length,
-    color: "pink",
+    color: "blue", // TODO: NOT THIS
     labels: uniqueRaces["Hispanic or Latino"].map((sen) => sen.senator),
   },
 ];

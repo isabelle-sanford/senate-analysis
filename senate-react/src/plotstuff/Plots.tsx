@@ -17,6 +17,8 @@ export function BarPlot(props: any): any {
         title: props.title,
         paper_bgcolor: "transparent",
         plot_bgcolor: "transparent",
+        autosize: false,
+        width: props.width,
       }}
     />
   );
@@ -74,9 +76,10 @@ export function ChamberPlot(props: any) {
         showlegend: true,
         title: props.title, // >:(
         paper_bgcolor: "transparent",
+        width: props.width || 1300,
         margin: {
           l: 0,
-          r: 0,
+          r: 150,
         },
         polar: {
           sector: [-10, 190],
@@ -165,6 +168,7 @@ export function StackedBarPlot(data: any, title: string) {
         xaxis: {
           categoryorder: "total descending", // CF
         },
+        // TODO: add hovertext to dividing line
         shapes: [
           {
             type: "line",
