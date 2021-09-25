@@ -1,0 +1,101 @@
+,Senator,Religion,State,party,assumed_office,term_up,st,pop,Gender,Race
+0,Marsha Blackburn,Presbyterian,Tennessee,Republican,"January 3, 2019",2024,TN,6910840,Female,White
+1,John Barrasso,Presbyterian,Wyoming,Republican,"June 25, 2007",2024,WY,576851,Male,White
+2,Shelley Moore Capito,Presbyterian,West Virginia,Republican,"January 3, 2015",2026,WV,1793716,Female,White
+3,Tom Carper,Presbyterian,Delaware,Democratic,"January 3, 2001",2024,DE,989948,Male,White
+4,Chris Coons,Presbyterian,Delaware,Democratic,"November 15, 2010",2026,DE,989948,Male,White
+5,Steve Daines,Presbyterian,Montana,Republican,"January 3, 2015",2026,MT,1084225,Male,White
+6,Deb Fischer,Presbyterian,Nebraska,Republican,"January 3, 2013",2024,NE,1961504,Female,White
+7,Jim Inhofe,Presbyterian,Oklahoma,Republican,"November 16, 1994",2026,OK,3959353,Male,White
+8,Rand Paul,Presbyterian,Kentucky,Republican,"January 3, 2011",2022,KY,4505836,Male,White
+9,Ben Sasse,Presbyterian,Nebraska,Republican,"January 3, 2015",2026,NE,1961504,Male,White
+10,Richard Shelby,Presbyterian,Alabama,Republican,"January 3, 1987",2022,AL,5024279,Male,White
+11,Tina Smith,Presbyterian,Minnesota,Democratic,"January 3, 2018",2026,MN,5706494,Female,White
+12,Mark Warner,Presbyterian,Virginia,Democratic,"January 3, 2009",2026,VA,8631393,Male,White
+13,Roy Blunt,Baptist,Missouri,Republican,"January 3, 2011",2022,MO,6154913,Male,White
+14,Cory Booker,Baptist,New Jersey,Democratic,"October 31, 2013",2026,NJ,9288994,Male,Black
+15,John Boozman,Baptist,Arkansas,Republican,"January 3, 2011",2022,AR,3011524,Male,White
+16,Ted Cruz,Baptist,Texas,Republican,"January 3, 2013",2024,TX,29145505,Male,Hispanic or Latino
+17,Lindsey Graham,Baptist,South Carolina,Republican,"January 3, 2003",2026,SC,5118425,Male,White
+18,Chuck Grassley,Baptist,Iowa,Republican,"January 3, 1981",2022,IA,3190369,Male,White
+19,Cindy Hyde-Smith,Baptist,Mississippi,Republican,"April 9, 2018",2026,MS,2961279,Female,White
+20,James Lankford,Baptist,Oklahoma,Republican,"January 3, 2015",2022,OK,3959353,Male,White
+21,Mitch McConnell,Baptist,Kentucky,Republican,"January 3, 1985",2026,KY,4505836,Male,White
+22,Raphael Warnock,Baptist,Georgia,Democratic,"January 20, 2021",2022,GA,10711908,Male,Black
+23,Roger Wicker,Baptist,Mississippi,Republican,"December 31, 2007",2024,MS,2961279,Male,White
+24,Richard Burr,Methodist,North Carolina,Republican,"January 3, 2005",2022,NC,10439388,Male,White
+25,Tom Cotton,Methodist,Arkansas,Republican,"January 3, 2015",2026,AR,3011524,Male,White
+26,John Kennedy,Methodist,Louisiana,Republican,"January 3, 2017",2022,LA,4657757,Male,White
+27,Jerry Moran,Methodist,Kansas,Republican,"January 3, 2011",2022,KS,2937880,Male,White
+28,Rob Portman,Methodist,Ohio,Republican,"January 3, 2011",2022,OH,11799448,Male,White
+29,Debbie Stabenow,Methodist,Michigan,Democratic,"January 3, 2001",2024,MI,10077331,Female,White
+30,Elizabeth Warren,Methodist,Massachusetts,Democratic,"January 3, 2013",2024,MA,7029917,Female,White
+31,Sherrod Brown,Lutheran,Ohio,Democratic,"January 3, 2007",2024,OH,11799448,Male,White
+32,Joni Ernst,Lutheran,Iowa,Republican,"January 3, 2015",2026,IA,3190369,Female,White
+33,Martin Heinrich,Lutheran,New Mexico,Democratic,"January 3, 2013",2024,NM,2117522,Male,White
+34,Ron Johnson,Lutheran,Wisconsin,Republican,"January 3, 2011",2022,WI,5893718,Male,White
+35,Cynthia Lummis,Lutheran,Wyoming,Republican,"January 3, 2021",2026,WY,576851,Female,White
+36,Jeff Merkley,Lutheran,Oregon,Democratic,"January 3, 2009",2026,OR,4237256,Male,White
+37,Bill Cassidy,Evangelical,Louisiana,Republican,"January 3, 2015",2026,LA,4657757,Male,White
+38,Kevin Cramer,Evangelical,North Dakota,Republican,"January 3, 2019",2024,ND,779094,Male,White
+39,Josh Hawley,Evangelical,Missouri,Republican,"January 3, 2019",2024,MO,6154913,Male,White
+40,Rick Scott,Evangelical,Florida,Republican,"January 8, 2019",2024,FL,21538187,Male,White
+41,Tim Scott,Evangelical,South Carolina,Republican,"January 3, 2013",2022,SC,5118425,Male,Black
+42,John Thune,Evangelical,South Dakota,Republican,"January 3, 2005",2022,SD,886667,Male,White
+43,Bill Hagerty,Episcopalian,Tennessee,Republican,"January 3, 2021",2026,TN,6910840,Male,White
+44,Angus King,Episcopalian,Maine,Independent,"January 3, 2013",2024,ME,1362359,Male,White
+45,Gary Peters,Episcopalian,Michigan,Democratic,"January 3, 2015",2026,MI,10077331,Male,White
+46,Chris Van Hollen,Episcopalian,Maryland,Democratic,"January 3, 2017",2022,MD,6177224,Male,White
+47,Sheldon Whitehouse,Episcopalian,Rhode Island,Democratic,"January 3, 2007",2024,RI,1097379,Male,White
+48,Maggie Hassan,Congregationalist(United Church of Christ),New Hampshire,Democratic,"January 3, 2017",2022,NH,1377529,Female,White
+49,Amy Klobuchar,Congregationalist(United Church of Christ),Minnesota,Democratic,"January 3, 2007",2024,MN,5706494,Female,White
+50,John Cornyn,Restorationist(Churches of Christ),Texas,Republican,"December 2, 2002",2026,TX,29145505,Male,White
+51,Tommy Tuberville,Restorationist(Churches of Christ),Alabama,Republican,"January 3, 2021",2026,AL,5024279,Male,White
+52,Jon Tester,Holiness(Church of God),Montana,Democratic,"January 3, 2007",2024,MT,1084225,Male,White
+53,John Hickenlooper,Quaker,Colorado,Democratic,"January 3, 2021",2026,CO,5773714,Male,White
+54,Chris Murphy,Protestant,Connecticut,Democratic,"January 3, 2013",2024,CT,3605944,Male,White
+55,Jeanne Shaheen,Protestant,New Hampshire,Democratic,"January 3, 2009",2026,NH,1377529,Female,White
+56,Todd Young,Protestant,Indiana,Republican,"January 3, 2017",2022,IN,6785528,Male,White
+57,Roger Marshall,Protestant,Kansas,Republican,"January 3, 2021",2026,KS,2937880,Male,White
+58,Mike Braun,Catholic,Indiana,Republican,"January 3, 2019",2024,IN,6785528,Male,White
+59,Maria Cantwell,Catholic,Washington,Democratic,"January 3, 2001",2024,WA,7705281,Female,White
+60,Bob Casey Jr.,Catholic,Pennsylvania,Democratic,"January 3, 2007",2024,PA,13002700,Male,White
+61,Susan Collins,Catholic,Maine,Republican,"January 3, 1997",2026,ME,1362359,Female,White
+62,Catherine Cortez Masto,Catholic,Nevada,Democratic,"January 3, 2017",2022,NV,3104614,Female,Hispanic or Latino
+63,Dick Durbin,Catholic,Illinois,Democratic,"January 3, 1997",2026,IL,12812508,Male,White
+64,Kirsten Gillibrand,Catholic,New York,Democratic,"January 26, 2009",2024,NY,20201249,Female,White
+65,John Hoeven,Catholic,North Dakota,Republican,"January 3, 2011",2022,ND,779094,Male,White
+66,Tim Kaine,Catholic,Virginia,Democratic,"January 3, 2013",2024,VA,8631393,Male,White
+67,Mark Kelly,Catholic,Arizona,Democratic,"December 2, 2020",2022,AZ,7151502,Male,White
+68,Patrick Leahy,Catholic,Vermont,Democratic,"January 3, 1975",2022,VT,643077,Male,White
+69,Ben Ray Luján,Catholic,New Mexico,Democratic,"January 3, 2021",2026,NM,2117522,Male,Hispanic or Latino
+70,Joe Manchin,Catholic,West Virginia,Democratic,"November 15, 2010",2024,WV,1793716,Male,White
+71,Ed Markey,Catholic,Massachusetts,Democratic,"July 16, 2013",2026,MA,7029917,Male,White
+72,Bob Menendez,Catholic,New Jersey,Democratic,"January 17, 2006",2024,NJ,9288994,Male,Hispanic or Latino
+73,Lisa Murkowski,Catholic,Alaska,Republican,"December 20, 2002",2022,AK,733391,Female,White
+74,Patty Murray,Catholic,Washington,Democratic,"January 3, 1993",2022,WA,7705281,Female,White
+75,Alex Padilla,Catholic,California,Democratic,"January 20, 2021",2022,CA,39538223,Male,Hispanic or Latino
+76,Jack Reed,Catholic,Rhode Island,Democratic,"January 3, 1997",2026,RI,1097379,Male,White
+77,Jim Risch,Catholic,Idaho,Republican,"January 3, 2009",2026,ID,1839106,Male,White
+78,Mike Rounds,Catholic,South Dakota,Republican,"January 3, 2015",2026,SD,886667,Male,White
+79,Marco Rubio,Catholic,Florida,Republican,"January 3, 2011",2022,FL,21538187,Male,Hispanic or Latino
+80,Dan Sullivan,Catholic,Alaska,Republican,"January 3, 2015",2026,AK,733391,Male,White
+81,Thom Tillis,Catholic,North Carolina,Republican,"January 3, 2015",2026,NC,10439388,Male,White
+82,Pat Toomey,Catholic,Pennsylvania,Republican,"January 3, 2011",2022,PA,13002700,Male,White
+83,Mike Crapo,Latter-day Saint,Idaho,Republican,"January 3, 1999",2022,ID,1839106,Male,White
+84,Mike Lee,Latter-day Saint,Utah,Republican,"January 3, 2011",2022,UT,3271616,Male,White
+85,Mitt Romney,Latter-day Saint,Utah,Republican,"January 3, 2019",2024,UT,3271616,Male,White
+86,Richard Blumenthal,Jewish,Connecticut,Democratic,"January 3, 2011",2022,CT,3605944,Male,White
+87,Jon Ossoff,Jewish,Georgia,Democratic,"January 20, 2021",2026,GA,10711908,Male,White
+88,Ben Cardin,Jewish,Maryland,Democratic,"January 3, 2007",2024,MD,6177224,Male,White
+89,Dianne Feinstein,Jewish,California,Democratic,"November 10, 1992",2024,CA,39538223,Female,White
+90,Bernie Sanders,Jewish,Vermont,Independent,"January 3, 2007",2024,VT,643077,Male,White
+91,Jacky Rosen,Jewish,Nevada,Democratic,"January 3, 2019",2024,NV,3104614,Female,White
+92,Brian Schatz,Jewish,Hawaii,Democratic,"December 26, 2012",2022,HI,1455271,Male,White
+93,Chuck Schumer,Jewish,New York,Democratic,"January 3, 1999",2022,NY,20201249,Male,White
+94,Ron Wyden,Jewish,Oregon,Democratic,"February 5, 1996",2022,OR,4237256,Male,White
+95,Mazie Hirono,Buddhist(Jōdo Shinshū),Hawaii,Democratic,"January 3, 2013",2024,HI,1455271,Female,Asian American
+96,Tammy Baldwin,Unknown/Refused to specify,Wisconsin,Democratic,"January 3, 2013",2024,WI,5893718,Female,White
+97,Michael Bennet,Unknown/Refused to specify,Colorado,Democratic,"January 21, 2009",2022,CO,5773714,Male,White
+98,Tammy Duckworth,Unknown/Refused to specify,Illinois,Democratic,"January 3, 2017",2022,IL,12812508,Female,Asian American
+99,Kyrsten Sinema,Unaffiliated,Arizona,Democratic,"January 3, 2019",2024,AZ,7151502,Female,White
