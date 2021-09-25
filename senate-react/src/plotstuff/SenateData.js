@@ -1,4 +1,4 @@
-import senData from "../data/senators.json";
+import senData from "../data0/senators0.json";
 import { sumList } from "./CensusData";
 import {
   myRed,
@@ -76,6 +76,8 @@ senData.forEach((sen) => {
     uniqueGenders[g].push(sen);
   }
 });
+
+console.log(uniqueGenders);
 
 export const sexData = [
   {
@@ -168,7 +170,9 @@ for (const religion in uniqueReligions) {
   let currDict = {
     name: religion,
     num: uniqueReligions[religion].length,
-    labels: uniqueReligions[religion].map((sen) => sen.senator),
+    labels: uniqueReligions[religion].map(
+      (sen) => `${sen.senator} (${sen.religion})`
+    ),
   };
 
   religHolder.push(currDict);
