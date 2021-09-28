@@ -24,7 +24,12 @@ import {
 } from "./plotstuff/SenateData";
 
 import Container from "react-bootstrap/Container";
-import { colonyData, raceDataUS, sexDataUS } from "./plotstuff/CensusData";
+import {
+  colonyData,
+  raceDataUS,
+  sexDataUS,
+  religDataUS,
+} from "./plotstuff/CensusData";
 
 function ExampleHeader(props) {
   return (
@@ -118,7 +123,7 @@ const App = () => (
             </Row>
           </Tab>
           <Tab eventKey="religion" title="Religion" className="m-2">
-            <ChamberPlot data={[religData]} title="Senate" />
+            <ChamberPlot data={[religDataUS, religData]} />
             {religion}
           </Tab>
         </Tabs>

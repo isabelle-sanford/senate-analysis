@@ -58,7 +58,7 @@ export function ChamberPlot(props: any) {
         showlegend: j > 0 ? false : true,
         marker: {
           color: d.color,
-          size: 10,
+          size: 12,
         },
 
         subplot: "polar" + (j > 0 ? j + 1 : ""),
@@ -75,7 +75,7 @@ export function ChamberPlot(props: any) {
       layout={{
         showlegend: true,
         title: props.title, // >:(
-        paper_bgcolor: "transparent",
+        paper_bgcolor: "white",
         width: props.width || 1300,
         margin: {
           l: 0,

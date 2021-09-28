@@ -1,5 +1,6 @@
 import sexData from "../data0/sex0.json";
 import raceData from "../data0/race0.json";
+//import religData from "../data0/relig0.json";
 import {
   MALE,
   FEMALE,
@@ -110,6 +111,78 @@ export const raceDataUS = [
     name: "Multiple Races",
     num: Math.round((raceData["multiple"] / 100) * seats),
     color: MULITPLE_RACES,
+  },
+];
+
+// RELIGION--------------------------------
+// this is hardcoded right now sorry :((
+
+export const religDataUS = [
+  {
+    name: "Evangelical",
+    num: (15 / 100) * seats,
+    color: "navy",
+    labels: "Evangelical",
+  },
+  {
+    name: "White Mainline Protestant",
+    num: (15 / 100) * seats,
+    color: "blue",
+    labels: "White Mainline Protestant",
+  },
+  {
+    name: "Non-white Protestant",
+    num: (14 / 100) * seats,
+    color: "dodgerblue",
+    labels: "Non-white Protestant",
+  },
+  {
+    name: "Latter-day Saint",
+    num: (2 / 100) * seats,
+    color: "aqua",
+    labels: "Latter-day Saint",
+  },
+  {
+    name: "Other Christian",
+    num: (1 / 100) * seats,
+    color: "darkcyan",
+    labels: "Other Christian",
+  },
+  {
+    name: "Catholic",
+    num: (22 / 100) * seats,
+    color: "blueviolet",
+    labels: "Catholic",
+  },
+  {
+    name: "Jewish",
+    num: (1 / 100) * seats,
+    color: "green",
+    labels: "Jewish",
+  },
+  {
+    name: "Buddhist",
+    num: (1 / 100) * seats,
+    color: "red",
+    labels: "Buddhist",
+  },
+  {
+    name: "Muslim",
+    num: (1 / 100) * seats,
+    color: "lightgreen",
+    labels: "Muslim",
+  },
+  {
+    name: "Other non-Christian",
+    num: (4 / 100) * seats,
+    color: "orange",
+    labels: "Other non-Christian",
+  },
+  {
+    name: "Unaffiliated",
+    num: (24 / 100) * seats,
+    color: "gray",
+    labels: "Unaffiliated",
   },
 ];
 

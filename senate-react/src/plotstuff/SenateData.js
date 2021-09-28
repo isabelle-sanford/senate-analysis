@@ -138,7 +138,7 @@ let protestantList = [
   "Congregationalist",
   "Episcopalian",
   "Presbyterian",
-  "Evangelical",
+  // "Evangelical",
   "Protestant",
   "Baptist",
   "Lutheran",
@@ -149,6 +149,17 @@ let protestantList = [
 ];
 
 // RELIGION------------------------------------------------------------
+
+let religColors = {
+  Protestant: "blue",
+  "Latter-day Saint": "aqua",
+  Catholic: "blueviolet",
+  Unaffiliated: "gray",
+  Jewish: "green",
+  Buddhist: "red",
+  Unknown: "black",
+  Evangelical: "navy",
+};
 
 let uniqueReligions = { Protestant: [] };
 
@@ -173,9 +184,12 @@ for (const religion in uniqueReligions) {
     labels: uniqueReligions[religion].map(
       (sen) => `${sen.senator} (${sen.religion})`
     ),
+    color: religColors[religion],
   };
 
   religHolder.push(currDict);
 }
+
+console.log(religHolder);
 
 export const religData = religHolder;
