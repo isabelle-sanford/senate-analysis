@@ -11,9 +11,9 @@ import {
   partisanship,
   whoTheyRepresentConclusion,
   compareColonialTimes,
-} from "./textStuff";
+} from "../../../src/text/textStuff";
 import { BarPlot, ChamberPlot, StackedBarPlot } from "./plotstuff/Plots";
-import { myRed } from "./Info";
+import { myRed } from "../../../src/text/Info";
 
 import {
   sexData,
