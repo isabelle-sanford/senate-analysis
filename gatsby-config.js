@@ -3,5 +3,4 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Senate Reform",
   },
-  plugins: [],
 };

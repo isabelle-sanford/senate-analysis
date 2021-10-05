@@ -1,21 +1,11 @@
 import * as React from "react";
-import {
-  Nav,
-  Navbar,
-  Row,
-  Col,
-  ListGroup,
-  Tabs,
-  Tab,
-  Image,
-} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { sources, dataSources, aboutMe } from "../text/citationText";
-import { SenateNavBar } from "./index.js";
+
+import Layout from "../components/layout";
 
 export const AboutPage = () => (
-  <Container fluid className="bg-skyblue">
-    <SenateNavBar />
-
+  <Layout pageInfo={{ pageName: "about" }}>
     <Row>
       <Col sm="8">
         <h1>Citations</h1>
@@ -28,13 +18,19 @@ export const AboutPage = () => (
         </p>
       </Col>
       <Col sm="4">
-        {dataSources.map((source) => ({ source }))}
+        <p>
+          <ul>
+            {dataSources.map((source) => (
+              <li>{source}</li>
+            ))}
+          </ul>
+        </p>
 
         <h1>About Me</h1>
         {aboutMe}
       </Col>
     </Row>
-  </Container>
+  </Layout>
 );
 
 // Step 3: Export your component

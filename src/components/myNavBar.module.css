@@ -1,0 +1,17 @@
+.bg-blue {
+  background-color: #053c5e !important;
+  color: white !important;
+}
+
+.nav-link-text {
+  color: white !important;
+  text-decoration: none;
+  size: 20px !important;
+}
+
+.nav-brand {
+  color: white !important;
+  size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}

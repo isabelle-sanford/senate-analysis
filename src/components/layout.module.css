@@ -1,0 +1,16 @@
+.bg-skyblue {
+  background-color: #bfdbf7;
+  border-color: #bfdbf7;
+  color: #333;
+}
+
+.link {
+  color: white !important;
+  /* weight: bold !important;
+  underline: none !important; */
+}
+
+.bg-blue {
+  background-color: #053c5e !important;
+  color: white !important;
+}
