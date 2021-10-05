@@ -1,15 +1,15 @@
 export const introPara = (
   <>
     <p>
-      The United States Senate is the upper chamber of the United States
-      Congress, which along with the House of Representatives constitutes the
-      legislature of the United States. The Senate is currently composed of 100
-      senators, two for each state. They serve staggered terms of six years.
+      The United States Senate is the upper chamber of Congress, and as such
+      arguably the most important legislative house in the world. It is
+      currently composed of 100 senators, two for each state. Senators serve
+      staggered terms of six years.
     </p>
     <p>
       The Senate has unique advice and consent power to ratify treaties, declare
-      war (theoretically), and confirm Cabinet Secretaries, Supreme Court
-      Justices, federal judges, ambassadors, and other officials. It also
+      war ([LINK]theoretically[/LINK]), and confirm Cabinet Secretaries, Supreme
+      Court Justices, federal judges, ambassadors, and other officials. It also
       conducts impeachment trials and, of course, makes law. It is designed to
       protect the power of individual states, and particularly smaller states
       with less representation in the House of Representatives.
@@ -17,8 +17,8 @@ export const introPara = (
     <p>
       Given the amount of power and influence that the Senate wields, it is
       important to ensure that it appropriately represents the American people.
-      This page is intended to show some ways in which it is falling short of
-      that ideal.
+      This page shows some of the ways in which it is falling short of that
+      ideal.
     </p>
   </>
 );
@@ -162,15 +162,15 @@ export const whyItMatters = (
     </p>
     <p>
       The answer is that many, many of those problems are deeply affected by the
-      Senate. It's the most powerful governing body in the world, after all. If
-      the Senate had more than three black members, it might be more likely to
-      pass laws fighting systemic racism in our justice system.
+      Senate. It's the most powerful governing body in the world. If the Senate
+      had more than three black members, it might be more likely to pass laws
+      fighting systemic racism in our justice system.
       {/* cite ^ */}
       If more senators were women, perhaps there would be more support for
       childcare and women in the workforce. If Congress weren't so
       overwhelmingly Christian, maybe we'd have taken 'In God We Trust' off our
       money by now. (It was only adopted in 1956 because we were afraid of
-      atheist Communism, after all.)
+      atheist Communism.)
       {/* cite ^ */}
       And as referenced above, studies have conclusively proven that white men
       do not introduce, advocate for, or pass legislation which primarily
@@ -223,8 +223,8 @@ export const gender = (
 export const race = (
   <>
     <p>
-      The Senate's racial and ethnic diversity is... slim, to say the least. It
-      has had so few non-white members that its official website has a page{" "}
+      The Senate's racial and ethnic diversity is slim, to put it mildly. It has
+      had so few non-white members that its official website has a page{" "}
       <a href="https://www.senate.gov/senators/EthnicDiversityintheSenate.htm">
         listing every senator in history who was non-white
       </a>
@@ -232,7 +232,7 @@ export const race = (
       current Senate contains two Asian Americans, three African Americans, and
       six senators of Hispanic origin. It has no Native Americans, and because
       Kamala Harris stepped down there are no longer any Pacific Islanders in
-      the Senate. (Yikes.)
+      the Senate.
     </p>
     <p>
       This makes an{" "}
@@ -248,12 +248,12 @@ export const race = (
       , and they usually motivate members of that minority to be more
       politically active.
     </p>
-    <p>
+    {/* <p>
       Please note that these graphs do not currently account for people of
       Hispanic origin. There are six senators with Hispanic origin, which brings
       the number of non-white people in the senate up to 11. About 18% of
       Americans are Hispanic or Latino.
-    </p>
+    </p> */}
   </>
 );
 
@@ -265,14 +265,14 @@ export const religion = (
       denomination of any religion being the Catholics. As you may have noticed,
       there is exactly one senator who calls herself 'unaffiliated' (Kyrsten
       Sinema) and three unknowns, whereas the US population is nearly 1/3
-      unaffiliated. There are a variety of factors at play here (this is a new
-      trend; most unaffiliated are younger and young people don't vote;
+      unaffiliated. There are a variety of factors at play here: this is a new
+      trend, most unaffiliated are younger and young people don't vote, and
       unaffiliated don't mind voting for Christians but
       {/* <!-- CITE --> */}
       <a href="https://www.pewforum.org/2016/01/27/faith-and-the-2016-campaign/pf_2016-01-27_religion-politics-overview-11/">
         half the country doesn't want to vote for atheists
       </a>
-      ), but the result at least is obvious.
+      .
     </p>
     <p>
       Because there are so few non-religious lawmakers, we have little research
@@ -287,8 +287,8 @@ export const religion = (
       serious consequences.
     </p>
     <p>
-      And of course, it would matter far less if the Christians in Congress
-      weren't quite so loudly and openly Christian.
+      And of course, it would matter less if the Christians in Congress weren't
+      quite so loudly and openly Christian.
       {/* <!-- [cite] --> */}
       (One other interesting note: looking at political parties, fully 50 of the
       50 Republican senators are some flavor of Christian. The 14 non-Christian
