@@ -2,7 +2,7 @@ import * as React from "react";
 
 const crs = (
   <p>
-    Congressional Research Service:
+    Congressional Research Service:{" "}
     <a href="https://crsreports.congress.gov/product/pdf/R/R46705">
       Membership of the 117th Congress: A Profile
     </a>
@@ -11,7 +11,7 @@ const crs = (
 
 const wglt = (
   <p>
-    WGLT:
+    WGLT:{" "}
     <a href="https://www.wglt.org/post/us-senate-most-unrepresentative-body#stream/0">
       The US Senate: The Most Unrepresentative Body
     </a>
@@ -20,7 +20,7 @@ const wglt = (
 
 const dataForProgress = (
   <p>
-    Data For Progress:
+    Data For Progress:{" "}
     <a href="https://www.filesforprogress.org/memos/the-senate-is-an-irredeemable-institution.pdf">
       The Senate is an Irredeemable Institution
     </a>
@@ -29,7 +29,7 @@ const dataForProgress = (
 
 const five38 = (
   <p>
-    FiveThirtyEight:
+    FiveThirtyEight:{" "}
     <a href="https://fivethirtyeight.com/features/the-senate-has-always-favored-smaller-states-it-just-didnt-help-republicans-until-now/">
       The Senate Has Always Favored Smaller States. It Just Didn't Help
       Republicans Until Now.
@@ -39,7 +39,7 @@ const five38 = (
 
 const atlantic = (
   <p>
-    The Atlantic
+    The Atlantic:{" "}
     <a href="https://www.theatlantic.com/ideas/archive/2019/09/when-adding-new-states-helped-republicans/598243/">
       When Adding New States Helped The Republicans
     </a>
@@ -48,7 +48,7 @@ const atlantic = (
 
 const womenInCongress = (
   <p>
-    Center for the Study of Democratic Institutions.
+    Center for the Study of Democratic Institutions:{" "}
     <a href="https://www.vanderbilt.edu/csdi/research/files/CSDI-WP-04-2010.pdf">
       The Legislative Effectiveness of Women in Congress
     </a>
@@ -185,23 +185,29 @@ export const aboutMe = (
     at Bryn Mawr College. She is still working on the site, and is happy to talk
     about it with anyone who wants to. Thanks for stopping by! The site itself
     is made using the Bootstrap library for web design and Plotly.js to create
-    the graphics. Code:{" "}
+    the graphics.
+    <br />
+    Code:{" "}
     <a href="https://github.com/isabelle-sanford/senate-analysis.git">
       Github repository
     </a>
+    <br />
     Contact: isabellesanford@gmail.com
   </p>
 );
 
 export const dataSources = [pewReligion, wikipediaSenate, censusData];
 
-export const sources = [
+export const uncitedSources = [
   crs,
   wglt,
   dataForProgress,
   five38,
   atlantic,
   womenInCongress,
+];
+
+export const citedSources = [
   womenInStateCongress,
   legislativeDiversity,
   congressionalDiversity,

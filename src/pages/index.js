@@ -35,7 +35,7 @@ import {
 } from "../plots/CensusData";
 
 import "../index.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Step 2: Define your component
 

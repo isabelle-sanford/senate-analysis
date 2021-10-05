@@ -8,22 +8,20 @@ import CustomNavbar from "./myNavBar";
 
 const Layout = ({ pageInfo, children }) => {
   return (
-    <Container fluid className={bgSkyblue}>
+    <>
       <CustomNavbar pageInfo={pageInfo} />
-      {/* <Row noGutters className="justify-content-center">
+      <Container fluid className={bgSkyblue}>
+        {/* <Row noGutters className="justify-content-center">
         <Col>
           <Header siteTitle="Senate Reform" />
         </Col>
       </Row> */}
 
-      <Row className="px-0 main">
-        <Col>
-          <Container fluid>
-            <main>{children}</main>
-          </Container>
-        </Col>
-      </Row>
-    </Container>
+        <Row className="px-0 main">
+          <main>{children}</main>
+        </Row>
+      </Container>
+    </>
   );
 };
 

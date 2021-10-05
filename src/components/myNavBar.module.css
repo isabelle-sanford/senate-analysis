@@ -1,6 +1,7 @@
 .bg-blue {
   background-color: #053c5e !important;
   color: white !important;
+  padding: 20px;
 }
 
 .nav-link-text {

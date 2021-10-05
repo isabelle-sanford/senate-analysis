@@ -10,7 +10,9 @@ const CustomNavbar = ({ pageInfo }) => {
     <Navbar expand="lg" id="site-navbar" sticky="top" className={bgBlue}>
       {/* <Container> */}
       <Link to="/" className={navBrand}>
-        <Navbar.Brand as="span">Senate Reform</Navbar.Brand>
+        <Navbar.Brand as="span" className={navBrand}>
+          Senate Reform
+        </Navbar.Brand>
       </Link>
       {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
       <Navbar.Collapse id="basic-navbar-nav">

@@ -1,6 +1,11 @@
 import * as React from "react";
 import { Row, Col } from "react-bootstrap";
-import { sources, dataSources, aboutMe } from "../text/citationText";
+import {
+  uncitedSources,
+  citedSources,
+  dataSources,
+  aboutMe,
+} from "../text/citationText";
 
 import Layout from "../components/layout";
 
@@ -8,16 +13,25 @@ export const AboutPage = () => (
   <Layout pageInfo={{ pageName: "about" }}>
     <Row>
       <Col sm="8">
-        <h1>Citations</h1>
+        <h2 className="text-center">Citations</h2>
+        <hr />
         <p>
           <ul>
-            {sources.map((source) => (
+            {uncitedSources.map((source) => (
+              <li>{source}</li>
+            ))}
+          </ul>
+          <hr />
+          <ul>
+            {citedSources.map((source) => (
               <li>{source}</li>
             ))}
           </ul>
         </p>
       </Col>
       <Col sm="4">
+        <h2 className="text-center">Data</h2>
+        <hr />
         <p>
           <ul>
             {dataSources.map((source) => (
@@ -26,7 +40,8 @@ export const AboutPage = () => (
           </ul>
         </p>
 
-        <h1>About Me</h1>
+        <h2 className="text-center">About Me</h2>
+        <hr />
         {aboutMe}
       </Col>
     </Row>

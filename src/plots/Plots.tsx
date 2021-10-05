@@ -75,7 +75,7 @@ export function ChamberPlot(props: any) {
       layout={{
         showlegend: true,
         title: props.title, // >:(
-        paper_bgcolor: "white",
+        paper_bgcolor: "transparent",
         width: props.width || 1300,
         margin: {
           l: 0,
