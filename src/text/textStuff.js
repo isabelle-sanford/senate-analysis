@@ -110,8 +110,7 @@ export const partisanship = (
       District of Columbia (and Puerto Rico, less prominently) because it will
       add two almost certainly Democratic senate seats, and accusing Democrats
       of wanting it only because of those seats. Once, territories began the
-      process of statehood once they had 60,000 people,
-      {/* <!-- CITE --> */}
+      process of statehood once they had 60,000 people, {/* <!-- CITE --> */}
       but not only is Puerto Rico more populous than 20 states, DC, Guam, and
       the Virgin Islands all have over a hundred thousand people.
     </p>
@@ -124,7 +123,7 @@ export const whoTheyRepresentConclusion = (
       Nowadays there are no objective criteria for statehood that hold up to
       scrutiny: by population, Puerto Rico is bigger than 20 states. By area,
       it's still bigger than two. By GDP per capita, DC would be ranked first in
-      the nation. By opinion of those living there,
+      the nation. By opinion of those living there,{" "}
       <a href="https://www.washingtonpost.com/local/dc-politics/district-voters-overwhelmingly-approve-referendum-to-make-dc-the-51st-state/2016/11/08/ff2ca5fe-a213-11e6-8d63-3e0a660f1f04_story.html?utm_term=.4e6629923c72">
         DC
       </a>{" "}
@@ -202,7 +201,7 @@ export const gender = (
       previous Senate, which is the highest number there have been in its
       history. Compared to the 50.8% of the general population that are women,
       this is rather lacking. This is not even better than the rest of the
-      world:
+      world:{" "}
       <a href="https://www.pewresearch.org/fact-tank/2019/03/18/the-share-of-women-in-legislatures-around-the-world-is-growing-but-they-are-still-underrepresented/">
         globally, 24% of national legislative body members are women.
       </a>
@@ -212,7 +211,7 @@ export const gender = (
       And it makes a difference: women are more likely to sponsor bills relating
       to education, child care, and family health. In state legislatures, they
       have also been found to be more effective in introducing and passing those
-      bills
+      bills{" "}
       <a href="https://www.jstor.org/stable/2131862">
         when the legislature has more women in it
       </a>
@@ -269,8 +268,7 @@ export const religion = (
       Sinema) and three unknowns, whereas the US population is nearly 1/3
       unaffiliated. There are a variety of factors at play here: this is a new
       trend, most unaffiliated are younger and young people don't vote, and
-      unaffiliated don't mind voting for Christians but
-      {/* <!-- CITE --> */}
+      unaffiliated don't mind voting for Christians but {/* <!-- CITE --> */}
       <a href="https://www.pewforum.org/2016/01/27/faith-and-the-2016-campaign/pf_2016-01-27_religion-politics-overview-11/">
         half the country doesn't want to vote for atheists
       </a>
@@ -280,10 +278,10 @@ export const religion = (
       Because there are so few non-religious lawmakers, we have little research
       on how lack of belief might influence their legislative actions. We do,
       however, have <a href="https://www.jstor.org/stable/42864400 ">plenty</a>{" "}
-      of
+      of{" "}
       <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jssr.12535">
         evidence
-      </a>
+      </a>{" "}
       that strength and sect of belief make significant differences to
       legislators' choices. A disproportional representation, then, does have
       serious consequences.
@@ -295,7 +293,7 @@ export const religion = (
       (One other interesting note: looking at political parties, fully 50 of the
       50 Republican senators are some flavor of Christian. The 14 non-Christian
       senators are all Democrats. For more detail on the religious makeup of
-      Congress,
+      Congress,{" "}
       <a href="https://www.pewforum.org/2021/01/04/faith-on-the-hill-2021/">
         see here
       </a>

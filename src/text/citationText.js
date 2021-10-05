@@ -70,9 +70,8 @@ const womenInStateCongress = (
 
 const legislativeDiversity = (
   <p>
-    Bratton, Kathleen A.
+    Bratton, Kathleen A.{" "}
     <a href="https://journals.sagepub.com/doi/pdf/10.1177/1532673X02030002001">
-      {" "}
       The Effect of Legislative Diversity on Agenda Setting
     </a>
     . American Politics Research, vol. 30, no. 2, 2002, pp. 115-142. Accessed 19
@@ -96,7 +95,6 @@ const diversityInStateCongress = (
   <p>
     Rheingold, Beth. "
     <a href="https://scholars.org/sites/scholars/files/ssn_key_findings_reingold_on_legislative_diversity_2.pdf">
-      {" "}
       THE UNEVEN PRESENCE OF WOMEN AND MINORITIES IN AMERICA’S STATE
       LEGISLATURES – AND WHY IT MATTERS
     </a>
@@ -113,7 +111,7 @@ const representationInCongress = (
       Descriptive and Substantive Representation in Congress: Evidence from
       80,000 Congressional Inquiries
     </a>
-    ." 2018. Accessed 19 Apr 2021.
+    ." 2018. Accessed 19 Apr 2021.{" "}
     <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2019/01/09/having-the-most-diverse-congress-ever-will-affect-more-than-just-legislation/">
       Washington Post summary here.
     </a>
@@ -135,14 +133,14 @@ const minorityLegislators = (
 
 const pewReligion = (
   <p>
-    Pew Research Forum:
+    Pew Research Forum:{" "}
     <a href="https://www.pewresearch.org/">Religion by State</a>
   </p>
 );
 
 const wikipediaSenate = (
   <p>
-    Wikipedia:
+    Wikipedia:{" "}
     <a href="https://en.wikipedia.org/wiki/List_of_current_United_States_senators">
       117th Senate
     </a>

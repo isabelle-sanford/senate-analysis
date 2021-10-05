@@ -78,15 +78,16 @@ export const raceDataUS = [
     color: WHITE,
   },
   {
-    name: "African American",
-    num: Math.round((raceData["black"] / 100) * seats),
-    color: AFRICAN_AMERICAN,
-  },
-  {
     name: "Hispanic or Latino",
     num: Math.round((raceData["hispanic"] / 100) * seats),
     color: "blue", // set color!!
   },
+  {
+    name: "African American",
+    num: Math.round((raceData["black"] / 100) * seats),
+    color: AFRICAN_AMERICAN,
+  },
+
   {
     name: "Native American",
     num: Math.round((raceData["indigenous"] / 100) * seats),

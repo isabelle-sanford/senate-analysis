@@ -28,6 +28,7 @@ export function BarPlot(props: any): any {
 
 // note: consider adding 'size' variable if we can get coords for diff sizes
 // Input should be list [[{num: 20, color: blue, labels: [], name: democrats}, ], [trace 2]]
+// US DATA FIRST, SENATE SECOND
 // todo: have input an object with key as title (maybe put title in middle of chamber?)
 export function ChamberPlot(props: any) {
   let [r, theta] = coords(false);
@@ -75,6 +76,35 @@ export function ChamberPlot(props: any) {
       layout={{
         showlegend: true,
         title: props.title, // >:(
+        //Set annotations text in layout configuration
+        annotations: [
+          {
+            text: "US",
+            font: {
+              size: 24,
+              color: "black",
+            },
+            showarrow: false,
+            align: "center",
+            x: 0.24, //position in x domain
+            y: 0.1, //position in y domain
+            xref: "paper",
+            yref: "paper",
+          },
+          {
+            text: "Senate",
+            font: {
+              size: 24,
+              //color: "orange",
+            },
+            showarrow: false,
+            align: "center",
+            x: 0.79, //position in x domain
+            y: 0.1, // position in y domain
+            xref: "paper",
+            yref: "paper",
+          },
+        ],
         paper_bgcolor: "transparent",
         width: props.width || 1300,
         margin: {

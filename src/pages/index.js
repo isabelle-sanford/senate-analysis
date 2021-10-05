@@ -107,7 +107,6 @@ const IndexPage = () => (
           </Row>
         </Tab>
         <Tab eventKey="race" title="Race" className="m-2">
-          {/* TODO make this not tiny?? */}
           <Row>
             <ChamberPlot data={[raceDataUS, raceData]} />
             {race}

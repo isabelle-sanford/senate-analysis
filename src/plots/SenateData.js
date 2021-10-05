@@ -115,10 +115,10 @@ export const raceData = [
     labels: uniqueRaces["White"].map((sen) => sen.senator),
   },
   {
-    name: "African American",
-    num: uniqueRaces["Black"].length,
-    color: AFRICAN_AMERICAN,
-    labels: uniqueRaces["Black"].map((sen) => sen.senator),
+    name: "Hispanic or Latino",
+    num: uniqueRaces["Hispanic or Latino"].length,
+    color: "blue", // TODO: NOT THIS
+    labels: uniqueRaces["Hispanic or Latino"].map((sen) => sen.senator),
   },
   {
     name: "Asian American",
@@ -126,11 +126,12 @@ export const raceData = [
     color: ASIAN_AMERICAN,
     labels: uniqueRaces["Asian American"].map((sen) => sen.senator),
   },
+
   {
-    name: "Hispanic or Latino",
-    num: uniqueRaces["Hispanic or Latino"].length,
-    color: "blue", // TODO: NOT THIS
-    labels: uniqueRaces["Hispanic or Latino"].map((sen) => sen.senator),
+    name: "African American",
+    num: uniqueRaces["Black"].length,
+    color: AFRICAN_AMERICAN,
+    labels: uniqueRaces["Black"].map((sen) => sen.senator),
   },
 ];
 
