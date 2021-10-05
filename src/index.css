@@ -14,8 +14,8 @@ body {
   /* height: 50%; */
   position: relative;
   height: 550px;
-  padding: 20px;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 code {
@@ -27,7 +27,7 @@ code {
 .bg-red {
   background-color: #a31621 !important;
   color: white;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .bg-light {

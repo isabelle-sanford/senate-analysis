@@ -82,7 +82,6 @@ export function ChamberPlot(props: any) {
             text: "US",
             font: {
               size: 24,
-              color: "black",
             },
             showarrow: false,
             align: "center",
@@ -95,7 +94,6 @@ export function ChamberPlot(props: any) {
             text: "Senate",
             font: {
               size: 24,
-              //color: "orange",
             },
             showarrow: false,
             align: "center",

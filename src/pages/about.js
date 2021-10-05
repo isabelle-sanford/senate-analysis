@@ -9,9 +9,9 @@ import {
 
 import Layout from "../components/layout";
 
-export const AboutPage = () => (
+const AboutPage = () => (
   <Layout pageInfo={{ pageName: "about" }}>
-    <Row>
+    <Row className="bg-skyblue">
       <Col sm="8">
         <h2 className="text-center">Citations</h2>
         <hr />

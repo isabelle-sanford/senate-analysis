@@ -27,11 +27,11 @@ const CustomNavbar = ({ pageInfo }) => {
               About
             </Nav.Link>
           </Link>
-          {/* <Link to="/solutions" className="link-no-style">
-              <Nav.Link as="span" eventKey="solutions">
-                Solutions
-              </Nav.Link>
-            </Link> */}
+          <Link to="/solutions" className="link-no-style">
+            <Nav.Link as="span" eventKey="solutions">
+              Solutions
+            </Nav.Link>
+          </Link>
         </Nav>
       </Navbar.Collapse>
       {/* </Container> */}
