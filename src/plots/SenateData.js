@@ -1,4 +1,4 @@
-import senData from "../data0/senators0.json";
+import senData from "./data/senators0.json";
 import { sumList } from "./CensusData";
 import {
   myRed,
@@ -8,7 +8,7 @@ import {
   WHITE,
   AFRICAN_AMERICAN,
   ASIAN_AMERICAN,
-} from "../Info";
+} from "../text/Info";
 
 // [{num: 20, color: blue, labels: [], name: democrats}, ]
 

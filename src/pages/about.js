@@ -9,8 +9,8 @@ import {
   Tab,
   Image,
 } from "react-bootstrap";
-import { sources, dataSources, aboutMe } from "./citationText.js";
-import { SenateNavBar } from "../../not-gatsby/senate-react/src/App.js";
+import { sources, dataSources, aboutMe } from "../text/citationText";
+import { SenateNavBar } from "./index.js";
 
 export const AboutPage = () => (
   <Container fluid className="bg-skyblue">

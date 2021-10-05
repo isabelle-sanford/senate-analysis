@@ -1,5 +1,5 @@
-import sexData from "../data0/sex0.json";
-import raceData from "../data0/race0.json";
+import sexData from "./data/sex0.json";
+import raceData from "./data/race0.json";
 //import religData from "../data0/relig0.json";
 import {
   MALE,
@@ -10,7 +10,7 @@ import {
   NATIVE_AMERICAN,
   PACIFIC_ISLANDER,
   MULITPLE_RACES,
-} from "../Info";
+} from "../text/Info";
 
 let seats = 100;
 
