@@ -1,40 +1,54 @@
-# senate-analysis
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal starter
+</h1>
 
-# Slithering Senate Salamanders
-![alt text](https://github.com/isabelle-sanford/senate-analysis/blob/main/static/img/US_Capitol_west_side.jpeg?raw=true)
+## 🚀 Quick start
 
+1.  **Create a Gatsby site.**
 
-**Overview**
-________________________________
-Examined the demographics of the United States Senate and compared to the United States demographics as a whole.  More specifically, examined population, race, gender, religion, and age through Python Flask-powered API, HTML/CSS, SQL, and JavaScript, to build graphs and visualizations.
+    Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
-**How representative is the US Senate compared to the whole United States?**
+    ```shell
+    # create a new Gatsby site using the minimal starter
+    npm init gatsby
+    ```
 
-It is theorized that 70% of Americans could be living in just 15 states by 2050 and 30% of the people who live in the smallest and poorest states will be represented by 70 Senators.(1)  If Senate reform is not addressed, the under-representation among Americans will only worsen.
+2.  **Start developing.**
 
-In the ten years since this review, we have witnessed an increase in minority representatives but who really holds the power, and does it represent the demographics of the entire nation?  Through exploring various Senate reform suggestions, can we have better representation?
+    Navigate into your new site’s directory and start it up.
 
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-**The Data**
-_______________________________
-*	US Census Population Data
-*	US Census State Population by Characteristics 
-*	Pew Research Religion Data
-*	Wikipedia
+3.  **Open the code and start customizing!**
 
+    Your site is now running at http://localhost:8000!
 
-**Technology**
-_______________________________
-*	Python Flask-powered API
-*	HTML/CSS and JavaScript
-*	SQL and SQLite
-*	Plotly and d3
+    Edit `src/pages/index.js` to see your site update in real-time!
 
+4.  **Learn more**
 
-**Dashboard**
-_______________________________
-*	<<<< Insert a Screenshot of Webpage Plots?>>>>
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-#### (1)  https://www.theatlantic.com/ideas/archive/2018/12/john-dingell-how-restore-faith-government/577222/
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+## 🚀 Quick start (Gatsby Cloud)
+
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
