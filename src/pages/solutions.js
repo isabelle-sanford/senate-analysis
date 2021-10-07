@@ -1,6 +1,6 @@
 // Step 1: Import React
 import * as React from "react";
-import { Row, Col, ListGroup, Tabs, Tab } from "react-bootstrap";
+//import { Row, Col, ListGroup, Tabs, Tab } from "react-bootstrap";
 import Layout from "../components/layout";
 import Header1 from "../components/header1";
 import Header2 from "../components/header2";

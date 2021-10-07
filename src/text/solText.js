@@ -1,14 +1,17 @@
 import * as React from "react";
+import { Link } from "gatsby";
 
 export const introPara = (
   <>
     <p>
       The U.S. Senate is the least representative body of its kind in the world.
-      [source, source, source] If it were a senate for a particular state, [the
-      Supreme Court would strike it down as unconstitutional]. And it has been
-      growing less functional for the past [X]. I go over the Senate’s problems
-      in detail [on this page], so I will only briefly summarize them here. The
-      senate is:
+      [source, source, source] If it were a senate for a particular state,{" "}
+      <a href="https://www.wglt.org/illinois/2021-02-09/the-u-s-senate-the-most-unrepresentative-body#stream/0">
+        the Supreme Court would strike it down as unconstitutional
+      </a>
+      . And it has been growing less functional for the past [X]. I go over the
+      Senate’s problems in detail <Link to="/">on this page</Link>, so I will
+      only briefly summarize them here. The senate is:
       <ul>
         <li>Unrepresentative of diversity by race/gender/religion/etc</li>
         <li>
@@ -39,11 +42,20 @@ export const introPara = (
         3/5ths Compromise
       </a>
       . Smaller states threatened to walk out of the convention if they were not
-      given equal representation, and the Senate was the result. This was more
-      palatable at the time that it is now, with the largest state being only
-      about ten times the size of the smallest (it’s now [68 to 1]) but even
-      then several of the Founding Fathers were deeply unhappy with it.
-      [relevant James Madison quote]
+      given equal representation, and the{" "}
+      <a href="https://en.wikipedia.org/wiki/Connecticut_Compromise">
+        Connecticut Compromise
+      </a>{" "}
+      resulted in the Senate giving states equal representation while the House
+      gives representation by population. This was more palatable at the time
+      that it is now, with the largest state being only about ten times the size
+      of the smallest (it’s now 68 to 1) but even then several of the Founding
+      Fathers were deeply unhappy with it, with James Madison calling it the
+      "lesser evil" in{" "}
+      <a href="https://teachingamericanhistory.org/document/federalist-no-62/">
+        Federalist No. 62
+      </a>
+      .
     </p>
     <p>
       <h3>SUMMARY</h3>
@@ -81,7 +93,11 @@ export const statehoodFix = (
     <strong>Partisanship</strong>: Clearly benefits the Democrats, particularly
     DC, which is some ridiculous percent blue. That’s why it’s popular right now
     <br />
-    <strong>Read more</strong>:<br />
+    <strong>Read more</strong>:{" "}
+    <a href="https://www.usatoday.com/story/news/politics/2021/04/14/what-know-bills-congress-washington-dc-puerto-rico-statehood/7211653002/">
+      USA Today
+    </a>
+    <br />
   </p>
 );
 
@@ -158,7 +174,6 @@ export const reformIntro = (
 
 export const HR1 = (
   <p>
-    <h4>HR1</h4>
     HR1, the{" "}
     <a href="https://www.congress.gov/bill/117th-congress/senate-bill/1/text">
       For the People Act of 2021
@@ -184,7 +199,6 @@ export const HR1 = (
 
 export const reformOther = (
   <p>
-    <h4>Other</h4>
     For an overview of a bunch of different reforms in this area, try{" "}
     <a href="https://www.cambridge.org/core/books/economic-realities-of-political-reform/4B15DB66F8C5F2921487B325AC7B068F#fndtn-contents">
       Economic Realities of Political Reform
@@ -213,10 +227,10 @@ export const reallocateSeats = (
     [covered in detail below], but others include:
     <ul>
       <li>
-        Add 100 senators allocated using
+        Add 100 senators allocated using{" "}
         <a href="https://en.wikipedia.org/wiki/Mixed-member_proportional_representation">
           MMP
-        </a>
+        </a>{" "}
         voting. (This is somewhat similar to the Senate Reform Act below, but
         MMP voting is a whole extra layer of interesting and complicated.)
       </li>
@@ -311,10 +325,10 @@ export const abolishSenate = (
   <p>
     <strong>DESCRIPTION</strong>: Remove the Senate entirely. This is the most
     extreme and most difficult option but it would certainly fix the Senate’s
-    problems. Former Representative John Dingell
+    problems. Former Representative John Dingell{" "}
     <a href="https://www.theatlantic.com/ideas/archive/2018/12/john-dingell-how-restore-faith-government/577222/">
       suggested
-    </a>
+    </a>{" "}
     combining the two chambers of Congress into one. Other options include
     simple abolition or replacement with a citizen’s veto.
     <br />
@@ -326,7 +340,7 @@ export const abolishSenate = (
     <strong>What It Fixes</strong>: Everything, maybe! It’s a chance for a clean
     slate
     <br />
-    <strong>Partisanship</strong>: Favors Democrats, because the GOP is
+    <strong>Partisanship</strong>: Favors Democrats, because the GOP is{" "}
     <a href="https://fivethirtyeight.com/features/the-congressional-map-is-historically-biased-toward-the-gop/">
       consistently overrepresented
     </a>{" "}
@@ -337,18 +351,18 @@ export const abolishSenate = (
   </p>
 );
 
-export const HR1 = (
-  <p>
-    <strong>DESCRIPTION</strong>:
-    <br />
-    <strong>Proponents</strong>:
-    <br />
-    <strong>Feasibility</strong>:
-    <br />
-    <strong>What It Fixes</strong>:
-    <br />
-    <strong>Partisanship</strong>:
-    <br />
-    <strong>Read more</strong>:<br />
-  </p>
-);
+// export const HR1 = (
+//   <p>
+//     <strong>DESCRIPTION</strong>:
+//     <br />
+//     <strong>Proponents</strong>:
+//     <br />
+//     <strong>Feasibility</strong>:
+//     <br />
+//     <strong>What It Fixes</strong>:
+//     <br />
+//     <strong>Partisanship</strong>:
+//     <br />
+//     <strong>Read more</strong>:<br />
+//   </p>
+// );

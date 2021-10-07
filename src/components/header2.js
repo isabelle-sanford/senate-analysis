@@ -7,7 +7,7 @@ import { bgBlue } from "./header2.module.css";
 
 const Header2 = ({ title, id }) => {
   return (
-    <Container fluid className="p-0">
+    <Container>
       <h2 className={bgBlue} id={id}>
         {title}
       </h2>
