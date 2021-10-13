@@ -1,4 +1,3 @@
 node_modules/
-.cache/
-.ipynb_checkpoints/
-__pycache__/
+public/
+public
