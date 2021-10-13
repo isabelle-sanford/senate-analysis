@@ -4736,24 +4736,24 @@ if (false) {} else {
 /***/ }),
 
 /***/ "react-dom/server":
-/*!*************************************************************************************************************!*\
-  !*** external "/home/isanford/react_stuff/senate-rewrite/senate-analysis/node_modules/react-dom/server.js" ***!
-  \*************************************************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("/home/isanford/react_stuff/senate-rewrite/senate-analysis/node_modules/react-dom/server.js");
-
-/***/ }),
-
-/***/ "react":
 /*!********************************************************************************************************!*\
-  !*** external "/home/isanford/react_stuff/senate-rewrite/senate-analysis/node_modules/react/index.js" ***!
+  !*** external "/home/isanford/web_stuff/react_stuff/senate-analysis/node_modules/react-dom/server.js" ***!
   \********************************************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("/home/isanford/react_stuff/senate-rewrite/senate-analysis/node_modules/react/index.js");
+module.exports = require("/home/isanford/web_stuff/react_stuff/senate-analysis/node_modules/react-dom/server.js");
+
+/***/ }),
+
+/***/ "react":
+/*!***************************************************************************************************!*\
+  !*** external "/home/isanford/web_stuff/react_stuff/senate-analysis/node_modules/react/index.js" ***!
+  \***************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("/home/isanford/web_stuff/react_stuff/senate-analysis/node_modules/react/index.js");
 
 /***/ })
 

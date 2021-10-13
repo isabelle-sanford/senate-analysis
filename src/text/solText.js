@@ -9,9 +9,9 @@ export const introPara = (
       <a href="https://www.wglt.org/illinois/2021-02-09/the-u-s-senate-the-most-unrepresentative-body#stream/0">
         the Supreme Court would strike it down as unconstitutional
       </a>
-      . And it has been growing less functional for the past [X]. I go over the
-      Senate’s problems in detail <Link to="/">on this page</Link>, so I will
-      only briefly summarize them here. The senate is:
+      . I go over the Senate’s problems in detail{" "}
+      <Link to="/">on this page</Link>, so I will only briefly summarize them
+      here. The senate is:
       <ul>
         <li>Unrepresentative of diversity by race/gender/religion/etc</li>
         <li>
