@@ -25,7 +25,9 @@
     "incremental-convex-hull": "^1.0.1",
     "joi": "^17.4.2",
     "ndarray": "^1.0.19",
+    "ndarray-gradient": "^1.0.1",
     "ndarray-ops": "^1.2.2",
+    "ndarray-pack": "^1.2.1",
     "plotly": "^1.0.6",
     "plotly.js": "^2.5.1",
     "plotly.js-dist": "^2.5.1",
@@ -34,6 +36,7 @@
     "react-dom": "^17.0.1",
     "react-plotly.js": "^2.5.1",
     "simplicial-complex-contour": "^1.0.2",
+    "surface-nets": "^1.0.2",
     "typescript": "^4.4.4"
   },
   "devDependencies": {
