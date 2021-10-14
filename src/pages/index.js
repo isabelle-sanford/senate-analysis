@@ -5,6 +5,12 @@ import Layout from "../components/layout";
 import Header1 from "../components/header1";
 
 import Image from "react-bootstrap/Image";
+import genderImage from "../images/plot_images/gender.png";
+import raceImage from "../images/plot_images/race.png";
+import religionImage from "../images/plot_images/religion.png";
+import stackedBar from "../images/plot_images/bar50states.png";
+import bar1790 from "../images/plot_images/bar1790census.png";
+import partyBar from "../images/plot_images/barPartyComparison.png";
 
 import {
   introPara,
@@ -93,19 +99,21 @@ const IndexPage = () => (
           <Tab eventKey="gender" title="Gender" className="m-2">
             <Row>
               {/* <ChamberPlot data={[sexDataUS, sexData]} /> */}
-              <Image src="../images/plot_images/gender.png" thumbnail />
+              <Image src={genderImage} rounded />
               {gender}
             </Row>
           </Tab>
           <Tab eventKey="race" title="Race" className="m-2">
             <Row>
               {/* <ChamberPlot data={[raceDataUS, raceData]} /> */}
+              <Image src={raceImage} rounded />
               {race}
             </Row>
           </Tab>
           <Tab eventKey="religion" title="Religion" className="m-2">
             {/* <ChamberPlot data={[religDataUS, religData]} /> */}
             {religion}
+            <Image src={religionImage} rounded />
           </Tab>
         </Tabs>
       </Container>
@@ -119,6 +127,7 @@ const IndexPage = () => (
             data={stackedData}
             title="State Population by Senator"
           /> */}
+          <Image src={stackedBar} rounded />
         </Row>
 
         <Row className="align-items-center">
@@ -131,6 +140,7 @@ const IndexPage = () => (
               title="Free White Male 16-year-olds in the 13 Colonies, 1790"
               width={700}
             /> */}
+            <Image src={bar1790} rounded />
           </Col>
         </Row>
         <Row className="align-items-center">
@@ -142,6 +152,7 @@ const IndexPage = () => (
               title="# of People Each Party Represents"
               width={400}
             /> */}
+            <Image src={partyBar} rounded />
           </Col>
           <Col sm="8">{partisanship}</Col>
         </Row>
