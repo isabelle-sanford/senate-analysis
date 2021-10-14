@@ -4,6 +4,8 @@ import { Row, Col, ListGroup, Tabs, Tab } from "react-bootstrap";
 import Layout from "../components/layout";
 import Header1 from "../components/header1";
 
+import Image from "react-bootstrap/Image";
+
 import {
   introPara,
   whoTheyAre,
@@ -91,6 +93,7 @@ const IndexPage = () => (
           <Tab eventKey="gender" title="Gender" className="m-2">
             <Row>
               {/* <ChamberPlot data={[sexDataUS, sexData]} /> */}
+              <Image src="../images/plot_images/gender.png" thumbnail />
               {gender}
             </Row>
           </Tab>
