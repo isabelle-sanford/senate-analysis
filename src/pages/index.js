@@ -16,24 +16,24 @@ import {
   whoTheyRepresentConclusion,
   compareColonialTimes,
 } from "../text/textStuff";
-import { BarPlot, ChamberPlot, StackedBarPlot } from "../plots/Plots";
-import { myRed } from "../text/Info";
+//import { BarPlot, ChamberPlot, StackedBarPlot } from "../plots/Plots";
+// import { myRed } from "../text/Info";
 
-import {
-  sexData,
-  raceData,
-  religData,
-  representationNums,
-  stackedData,
-} from "../plots/SenateData";
+// import {
+//   sexData,
+//   raceData,
+//   religData,
+//   representationNums,
+//   stackedData,
+// } from "../plots/SenateData";
 
 import Container from "react-bootstrap/Container";
-import {
-  colonyData,
-  raceDataUS,
-  sexDataUS,
-  religDataUS,
-} from "../plots/CensusData";
+// import {
+//   colonyData,
+//   raceDataUS,
+//   sexDataUS,
+//   religDataUS,
+// } from "../plots/CensusData";
 
 import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -90,18 +90,18 @@ const IndexPage = () => (
         >
           <Tab eventKey="gender" title="Gender" className="m-2">
             <Row>
-              <ChamberPlot data={[sexDataUS, sexData]} />
+              {/* <ChamberPlot data={[sexDataUS, sexData]} /> */}
               {gender}
             </Row>
           </Tab>
           <Tab eventKey="race" title="Race" className="m-2">
             <Row>
-              <ChamberPlot data={[raceDataUS, raceData]} />
+              {/* <ChamberPlot data={[raceDataUS, raceData]} /> */}
               {race}
             </Row>
           </Tab>
           <Tab eventKey="religion" title="Religion" className="m-2">
-            <ChamberPlot data={[religDataUS, religData]} />
+            {/* <ChamberPlot data={[religDataUS, religData]} /> */}
             {religion}
           </Tab>
         </Tabs>
@@ -112,33 +112,33 @@ const IndexPage = () => (
       <Container>
         {whoTheyRepresent}
         <Row>
-          <StackedBarPlot
+          {/* <StackedBarPlot
             data={stackedData}
             title="State Population by Senator"
-          />
+          /> */}
         </Row>
 
         <Row className="align-items-center">
           <Col sm="6">{compareColonialTimes}</Col>
           <Col sm="6">
-            <BarPlot
+            {/* <BarPlot
               x={colonyData.map((c) => c.state)}
               y={colonyData.map((c) => c.pop)}
               colors={myRed}
               title="Free White Male 16-year-olds in the 13 Colonies, 1790"
               width={700}
-            />
+            /> */}
           </Col>
         </Row>
         <Row className="align-items-center">
           <Col sm="4">
-            <BarPlot
+            {/* <BarPlot
               x={representationNums.map((r) => r.party)}
               y={representationNums.map((r) => r.population)}
               colors={representationNums.map((r) => r.color)}
               title="# of People Each Party Represents"
               width={400}
-            />
+            /> */}
           </Col>
           <Col sm="8">{partisanship}</Col>
         </Row>
