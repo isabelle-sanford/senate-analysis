@@ -35,6 +35,7 @@
     "react-bootstrap": "^2.0.0-rc.0",
     "react-dom": "^17.0.1",
     "react-plotly.js": "^2.5.1",
+    "robust-linear-solve": "^1.0.0",
     "simplicial-complex-contour": "^1.0.2",
     "surface-nets": "^1.0.2",
     "typescript": "^4.4.4"
