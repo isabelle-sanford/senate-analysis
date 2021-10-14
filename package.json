@@ -24,6 +24,7 @@
     "gatsby-plugin-gatsby-cloud": "^3.2.0",
     "incremental-convex-hull": "^1.0.1",
     "joi": "^17.4.2",
+    "ndarray": "^1.0.19",
     "plotly": "^1.0.6",
     "plotly.js": "^2.5.1",
     "plotly.js-dist": "^2.5.1",
