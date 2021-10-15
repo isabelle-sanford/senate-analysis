@@ -50,13 +50,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const IndexPage = () => (
   <Layout pageInfo={{ pageName: "index" }}>
-    <Container fluid className="hero px-0 mx-0">
+    <Container fluid className="hero px-0 mx-0 pt-5">
       <h1 className="text-center text-light">
         Senate Reform: Why the Senate Doesn't Represent the US
       </h1>
     </Container>
 
     <Container fluid className="bg-skyblue">
+      <Row className="justify-content-center pt-4">
+        <Col className="col-4 border border-danger border-4">
+          <p className="text-center">
+            NOTE: The library I use to create graphs is temporarily having a
+            problem with React. Click{" "}
+            <a href="https://isabelle-sanford.github.io/senate-analysis/">
+              here
+            </a>{" "}
+            to access the old site, for which the graphs are still interactive.
+            <br />
+          </p>
+        </Col>
+      </Row>
+
       <Row className="align-items-center ">
         <Col sm="3">
           <Container>
@@ -112,8 +126,9 @@ const IndexPage = () => (
           </Tab>
           <Tab eventKey="religion" title="Religion" className="m-2">
             {/* <ChamberPlot data={[religDataUS, religData]} /> */}
-            {religion}
+
             <Image src={religionImage} rounded />
+            {religion}
           </Tab>
         </Tabs>
       </Container>

@@ -14,7 +14,7 @@ const CustomNavbar = ({ pageInfo }) => {
           Senate Reform
         </Navbar.Brand>
       </Link>
-      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto" activeKey={pageInfo && pageInfo.pageName}>
           <Link to="/" className={navLinkText}>
