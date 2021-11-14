@@ -16,15 +16,32 @@ import {
 } from "../text/mySolText";
 
 import Container from "react-bootstrap/Container";
+import { Row, Col, ListGroup, Tabs, Tab } from "react-bootstrap";
 
 import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const MySolutionPage = () => (
-  <Layout pageInfo={{ pageName: "index" }}>
-    <Container fluid className="bg-skyblue">
-      <Header1 title="Introduction" id="intro" />
-      <Container>{solIntro}</Container>
+  <Layout pageInfo={{ pageName: "mysolution" }}>
+    <Container fluid className="bg-skyblue py-4">
+      <Row>
+        <Col sm="3">
+          <a
+            title="!Original: MaksimVector: Ipankonin, CC BY-SA 2.5 &lt;https://creativecommons.org/licenses/by-sa/2.5&gt;, via Wikimedia Commons"
+            href="https://commons.wikimedia.org/wiki/File:Seal_of_the_United_States_Senate.svg"
+          >
+            <img
+              width="256"
+              alt="Seal of the United States Senate"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Seal_of_the_United_States_Senate.svg/512px-Seal_of_the_United_States_Senate.svg.png"
+            />
+          </a>
+        </Col>
+        <Col sm="9">
+          <Header1 title="Introduction" id="intro" />
+          <Container>{solIntro}</Container>
+        </Col>
+      </Row>
 
       <Header1 title="How It Works" id="howitworks" />
       <Container>

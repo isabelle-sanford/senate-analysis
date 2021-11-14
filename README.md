@@ -1,43 +1,9 @@
 # senate-analysis
 
-# Slithering Senate Salamanders
+## Overview
 
-![alt text](https://github.com/isabelle-sanford/senate-analysis/blob/main/static/img/US_Capitol_west_side.jpeg?raw=true)
+You can find the current version of the site at <https://senatereform.gtsb.io/>! It's still a work in progress, but check it out anyway. The goal of this project is to examine the United States Senate and its problems, especially the discrepancy between its demographics and the demographics of the US as a whole.
 
-**Overview**
+## About
 
----
-
-Examined the demographics of the United States Senate and compared to the United States demographics as a whole. More specifically, examined population, race, gender, religion, and age through Python Flask-powered API, HTML/CSS, SQL, and JavaScript, to build graphs and visualizations.
-
-**How representative is the US Senate compared to the whole United States?**
-
-It is theorized that 70% of Americans could be living in just 15 states by 2050 and 30% of the people who live in the smallest and poorest states will be represented by 70 Senators.(1) If Senate reform is not addressed, the under-representation among Americans will only worsen.
-
-In the ten years since this review, we have witnessed an increase in minority representatives but who really holds the power, and does it represent the demographics of the entire nation? Through exploring various Senate reform suggestions, can we have better representation?
-
-**The Data**
-
----
-
-- US Census Population Data
-- US Census State Population by Characteristics
-- Pew Research Religion Data
-- Wikipedia
-
-**Technology**
-
----
-
-- Python Flask-powered API
-- HTML/CSS and JavaScript
-- SQL and SQLite
-- Plotly and d3
-
-**Dashboard**
-
----
-
-- <<<< Insert a Screenshot of Webpage Plots?>>>>
-
-#### (1) https://www.theatlantic.com/ideas/archive/2018/12/john-dingell-how-restore-faith-government/577222/
+This project was initially created as a group project during the (link?) USC Viterbi School of Engineering Data Analysis & Visualization Bootcamp, by Steven Brown, William Enriquez, Michelle Risucci, Isabelle Sanford, and Kosal Sieng. It has since been extended by Isabelle Sanford to its current state, including most of the words and citations, plus a complete rewrite in React. The site uses (link?) the Plotly library for its graphs, and is hosted on (link) Gatsby Cloud. Further information and all sources can be found at <https://senatereform.gtsb.io/about>.

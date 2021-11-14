@@ -2,22 +2,24 @@ import * as React from "react";
 
 export const solIntro = (
   <p>
-    In this proposal, I will advocate for the Senate Reform Act proposed by
-    Professor Eric Orts, combined with the pro-majoritarian filibuster from
-    Gould et al.
+    This proposal advocates for the (LINK)Senate Reform Act (SRA) proposed by
+    Professor Eric Orts, combined with the (LINK)pro-majoritarian filibuster
+    from Gould et al.
   </p>
 );
 
 export const explainSRA = (
   <p>
-    The mathematics of the Orts proposition work as follows.
+    The mathematics of the Orts proposition work like this.
     <br />
     First, get our “unit” number by dividing the population by 100. (This could
     be another number; 100 just results in about 100 Senate seats like we have
     now, and the math is easy to do.) Using the recently released 2020 census
-    data, our unit is 3,307,597 people. Next, divide every state’s population by
-    this number, to get the ratio between the unit and the state population.
+    data, that makes our unit <strong>3,307,597 people</strong>. Next, divide
+    every state’s population by this number, to get the ratio between the unit
+    and the state population.
     <br />
+    {/* GRAPH HERE OF US WITH NUMS ON IT, TITLED 'how many 1%s of the US each state has' */}
     Using these numbers, we assign Senate seats. Any number with less than one
     unit gets 1 seat. Beyond one unit, we round normally: states with a ratio of
     X.5 or above get X+1, states below X.5 get X. The results:
@@ -33,11 +35,13 @@ export const explainSRA = (
       <li>12 seats - California</li>
     </ul>
     The end result is 111 senators from the 50 states. These seats would be
-    updated with the decennial census like the House already does.
-    <br /> Problems Remain: This is more proportional, but some states still
-    have much more per-voter power than others. In general, the very smallest
-    states still have the most disproportionate advantage, but after that it is
-    at least somewhat more random.
+    updated with the decennial census, just like the House already does.
+    <br /> <br />
+    <strong>Problems Remain</strong>: This is more proportional, but some states
+    still have much more per-voter power than others. In general, the very
+    smallest states still have the most disproportionate advantage, but after
+    that it is at least somewhat more random.
+    {/* ANOTHER GRAPH HERE */}
   </p>
 );
 
