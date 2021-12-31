@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 import Header1 from "../components/header1";
 import Header2 from "../components/header2";
 
+import { SRAMap } from "../plots/Maps";
+
 import {
   solIntro,
   explainSRA,
@@ -16,7 +18,7 @@ import {
 } from "../text/mySolText";
 
 import Container from "react-bootstrap/Container";
-import { Row, Col, ListGroup, Tabs, Tab } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import "../index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -47,6 +49,7 @@ const MySolutionPage = () => (
       <Container>
         <Header2 title="Senate Reform Act" id="explainSRA" />
         {explainSRA}
+        <SRAMap />
         <Header2 title="Pro-Majoritarian Filibuster" id="explainPMF" />
         {explainPMFilibuster}
       </Container>
