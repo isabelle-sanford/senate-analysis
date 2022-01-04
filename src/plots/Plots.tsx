@@ -1,10 +1,22 @@
 import * as React from "react";
 
-import Plot from "react-plotly.js";
+import Loadable from "react-loadable";
+//import Plot from "react-plotly.js";
+
+const Plotly = Loadable({
+  loader: () => import(`react-plotly.js`),
+  loading: ({ timedOut }) =>
+    timedOut ? (
+      <blockquote>Error: Loading Plotly timed out.</blockquote>
+    ) : (
+      <blockquote>Loading...</blockquote>
+    ),
+  timeout: 10000,
+});
 
 export function BarPlot(props: any): any {
   return (
-    <Plot
+    <Plotly
       data={[
         {
           x: props.x,
@@ -71,7 +83,7 @@ export function ChamberPlot(props: any) {
   //console.log(dataList);
 
   return (
-    <Plot
+    <Plotly
       data={fullData}
       layout={{
         showlegend: true,
@@ -187,7 +199,7 @@ export function StackedBarPlot(data: any, title: string) {
   });
 
   return (
-    <Plot
+    <Plotly
       data={traces}
       layout={{
         title: title,
