@@ -10,7 +10,7 @@ export const introPara = (
     </p>
     <p>
       The Senate has unique advice and consent power to ratify treaties, declare
-      war ([LINK]theoretically[/LINK]), and confirm Cabinet Secretaries, Supreme
+      war, and confirm Cabinet Secretaries, Supreme
       Court Justices, federal judges, ambassadors, and other officials. It also
       conducts impeachment trials and, of course, makes law. It is designed to
       protect the power of individual states, and particularly smaller states
