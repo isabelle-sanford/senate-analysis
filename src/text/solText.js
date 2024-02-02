@@ -5,7 +5,7 @@ export const introPara = (
   <>
     <p>
       The U.S. Senate is the least representative body of its kind in the world.
-      [source, source, source] If it were a senate for a particular state,{" "}
+      If it were a senate for a particular state,{" "}
       <a href="https://www.wglt.org/illinois/2021-02-09/the-u-s-senate-the-most-unrepresentative-body#stream/0">
         the Supreme Court would strike it down as unconstitutional
       </a>
